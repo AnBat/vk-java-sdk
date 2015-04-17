@@ -7,8 +7,8 @@ package com.vk.api.methods;
  * www.batyaev.com
  */
 
-import com.vk.sdk.api.VKParameters;
-import com.vk.sdk.api.VKRequest;
+import com.vk.api.VKParameters;
+import com.vk.api.VKRequest;
 
 /**
  * Builds requests for API.widgets part
