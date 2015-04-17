@@ -24,7 +24,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("get", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.getById
      *
      * You need the following rights to call this method: audio.
@@ -33,7 +33,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("getById", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.getLyrics
      *
      * You need the following rights to call this method: audio.
@@ -42,7 +42,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("getLyrics", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.search
      *
      * You need the following rights to call this method: audio.
@@ -51,7 +51,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("search", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.getUploadServer
      *
      * You need the following rights to call this method: audio.
@@ -60,7 +60,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("getUploadServer", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.save
      *
      * You need the following rights to call this method: audio.
@@ -69,7 +69,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("save", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.add
      *
      * You need the following rights to call this method: audio.
@@ -78,7 +78,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("add", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.delete
      *
      * You need the following rights to call this method: audio.
@@ -87,7 +87,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("delete", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.edit
      *
      * You need the following rights to call this method: audio.
@@ -96,7 +96,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("edit", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.reorder
      *
      * You need the following rights to call this method: audio.
@@ -105,7 +105,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("reorder", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.restore
      *
      * You need the following rights to call this method: audio.
@@ -114,7 +114,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("restore", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.getAlbums
      *
      * You need the following rights to call this method: audio.
@@ -123,7 +123,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("getAlbums", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.addAlbum
      *
      * You need the following rights to call this method: audio.
@@ -132,7 +132,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("addAlbum", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.editAlbum
      *
      * You need the following rights to call this method: audio.
@@ -141,7 +141,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("editAlbum", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.deleteAlbum
      *
      * You need the following rights to call this method: audio.
@@ -150,7 +150,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("deleteAlbum", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.moveToAlbum
      *
      * You need the following rights to call this method: audio.
@@ -159,7 +159,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("moveToAlbum", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.setBroadcast
      *
      * You need the following rights to call this method: audio.
@@ -168,7 +168,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("setBroadcast", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.getBroadcastList
      *
      * You need the following rights to call this method: audio.
@@ -177,7 +177,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("getBroadcastList", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.getRecommendations
      *
      * You need the following rights to call this method: audio.
@@ -186,7 +186,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("getRecommendations", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.getPopular
      *
      * You need the following rights to call this method: audio.
@@ -195,7 +195,7 @@ public class VKApiAudio extends VKApiBase {
         return prepareRequest("getPopular", params);
     }
 
-    /*
+    /**
      * https://vk.com/dev/audio.getCount
      *
      * You need the following rights to call this method: audio.
