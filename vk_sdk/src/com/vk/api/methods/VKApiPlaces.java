@@ -47,7 +47,7 @@ public class VKApiPlaces extends VKApiBase {
     /**
      * https://vk.com/dev/places.checkin
      *
-     * You need the following rights to call this method: wall. (Read more on rights)
+     * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.  
      */
     public VKRequest checkin(VKParameters params) {
