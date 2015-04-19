@@ -12,7 +12,7 @@ import java.lang.String;
 /**
  * User object describes a user profile.
  */
-public class VKApiUser {
+public class VKUser {
 
     /**
      * First name of user.
@@ -56,7 +56,7 @@ public class VKApiUser {
     /**
      * Creates empty User instance.
      */
-    public VKApiUser() {
+    public VKUser() {
 
     }
 
