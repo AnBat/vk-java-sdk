@@ -1,31 +1,20 @@
-import java.sql.Wrapper
-
 apply plugin: 'java'
 apply plugin: 'idea'
 
-//def mainClassName = "com.batyaev.vk.VKApi"
-//
-//jar {
-//    manifest.attributes("Main-Class": mainClassName);
-//}
+mainClassName = "com.batyaev.vk.VKApi"
 
-//compile {
-//    source = 'src'
-//}
+jar {
+    manifest.attributes("Main-Class": mainClassName);
+}
+
 sourceSets {
+    intTest
     main {
         java {
             srcDir 'src'
         }
+        resources {
+            srcDir 'resources'
+        }
     }
 }
-//sourceSets {
-//    main {
-//        java {
-//            srcDir 'src'
-//        }
-//        resources {
-//            srcDir 'resources'
-//        }
-//    }
-//}

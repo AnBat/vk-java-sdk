@@ -7,8 +7,11 @@ package com.batyaev.vk.api.methods;
  * www.batyaev.com
  */
 
+import com.batyaev.vk.annotation.Rights;
+import com.batyaev.vk.annotation.StandAloneAppOnly;
 import com.batyaev.vk.api.VKParameters;
 import com.batyaev.vk.api.VKRequest;
+import com.batyaev.vk.api.consts.VKApiRigths;
 
 /**
  * Builds requests for API.account part
@@ -18,7 +21,7 @@ import com.batyaev.vk.api.VKRequest;
 public class VKApiAccount extends VKApiBase {
 
     /**
-     * https://vk.com/dev/account.getCounters
+     * @link https://vk.com/dev/account.getCounters
      *
      * This method doesn't require any specific rights.  
      */
@@ -27,7 +30,7 @@ public class VKApiAccount extends VKApiBase {
     }
 
     /**
-     * https://vk.com/dev/account.setNameInMenu
+     * @link https://vk.com/dev/account.setNameInMenu
      *
      * This method doesn't require any specific rights.  
      */
@@ -36,75 +39,68 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * https://vk.com/dev/account.setOnline
-     *
-     * This method is available only to standalone-applications. 
+     * @link https://vk.com/dev/account.setOnline
      */
+    @StandAloneAppOnly
     public VKRequest setOnline(VKParameters params) {
         return prepareRequest("setOnline", params);
     }
     
     /**
-     * https://vk.com/dev/account.setOffline
-     *
-     * This method is available only to standalone-applications. 
+     * @link https://vk.com/dev/account.setOffline
      */
+    @StandAloneAppOnly
     public VKRequest setOffline(VKParameters params) {
         return prepareRequest("setOffline", params);
     }
-    
+
     /**
-     * https://vk.com/dev/account.lookupContacts
-     *
-     * You need the following rights to call this method: friends. (Read more on rights)
-     * This method is available only to standalone-applications. 
+     * @link https://vk.com/dev/account.lookupContacts
      */
+    @StandAloneAppOnly
+    @Rights(VKApiRigths.FRIENDS)
     public VKRequest lookupContacts(VKParameters params) {
         return prepareRequest("lookupContacts", params);
     }
-    
+
     /**
-     * https://vk.com/dev/account.registerDevice
-     *
-     * You need the following rights to call this method: messages. (Read more on rights)
-     * This method is available only to standalone-applications. 
+     * @link https://vk.com/dev/account.registerDevice
      */
+    @StandAloneAppOnly
+    @Rights(VKApiRigths.MESSAGES)
     public VKRequest registerDevice(VKParameters params) {
         return prepareRequest("registerDevice", params);
     }
-    
+
     /**
-     * https://vk.com/dev/account.unregisterDevice
-     *
-     * You need the following rights to call this method: messages. (Read more on rights)
-     * This method is available only to standalone-applications. 
+     * @link https://vk.com/dev/account.unregisterDevice
      */
+    @StandAloneAppOnly
+    @Rights(VKApiRigths.MESSAGES)
     public VKRequest unregisterDevice(VKParameters params) {
         return prepareRequest("unregisterDevice", params);
     }
     
     /**
-     * https://vk.com/dev/account.setSilenceMode
-     *
-     * You need the following rights to call this method: messages. (Read more on rights)
-     * This method is available only to standalone-applications.  
+     * @link https://vk.com/dev/account.setSilenceMode
      */
+    @StandAloneAppOnly
+    @Rights(VKApiRigths.MESSAGES)
     public VKRequest setSilenceMode(VKParameters params) {
         return prepareRequest("setSilenceMode", params);
     }
     
     /**
-     * https://vk.com/dev/account.getPushSettings
-     *
-     * You need the following rights to call this method: messages. (Read more on rights)
-     * This method is available only to standalone-applications.  
+     * @link https://vk.com/dev/account.getPushSettings
      */
+    @StandAloneAppOnly
+    @Rights(VKApiRigths.MESSAGES)
     public VKRequest getPushSettings(VKParameters params) {
         return prepareRequest("getPushSettings", params);
     }
     
     /**
-     * https://vk.com/dev/account.getAppPermissions
+     * @link https://vk.com/dev/account.getAppPermissions
      *
      * This method doesn't require any specific rights.  
      */
@@ -113,7 +109,7 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * https://vk.com/dev/account.getActiveOffers
+     * @link https://vk.com/dev/account.getActiveOffers
      *
      * This method doesn't require any specific rights. 
      */
@@ -122,73 +118,65 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * https://vk.com/dev/account.banUser
-     *
-     * This method is available only to standalone-applications.
+     * @link https://vk.com/dev/account.banUser
      */
+    @StandAloneAppOnly
     public VKRequest banUser(VKParameters params) {
         return prepareRequest("banUser", params);
     }
     
     /**
-     * https://vk.com/dev/account.unbanUser
-     *
-     * This method is available only to standalone-applications.  
+     * @link https://vk.com/dev/account.unbanUser
      */
+    @StandAloneAppOnly
     public VKRequest unbanUser(VKParameters params) {
         return prepareRequest("unbanUser", params);
     }
     
     /**
-     * https://vk.com/dev/account.getBanned
-     *
-     * This method is available only to standalone-applications.  
+     * @link https://vk.com/dev/account.getBanned
      */
+    @StandAloneAppOnly
     public VKRequest getBanned(VKParameters params) {
         return prepareRequest("getBanned", params);
     }
     
     /**
-     * https://vk.com/dev/account.getInfo
-     *
-     * This method is available only to standalone-applications.  
+     * @link https://vk.com/dev/account.getInfo
      */
+    @StandAloneAppOnly
     public VKRequest getInfo(VKParameters params) {
         return prepareRequest("getInfo", params);
     }
     
     /**
-     * https://vk.com/dev/account.setInfo
-     *
-     * This method is available only to standalone-applications.  
+     * @link https://vk.com/dev/account.setInfo
      */
+    @StandAloneAppOnly
     public VKRequest setInfo(VKParameters params) {
         return prepareRequest("setInfo", params);
     }
     
     /**
-     * https://vk.com/dev/account.changePassword
-     *
-     * This method is available only to standalone-applications.  
+     * @link https://vk.com/dev/account.changePassword
      */
+    @StandAloneAppOnly
     public VKRequest changePassword(VKParameters params) {
         return prepareRequest("changePassword", params);
     }
     
     /**
-     * https://vk.com/dev/account.getProfileInfo
-     *
-     * This method is available only to standalone-applications.  
+     * @link https://vk.com/dev/account.getProfileInfo
      */
+    @StandAloneAppOnly
     public VKRequest getProfileInfo(VKParameters params) {
         return prepareRequest("getProfileInfo", params);
     }
     
     /**
-     * https://vk.com/dev/account.saveProfileInfo
-     *
-     * This method is available only to standalone-applications.  
+     * @link https://vk.com/dev/account.saveProfileInfo
      */
+    @StandAloneAppOnly
     public VKRequest saveProfileInfo(VKParameters params) {
         return prepareRequest("saveProfileInfo", params);
     }
