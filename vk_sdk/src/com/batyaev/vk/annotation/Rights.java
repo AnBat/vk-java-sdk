@@ -1,7 +1,5 @@
 package com.batyaev.vk.annotation;
 
-import com.batyaev.vk.api.consts.VKApiRigths;
-
 /**
  * Created by anton on 18/04/15.
  * ---
@@ -11,4 +9,5 @@ import com.batyaev.vk.api.consts.VKApiRigths;
 
 public @interface Rights {
     int[] value() default {};
+    boolean standAloneOnly() default false;
 }

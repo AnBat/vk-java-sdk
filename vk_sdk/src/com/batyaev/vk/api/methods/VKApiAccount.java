@@ -8,7 +8,6 @@ package com.batyaev.vk.api.methods;
  */
 
 import com.batyaev.vk.annotation.Rights;
-import com.batyaev.vk.annotation.StandAloneAppOnly;
 import com.batyaev.vk.api.VKParameters;
 import com.batyaev.vk.api.VKRequest;
 import com.batyaev.vk.api.consts.VKApiRigths;
@@ -22,18 +21,16 @@ public class VKApiAccount extends VKApiBase {
 
     /**
      * @link https://vk.com/dev/account.getCounters
-     *
-     * This method doesn't require any specific rights.  
      */
+    @Rights(VKApiRigths.NOTHING)
     public VKRequest getCounters(VKParameters params) {
         return prepareRequest("getCounters", params);
     }
 
     /**
      * @link https://vk.com/dev/account.setNameInMenu
-     *
-     * This method doesn't require any specific rights.  
      */
+    @Rights(VKApiRigths.NOTHING)
     public VKRequest setNameInMenu(VKParameters params) {
         return prepareRequest("setNameInMenu", params);
     }
@@ -41,7 +38,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.setOnline
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest setOnline(VKParameters params) {
         return prepareRequest("setOnline", params);
     }
@@ -49,7 +46,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.setOffline
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest setOffline(VKParameters params) {
         return prepareRequest("setOffline", params);
     }
@@ -57,8 +54,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.lookupContacts
      */
-    @StandAloneAppOnly
-    @Rights(VKApiRigths.FRIENDS)
+    @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public VKRequest lookupContacts(VKParameters params) {
         return prepareRequest("lookupContacts", params);
     }
@@ -66,8 +62,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.registerDevice
      */
-    @StandAloneAppOnly
-    @Rights(VKApiRigths.MESSAGES)
+    @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public VKRequest registerDevice(VKParameters params) {
         return prepareRequest("registerDevice", params);
     }
@@ -75,8 +70,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.unregisterDevice
      */
-    @StandAloneAppOnly
-    @Rights(VKApiRigths.MESSAGES)
+    @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public VKRequest unregisterDevice(VKParameters params) {
         return prepareRequest("unregisterDevice", params);
     }
@@ -84,8 +78,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.setSilenceMode
      */
-    @StandAloneAppOnly
-    @Rights(VKApiRigths.MESSAGES)
+    @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public VKRequest setSilenceMode(VKParameters params) {
         return prepareRequest("setSilenceMode", params);
     }
@@ -93,26 +86,23 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.getPushSettings
      */
-    @StandAloneAppOnly
-    @Rights(VKApiRigths.MESSAGES)
+    @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public VKRequest getPushSettings(VKParameters params) {
         return prepareRequest("getPushSettings", params);
     }
     
     /**
      * @link https://vk.com/dev/account.getAppPermissions
-     *
-     * This method doesn't require any specific rights.  
      */
+    @Rights(VKApiRigths.NOTHING)
     public VKRequest getAppPermissions(VKParameters params) {
         return prepareRequest("getAppPermissions", params);
     }
     
     /**
      * @link https://vk.com/dev/account.getActiveOffers
-     *
-     * This method doesn't require any specific rights. 
      */
+    @Rights(VKApiRigths.NOTHING)
     public VKRequest getActiveOffers(VKParameters params) {
         return prepareRequest("getActiveOffers", params);
     }
@@ -120,7 +110,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.banUser
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest banUser(VKParameters params) {
         return prepareRequest("banUser", params);
     }
@@ -128,7 +118,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.unbanUser
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest unbanUser(VKParameters params) {
         return prepareRequest("unbanUser", params);
     }
@@ -136,7 +126,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.getBanned
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest getBanned(VKParameters params) {
         return prepareRequest("getBanned", params);
     }
@@ -144,7 +134,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.getInfo
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest getInfo(VKParameters params) {
         return prepareRequest("getInfo", params);
     }
@@ -152,7 +142,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.setInfo
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest setInfo(VKParameters params) {
         return prepareRequest("setInfo", params);
     }
@@ -160,7 +150,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.changePassword
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest changePassword(VKParameters params) {
         return prepareRequest("changePassword", params);
     }
@@ -168,7 +158,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.getProfileInfo
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest getProfileInfo(VKParameters params) {
         return prepareRequest("getProfileInfo", params);
     }
@@ -176,7 +166,7 @@ public class VKApiAccount extends VKApiBase {
     /**
      * @link https://vk.com/dev/account.saveProfileInfo
      */
-    @StandAloneAppOnly
+    @Rights(standAloneOnly = true)
     public VKRequest saveProfileInfo(VKParameters params) {
         return prepareRequest("saveProfileInfo", params);
     }

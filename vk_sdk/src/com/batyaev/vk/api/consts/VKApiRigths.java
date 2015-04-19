@@ -7,6 +7,7 @@ package com.batyaev.vk.api.consts;
  * www.batyaev.com
  */
 public class VKApiRigths {
+    public final static int NOTHING = 0; //This method doesn't require any specific rights.
     public final static int NOTIFY = 1; //User allowed to send notifications to him/her.
     public final static int FRIENDS = 2; //Access to friends.
     public final static int PHOTOS = 4; //Access to photos.
