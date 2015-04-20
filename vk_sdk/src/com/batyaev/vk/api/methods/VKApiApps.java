@@ -18,46 +18,41 @@ import com.batyaev.vk.api.VKRequest;
 public class VKApiApps extends VKApiBase {
 	
     /**
-	 * https://vk.com/dev/apps.getCatalog
-     *
-     * This is an open method; it does not require an access_token.
+	 * @link https://vk.com/dev/apps.getCatalog
      */
+    @Rights(VKApiRigths.OPEN_METHOD)
     public VKRequest getCatalog(VKParameters params) {
         return prepareRequest("getCatalog", params);
     }
 
     /**
-     * https://vk.com/dev/apps.get
-     *
-     * This is an open method; it does not require an access_token.
+     * @link https://vk.com/dev/apps.get
      */
+    @Rights(VKApiRigths.OPEN_METHOD)
     public VKRequest get(VKParameters params) {
         return prepareRequest("get", params);
     }
     
     /**
-	 * https://vk.com/dev/apps.sendRequest
-     *
-     * This method is available only to standalone-applications.
+	 * @link https://vk.com/dev/apps.sendRequest
      */
+    @Rights(standAloneOnly = true)
     public VKRequest sendRequest(VKParameters params) {
         return prepareRequest("sendRequest", params);
     }
 
     /**
-     * https://vk.com/dev/apps.deleteAppRequests
-     *
-     * This method is available only to standalone-applications.
+     * @link https://vk.com/dev/apps.deleteAppRequests
      */
+    @Rights(standAloneOnly = true)
     public VKRequest deleteAppRequests(VKParameters params) {
         return prepareRequest("deleteAppRequests", params);
     }
 
     /**
-     * https://vk.com/dev/apps.getFriendsList
-     *
-     * This method is available only to standalone-applications.
+     * @link https://vk.com/dev/apps.getFriendsList
      */
+    @Rights(standAloneOnly = true)
     public VKRequest getFriendsList(VKParameters params) {
         return prepareRequest("getFriendsList", params);
     }

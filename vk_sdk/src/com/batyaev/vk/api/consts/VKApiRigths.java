@@ -7,6 +7,7 @@ package com.batyaev.vk.api.consts;
  * www.batyaev.com
  */
 public class VKApiRigths {
+    public final static int OPEN_METHOD = -1; //This is an open method; it does not require an access_token.
     public final static int NOTHING = 0; //This method doesn't require any specific rights.
     public final static int NOTIFY = 1; //User allowed to send notifications to him/her.
     public final static int FRIENDS = 2; //Access to friends.
