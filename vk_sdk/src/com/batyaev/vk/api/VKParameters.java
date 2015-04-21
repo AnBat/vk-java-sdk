@@ -9,6 +9,6 @@ import java.util.Map;
  * www.batyaev.com
  */
 
-public class VKParameters implements Map {
+public class VKParameters {
     public Map<String, String> params;
 }
