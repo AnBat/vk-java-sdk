@@ -4,7 +4,6 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -23,8 +22,6 @@ public class VKRequest {
     //    https://api.vk.com/method/METHOD_NAME?PARAMETERS&access_token=ACCESS_TOKEN
     public String access_token;
     public final static String BASE_URL = "https://api.vk.com/method/";
-    public String method_name;
-    public String parameters;
 
     public String getRequest(String methodName, String params) throws IOException {
 //        https://hc.apache.org/httpcomponents-client-4.4.x/httpclient/examples/org/apache/http/examples/client/ClientWithResponseHandler.java /
@@ -39,7 +36,7 @@ public class VKRequest {
 
                 @Override
                 public String handleResponse(
-                        final HttpResponse response) throws ClientProtocolException, IOException {
+                        final HttpResponse response) throws IOException {
                     int status = response.getStatusLine().getStatusCode();
                     if (status >= 200 && status < 300) {
                         HttpEntity entity = response.getEntity();

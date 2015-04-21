@@ -1,5 +1,7 @@
 package com.batyaev.vk.api;
 
+import java.util.Map;
+
 /**
  * Created by anton on 17/04/15.
  * ---
@@ -7,5 +9,6 @@ package com.batyaev.vk.api;
  * www.batyaev.com
  */
 
-public class VKParameters {
+public class VKParameters implements Map {
+    public Map<String, String> params;
 }
