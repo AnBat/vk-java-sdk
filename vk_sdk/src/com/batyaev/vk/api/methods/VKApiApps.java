@@ -7,8 +7,10 @@ package com.batyaev.vk.api.methods;
  * www.batyaev.com
  */
 
+import com.batyaev.vk.annotation.Rights;
 import com.batyaev.vk.api.VKParameters;
 import com.batyaev.vk.api.VKRequest;
+import com.batyaev.vk.api.consts.VKApiRigths;
 
 /**
  * Builds requests for API.apps part

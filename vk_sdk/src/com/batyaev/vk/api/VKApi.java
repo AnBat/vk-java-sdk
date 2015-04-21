@@ -9,6 +9,8 @@ package com.batyaev.vk.api;
 
 import com.batyaev.vk.api.methods.*;
 
+import java.io.IOException;
+
 /**
  * Common interface for VK API
  * 
@@ -16,6 +18,10 @@ import com.batyaev.vk.api.methods.*;
  */
 public class VKApi extends VKApiBase {
 
+    public static void main(String[] args) throws IOException {
+        VKRequest req = new VKRequest();
+        req.getRequest("friends.get", "user_id=38561327");
+    }
     /**
      * https://vk.com/dev/account
      */

@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 
-mainClassName = "com.batyaev.vk.VKApi"
+mainClassName = "com.batyaev.vk.api.VKApi"
 
 jar {
     manifest.attributes("Main-Class": mainClassName);
@@ -17,4 +17,10 @@ sourceSets {
             srcDir 'resources'
         }
     }
+}
+
+def httpClientVersion = '4.4.1'
+
+dependencies {
+    compile "org.apache.httpcomponents:httpclient:$httpClientVersion"
 }
