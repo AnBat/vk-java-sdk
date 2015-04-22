@@ -18,6 +18,9 @@ public abstract class VKApiBase {
     protected abstract String getMethodsGroup();
 
     protected VKRequest prepareRequest(String methodName, VKParameters methodParameters) {
-        return new VKRequest();
+        VKRequest request = new VKRequest();
+        request.setMethodName(methodName);
+        request.setParameters(methodParameters);
+        return request;
     }
 }

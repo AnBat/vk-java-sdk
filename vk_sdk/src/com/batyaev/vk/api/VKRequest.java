@@ -10,6 +10,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.lang.String;
 
 /**
  * Created by anton on 17/04/15.
@@ -21,13 +22,33 @@ import java.io.IOException;
 public class VKRequest {
     //    https://api.vk.com/method/METHOD_NAME?PARAMETERS&access_token=ACCESS_TOKEN
     public String access_token;
+    public String method_name;
+    public String parameters;
     public final static String BASE_URL = "https://api.vk.com/method/";
 
+    public void setAccessToken(String accessToken) {
+        access_token = accessToken;
+    }
+
+    public void setMethodName(String methodName) {
+        method_name = methodName;
+    }
+
+    public void setParameters(String params) {
+        parameters = params;
+    }
+
     public String getRequest(String methodName, String params) throws IOException {
+        method_name = methodName;
+        parameters = params;
+        return getRequest();
+    }
+
+    public String getRequest() throws IOException {
 //        https://hc.apache.org/httpcomponents-client-4.4.x/httpclient/examples/org/apache/http/examples/client/ClientWithResponseHandler.java /
         CloseableHttpClient httpclient = HttpClients.createDefault();
         try {
-            HttpGet httpget = new HttpGet(BASE_URL + methodName + "?" + params);
+            HttpGet httpget = new HttpGet(BASE_URL + method_name + "?" + parameters);
 
             System.out.println("Executing request " + httpget.getRequestLine());
 
@@ -54,6 +75,17 @@ public class VKRequest {
             httpclient.close();
         }
 
+
+        return "";
+    }
+
+    public String postRequest(String methodName, String params) throws IOException {
+        method_name = methodName;
+        parameters = params;
+        return postRequest();
+    }
+
+    public String postRequest() throws IOException {
 
         return "";
     }
