@@ -11,4 +11,8 @@ import java.util.Map;
 
 public class VKParameters {
     public Map<String, String> params;
+
+    public String toString() {
+        return params.toString();
+    }
 }

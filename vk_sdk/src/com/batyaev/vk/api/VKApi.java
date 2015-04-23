@@ -19,6 +19,7 @@ import java.io.IOException;
 public class VKApi extends VKApiBase {
 
     public static void main(String[] args) throws IOException {
+        
         VKRequest req = new VKRequest();
         req.getRequest("friends.get", "user_id=38561327");
     }
@@ -55,6 +56,41 @@ public class VKApi extends VKApiBase {
      */
     public VKApiBase auth(VKParameters params) {
         return new VKApiAuth();
+    }
+
+    /**
+     * https://vk.com/dev/board
+     */
+    public VKApiBase board(VKParameters params) {
+        return new VKApiBoard();
+    }
+
+    /**
+     * https://vk.com/dev/database
+     */
+    public VKApiBase database(VKParameters params) {
+        return new VKApiDatabase();
+    }
+
+    /**
+     * https://vk.com/dev/docs
+     */
+    public VKApiBase docs(VKParameters params) {
+        return new VKApiDocs();
+    }
+
+    /**
+     * https://vk.com/dev/favorites
+     */
+    public VKApiBase favorites(VKParameters params) {
+        return new VKApiFavorites();
+    }
+
+    /**
+     * https://vk.com/dev/friends
+     */
+    public VKApiBase friends(VKParameters params) {
+        return new VKApiFriends();
     }
 
     @Override
