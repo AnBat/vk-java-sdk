@@ -1,6 +1,6 @@
 package com.batyaev.vk.api;
 
-import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Created by anton on 17/04/15.
@@ -10,10 +10,13 @@ import java.util.Map;
  */
 
 public class VKParameters {
-    public String key;
-    public String value;
+    public HashMap<String, String> values = new HashMap<String, String>();
 
     public String toString() {
-        return key + "=" + value;
+        String result = "";
+        for (String key : values.keySet()) {
+            result += key + "=" + values.get(key) + "&";
+        }
+        return result;
     }
 }
