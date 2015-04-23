@@ -94,6 +94,167 @@ public class VKApi extends VKApiBase {
         return new VKApiFriends();
     }
 
+    /**
+     * https://vk.com/dev/gifts
+     */
+    public static VKApiGifts gifts() {
+        return new VKApiGifts();
+    }
+
+    /**
+     * https://vk.com/dev/groups
+     */
+    public static VKApiGroups groups() {
+        return new VKApiGroups();
+    }
+
+    /**
+     * https://vk.com/dev/leads
+     */
+    public static VKApiLeads leads() {
+        return new VKApiLeads();
+    }
+
+    /**
+     * https://vk.com/dev/likes
+     */
+    public static VKApiLikes likes() {
+        return new VKApiLikes();
+    }
+
+    /**
+     * https://vk.com/dev/messages
+     */
+    public static VKApiMessages messages() {
+        return new VKApiMessages();
+    }
+
+    /**
+     * https://vk.com/dev/newsfeed
+     */
+    public static VKApiNews newsfeed() {
+        return new VKApiNews();
+    }
+
+    /**
+     * https://vk.com/dev/notes
+     */
+    public static VKApiNotes notes() {
+        return new VKApiNotes();
+    }
+
+    /**
+     * https://vk.com/dev/notifications
+     */
+    public static VKApiNotifications notifications() {
+        return new VKApiNotifications();
+    }
+
+    /**
+     * https://vk.com/dev/orders
+     */
+    public static VKApiOrders orders() {
+        return new VKApiOrders();
+    }
+
+    /**
+     * https://vk.com/dev/pages
+     */
+    public static VKApiPages pages() {
+        return new VKApiPages();
+    }
+
+    /**
+     * https://vk.com/dev/photos
+     */
+    public static VKApiPhotos photos() {
+        return new VKApiPhotos();
+    }
+
+    /**
+     * https://vk.com/dev/places
+     */
+    public static VKApiPlaces places() {
+        return new VKApiPlaces();
+    }
+
+    /**
+     * https://vk.com/dev/polls
+     */
+    public static VKApiPolls polls() {
+        return new VKApiPolls();
+    }
+
+    /**
+     * https://vk.com/dev/search
+     */
+    public static VKApiSearch search() {
+        return new VKApiSearch();
+    }
+
+    /**
+     * https://vk.com/dev/secure
+     */
+    public static VKApiSecure secure() {
+        return new VKApiSecure();
+    }
+
+    /**
+     * https://vk.com/dev/stats
+     */
+    public static VKApiStats stats() {
+        return new VKApiStats();
+    }
+
+    /**
+     * https://vk.com/dev/status
+     */
+    public static VKApiStatus status() {
+        return new VKApiStatus();
+    }
+
+    /**
+     * https://vk.com/dev/storage
+     */
+    public static VKApiStorage storage() {
+        return new VKApiStorage();
+    }
+
+    /**
+     * https://vk.com/dev/users
+     */
+    public static VKApiUsers users() {
+        return new VKApiUsers();
+    }
+
+    /**
+     * https://vk.com/dev/utils
+     */
+    public static VKApiUtils utils() {
+        return new VKApiUtils();
+    }
+
+    /**
+     * https://vk.com/dev/video
+     */
+    public static VKApiVideo video() {
+        return new VKApiVideo();
+    }
+
+    /**
+     * https://vk.com/dev/wall
+     */
+    public static VKApiWall wall() {
+        return new VKApiWall();
+    }
+
+    /**
+     * https://vk.com/dev/widgets
+     */
+    public static VKApiWidgets widgets() {
+        return new VKApiWidgets();
+    }
+
     @Override
     protected String getMethodsGroup() {
         return "api";
