@@ -20,7 +20,7 @@ public class VKApi extends VKApiBase {
 
     public static void main(String[] args) throws IOException {
         VKParameters parms = new VKParameters();
-        parms.values.put("user_id", "38561327");
+        parms.setValue("user_id", "38561327");
         friends().get(parms).getRequest();
     }
 

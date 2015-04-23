@@ -10,7 +10,11 @@ import java.util.HashMap;
  */
 
 public class VKParameters {
-    public HashMap<String, String> values = new HashMap<String, String>();
+    private HashMap<String, String> values = new HashMap<String, String>();
+
+    public void setValue(String key, String value) {
+        values.put(key, value);
+    }
 
     public String toString() {
         String result = "";
