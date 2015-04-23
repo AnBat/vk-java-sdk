@@ -10,9 +10,10 @@ import java.util.Map;
  */
 
 public class VKParameters {
-    public Map<String, String> params;
+    public String key;
+    public String value;
 
     public String toString() {
-        return params.toString();
+        return key + "=" + value;
     }
 }

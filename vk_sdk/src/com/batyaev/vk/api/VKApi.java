@@ -19,77 +19,79 @@ import java.io.IOException;
 public class VKApi extends VKApiBase {
 
     public static void main(String[] args) throws IOException {
-        
-        VKRequest req = new VKRequest();
-        req.getRequest("friends.get", "user_id=38561327");
+        VKParameters parms = new VKParameters();
+        parms.key = "user_id";
+        parms.value = "38561327";
+        friends().get(parms).getRequest();
     }
+
     /**
      * https://vk.com/dev/account
      */
-    public VKApiBase account(VKParameters params) {
+    public static VKApiAccount account() {
         return new VKApiAccount();
     }
 
     /**
      * https://vk.com/dev/ads
      */
-    public VKApiBase ads(VKParameters params) {
+    public static VKApiAds ads() {
         return new VKApiAds();
     }
 
     /**
      * https://vk.com/dev/apps
      */
-    public VKApiBase apps(VKParameters params) {
+    public static VKApiApps apps() {
         return new VKApiApps();
     }
 
     /**
      * https://vk.com/dev/audio
      */
-    public VKApiBase audio(VKParameters params) {
+    public static VKApiAudio audio() {
         return new VKApiAudio();
     }
 
     /**
      * https://vk.com/dev/auth
      */
-    public VKApiBase auth(VKParameters params) {
+    public static VKApiAuth auth() {
         return new VKApiAuth();
     }
 
     /**
      * https://vk.com/dev/board
      */
-    public VKApiBase board(VKParameters params) {
+    public static VKApiBoard board() {
         return new VKApiBoard();
     }
 
     /**
      * https://vk.com/dev/database
      */
-    public VKApiBase database(VKParameters params) {
+    public static VKApiDatabase database() {
         return new VKApiDatabase();
     }
 
     /**
      * https://vk.com/dev/docs
      */
-    public VKApiBase docs(VKParameters params) {
+    public static VKApiDocs docs() {
         return new VKApiDocs();
     }
 
     /**
      * https://vk.com/dev/favorites
      */
-    public VKApiBase favorites(VKParameters params) {
+    public static VKApiFavorites favorites() {
         return new VKApiFavorites();
     }
 
     /**
      * https://vk.com/dev/friends
      */
-    public VKApiBase friends(VKParameters params) {
+    public static VKApiFriends friends() {
         return new VKApiFriends();
     }
 
