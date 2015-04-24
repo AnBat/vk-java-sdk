@@ -6,3 +6,4 @@
 # www.batyaev.com
 
 gradle clean build jar javadoc run
+
