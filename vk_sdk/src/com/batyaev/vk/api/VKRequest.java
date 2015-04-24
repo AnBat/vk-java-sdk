@@ -8,9 +8,10 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.lang.String;
 
 /**
  * Created by anton on 17/04/15.
@@ -20,6 +21,8 @@ import java.lang.String;
  */
 
 public class VKRequest {
+
+    private static final Logger LOG = LogManager.getLogger(VKRequest.class);
     //    https://api.vk.com/method/METHOD_NAME?PARAMETERS&access_token=ACCESS_TOKEN
     public String access_token;
     public String method_name;
@@ -50,7 +53,7 @@ public class VKRequest {
         try {
             HttpGet httpget = new HttpGet(BASE_URL + method_name + "?" + parameters);
 
-            System.out.println("Executing request " + httpget.getRequestLine());
+            LOG.error("Executing request " + httpget.getRequestLine());
 
             // Create a custom response handler
             ResponseHandler<String> responseHandler = new ResponseHandler<String>() {
@@ -69,8 +72,8 @@ public class VKRequest {
 
             };
             String responseBody = httpclient.execute(httpget, responseHandler);
-            System.out.println("----------------------------------------");
-            System.out.println(responseBody);
+            LOG.error("----------------------------------------");
+            LOG.error(responseBody);
         } finally {
             httpclient.close();
         }
