@@ -8,6 +8,8 @@ package com.batyaev.vk.api;
  */
 
 import com.batyaev.vk.api.methods.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 
@@ -18,10 +20,14 @@ import java.io.IOException;
  */
 public class VKApi extends VKApiBase {
 
+    private static final Logger LOG = LogManager.getLogger(VKRequest.class);
+
     public static void main(String[] args) throws IOException {
         VKParameters parms = new VKParameters();
         parms.setValue("user_id", "38561327");
-        friends().get(parms).getRequest();
+        String response = friends().get(parms).getRequest();
+
+        LOG.error(response);
     }
 
     /**

@@ -50,10 +50,11 @@ public class VKRequest {
     public String getRequest() throws IOException {
 //        https://hc.apache.org/httpcomponents-client-4.4.x/httpclient/examples/org/apache/http/examples/client/ClientWithResponseHandler.java /
         CloseableHttpClient httpclient = HttpClients.createDefault();
+        String responseBody = "";
         try {
             HttpGet httpget = new HttpGet(BASE_URL + method_name + "?" + parameters);
 
-            LOG.error("Executing request " + httpget.getRequestLine());
+            LOG.info("Executing request " + httpget.getRequestLine());
 
             // Create a custom response handler
             ResponseHandler<String> responseHandler = new ResponseHandler<String>() {
@@ -71,15 +72,13 @@ public class VKRequest {
                 }
 
             };
-            String responseBody = httpclient.execute(httpget, responseHandler);
-            LOG.error("----------------------------------------");
-            LOG.error(responseBody);
+            responseBody = httpclient.execute(httpget, responseHandler);
         } finally {
             httpclient.close();
         }
 
 
-        return "";
+        return responseBody;
     }
 
     public String postRequest(String methodName, String params) throws IOException {
