@@ -25,6 +25,8 @@ public class VKApi extends VKApiBase {
     public static void main(String[] args) throws IOException {
         VKParameters parms = new VKParameters();
         parms.setValue("user_id", "38561327");
+        parms.setValue("order", "hints");
+        parms.setValue("fields", "uid, first_name, last_name, nickname, sex, bdate, city, country, timezone, photo");
         String response = friends().get(parms).getRequest();
 
         LOG.info(response);

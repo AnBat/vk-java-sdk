@@ -21,6 +21,6 @@ public class VKParameters {
         for (String key : values.keySet()) {
             result += key + "=" + values.get(key) + "&";
         }
-        return result;
+        return result.replace(" ", "");
     }
 }
