@@ -14,6 +14,7 @@ import java.lang.String;
  */
 public class VKUser {
 
+    public long user_id = 1;
     /**
      * First name of user.
      */

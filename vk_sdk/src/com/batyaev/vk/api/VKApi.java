@@ -27,7 +27,7 @@ public class VKApi extends VKApiBase {
         parms.setValue("user_id", "38561327");
         String response = friends().get(parms).getRequest();
 
-        LOG.error(response);
+        LOG.info(response);
     }
 
     /**
