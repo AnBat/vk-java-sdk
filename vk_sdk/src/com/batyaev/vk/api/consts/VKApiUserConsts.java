@@ -10,14 +10,14 @@ package com.batyaev.vk.api.consts;
 import java.lang.String;
 
 public class VKApiUserConsts {
-    public final static String FIELD_UID = "uid";
-    public final static String FIELD_FIRST_NAME = "first_name";
-    public final static String FIELD_LAST_NAME = "last_name";
+    public final static String UID = "uid";
+    public final static String FIRST_NAME = "first_name";
+    public final static String LAST_NAME = "last_name";
     public final static String FIELD_DEACTIVATED = "deactivated"; //{deleted, banned}
     public final static String FIELD_HIDDEN = "hidden";
     public final static String FIELD_VERIFIED = "verified";
     public final static String FIELD_BLACKLISTED = "blacklisted";
-    public final static String FIELD_SEX = "sex"; //{1 — female; 2 — male; 0 — not specified.}
+    public final static String SEX = "sex"; //{1 — female; 2 — male; 0 — not specified.}
     public final static String FIELD_BDATE = "bdate"; //DD.MM.YYYY or DD.MM (if birth year is hidden) or nothing if date is hidden
     public final static String FIELD_CITY = "city";
     public final static String FIELD_COUNTRY = "country";
@@ -28,7 +28,7 @@ public class VKApiUserConsts {
     public final static String FIELD_PHOTO_200 = "photo_200";
     public final static String FIELD_PHOTO_400_ORIG = "photo_400_orig";
     public final static String FIELD_PHOTO_MAX = "photo_max"; //default = http://vk.com/images/camera_b.gif
-    public final static String FIELD_PHOTO_MAX_ORIG = "photo_max_orig"; //default = http://vk.com/images/camera_a.gif
+    public final static String PHOTO_MAX_ORIG = "photo_max_orig"; //default = http://vk.com/images/camera_a.gif
     public final static String FIELD_ONLINE = "online";
     //sub
     public final static String FIELD_ONLINE_MOBILE = "online_mobile";
@@ -106,7 +106,7 @@ public class VKApiUserConsts {
     public final static String FIELD_OCCUPATION_ID = "id";
     public final static String FIELD_OCCUPATION_NAME = "name";
     //end sub
-    public final static String FIELD_NICKNAME = "nickname";
+    public final static String NICKNAME = "nickname";
     public final static String FIELD_RELATIVES = "relatives";
     //sub
     public final static String FIELD_RELATIVES_ID = "id"; //or name not together

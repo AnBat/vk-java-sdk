@@ -21,9 +21,11 @@ sourceSets {
 
 def httpClientVersion = '4.4.1'
 def log4jVersion = '2.2'
+def jsonVersion = '20140107'
 
 dependencies {
     compile "org.apache.httpcomponents:httpclient:$httpClientVersion"
     compile "org.apache.logging.log4j:log4j-api:$log4jVersion"
     compile "org.apache.logging.log4j:log4j-core:$log4jVersion"
+    compile "org.json:json:$jsonVersion"
 }

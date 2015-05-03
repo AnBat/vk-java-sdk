@@ -26,6 +26,19 @@ public class VKUser {
     public String last_name = "DELETED";
 
     /**
+     * User sex. One of three values is returned:
+     * 1 — female;
+     * 2 — male;
+     * 0 — not specified.
+     */
+    public int sex = 0;
+
+    /**
+     * User nickname
+     */
+    public String nickname = "";
+
+    /**
      * Information whether the user is online.
      */
     public boolean online;
@@ -51,6 +64,12 @@ public class VKUser {
     public String photo_200 = "http://vk.com/images/camera_a.gif";
 
     /**
+     * Returns URL of user's photo of maximum size. Can be returned a photo both 400 and 200 pixels in width.
+     * In case user does not have a photo, http://vk.com/images/camera_a.gif is returned.
+     */
+    public String photo_max_orig = "http://vk.com/images/camera_a.gif";
+
+    /**
      * {@link #photo_50}, {@link #photo_100}, {@link #photo_200} included here in Photo Sizes format.
      */
 
@@ -71,7 +90,7 @@ public class VKUser {
         if(full_name == null) {
             full_name = first_name + ' ' + last_name;
         }
-        return full_name;
+        return user_id + " : " + full_name;
     }
 
 }
