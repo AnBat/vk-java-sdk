@@ -3,6 +3,7 @@ package com.batyaev.vk.api;
 import com.batyaev.vk.api.consts.VKApiConst;
 import com.batyaev.vk.api.consts.VKApiUserConsts;
 import com.batyaev.vk.api.dataTypes.VKUser;
+import com.batyaev.vk.api.dataTypes.VKUserList;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -18,7 +19,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by anton on 17/04/15.
@@ -99,10 +99,11 @@ public class VKRequest {
         return "";
     }
 
-    public List<VKUser> getFriends() throws IOException, JSONException {
+    public VKUserList getFriends() throws IOException, JSONException {
         String respond = getRequest();
         JSONObject obj = new JSONObject(respond);
         final JSONArray friendList = obj.getJSONArray(VKApiConst.RESPONSE);
+        VKUserList result = new VKUserList();
         for (int i = 0; i < friendList.length(); ++i) {
             VKUser user = new VKUser();
             JSONObject userJson = friendList.getJSONObject(i);
@@ -111,14 +112,15 @@ public class VKRequest {
             user.first_name = userJson.getString(VKApiUserConsts.FIRST_NAME);
             user.last_name = userJson.getString(VKApiUserConsts.LAST_NAME);
             user.sex = userJson.getInt(VKApiUserConsts.SEX);
-            if (userJson.has(VKApiUserConsts.NICKNAME))
+            if (userJson.has(VKApiUserConsts.NICKNAME)) {
                 user.nickname = userJson.getString(VKApiUserConsts.NICKNAME);
+            }
             user.photo_max_orig = userJson.getString(VKApiUserConsts.PHOTO_MAX_ORIG);
 
+            result.add(user);
             LOG.info(user.toString());
         }
         LOG.info(friendList.toString());
-        List<VKUser> result = null;
         return result;
     }
 }

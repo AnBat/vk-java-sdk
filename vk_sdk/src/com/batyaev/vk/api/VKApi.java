@@ -7,13 +7,12 @@ package com.batyaev.vk.api;
  * www.batyaev.com
  */
 
-import com.batyaev.vk.api.dataTypes.VKUser;
+import com.batyaev.vk.api.dataTypes.VKUserList;
 import com.batyaev.vk.api.methods.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Common interface for VK API
@@ -29,7 +28,7 @@ public class VKApi extends VKApiBase {
         parms.setValue("user_id", "38561327");
         parms.setValue("order", "hints");
         parms.setValue("fields", "uid, first_name, last_name, nickname, sex, online, bdate, city, country, timezone, photo_max_orig");
-        List<VKUser> friends = friends().get(parms).getFriends();
+        VKUserList friends = friends().get(parms).getFriends();
     }
 
     /**
