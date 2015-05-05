@@ -16,10 +16,16 @@ public class VKParameters {
         values.put(key, value);
     }
 
+    public void setValue(String key, int value) {
+        values.put(key, String.valueOf(value));
+    }
+
     public String toString() {
         String result = "";
         for (String key : values.keySet()) {
-            result += key + "=" + values.get(key) + "&";
+            if (!result.isEmpty())
+                result += "&";
+            result += key + "=" + values.get(key);
         }
         return result.replace(" ", "");
     }

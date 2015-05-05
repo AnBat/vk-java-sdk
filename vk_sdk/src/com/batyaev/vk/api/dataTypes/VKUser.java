@@ -7,8 +7,6 @@ package com.batyaev.vk.api.dataTypes;
  * www.batyaev.com
  */
 
-import java.lang.String;
-
 /**
  * User object describes a user profile.
  */
@@ -49,6 +47,23 @@ public class VKUser {
     public boolean online_mobile;
 
     /**
+     * ID of the city specified on user's page in "Contacts" section.
+     */
+    public VKCity city;
+
+    /**
+     * User's date of birth.  Returned as DD.MM.YYYY or DD.MM (if birth year is hidden).
+     * If the whole date is hidden, no field is returned.
+     */
+    public String bdate;
+
+    /**
+     * ID of the country specified on user's page in "Contacts" section.
+     */
+    public int country;
+
+
+    /**
      * URL of default square photo of the user with 50 pixels in width.
      */
     public String photo_50 = "http://vk.com/images/camera_c.gif";
@@ -72,6 +87,19 @@ public class VKUser {
     /**
      * {@link #photo_50}, {@link #photo_100}, {@link #photo_200} included here in Photo Sizes format.
      */
+
+    public String sex() {
+        switch (sex) {
+            case 0: return "Not specified";
+            case 1: return "Female";
+            case 2: return "Male";
+        }
+        return "Not specified";
+    }
+
+    public String online() {
+        return online ? "Online" : "Offline";
+    }
 
     /**
      * Creates empty User instance.

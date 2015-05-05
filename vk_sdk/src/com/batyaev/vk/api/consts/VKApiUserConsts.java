@@ -4,7 +4,7 @@ package com.batyaev.vk.api.consts;
  * Created by anton on 13/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 import java.lang.String;

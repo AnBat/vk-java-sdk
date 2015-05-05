@@ -1,9 +1,12 @@
 package com.batyaev.vk.api;
 
 import com.batyaev.vk.api.consts.VKApiConst;
+import com.batyaev.vk.api.consts.VKApiDatabaseConsts;
 import com.batyaev.vk.api.consts.VKApiUserConsts;
+import com.batyaev.vk.api.dataTypes.VKCity;
 import com.batyaev.vk.api.dataTypes.VKUser;
 import com.batyaev.vk.api.dataTypes.VKUserList;
+import com.batyaev.vk.api.methods.VKApiDatabase;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -112,15 +115,46 @@ public class VKRequest {
             user.first_name = userJson.getString(VKApiUserConsts.FIRST_NAME);
             user.last_name = userJson.getString(VKApiUserConsts.LAST_NAME);
             user.sex = userJson.getInt(VKApiUserConsts.SEX);
-            if (userJson.has(VKApiUserConsts.NICKNAME)) {
+            if (userJson.has(VKApiUserConsts.NICKNAME))
                 user.nickname = userJson.getString(VKApiUserConsts.NICKNAME);
-            }
             user.photo_max_orig = userJson.getString(VKApiUserConsts.PHOTO_MAX_ORIG);
-
+            user.online = userJson.getInt(VKApiUserConsts.ONLINE) == 1;
+            if (userJson.has(VKApiUserConsts.CITY)) {
+                VKApiDatabase database = new VKApiDatabase();
+                VKParameters parms = new VKParameters();
+                parms.setValue(VKApiDatabaseConsts.NEED_ALL, 1);
+                parms.setValue(VKApiDatabaseConsts.CITY_IDS, userJson.getInt(VKApiUserConsts.CITY));
+                user.city = database.getCitiesById(parms).getCity();
+            }
+            if (userJson.has(VKApiUserConsts.COUNTRY))
+                user.country = userJson.getInt(VKApiUserConsts.COUNTRY);
+            if (userJson.has(VKApiUserConsts.BDATE))
+                user.bdate = userJson.getString(VKApiUserConsts.BDATE);
             result.add(user);
-            LOG.info(user.toString());
+
+            LOG.info( user.toString() + "\t\t" + user.bdate  + "\t\t" + user.online() + "\tcountry=" + user.country);
         }
         LOG.info(friendList.toString());
         return result;
+    }
+
+    public VKCity getCity() throws IOException {
+        String respond = getRequest();
+
+        LOG.error(respond);
+
+        JSONObject obj = new JSONObject(respond);
+        final JSONArray cityList = obj.getJSONArray(VKApiConst.RESPONSE);
+
+        VKCity city = new VKCity();
+        if (cityList.length() == 0)
+            return city;
+
+        JSONObject cityJson = cityList.getJSONObject(0);
+
+        city.id = cityJson.getInt(VKApiDatabaseConsts.CID);
+        city.name = cityJson.getString(VKApiDatabaseConsts.NAME);
+
+        return city;
     }
 }
