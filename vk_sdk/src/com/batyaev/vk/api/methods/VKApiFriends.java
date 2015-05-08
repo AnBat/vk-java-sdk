@@ -9,6 +9,17 @@ package com.batyaev.vk.api.methods;
  
 import com.batyaev.vk.api.VKParameters;
 import com.batyaev.vk.api.VKRequest;
+import com.batyaev.vk.api.consts.VKApiConst;
+import com.batyaev.vk.api.consts.VKApiDatabaseConsts;
+import com.batyaev.vk.api.consts.VKApiUserConsts;
+import com.batyaev.vk.api.dataTypes.VKUser;
+import com.batyaev.vk.api.dataTypes.VKUserList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.IOException;
 
 /**
  * Builds requests for API.friends part
@@ -17,13 +28,49 @@ import com.batyaev.vk.api.VKRequest;
  */
 public class VKApiFriends extends VKApiBase {
 
+    private static final Logger LOG = LogManager.getLogger(VKApiFriends.class);
+
     /**
      * https://vk.com/dev/friends.get
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public VKUserList get(VKParameters params) throws IOException {
+
+        String respond = prepareRequest(VKApiConst.GET, params).getRequest();
+
+        JSONObject obj = new JSONObject(respond);
+        final JSONArray friendList = obj.getJSONArray(VKApiConst.RESPONSE);
+        VKUserList result = new VKUserList();
+        for (int i = 0; i < friendList.length(); ++i) {
+            VKUser user = new VKUser();
+            JSONObject userJson = friendList.getJSONObject(i);
+
+            user.user_id = userJson.getInt(VKApiUserConsts.UID);
+            user.first_name = userJson.getString(VKApiUserConsts.FIRST_NAME);
+            user.last_name = userJson.getString(VKApiUserConsts.LAST_NAME);
+            user.sex = userJson.getInt(VKApiUserConsts.SEX);
+            if (userJson.has(VKApiUserConsts.NICKNAME))
+                user.nickname = userJson.getString(VKApiUserConsts.NICKNAME);
+            user.photo_max_orig = userJson.getString(VKApiUserConsts.PHOTO_MAX_ORIG);
+            user.online = userJson.getInt(VKApiUserConsts.ONLINE) == 1;
+            if (userJson.has(VKApiUserConsts.CITY)) {
+                VKApiDatabase database = new VKApiDatabase();
+                VKParameters parms = new VKParameters();
+                parms.setValue(VKApiDatabaseConsts.NEED_ALL, 1);
+                parms.setValue(VKApiDatabaseConsts.CITY_IDS, userJson.getInt(VKApiUserConsts.CITY));
+                user.city = database.getCitiesById(parms);
+            }
+            if (userJson.has(VKApiUserConsts.COUNTRY))
+                user.country = userJson.getInt(VKApiUserConsts.COUNTRY);
+            if (userJson.has(VKApiUserConsts.BDATE))
+                user.bdate = userJson.getString(VKApiUserConsts.BDATE);
+            result.add(user);
+
+            LOG.info( user.toString() + "\t\t" + user.bdate  + "\t\t" + user.online() + "\tcountry=" + user.country);
+        }
+        LOG.info(friendList.toString());
+        return result;
     }
 
     /**

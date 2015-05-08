@@ -8,4 +8,5 @@ package com.batyaev.vk.api.consts;
  */
 public class VKApiConst {
     public final static String RESPONSE = "response";
+    public final static String GET = "get";
 }

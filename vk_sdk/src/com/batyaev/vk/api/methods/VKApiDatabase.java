@@ -9,6 +9,15 @@ package com.batyaev.vk.api.methods;
 
 import com.batyaev.vk.api.VKParameters;
 import com.batyaev.vk.api.VKRequest;
+import com.batyaev.vk.api.consts.VKApiConst;
+import com.batyaev.vk.api.consts.VKApiDatabaseConsts;
+import com.batyaev.vk.api.dataTypes.VKCity;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.IOException;
 
 /**
  * Builds requests for API.database part
@@ -16,6 +25,7 @@ import com.batyaev.vk.api.VKRequest;
  * https://vk.com/dev/database
  */
 public class VKApiDatabase extends VKApiBase {
+    private static final Logger LOG = LogManager.getLogger(VKRequest.class);
 
     /**
      * https://vk.com/dev/database.getCountries
@@ -67,8 +77,24 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getCitiesById(VKParameters params) {
-        return prepareRequest("getCitiesById", params);
+    public VKCity getCitiesById(VKParameters params) throws IOException {
+        String respond = prepareRequest("getCitiesById", params).getRequest();
+
+        LOG.error(respond);
+
+        JSONObject obj = new JSONObject(respond);
+        final JSONArray cityList = obj.getJSONArray(VKApiConst.RESPONSE);
+
+        VKCity city = new VKCity();
+        if (cityList.length() == 0)
+            return city;
+
+        JSONObject cityJson = cityList.getJSONObject(0);
+
+        city.id = cityJson.getInt(VKApiDatabaseConsts.CID);
+        city.name = cityJson.getString(VKApiDatabaseConsts.NAME);
+
+        return city;
     }
 
     /**
