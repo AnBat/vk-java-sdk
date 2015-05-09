@@ -20,6 +20,10 @@ public class VKParameters {
         values.put(key, String.valueOf(value));
     }
 
+    public String value(String key) {
+        return values.get(key);
+    }
+
     public String toString() {
         String result = "";
         for (String key : values.keySet()) {

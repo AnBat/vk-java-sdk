@@ -7,6 +7,6 @@ package com.batyaev.vk.api.dataTypes;
  * www.batiaev.com
  */
 public class VKCity {
-    public int id;
-    public String name;
+    public int id = -1;
+    public String name = "";
 }

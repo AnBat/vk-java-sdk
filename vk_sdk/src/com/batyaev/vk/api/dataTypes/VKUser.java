@@ -24,12 +24,99 @@ public class VKUser {
     public String last_name = "DELETED";
 
     /**
+     * Returns if a profile is deleted or blocked.
+     * Gets the value deleted or banned.
+     * Keep in mind that in this case no additional fields are returned.
+     */
+    public int deactivated;
+
+    /**
+     * Returns while operating without access_token
+     * if a user has set the "Who can see my profile on the Internet" → "Only VK users" privacy setting.
+     * Keep in mind that in this case no additional fields are returned.
+     */
+    public boolean hidden;
+
+    /**
+     * Returns 1 if the profile is verified, 0 if not.
+     */
+    public boolean verified;
+
+    /**
+     * Returns 1 if a current user is in the requested user's blacklist.
+     */
+    public boolean blacklisted;
+
+    /**
      * User sex. One of three values is returned:
      * 1 — female;
      * 2 — male;
      * 0 — not specified.
      */
     public int sex = 0;
+
+    /**
+     * User's date of birth.  Returned as DD.MM.YYYY or DD.MM (if birth year is hidden).
+     * If the whole date is hidden, no field is returned.
+     */
+    public String bdate;
+
+    /**
+     * ID of the city specified on user's page in "Contacts" section.
+     */
+    public VKCity city = new VKCity();
+
+    /**
+     * ID of the country specified on user's page in "Contacts" section.
+     */
+    public VKCountry country = new VKCountry();
+
+    /**
+     * User's home town.
+     */
+    public String home_town;
+
+    /**
+     * URL of default square photo of the user with 50 pixels in width.
+     */
+    public String photo_50 = "http://vk.com/images/camera_c.gif";
+
+    /**
+     * URL of default square photo of the user with 100 pixels in width.
+     */
+    public String photo_100 = "http://vk.com/images/camera_b.gif";
+
+    /**
+     * Returns URL of user's photo with 200 pixels in width.
+     * In case user does not have a photo, http://vk.com/images/camera_a.gif is returned.
+     */
+    public String photo_200_orig = "http://vk.com/images/camera_a.gif";
+
+    /**
+     * Returns URL of square photo of the user with 200 pixels in width.
+     * If the photo was uploaded long time ago,
+     * there can be no image of such size and in this case the reply will not include this field.
+     */
+    public String photo_200;
+
+    /**
+     * Returns URL of user's photo with 400 pixels in width.
+     * If user does not have a photo of such size, reply will not include this field.
+     */
+    public String photo_400_orig;
+
+    /**
+     * Returns URL of square photo of the user with maximum width.
+     * Can be returned a photo both 200 and 100 pixels in width.
+     * In case user does not have a photo, http://vk.com/images/camera_b.gif is returned.
+     */
+    public String photo_max = "http://vk.com/images/camera_b.gif";
+
+    /**
+     * Returns URL of user's photo of maximum size. Can be returned a photo both 400 and 200 pixels in width.
+     * In case user does not have a photo, http://vk.com/images/camera_a.gif is returned.
+     */
+    public String photo_max_orig = "http://vk.com/images/camera_a.gif";
 
     /**
      * User nickname
@@ -47,46 +134,19 @@ public class VKUser {
     public boolean online_mobile;
 
     /**
-     * ID of the city specified on user's page in "Contacts" section.
+     * With that, in case of application, online_app additional field is returned with application ID.
      */
-    public VKCity city;
+    public String online_app;
 
     /**
-     * User's date of birth.  Returned as DD.MM.YYYY or DD.MM (if birth year is hidden).
-     * If the whole date is hidden, no field is returned.
+     * Returns a website address from a user profile.
      */
-    public String bdate;
-
+    public String site;
+    
     /**
-     * ID of the country specified on user's page in "Contacts" section.
+     * 	user time zone. Retuns only while requesting current user info.
      */
-    public VKCountry country;
-
-
-    /**
-     * URL of default square photo of the user with 50 pixels in width.
-     */
-    public String photo_50 = "http://vk.com/images/camera_c.gif";
-
-    /**
-     * URL of default square photo of the user with 100 pixels in width.
-     */
-    public String photo_100 = "http://vk.com/images/camera_b.gif";
-
-    /**
-     * URL of default square photo of the user with 200 pixels in width.
-     */
-    public String photo_200 = "http://vk.com/images/camera_a.gif";
-
-    /**
-     * Returns URL of user's photo of maximum size. Can be returned a photo both 400 and 200 pixels in width.
-     * In case user does not have a photo, http://vk.com/images/camera_a.gif is returned.
-     */
-    public String photo_max_orig = "http://vk.com/images/camera_a.gif";
-
-    /**
-     * {@link #photo_50}, {@link #photo_100}, {@link #photo_200} included here in Photo Sizes format.
-     */
+    public String timezone;
 
     public String sex() {
         switch (sex) {

@@ -19,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 /**
  * Builds requests for API.database part
@@ -26,7 +27,16 @@ import java.io.IOException;
  * https://vk.com/dev/database
  */
 public class VKApiDatabase extends VKApiBase {
+
+    public static HashMap<Integer, String> cities = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> countries = new HashMap<Integer, String>();
+
     private static final Logger LOG = LogManager.getLogger(VKRequest.class);
+
+    public VKApiDatabase() {
+        cities.put(0, "");
+        countries.put(0, "");
+    }
 
     /**
      * https://vk.com/dev/database.getCountries
@@ -61,22 +71,31 @@ public class VKApiDatabase extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public VKCountry getCountriesById(VKParameters params) throws IOException {
-
-        String respond = prepareRequest("getCountriesById", params).getRequest();
-
-        LOG.info(respond);
-        JSONObject obj = new JSONObject(respond);
-        final JSONArray countryList = obj.getJSONArray(VKApiConst.RESPONSE);
-
         VKCountry country = new VKCountry();
-        if (countryList.length() == 0)
-            return country;
 
-        JSONObject countryJson = countryList.getJSONObject(0);
+        int countryId = Integer.parseInt(params.value(VKApiDatabaseConsts.COUNTRY_IDS));
+        if (countries.containsKey(countryId)) {
+            country.id = countryId;
+            country.name = countries.get(countryId);
+        }
+        else {
+            String respond = prepareRequest("getCountriesById", params).getRequest();
 
-        country.id = countryJson.getInt(VKApiDatabaseConsts.CID);
-        country.name = countryJson.getString(VKApiDatabaseConsts.NAME);
+            LOG.info(respond);
 
+            JSONObject obj = new JSONObject(respond);
+            final JSONArray countryList = obj.getJSONArray(VKApiConst.RESPONSE);
+
+            if (countryList.length() == 0)
+                return country;
+
+            JSONObject countryJson = countryList.getJSONObject(0);
+
+            country.id = countryJson.getInt(VKApiDatabaseConsts.CID);
+            country.name = countryJson.getString(VKApiDatabaseConsts.NAME);
+
+            countries.put(country.id, country.name);
+        }
         return country;
     }
 
@@ -95,21 +114,31 @@ public class VKApiDatabase extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public VKCity getCitiesById(VKParameters params) throws IOException {
-        String respond = prepareRequest("getCitiesById", params).getRequest();
-
-        LOG.debug(respond);
-
-        JSONObject obj = new JSONObject(respond);
-        final JSONArray cityList = obj.getJSONArray(VKApiConst.RESPONSE);
-
         VKCity city = new VKCity();
-        if (cityList.length() == 0)
-            return city;
+        int cityId = Integer.parseInt(params.value(VKApiDatabaseConsts.CITY_IDS));
+        city.id = cityId;
 
-        JSONObject cityJson = cityList.getJSONObject(0);
+        if (cities.containsKey(cityId)) {
+            city.name = cities.get(cityId);
+        }
+        else {
+            String respond = prepareRequest("getCitiesById", params).getRequest();
 
-        city.id = cityJson.getInt(VKApiDatabaseConsts.CID);
-        city.name = cityJson.getString(VKApiDatabaseConsts.NAME);
+            LOG.info(respond);
+
+            JSONObject obj = new JSONObject(respond);
+            final JSONArray cityList = obj.getJSONArray(VKApiConst.RESPONSE);
+
+            if (cityList.length() == 0)
+                return city;
+
+            JSONObject cityJson = cityList.getJSONObject(0);
+
+            city.id = cityJson.getInt(VKApiDatabaseConsts.CID);
+            city.name = cityJson.getString(VKApiDatabaseConsts.NAME);
+
+            cities.put(city.id, city.name);
+        }
 
         return city;
     }

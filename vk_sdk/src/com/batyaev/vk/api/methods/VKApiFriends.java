@@ -72,7 +72,7 @@ public class VKApiFriends extends VKApiBase {
                 user.bdate = userJson.getString(VKApiUserConsts.BDATE);
             result.add(user);
 
-            LOG.info( user.toString() + "\t\t" + user.bdate  + "\t\t" + user.online() + "\tcountry=" + user.country);
+            LOG.info( user.toString() + "\t\t" + user.bdate  + "\t\t" + user.online() + "\t" + user.country.name + ", " + user.city.name);
         }
         LOG.info(friendList.toString());
         return result;
