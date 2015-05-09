@@ -7,6 +7,8 @@ package com.batyaev.vk.api.dataTypes;
  * www.batyaev.com
  */
 
+import java.util.Date;
+
 /**
  * User object describes a user profile.
  */
@@ -59,7 +61,7 @@ public class VKUser {
      * User's date of birth.  Returned as DD.MM.YYYY or DD.MM (if birth year is hidden).
      * If the whole date is hidden, no field is returned.
      */
-    public String bdate;
+    public Date bdate;
 
     /**
      * ID of the city specified on user's page in "Contacts" section.

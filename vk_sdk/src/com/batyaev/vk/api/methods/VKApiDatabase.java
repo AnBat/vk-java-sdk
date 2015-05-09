@@ -70,7 +70,7 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKCountry getCountriesById(VKParameters params) throws IOException {
+    public VKCountry getCountriesById(VKParameters params) {
         VKCountry country = new VKCountry();
 
         int countryId = Integer.parseInt(params.value(VKApiDatabaseConsts.COUNTRY_IDS));
@@ -79,7 +79,13 @@ public class VKApiDatabase extends VKApiBase {
             country.name = countries.get(countryId);
         }
         else {
-            String respond = prepareRequest("getCountriesById", params).getRequest();
+            String respond = "";
+            try {
+                respond = prepareRequest("getCountriesById", params).getRequest();
+            } catch (IOException e) {
+                LOG.error("Cannot get information from VK.com\n");
+                e.printStackTrace();
+            }
 
             LOG.info(respond);
 
@@ -113,7 +119,7 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKCity getCitiesById(VKParameters params) throws IOException {
+    public VKCity getCitiesById(VKParameters params) {
         VKCity city = new VKCity();
         int cityId = Integer.parseInt(params.value(VKApiDatabaseConsts.CITY_IDS));
         city.id = cityId;
@@ -122,7 +128,13 @@ public class VKApiDatabase extends VKApiBase {
             city.name = cities.get(cityId);
         }
         else {
-            String respond = prepareRequest("getCitiesById", params).getRequest();
+            String respond = "";
+            try {
+                respond = prepareRequest("getCitiesById", params).getRequest();
+            } catch (IOException e) {
+                LOG.error("Cannot get information from VK.com\n");
+                e.printStackTrace();
+            }
 
             LOG.info(respond);
 

@@ -6,7 +6,7 @@ package com.batyaev.vk.api.methods;
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batyaev.com
  */
- 
+
 import com.batyaev.vk.api.VKParameters;
 import com.batyaev.vk.api.VKRequest;
 import com.batyaev.vk.api.consts.VKApiConst;
@@ -20,6 +20,10 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 /**
  * Builds requests for API.friends part
@@ -35,9 +39,15 @@ public class VKApiFriends extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKUserList get(VKParameters params) throws IOException {
+    public VKUserList get(VKParameters params) {
 
-        String respond = prepareRequest(VKApiConst.GET, params).getRequest();
+        String respond = "";
+        try {
+            respond = prepareRequest(VKApiConst.GET, params).getRequest();
+        } catch (IOException e) {
+            LOG.error("Cannot get information from VK.com\n");
+            e.printStackTrace();
+        }
 
         JSONObject obj = new JSONObject(respond);
         final JSONArray friendList = obj.getJSONArray(VKApiConst.RESPONSE);
@@ -68,11 +78,24 @@ public class VKApiFriends extends VKApiBase {
                 countryParams.setValue(VKApiDatabaseConsts.COUNTRY_IDS, userJson.getInt(VKApiUserConsts.COUNTRY));
                 user.country = database.getCountriesById(countryParams);
             }
-            if (userJson.has(VKApiUserConsts.BDATE))
-                user.bdate = userJson.getString(VKApiUserConsts.BDATE);
+            if (userJson.has(VKApiUserConsts.BDATE)) {
+                String bDateString = userJson.getString(VKApiUserConsts.BDATE);
+
+                try {
+                    DateFormat format = new SimpleDateFormat("DD.M.yyyy", Locale.ENGLISH);
+                    user.bdate = format.parse(bDateString);
+                } catch (ParseException e) {
+                    DateFormat format = new SimpleDateFormat("DD.M", Locale.ENGLISH);
+                    try {
+                        user.bdate = format.parse(bDateString);
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            }
             result.add(user);
 
-            LOG.info( user.toString() + "\t\t" + user.bdate  + "\t\t" + user.online() + "\t" + user.country.name + ", " + user.city.name);
+            LOG.info(user.toString() + "\t\t" + user.bdate + "\t\t" + user.online() + "\t" + user.country.name + ", " + user.city.name);
         }
         LOG.info(friendList.toString());
         return result;
