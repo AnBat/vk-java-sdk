@@ -11,5 +11,6 @@ public class VKApiDatabaseConsts {
     public final static String CID = "cid";
     public final static String NAME = "name";
     public final static String CITY_IDS = "city_ids";
+    public final static String COUNTRY_IDS = "country_ids";
     public final static String NEED_ALL = "need_all";
 }

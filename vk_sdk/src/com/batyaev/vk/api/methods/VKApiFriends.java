@@ -56,13 +56,18 @@ public class VKApiFriends extends VKApiBase {
             user.online = userJson.getInt(VKApiUserConsts.ONLINE) == 1;
             if (userJson.has(VKApiUserConsts.CITY)) {
                 VKApiDatabase database = new VKApiDatabase();
-                VKParameters parms = new VKParameters();
-                parms.setValue(VKApiDatabaseConsts.NEED_ALL, 1);
-                parms.setValue(VKApiDatabaseConsts.CITY_IDS, userJson.getInt(VKApiUserConsts.CITY));
-                user.city = database.getCitiesById(parms);
+                VKParameters cityParams = new VKParameters();
+                cityParams.setValue(VKApiDatabaseConsts.NEED_ALL, 1);
+                cityParams.setValue(VKApiDatabaseConsts.CITY_IDS, userJson.getInt(VKApiUserConsts.CITY));
+                user.city = database.getCitiesById(cityParams);
             }
-            if (userJson.has(VKApiUserConsts.COUNTRY))
-                user.country = userJson.getInt(VKApiUserConsts.COUNTRY);
+            if (userJson.has(VKApiUserConsts.COUNTRY)) {
+                VKApiDatabase database = new VKApiDatabase();
+                VKParameters countryParams = new VKParameters();
+                countryParams.setValue(VKApiDatabaseConsts.NEED_ALL, 1);
+                countryParams.setValue(VKApiDatabaseConsts.COUNTRY_IDS, userJson.getInt(VKApiUserConsts.COUNTRY));
+                user.country = database.getCountriesById(countryParams);
+            }
             if (userJson.has(VKApiUserConsts.BDATE))
                 user.bdate = userJson.getString(VKApiUserConsts.BDATE);
             result.add(user);

@@ -60,7 +60,7 @@ public class VKUser {
     /**
      * ID of the country specified on user's page in "Contacts" section.
      */
-    public int country;
+    public VKCountry country;
 
 
     /**

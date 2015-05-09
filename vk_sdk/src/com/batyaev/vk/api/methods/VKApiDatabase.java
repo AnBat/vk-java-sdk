@@ -12,6 +12,7 @@ import com.batyaev.vk.api.VKRequest;
 import com.batyaev.vk.api.consts.VKApiConst;
 import com.batyaev.vk.api.consts.VKApiDatabaseConsts;
 import com.batyaev.vk.api.dataTypes.VKCity;
+import com.batyaev.vk.api.dataTypes.VKCountry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
@@ -59,8 +60,24 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getCountriesById(VKParameters params) {
-        return prepareRequest("getCountriesById", params);
+    public VKCountry getCountriesById(VKParameters params) throws IOException {
+
+        String respond = prepareRequest("getCountriesById", params).getRequest();
+
+        LOG.info(respond);
+        JSONObject obj = new JSONObject(respond);
+        final JSONArray countryList = obj.getJSONArray(VKApiConst.RESPONSE);
+
+        VKCountry country = new VKCountry();
+        if (countryList.length() == 0)
+            return country;
+
+        JSONObject countryJson = countryList.getJSONObject(0);
+
+        country.id = countryJson.getInt(VKApiDatabaseConsts.CID);
+        country.name = countryJson.getString(VKApiDatabaseConsts.NAME);
+
+        return country;
     }
 
     /**
@@ -80,7 +97,7 @@ public class VKApiDatabase extends VKApiBase {
     public VKCity getCitiesById(VKParameters params) throws IOException {
         String respond = prepareRequest("getCitiesById", params).getRequest();
 
-        LOG.error(respond);
+        LOG.debug(respond);
 
         JSONObject obj = new JSONObject(respond);
         final JSONArray cityList = obj.getJSONArray(VKApiConst.RESPONSE);
