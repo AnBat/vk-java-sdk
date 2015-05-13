@@ -97,7 +97,7 @@ public class VKApiFriends extends VKApiBase {
 
             LOG.info(user.toString() + "\t\t" + user.bdate + "\t\t" + user.online() + "\t" + user.country.name + ", " + user.city.name);
         }
-        LOG.info(friendList.toString());
+//        LOG.info(friendList.toString());
         return result;
     }
 

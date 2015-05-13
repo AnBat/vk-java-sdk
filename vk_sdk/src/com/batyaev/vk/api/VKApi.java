@@ -29,6 +29,10 @@ public class VKApi extends VKApiBase {
         parms.setValue("order", "hints");
         parms.setValue("fields", "uid, first_name, last_name, nickname, sex, online, bdate, city, country, timezone, photo_max_orig, rate, contacts, education");
         VKUserList friends = friends().get(parms);
+
+        VKParameters placesParams = new VKParameters();
+        LOG.info("=======================");
+        LOG.info(places().getTypes(placesParams).getRequest());
     }
 
     /**
