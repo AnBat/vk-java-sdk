@@ -7,6 +7,8 @@ package com.batyaev.vk.api.dataTypes;
  * www.batyaev.com
  */
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -157,6 +159,15 @@ public class VKUser {
             case 2: return "Male";
         }
         return "Not specified";
+    }
+
+    public String birthday() {
+        DateFormat format = new SimpleDateFormat("dd.MM");
+        DateFormat formatFull = new SimpleDateFormat("dd.MM.yyyy");
+        if (bdate == null)
+            return "";
+        else
+            return bdate.getYear() == 1900 ? format.format(bdate) : formatFull.format(bdate);
     }
 
     public String online() {

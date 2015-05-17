@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -82,20 +83,21 @@ public class VKApiFriends extends VKApiBase {
                 String bDateString = userJson.getString(VKApiUserConsts.BDATE);
 
                 try {
-                    DateFormat format = new SimpleDateFormat("DD.M.yyyy", Locale.ENGLISH);
+                    DateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
                     user.bdate = format.parse(bDateString);
                 } catch (ParseException e) {
-                    DateFormat format = new SimpleDateFormat("DD.M", Locale.ENGLISH);
+                    DateFormat format = new SimpleDateFormat("dd.MM", Locale.ENGLISH);
                     try {
-                        user.bdate = format.parse(bDateString);
+                        Date date = format.parse(bDateString);
+                        date.setYear(0);
+                        user.bdate = date;
                     } catch (ParseException e1) {
                         e1.printStackTrace();
                     }
                 }
             }
             result.add(user);
-
-            LOG.info(user.toString() + "\t\t" + user.bdate + "\t\t" + user.online() + "\t" + user.country.name + ", " + user.city.name);
+            LOG.info(user.toString() + "\t\t" + user.birthday() + "\t\t" + user.online() + "\t" + user.country.name + ", " + user.city.name);
         }
 //        LOG.info(friendList.toString());
         return result;
