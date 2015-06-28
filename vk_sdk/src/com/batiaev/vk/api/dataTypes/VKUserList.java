@@ -9,4 +9,5 @@ import java.util.*;
  * www.batyaev.com
  */
 public class VKUserList extends ArrayList<VKUser> {
+
 }

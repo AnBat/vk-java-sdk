@@ -7,10 +7,10 @@ package com.batiaev.vk.api.methods;
  * www.batyaev.com
  */
 
-import com.batiaev.vk.api.consts.VKApiConst;
-import com.batiaev.vk.api.consts.VKApiDatabaseConsts;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.VKRequest;
+import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiDatabaseConsts;
 import com.batiaev.vk.api.consts.VKApiUserConsts;
 import com.batiaev.vk.api.dataTypes.VKUser;
 import com.batiaev.vk.api.dataTypes.VKUserList;
