@@ -7,12 +7,9 @@ package com.batiaev.vk.api;
  * www.batiaev.com
  */
 
-import com.batiaev.vk.api.dataTypes.VKUserList;
 import com.batiaev.vk.api.methods.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.io.IOException;
 
 /**
  * Common interface for VK API
@@ -21,18 +18,7 @@ import java.io.IOException;
  */
 public class VKApi extends VKApiBase {
 
-    private static final Logger LOG = LogManager.getLogger(VKRequest.class);
-
-    public static void main(String[] args) throws IOException {
-        VKParameters params = new VKParameters();
-        params.setValue("user_id", "38561327");
-        params.setValue("order", "hints");
-        params.setValue("fields", "uid, first_name, last_name, nickname, sex, online, bdate, city, country, timezone, photo_max_orig, rate, contacts, education");
-        VKUserList friends = friends().get(params);
-
-        LOG.info("=======================");
-        LOG.info(places().getTypes(new VKParameters()).getRequest());
-    }
+    private static final Logger LOG = LogManager.getLogger(VKApi.class);
 
     /**
      * https://vk.com/dev/account

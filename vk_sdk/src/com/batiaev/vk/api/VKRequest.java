@@ -1,7 +1,6 @@
 package com.batiaev.vk.api;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
@@ -27,7 +26,7 @@ public class VKRequest {
     public String access_token;
     public String method_name;
     public String parameters;
-    public final static String BASE_URL = "https://api.vk.com/method/";
+    public final static String BASE_URL = "http://api.vk.com/method/";
     public final static String ACCESS_TOKEN_URL = "https://oauth.vk.com/access_token?";
     public final static String AUTH_URL = "https://oauth.vk.com/authorize?";
 
@@ -59,20 +58,14 @@ public class VKRequest {
             LOG.info("Executing request " + httpget.getRequestLine());
 
             // Create a custom response handler
-            ResponseHandler<String> responseHandler = new ResponseHandler<String>() {
-
-                @Override
-                public String handleResponse(
-                        final HttpResponse response) throws IOException {
-                    int status = response.getStatusLine().getStatusCode();
-                    if (status >= 200 && status < 300) {
-                        HttpEntity entity = response.getEntity();
-                        return entity != null ? EntityUtils.toString(entity) : null;
-                    } else {
-                        throw new ClientProtocolException("Unexpected response status: " + status);
-                    }
+            ResponseHandler<String> responseHandler = response -> {
+                int status = response.getStatusLine().getStatusCode();
+                if (status >= 200 && status < 300) {
+                    HttpEntity entity = response.getEntity();
+                    return entity != null ? EntityUtils.toString(entity) : null;
+                } else {
+                    throw new ClientProtocolException("Unexpected response status: " + status);
                 }
-
             };
             responseBody = httpclient.execute(httpget, responseHandler);
         } catch (ClientProtocolException e) {

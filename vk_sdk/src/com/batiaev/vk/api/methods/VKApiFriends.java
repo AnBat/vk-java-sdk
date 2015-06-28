@@ -41,7 +41,7 @@ public class VKApiFriends extends VKApiBase {
      */
     public VKUserList get(VKParameters params) {
 
-        String respond = "";
+        String respond;
         respond = prepareRequest(VKApiConst.GET, params).getRequest();
 
         JSONObject obj = new JSONObject(respond);
