@@ -51,13 +51,18 @@ public class VKApiFriends extends VKApiBase {
             VKUser user = new VKUser();
             JSONObject userJson = friendList.getJSONObject(i);
 
-            user.user_id = userJson.getInt(VKApiUserConsts.UID);
-            user.first_name = userJson.getString(VKApiUserConsts.FIRST_NAME);
-            user.last_name = userJson.getString(VKApiUserConsts.LAST_NAME);
-            user.sex = userJson.getInt(VKApiUserConsts.SEX);
+            if (userJson.has(VKApiUserConsts.UID))
+                user.user_id = userJson.getInt(VKApiUserConsts.UID);
+            if (userJson.has(VKApiUserConsts.FIRST_NAME))
+                user.first_name = userJson.getString(VKApiUserConsts.FIRST_NAME);
+            if (userJson.has(VKApiUserConsts.LAST_NAME))
+                user.last_name = userJson.getString(VKApiUserConsts.LAST_NAME);
+            if (userJson.has(VKApiUserConsts.SEX))
+                user.sex = userJson.getInt(VKApiUserConsts.SEX);
             if (userJson.has(VKApiUserConsts.NICKNAME))
                 user.nickname = userJson.getString(VKApiUserConsts.NICKNAME);
-            user.photo_max_orig = userJson.getString(VKApiUserConsts.PHOTO_MAX_ORIG);
+            if (userJson.has(VKApiUserConsts.PHOTO_MAX_ORIG))
+                user.photo_max_orig = userJson.getString(VKApiUserConsts.PHOTO_MAX_ORIG);
             user.setOnline(userJson.getInt(VKApiUserConsts.ONLINE) == 1);
             if (userJson.has(VKApiUserConsts.CITY)) {
                 VKApiDatabase database = new VKApiDatabase();
