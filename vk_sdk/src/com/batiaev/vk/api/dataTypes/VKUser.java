@@ -130,7 +130,7 @@ public class VKUser {
     /**
      * Information whether the user is online.
      */
-    public boolean online;
+    private boolean online;
 
     /**
      * If user utilizes a mobile application or site mobile version, it returns online_mobile as additional.
@@ -166,12 +166,15 @@ public class VKUser {
         DateFormat formatFull = new SimpleDateFormat("dd.MM.yyyy");
         if (bdate == null)
             return "";
-        else
-            return bdate.getYear() == 1900 ? format.format(bdate) : formatFull.format(bdate);
+        return bdate.getYear() == 1900 ? format.format(bdate) : formatFull.format(bdate);
     }
 
     public String online() {
         return online ? "Online" : "Offline";
+    }
+
+    public boolean isOnline() {
+        return online;
     }
 
     /**
@@ -181,17 +184,20 @@ public class VKUser {
 
     }
 
-    private String full_name;
+    public String fullName() {
+        return first_name + ' ' + last_name;
+    }
 
     /**
-     * @return full user name
+     * @return user_id and full user name
      */
     @Override
     public String toString() {
-        if(full_name == null) {
-            full_name = first_name + ' ' + last_name;
-        }
-        return user_id + " : " + full_name;
+        return user_id + " : " + fullName();
     }
 
+    public void setOnline(boolean online) {
+        this.online = online;
+    }
 }
+

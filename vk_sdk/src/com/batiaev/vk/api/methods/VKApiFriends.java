@@ -58,7 +58,7 @@ public class VKApiFriends extends VKApiBase {
             if (userJson.has(VKApiUserConsts.NICKNAME))
                 user.nickname = userJson.getString(VKApiUserConsts.NICKNAME);
             user.photo_max_orig = userJson.getString(VKApiUserConsts.PHOTO_MAX_ORIG);
-            user.online = userJson.getInt(VKApiUserConsts.ONLINE) == 1;
+            user.setOnline(userJson.getInt(VKApiUserConsts.ONLINE) == 1);
             if (userJson.has(VKApiUserConsts.CITY)) {
                 VKApiDatabase database = new VKApiDatabase();
                 VKParameters cityParams = new VKParameters();
