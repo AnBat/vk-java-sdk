@@ -17,7 +17,6 @@ import org.apache.logging.log4j.Logger;
  * https://vk.com/dev/openapi
  */
 public class VKApi extends VKApiBase {
-
     private static final Logger LOG = LogManager.getLogger(VKApi.class);
 
     /**

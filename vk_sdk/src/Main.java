@@ -1,12 +1,11 @@
 import com.batiaev.vk.api.VKApi;
+import com.batiaev.vk.api.VKAuthorization;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.dataTypes.VKUserList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by anton on 28/06/15.
@@ -18,8 +17,10 @@ public class Main {
     private static final Logger LOG = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws IOException {
+        VKAuthorization authorization = new VKAuthorization();
+
         VKParameters params = new VKParameters();
-        params.setValue("user_id", "38561327");
+        params.setValue("user_id", VKAuthorization.userId());
         params.setValue("order", "hints");
         params.setValue("fields", "uid, first_name, last_name, nickname, sex, online, bdate, city, country," +
                 "timezone, photo_max_orig, rate, contacts, education");
@@ -40,8 +41,8 @@ public class Main {
 //                e.printStackTrace();
 //            }
 //        });
-        LOG.info("=======================");
-        LOG.info(VKApi.places().getTypes(new VKParameters()).getRequest());
+//        LOG.info("=======================");
+//        LOG.info(VKApi.places().getTypes(new VKParameters()).getRequest());
     }
 
     private static void saveFriends(VKUserList friends, String user_id) throws IOException {
@@ -54,6 +55,7 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         FileWriter writer = new FileWriter(user_friends, false);
         writer.write("<html>\n<head>\n<meta charset=\"utf-8\">\n<title>Friends</title>\n</head>\n<body>\n<table>\n<tr>\n");
         final int[] index = {0};
@@ -70,6 +72,5 @@ public class Main {
             }
         });
         writer.write("</tr>\n</table>\n</body>\n</html");
-
     }
 }
