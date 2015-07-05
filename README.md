@@ -1,4 +1,4 @@
-vk-java-sdk
+Vk Java SDK
 ==========
 
 Library for working with VK API, authorization through VK app, using VK functions.
@@ -11,5 +11,9 @@ Run
 ===
 gralde clean build jacocoTestReport run
 
-Required
+Prerequisites
 ========
+Apache httpClient v.4.5
+Apache log4j v.2.2
+org.json v.20140107
+JUnit v.4.12
