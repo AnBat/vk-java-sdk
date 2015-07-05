@@ -1,7 +1,7 @@
 Vk Java SDK
 ==========
 
-Library for working with VK API, authorization through VK app, using VK functions (https://vk.com).
+Library for working with [VK API](https://vk.com/dev/openapi), authorization through VK app, using VK functions.
 
 Run
 ===
@@ -18,4 +18,4 @@ Contacts
 ========
 anton@batiaev.com
 
-http://batiaev.com/projects#vk-java-sdk
+[batiaev.com](http://batiaev.com/projects#vk-java-sdk)
