@@ -26,7 +26,7 @@ public class VKRequest {
     public String access_token;
     public String method_name;
     public String parameters;
-    public final static String BASE_URL = "http://api.vk.com/method/";
+    public final static String BASE_URL = "https://api.vk.com/method/";
     public final static String ACCESS_TOKEN_URL = "https://oauth.vk.com/access_token?";
     public final static String AUTH_URL = "https://oauth.vk.com/authorize?";
 
@@ -55,7 +55,7 @@ public class VKRequest {
         try {
             HttpGet httpget = new HttpGet(BASE_URL + method_name + "?" + parameters);
 
-            LOG.info("Executing request " + httpget.getRequestLine());
+            LOG.debug("Executing request " + httpget.getRequestLine());
 
             // Create a custom response handler
             ResponseHandler<String> responseHandler = response -> {

@@ -1,6 +1,7 @@
 import com.batiaev.vk.api.VKApi;
 import com.batiaev.vk.api.VKAuthorization;
 import com.batiaev.vk.api.VKParameters;
+import com.batiaev.vk.api.dataTypes.VKMessageList;
 import com.batiaev.vk.api.dataTypes.VKUserList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,8 +27,8 @@ public class Main {
                 "timezone, photo_max_orig, rate, contacts, education");
 
         VKUserList friends = VKApi.friends().get(params);
-
-        saveFriends(friends, params.value("user_id"));
+//
+//        saveFriends(friends, params.value("user_id"));
 //        friends.forEach(user -> {
 //            VKParameters userParams = new VKParameters();
 //            userParams.setValue("user_id", String.valueOf(user.user_id));
@@ -41,8 +42,18 @@ public class Main {
 //                e.printStackTrace();
 //            }
 //        });
-//        LOG.info("=======================");
-//        LOG.info(VKApi.places().getTypes(new VKParameters()).getRequest());
+        LOG.info("=======================");
+        VKParameters parameters = new VKParameters();
+        parameters.setValue("access_token", VKAuthorization.accessToken());
+        LOG.info(VKApi.places().getTypes(parameters).getRequest());
+        LOG.info("=======================");
+        parameters = new VKParameters();
+        parameters.setValue("out", 0);
+        parameters.setValue("count", 20);
+        parameters.setValue("time_offset", 0);
+        parameters.setValue("filters", 4);
+        parameters.setValue("access_token", VKAuthorization.accessToken());
+        VKMessageList messages = VKApi.messages().get(parameters);
     }
 
     private static void saveFriends(VKUserList friends, String user_id) throws IOException {

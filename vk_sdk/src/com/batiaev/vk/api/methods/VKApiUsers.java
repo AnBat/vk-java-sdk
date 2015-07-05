@@ -9,6 +9,14 @@ package com.batiaev.vk.api.methods;
 
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.VKRequest;
+import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiUserConsts;
+import com.batiaev.vk.api.dataTypes.VKUser;
+import com.batiaev.vk.api.dataTypes.VKUserList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  * Builds requests for API.users part
@@ -16,6 +24,7 @@ import com.batiaev.vk.api.VKRequest;
  * https://vk.com/dev/users
  */
 public class VKApiUsers extends VKApiBase {
+    private static final Logger LOG = LogManager.getLogger(VKApiUsers.class);
 
     /**
      * https://vk.com/dev/users.get
@@ -23,8 +32,26 @@ public class VKApiUsers extends VKApiBase {
      * This is an open method; it does not require an access_token.
      *
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public VKUserList get(VKParameters params) {
+        String respond = prepareRequest(VKApiConst.GET, params).getRequest();
+
+        JSONObject obj = new JSONObject(respond);
+        final JSONArray friendList = obj.getJSONArray(VKApiConst.RESPONSE);
+        VKUserList result = new VKUserList();
+        for (int i = 0; i < friendList.length(); ++i) {
+            VKUser user = new VKUser();
+            JSONObject userJson = friendList.getJSONObject(i);
+
+            if (userJson.has(VKApiUserConsts.UID))
+                user.user_id = userJson.getInt(VKApiUserConsts.UID);
+            if (userJson.has(VKApiUserConsts.FIRST_NAME))
+                user.first_name = userJson.getString(VKApiUserConsts.FIRST_NAME);
+            if (userJson.has(VKApiUserConsts.LAST_NAME))
+                user.last_name = userJson.getString(VKApiUserConsts.LAST_NAME);
+            result.add(user);
+//            LOG.info(user.toString());
+        }
+        return result;
     }
 
     /**

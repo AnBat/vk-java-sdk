@@ -7,6 +7,7 @@ package com.batiaev.vk.api.dataTypes;
  * www.batyaev.com
  */
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public class VKMessage {
 
     public int id;
     public int user_id;
-    public int date;
+    public Date date;
     public boolean read_state;
     public boolean out;
     public String title;

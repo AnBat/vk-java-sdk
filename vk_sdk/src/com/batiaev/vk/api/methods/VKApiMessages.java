@@ -7,8 +7,22 @@ package com.batiaev.vk.api.methods;
  * www.batyaev.com
  */
 
+import com.batiaev.vk.api.VKApi;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.VKRequest;
+import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiMessagesConsts;
+import com.batiaev.vk.api.dataTypes.VKMessage;
+import com.batiaev.vk.api.dataTypes.VKMessageList;
+import com.batiaev.vk.api.dataTypes.VKUserList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Builds requests for API.messages part
@@ -16,15 +30,51 @@ import com.batiaev.vk.api.VKRequest;
  * https://vk.com/dev/messages
  */
 public class VKApiMessages extends VKApiBase {
-    
+
+    private static final Logger LOG = LogManager.getLogger(VKApiMessages.class);
     /**
      * https://vk.com/dev/messages.get
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public VKMessageList get(VKParameters params) {
+        String respond =  prepareRequest(VKApiConst.GET, params).getRequest();
+        JSONObject obj = new JSONObject(respond);
+        final JSONArray messageList = obj.getJSONArray(VKApiConst.RESPONSE);
+        VKMessageList result = new VKMessageList();
+        int messageCount = messageList.getInt(0);
+        LOG.info("Total count of messages: " + messageCount);
+        HashMap<Integer, String> userCache = new HashMap<>();
+        for (int i = 1; i < messageList.length(); ++i) {
+            VKMessage message = new VKMessage();
+            JSONObject messageJson = messageList.getJSONObject(i);
+
+            if (messageJson.has(VKApiMessagesConsts.MID))
+                message.id = messageJson.getInt(VKApiMessagesConsts.MID);
+            if (messageJson.has(VKApiMessagesConsts.UID))
+                message.user_id = messageJson.getInt(VKApiMessagesConsts.UID);
+            if (messageJson.has(VKApiMessagesConsts.DATE))
+                message.date = new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000);
+            if (messageJson.has(VKApiMessagesConsts.BODY))
+                message.body = messageJson.getString(VKApiMessagesConsts.BODY);
+
+            result.add(message);
+
+            //get user by ID
+            if (!userCache.containsKey(message.user_id)) {
+                VKParameters userParams = new VKParameters();
+                userParams.setValue("user_id", message.user_id);
+                userParams.setValue("fields", "first_name, last_name");
+                VKUserList users = VKApi.users().get(userParams);
+
+                userCache.put(message.user_id, users.get(0).fullName());
+            }
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            LOG.info(userCache.get(message.user_id) + " " + dateFormat.format(message.date) + " " + message.body);
+        }
+        return result;
     }
 
     /**
