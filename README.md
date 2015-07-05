@@ -12,8 +12,14 @@ Run
 gralde clean build jacocoTestReport run
 
 Prerequisites
+=============
+- Apache httpClient v.4.5
+- Apache log4j v.2.2
+- org.json v.20140107
+- JUnit v.4.12
+
+Contacts
 ========
-Apache httpClient v.4.5
-Apache log4j v.2.2
-org.json v.20140107
-JUnit v.4.12
+anton@batiaev.com
+
+batiaev.com
