@@ -62,7 +62,8 @@ public class VKApiFriends extends VKApiBase {
                 user.nickname = userJson.getString(VKApiUserConsts.NICKNAME);
             if (userJson.has(VKApiUserConsts.PHOTO_MAX_ORIG))
                 user.photo_max_orig = userJson.getString(VKApiUserConsts.PHOTO_MAX_ORIG);
-            user.setOnline(userJson.getInt(VKApiUserConsts.ONLINE) == 1);
+            if (userJson.has(VKApiUserConsts.ONLINE))
+                user.setOnline(userJson.getInt(VKApiUserConsts.ONLINE) == 1);
             if (userJson.has(VKApiUserConsts.CITY)) {
                 VKApiDatabase database = new VKApiDatabase();
                 VKParameters cityParams = new VKParameters();
@@ -97,7 +98,6 @@ public class VKApiFriends extends VKApiBase {
             result.add(user);
             LOG.info(user.toString() + "\t\t" + user.birthday() + "\t\t" + user.online() + "\t" + user.country.name + ", " + user.city.name);
         }
-//        LOG.info(friendList.toString());
         return result;
     }
 

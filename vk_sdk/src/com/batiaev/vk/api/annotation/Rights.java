@@ -1,7 +1,8 @@
-package com.batiaev.vk.annotation;
+package com.batiaev.vk.api.annotation;
 
 /**
- * Created by anton on 18/04/15.
+ * @author batiaev
+ * Created by batiaev on 18/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batyaev.com

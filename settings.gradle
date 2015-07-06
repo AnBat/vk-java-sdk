@@ -1,1 +1,2 @@
 include ':vk_sdk'
+include ':test_app'
