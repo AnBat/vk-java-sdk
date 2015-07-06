@@ -43,11 +43,11 @@ public class VKApiUsers extends VKApiBase {
             JSONObject userJson = friendList.getJSONObject(i);
 
             if (userJson.has(VKApiUserConsts.UID))
-                user.user_id = userJson.getInt(VKApiUserConsts.UID);
+                user.setUserId(userJson.getInt(VKApiUserConsts.UID));
             if (userJson.has(VKApiUserConsts.FIRST_NAME))
-                user.first_name = userJson.getString(VKApiUserConsts.FIRST_NAME);
+                user.setFirstName(userJson.getString(VKApiUserConsts.FIRST_NAME));
             if (userJson.has(VKApiUserConsts.LAST_NAME))
-                user.last_name = userJson.getString(VKApiUserConsts.LAST_NAME);
+                user.setLastName(userJson.getString(VKApiUserConsts.LAST_NAME));
             result.add(user);
 //            LOG.info(user.toString());
         }
