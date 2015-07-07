@@ -11,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
 
 /**
  * Created by anton on 17/04/15.
@@ -33,7 +32,7 @@ public class VKRequest {
 
     /**
      *
-     * @param accessToken
+     * @param accessToken string for access to vk.com server
      */
     public void setAccessToken(String accessToken) {
         access_token = accessToken;
@@ -51,7 +50,6 @@ public class VKRequest {
 //        https://hc.apache.org/httpcomponents-client-4.4.x/httpclient/examples/org/apache/http/examples/client/ClientWithResponseHandler.java /
         CloseableHttpClient httpclient = HttpClients.createDefault();
         String responseBody = "";
-        PreparedStatement statement;
         try {
             HttpGet httpget = new HttpGet(BASE_URL + method_name + "?" + parameters);
 

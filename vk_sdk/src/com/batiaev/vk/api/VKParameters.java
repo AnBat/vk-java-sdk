@@ -12,6 +12,11 @@ import java.util.HashMap;
 public class VKParameters {
     private HashMap<String, String> values = new HashMap<String, String>();
 
+    public VKParameters() {
+        values.put("v", VKApiVersion.v5_34);
+        values.put("lang", VKApiLang.en);
+//        values.put("test_mode", "1");
+    }
     public void setValue(String key, String value) {
         values.put(key, value);
     }

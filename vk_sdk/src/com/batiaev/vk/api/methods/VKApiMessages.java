@@ -120,16 +120,16 @@ public class VKApiMessages extends VKApiBase {
 //            //FIXME
 //            return new VKMessageList();
 //        }
-//        JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
-//        if (respondJson.has(VKApiConst.COUNT)) {
-//            int messageCount = respondJson.getInt(VKApiConst.COUNT);
-//            LOG.info("Total count of messages: " + messageCount);
-//        }
-//        if (respondJson.has(VKApiConst.UNREAD)) {
-//            int messageUnread = respondJson.getInt(VKApiConst.UNREAD);
-//            LOG.info("Count of unread messages: " + messageUnread);
-//        }
-        final JSONArray messageList = obj.getJSONArray(VKApiConst.RESPONSE);//VKApiConst.ITEMS);
+        JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
+        if (respondJson.has(VKApiConst.COUNT)) {
+            int messageCount = respondJson.getInt(VKApiConst.COUNT);
+            LOG.info("Total count of messages: " + messageCount);
+        }
+        if (respondJson.has(VKApiConst.UNREAD)) {
+            int messageUnread = respondJson.getInt(VKApiConst.UNREAD);
+            LOG.info("Count of unread messages: " + messageUnread);
+        }
+        final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
         VKMessageList result = new VKMessageList();
 
         HashMap<Integer, String> userCache = new HashMap<>();
