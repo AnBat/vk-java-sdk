@@ -83,8 +83,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getDialogs(VKParameters params) {
-        return prepareRequest("getDialogs", params);
+    public String getDialogs(VKParameters params) {
+        return prepareRequest("getDialogs", params).getRequest();
     }
     
     /**
@@ -113,8 +113,63 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getHistory(VKParameters params) {
-        return prepareRequest("getHistory", params);
+    public VKMessageList getHistory(VKParameters params) {
+        String respond =  prepareRequest(VKApiConst.GET_HISTORY, params).getRequest();
+        JSONObject obj = new JSONObject(respond);
+//        if (obj.has(VKApiConst.ERROR)) {
+//            //FIXME
+//            return new VKMessageList();
+//        }
+//        JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
+//        if (respondJson.has(VKApiConst.COUNT)) {
+//            int messageCount = respondJson.getInt(VKApiConst.COUNT);
+//            LOG.info("Total count of messages: " + messageCount);
+//        }
+//        if (respondJson.has(VKApiConst.UNREAD)) {
+//            int messageUnread = respondJson.getInt(VKApiConst.UNREAD);
+//            LOG.info("Count of unread messages: " + messageUnread);
+//        }
+        final JSONArray messageList = obj.getJSONArray(VKApiConst.RESPONSE);//VKApiConst.ITEMS);
+        VKMessageList result = new VKMessageList();
+
+        HashMap<Integer, String> userCache = new HashMap<>();
+        for (int i = 2; i < messageList.length(); ++i) {
+            VKMessage message = new VKMessage();
+            JSONObject messageJson = messageList.getJSONObject(i);
+
+            if (messageJson.has(VKApiMessagesConsts.ID))
+                message.id = messageJson.getInt(VKApiMessagesConsts.ID);
+//            if (messageJson.has(VKApiMessagesConsts.USER_ID))
+//                message.user_id = messageJson.getInt(VKApiMessagesConsts.USER_ID);
+            if (messageJson.has(VKApiMessagesConsts.FROM_ID))
+                message.user_id = messageJson.getInt(VKApiMessagesConsts.FROM_ID);
+            if (messageJson.has(VKApiMessagesConsts.DATE))
+                message.date = new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000);
+            if (messageJson.has(VKApiMessagesConsts.BODY))
+                message.body = messageJson.getString(VKApiMessagesConsts.BODY);
+            if (messageJson.has(VKApiMessagesConsts.READ_STATE))
+                message.read_state = messageJson.getInt(VKApiMessagesConsts.READ_STATE) == 1;
+            if (messageJson.has(VKApiMessagesConsts.OUT))
+                message.out = messageJson.getInt(VKApiMessagesConsts.OUT) == 1;
+            if (messageJson.has(VKApiMessagesConsts.EMOJI))
+                message.emoji = messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1;
+
+            result.add(message);
+
+            //get user by ID
+            if (!userCache.containsKey(message.user_id)) {
+                VKParameters userParams = new VKParameters();
+                userParams.setValue("user_id", message.user_id);
+                userParams.setValue("fields", "first_name, last_name");
+                VKUserList users = VKApi.users().get(userParams);
+
+                userCache.put(message.user_id, users.get(0).fullName());
+            }
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            LOG.info(userCache.get(message.user_id) + " " + dateFormat.format(message.date) + " " + message.body);
+        }
+        return result;
     }
     
     /**

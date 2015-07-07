@@ -2,11 +2,10 @@ import com.batiaev.vk.api.VKApi;
 import com.batiaev.vk.api.VKAuthorization;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.dataTypes.VKMessageList;
-import com.batiaev.vk.api.dataTypes.VKUserList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.*;
+import java.io.IOException;
 
 /**
  * Created by anton on 28/06/15.
@@ -26,20 +25,25 @@ public class Main {
         params.setValue("fields", "uid, first_name, last_name, nickname, sex, online, bdate, city, country," +
                 "timezone, photo_max_orig, rate, contacts, education");
 
-        VKUserList friends = VKApi.friends().get(params);
+//        VKUserList friends = VKApi.friends().get(params);
 //        VkLocalCache.saveFriends(friends, params.value("user_id"));
 
-        LOG.info("=======================");
+//        LOG.info("=======================");
         VKParameters parameters = new VKParameters();
-        parameters.setValue("access_token", VKAuthorization.accessToken());
-        LOG.info(VKApi.places().getTypes(parameters).getRequest());
-        LOG.info("=======================");
+//        parameters.setValue("access_token", VKAuthorization.accessToken());
+//        LOG.info(VKApi.places().getTypes(parameters).getRequest());
+//        LOG.info("=======================");
+//        parameters = new VKParameters();
+//        parameters.setValue("out", 0);
+//        parameters.setValue("count", 20);
+//        parameters.setValue("time_offset", 0);
+//        parameters.setValue("filters", 4);
+//        parameters.setValue("access_token", VKAuthorization.accessToken());
+//        VKMessageList messages = VKApi.messages().get(parameters);
         parameters = new VKParameters();
-        parameters.setValue("out", 0);
         parameters.setValue("count", 20);
-        parameters.setValue("time_offset", 0);
-        parameters.setValue("filters", 4);
+        parameters.setValue("user_id", "8475109");
         parameters.setValue("access_token", VKAuthorization.accessToken());
-        VKMessageList messages = VKApi.messages().get(parameters);
+        VKMessageList messages = VKApi.messages().getHistory(parameters);
     }
 }

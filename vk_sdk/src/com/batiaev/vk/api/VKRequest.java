@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
 
 /**
  * Created by anton on 17/04/15.
@@ -30,6 +31,10 @@ public class VKRequest {
     public final static String ACCESS_TOKEN_URL = "https://oauth.vk.com/access_token?";
     public final static String AUTH_URL = "https://oauth.vk.com/authorize?";
 
+    /**
+     *
+     * @param accessToken
+     */
     public void setAccessToken(String accessToken) {
         access_token = accessToken;
     }
@@ -42,16 +47,11 @@ public class VKRequest {
         parameters = params;
     }
 
-    public String getRequest(String methodName, String params) {
-        method_name = methodName;
-        parameters = params;
-        return getRequest();
-    }
-
     public String getRequest() {
 //        https://hc.apache.org/httpcomponents-client-4.4.x/httpclient/examples/org/apache/http/examples/client/ClientWithResponseHandler.java /
         CloseableHttpClient httpclient = HttpClients.createDefault();
         String responseBody = "";
+        PreparedStatement statement;
         try {
             HttpGet httpget = new HttpGet(BASE_URL + method_name + "?" + parameters);
 
@@ -83,12 +83,6 @@ public class VKRequest {
         }
 
         return responseBody;
-    }
-
-    public String postRequest(String methodName, String params) throws IOException {
-        method_name = methodName;
-        parameters = params;
-        return postRequest();
     }
 
     public String postRequest() throws IOException {
