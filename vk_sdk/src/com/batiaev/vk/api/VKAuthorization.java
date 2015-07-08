@@ -14,10 +14,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URLEncoder;
 import java.util.Properties;
 
@@ -125,6 +128,9 @@ public class VKAuthorization {
     }
 
     public String clientAuth() {
+        //1. Opening OAuth Authorization Dialog
+        //2. Providing Access Permissions
+        //3. Receiving "access_token"
 
         String redirect_uri = BASE_URL + "blank.html";
         String scope = "notify,friends,photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline";
@@ -138,66 +144,77 @@ public class VKAuthorization {
                 "&v=" + vk_api_version +
                 "&response_type=" + response_type;
 
-        System.out.println("#####");
-        CloseableHttpClient httpclient = HttpClients.createDefault();
-
-        String responseBody = "";
-        ResponseHandler<String> responseHandler = response -> {
-            int status = response.getStatusLine().getStatusCode();
-            System.out.println("## Respond: " + response.toString());
-            if (status >= 200 && status < 300) {
-                HttpEntity entity = response.getEntity();
-                return entity != null ? EntityUtils.toString(entity) : null;
-            } else {
-                throw new ClientProtocolException("Unexpected response status: " + status);
+        //open default browser
+        if (Desktop.isDesktopSupported()) {
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.browse(new URI(requestUrl));
+            } catch (IOException | URISyntaxException e) {
+                e.printStackTrace();
             }
-        };
+        } else {
+            Runtime runtime = Runtime.getRuntime();
+            try {
+                runtime.exec("xdg-open " + requestUrl);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-        HttpPost post = new HttpPost(requestUrl);
-        String login = null;
-        String pass = null;
-        try {
-            login = URLEncoder.encode(userEmail(), "UTF-8");
-            pass = URLEncoder.encode(userPassword(), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        HttpResponse resp = null;
-        try {
-            responseBody = httpclient.execute(post, responseHandler);
-//            resp = httpclient.execute(get);
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        System.out.println("## Request: " + requestUrl);
-        System.out.println("## Respond body: " + responseBody);
-        post.abort();
-        String tempIpH = responseBody.substring(responseBody.indexOf("ip_h") + 6);
-        String tempLgH = responseBody.substring(responseBody.indexOf("lg_h") + 6);
-        String tempTo = responseBody.substring(responseBody.indexOf("name=\"to\"") + 9);
-        String ip_h = tempIpH.substring(tempIpH.indexOf("value=") + 7, tempIpH.indexOf("/>") - 2);
-        String lg_h = tempLgH.substring(tempLgH.indexOf("value=") + 7, tempLgH.indexOf("/>") - 2);
-        String to = tempTo.substring(tempTo.indexOf("value=") + 7, tempTo.indexOf("--\">"));
-        //Second request
-        String postRequest = "https://login.vk.com/?act=login&soft=1&utf8=1&_origin=oauth.vk.com"+
-                "&ip_h"+ip_h+
-                "&lg_h="+lg_h+
-                "&to" + to +
-                "&email="+login+
-                "&pass="+pass;
-        System.out.println(postRequest);
-        post = new HttpPost(postRequest);
-        try {
-            resp = httpclient.execute(post);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("## Respond 2 : " + resp.toString());
-        post.abort();
-        System.out.println("############");
-        //1. Opening OAuth Authorization Dialog
-        //2. Providing Access Permissions
-        //3. Receiving "access_token"
+//        CloseableHttpClient httpclient = HttpClients.createDefault();
+//
+//        String responseBody = "";
+//        ResponseHandler<String> responseHandler = response -> {
+//            int status = response.getStatusLine().getStatusCode();
+//            System.out.println("## Respond: " + response.toString());
+//            if (status >= 200 && status < 300) {
+//                HttpEntity entity = response.getEntity();
+//                return entity != null ? EntityUtils.toString(entity) : null;
+//            } else {
+//                throw new ClientProtocolException("Unexpected response status: " + status);
+//            }
+//        };
+//
+//        HttpPost post = new HttpPost(requestUrl);
+//        String login = null;
+//        String pass = null;
+//        try {
+//            login = URLEncoder.encode(userEmail(), "UTF-8");
+//            pass = URLEncoder.encode(userPassword(), "UTF-8");
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
+//        HttpResponse resp = null;
+//        try {
+//            responseBody = httpclient.execute(post, responseHandler);
+//        } catch (IOException e1) {
+//            e1.printStackTrace();
+//        }
+//        System.out.println("## Request: " + requestUrl);
+//        System.out.println("## Respond body: " + responseBody);
+//        post.abort();
+//        String tempIpH = responseBody.substring(responseBody.indexOf("ip_h") + 6);
+//        String tempLgH = responseBody.substring(responseBody.indexOf("lg_h") + 6);
+//        String tempTo = responseBody.substring(responseBody.indexOf("name=\"to\"") + 9);
+//        String ip_h = tempIpH.substring(tempIpH.indexOf("value=") + 7, tempIpH.indexOf("/>") - 2);
+//        String lg_h = tempLgH.substring(tempLgH.indexOf("value=") + 7, tempLgH.indexOf("/>") - 2);
+//        String to = tempTo.substring(tempTo.indexOf("value=") + 7, tempTo.indexOf("--\">"));
+//        //Second request
+//        String postRequest = "https://login.vk.com/?act=login&soft=1&utf8=1&_origin=oauth.vk.com"+
+//                "&ip_h"+ip_h+
+//                "&lg_h="+lg_h+
+//                "&to" + to +
+//                "&email="+login+
+//                "&pass="+pass;
+//        System.out.println(postRequest);
+//        post = new HttpPost(postRequest);
+//        try {
+//            resp = httpclient.execute(post);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("## Respond 2 : " + resp.toString());
+//        post.abort();
         return "";
     }
 
@@ -221,9 +238,5 @@ public class VKAuthorization {
         setAppId(prop.getProperty("vk.app.id"));
         setSecureCode(prop.getProperty("vk.app.secure_code"));
         setAccessToken(prop.getProperty("vk.access_token"));
-
-        LOG.error("User id = " + userId());
-        LOG.error("App id = " + appId());
-        LOG.error("Security code = " + secureCode());
     }
 }

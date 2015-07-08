@@ -1,22 +1,22 @@
 package com.batiaev.vk.api.dataTypes;
 
-/**
- * Created by anton on 20/04/15.
- * ---
- * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
- */
-
 import java.util.Date;
 import java.util.List;
 
 /**
+ * @author batiaev
+ * Created by batiaev on 20/04/15.
+ * ---
  * A message object describes a private message
  * API version 5.0 and higher
+ * ---
+ * Copyright © 2015. Anton Batiaev. All Rights Reserved.
+ * www.batiaev.com
  */
 public class VKMessage {
 
     public int id;
+    public int from_id;
     public int user_id;
     public Date date;
     public boolean read_state;
