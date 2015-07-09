@@ -13,10 +13,8 @@ public class VKApiMessagesConsts {
     public final static String BODY = "body";
 
     public final static String ID = "id";
-    public final static String USER_ID = "user_id";
     public final static String FROM_ID = "from_id";
     public final static String READ_STATE = "read_state";
     public final static String OUT = "out";
     public final static String EMOJI = "emoji";
-
 }
