@@ -10,21 +10,13 @@ package com.batiaev.vk.api.methods;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.VKRequest;
 import com.batiaev.vk.api.consts.VKApiConst;
-import com.batiaev.vk.api.consts.VKApiDatabaseConsts;
-import com.batiaev.vk.api.consts.VKApiUserConsts;
 import com.batiaev.vk.api.dataTypes.VKUser;
 import com.batiaev.vk.api.dataTypes.VKUserList;
+import com.batiaev.vk.api.system.VkJsonParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
 /**
  * Builds requests for API.friends part
@@ -48,57 +40,9 @@ public class VKApiFriends extends VKApiBase {
         final JSONArray friendList = obj.getJSONArray(VKApiConst.RESPONSE);
         VKUserList result = new VKUserList();
         for (int i = 0; i < friendList.length(); ++i) {
-            VKUser user = new VKUser();
             JSONObject userJson = friendList.getJSONObject(i);
-
-            if (userJson.has(VKApiUserConsts.UID))
-                user.setUserId(userJson.getInt(VKApiUserConsts.UID));
-            if (userJson.has(VKApiUserConsts.FIRST_NAME))
-                user.setFirstName(userJson.getString(VKApiUserConsts.FIRST_NAME));
-            if (userJson.has(VKApiUserConsts.LAST_NAME))
-                user.setLastName(userJson.getString(VKApiUserConsts.LAST_NAME));
-            if (userJson.has(VKApiUserConsts.SEX))
-                user.setSex(userJson.getInt(VKApiUserConsts.SEX));
-            if (userJson.has(VKApiUserConsts.NICKNAME))
-                user.setNickname(userJson.getString(VKApiUserConsts.NICKNAME));
-            if (userJson.has(VKApiUserConsts.PHOTO_MAX_ORIG))
-                user.setPhotoMaxOrig(userJson.getString(VKApiUserConsts.PHOTO_MAX_ORIG));
-            if (userJson.has(VKApiUserConsts.ONLINE))
-                user.setOnline(userJson.getInt(VKApiUserConsts.ONLINE) == 1);
-            if (userJson.has(VKApiUserConsts.CITY)) {
-                VKApiDatabase database = new VKApiDatabase();
-                VKParameters cityParams = new VKParameters();
-                cityParams.setValue(VKApiDatabaseConsts.NEED_ALL, 1);
-                cityParams.setValue(VKApiDatabaseConsts.CITY_IDS, userJson.getInt(VKApiUserConsts.CITY));
-                user.setCity(database.getCitiesById(cityParams));
-            }
-            if (userJson.has(VKApiUserConsts.COUNTRY)) {
-                VKApiDatabase database = new VKApiDatabase();
-                VKParameters countryParams = new VKParameters();
-                countryParams.setValue(VKApiDatabaseConsts.NEED_ALL, 1);
-                countryParams.setValue(VKApiDatabaseConsts.COUNTRY_IDS, userJson.getInt(VKApiUserConsts.COUNTRY));
-                user.setCountry(database.getCountriesById(countryParams));
-            }
-            if (userJson.has(VKApiUserConsts.BDATE)) {
-                String bDateString = userJson.getString(VKApiUserConsts.BDATE);
-
-                try {
-                    DateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
-                    user.setBirthday(format.parse(bDateString));
-                } catch (ParseException e) {
-                    DateFormat format = new SimpleDateFormat("dd.MM", Locale.ENGLISH);
-                    try {
-                        Calendar cal = Calendar.getInstance();
-                        cal.setTime(format.parse(bDateString));
-                        cal.set(Calendar.YEAR, 0);
-                        user.setBirthday(cal.getTime());
-                    } catch (ParseException e1) {
-                        e1.printStackTrace();
-                    }
-                }
-            }
+            VKUser user = VkJsonParser.parseUser(userJson);
             result.add(user);
-            LOG.info(user.toString() + "\t\t" + user.birthday() + "\t\t" + user.online() + "\t" + user.country().name + ", " + user.city().name);
         }
         return result;
     }
