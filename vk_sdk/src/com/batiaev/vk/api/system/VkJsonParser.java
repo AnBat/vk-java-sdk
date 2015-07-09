@@ -1,10 +1,12 @@
 package com.batiaev.vk.api.system;
 
-import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.consts.VKApiDatabaseConsts;
+import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiUserConsts;
+import com.batiaev.vk.api.dataTypes.VKCity;
+import com.batiaev.vk.api.dataTypes.VKCountry;
 import com.batiaev.vk.api.dataTypes.VKUser;
-import com.batiaev.vk.api.methods.VKApiDatabase;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
@@ -21,6 +23,8 @@ import java.util.Locale;
  * www.batiaev.com
  */
 public class VkJsonParser {
+    private static final Logger LOG = LogManager.getLogger(VkJsonParser.class);
+
     public static VKUser parseUser(JSONObject userJson) {
         VKUser user = new VKUser();
 
@@ -39,18 +43,18 @@ public class VkJsonParser {
         if (userJson.has(VKApiUserConsts.ONLINE))
             user.setOnline(userJson.getInt(VKApiUserConsts.ONLINE) == 1);
         if (userJson.has(VKApiUserConsts.CITY)) {
-            VKApiDatabase database = new VKApiDatabase();
-            VKParameters cityParams = new VKParameters();
-            cityParams.setValue(VKApiDatabaseConsts.NEED_ALL, 1);
-            cityParams.setValue(VKApiDatabaseConsts.CITY_IDS, userJson.getInt(VKApiUserConsts.CITY));
-            user.setCity(database.getCitiesById(cityParams));
+            JSONObject cityJson = userJson.getJSONObject(VKApiUserConsts.CITY);
+            VKCity city = new VKCity();
+            city.id = cityJson.getInt(VKApiConst.ID);
+            city.name = cityJson.getString(VKApiConst.TITLE);
+            user.setCity(city);
         }
         if (userJson.has(VKApiUserConsts.COUNTRY)) {
-            VKApiDatabase database = new VKApiDatabase();
-            VKParameters countryParams = new VKParameters();
-            countryParams.setValue(VKApiDatabaseConsts.NEED_ALL, 1);
-            countryParams.setValue(VKApiDatabaseConsts.COUNTRY_IDS, userJson.getInt(VKApiUserConsts.COUNTRY));
-            user.setCountry(database.getCountriesById(countryParams));
+            JSONObject countryJson = userJson.getJSONObject(VKApiUserConsts.COUNTRY);
+            VKCountry country = new VKCountry();
+            country.id = countryJson.getInt(VKApiConst.ID);
+            country.name = countryJson.getString(VKApiConst.TITLE);
+            user.setCountry(country);
         }
         if (userJson.has(VKApiUserConsts.BDATE)) {
             String bDateString = userJson.getString(VKApiUserConsts.BDATE);

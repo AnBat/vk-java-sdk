@@ -9,5 +9,12 @@ import java.util.*;
  * www.batyaev.com
  */
 public class VKUserList extends ArrayList<VKUser> {
+    public VKUserList() {
+        super();
+    }
+
+    public VKUserList(int initialCapacity) {
+        super(initialCapacity);
+    }
 
 }

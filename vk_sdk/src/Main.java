@@ -2,6 +2,7 @@ import com.batiaev.vk.api.VKApi;
 import com.batiaev.vk.api.VKAuthorization;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.dataTypes.VKMessageList;
+import com.batiaev.vk.api.dataTypes.VKUserList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,7 +26,7 @@ public class Main {
         params.setValue("fields", "uid, first_name, last_name, nickname, sex, online, bdate, city, country," +
                 "timezone, photo_max_orig, rate, contacts, education");
 
-//        VKUserList friends = VKApi.friends().get(params);
+        VKUserList friends = VKApi.friends().get(params);
 //        VkLocalCache.saveFriends(friends, params.value("user_id"));
 
 //        LOG.info("=======================");

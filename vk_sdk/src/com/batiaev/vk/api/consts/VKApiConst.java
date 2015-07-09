@@ -16,4 +16,8 @@ public class VKApiConst {
     public final static String COUNT = "count";
     public final static String UNREAD = "unread";
     public final static String ITEMS = "items";
+
+    public final static String ID = "id";
+
+    public final static String TITLE = "title";
 }

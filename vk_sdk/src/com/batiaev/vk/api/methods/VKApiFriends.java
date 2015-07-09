@@ -37,8 +37,8 @@ public class VKApiFriends extends VKApiBase {
         String respond = prepareRequest(VKApiConst.GET, params).getRequest();
 
         JSONObject obj = new JSONObject(respond);
-        final JSONArray friendList = obj.getJSONArray(VKApiConst.RESPONSE);
-        VKUserList result = new VKUserList();
+        final JSONArray friendList = obj.getJSONObject(VKApiConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
+        VKUserList result = new VKUserList(obj.getJSONObject(VKApiConst.RESPONSE).getInt(VKApiConst.COUNT));
         for (int i = 0; i < friendList.length(); ++i) {
             JSONObject userJson = friendList.getJSONObject(i);
             VKUser user = VkJsonParser.parseUser(userJson);
