@@ -2,11 +2,9 @@ package com.batiaev.vk.api;
 
 import com.batiaev.vk.api.consts.VKApiConst;
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -18,10 +16,8 @@ import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URLEncoder;
 import java.util.Properties;
 
 /**
@@ -42,8 +38,6 @@ public class VKAuthorization {
 
     public VKAuthorization() {
         loadProperties();
-//        serverAuth();
-        clientAuth();
     }
 
     public static String secureCode() {
@@ -128,10 +122,6 @@ public class VKAuthorization {
     }
 
     public String clientAuth() {
-        //1. Opening OAuth Authorization Dialog
-        //2. Providing Access Permissions
-        //3. Receiving "access_token"
-
         String redirect_uri = BASE_URL + "blank.html";
         String scope = "notify,friends,photos,audio,video,docs,notes,pages,status,offers,questions,wall,groups,messages,email,notifications,stats,ads,offline";
         String display = "popup";
@@ -160,61 +150,6 @@ public class VKAuthorization {
                 e.printStackTrace();
             }
         }
-
-//        CloseableHttpClient httpclient = HttpClients.createDefault();
-//
-//        String responseBody = "";
-//        ResponseHandler<String> responseHandler = response -> {
-//            int status = response.getStatusLine().getStatusCode();
-//            System.out.println("## Respond: " + response.toString());
-//            if (status >= 200 && status < 300) {
-//                HttpEntity entity = response.getEntity();
-//                return entity != null ? EntityUtils.toString(entity) : null;
-//            } else {
-//                throw new ClientProtocolException("Unexpected response status: " + status);
-//            }
-//        };
-//
-//        HttpPost post = new HttpPost(requestUrl);
-//        String login = null;
-//        String pass = null;
-//        try {
-//            login = URLEncoder.encode(userEmail(), "UTF-8");
-//            pass = URLEncoder.encode(userPassword(), "UTF-8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        HttpResponse resp = null;
-//        try {
-//            responseBody = httpclient.execute(post, responseHandler);
-//        } catch (IOException e1) {
-//            e1.printStackTrace();
-//        }
-//        System.out.println("## Request: " + requestUrl);
-//        System.out.println("## Respond body: " + responseBody);
-//        post.abort();
-//        String tempIpH = responseBody.substring(responseBody.indexOf("ip_h") + 6);
-//        String tempLgH = responseBody.substring(responseBody.indexOf("lg_h") + 6);
-//        String tempTo = responseBody.substring(responseBody.indexOf("name=\"to\"") + 9);
-//        String ip_h = tempIpH.substring(tempIpH.indexOf("value=") + 7, tempIpH.indexOf("/>") - 2);
-//        String lg_h = tempLgH.substring(tempLgH.indexOf("value=") + 7, tempLgH.indexOf("/>") - 2);
-//        String to = tempTo.substring(tempTo.indexOf("value=") + 7, tempTo.indexOf("--\">"));
-//        //Second request
-//        String postRequest = "https://login.vk.com/?act=login&soft=1&utf8=1&_origin=oauth.vk.com"+
-//                "&ip_h"+ip_h+
-//                "&lg_h="+lg_h+
-//                "&to" + to +
-//                "&email="+login+
-//                "&pass="+pass;
-//        System.out.println(postRequest);
-//        post = new HttpPost(postRequest);
-//        try {
-//            resp = httpclient.execute(post);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println("## Respond 2 : " + resp.toString());
-//        post.abort();
         return "";
     }
 

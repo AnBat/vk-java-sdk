@@ -10,6 +10,9 @@ public class VKApiConst {
     public final static String ACCESS_TOKEN = "access_token";
     public final static String RESPONSE = "response";
     public final static String ERROR = "error";
+    public final static String ERROR_CODE = "error_code";
+    public final static String ERROR_MSG = "error_msg";
+    public final static String REQUEST_PARAMS = "request_params";
     public final static String GET = "get";
     public final static String GET_HISTORY = "getHistory";
 
@@ -20,4 +23,7 @@ public class VKApiConst {
     public final static String ID = "id";
 
     public final static String TITLE = "title";
+
+    public final static String VALUE = "value";
+    public final static String KEY = "key";
 }

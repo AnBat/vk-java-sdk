@@ -1,5 +1,6 @@
 package com.batiaev.vk.api.system;
 
+import com.batiaev.vk.api.VKError;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiUserConsts;
 import com.batiaev.vk.api.dataTypes.VKCity;
@@ -7,6 +8,7 @@ import com.batiaev.vk.api.dataTypes.VKCountry;
 import com.batiaev.vk.api.dataTypes.VKUser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
@@ -75,5 +77,17 @@ public class VkJsonParser {
             }
         }
         return user;
+    }
+
+    public static VKError parseError(JSONObject errorJson) {
+        VKError error = new VKError();
+        error.error_code = errorJson.getInt(VKApiConst.ERROR_CODE);
+        error.error_msg = errorJson.getString(VKApiConst.ERROR_MSG);
+        JSONArray requestParams = errorJson.getJSONArray(VKApiConst.REQUEST_PARAMS);
+        for (int i = 0; i < requestParams.length(); ++i) {
+            JSONObject param = requestParams.getJSONObject(i);
+            error.request_params.put(param.getString(VKApiConst.KEY), param.getString(VKApiConst.VALUE));
+        }
+        return error;
     }
 }

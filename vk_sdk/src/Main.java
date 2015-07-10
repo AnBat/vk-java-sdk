@@ -19,6 +19,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         VKAuthorization authorization = new VKAuthorization();
+        authorization.serverAuth();
+        authorization.clientAuth();
 
         VKParameters params = new VKParameters();
         params.setValue("user_id", VKAuthorization.userId());

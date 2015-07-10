@@ -1,5 +1,7 @@
 package com.batiaev.vk.api;
 
+import java.util.HashMap;
+
 /**
  * Created by anton on 19/05/15.
  * ---
@@ -7,7 +9,18 @@ package com.batiaev.vk.api;
  * www.batiaev.com
  */
 public class VKError {
-    private int error_code;
-    private String error_msg;
-    private String[] request_params;
+    public int error_code;
+    public String error_msg;
+    public HashMap<String, String> request_params;
+
+    public VKError() {
+        error_code = 0;
+        error_msg = "";
+        request_params = new HashMap<>();
+    }
+
+    @Override
+    public String toString() {
+        return error_code + " " + error_msg + " " + request_params.toString();
+    }
 }

@@ -8,6 +8,7 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKApi;
+import com.batiaev.vk.api.VKError;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.VKRequest;
 import com.batiaev.vk.api.consts.VKApiConst;
@@ -15,6 +16,7 @@ import com.batiaev.vk.api.consts.VKApiMessagesConsts;
 import com.batiaev.vk.api.dataTypes.VKMessage;
 import com.batiaev.vk.api.dataTypes.VKMessageList;
 import com.batiaev.vk.api.dataTypes.VKUserList;
+import com.batiaev.vk.api.system.VkJsonParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
@@ -116,10 +118,11 @@ public class VKApiMessages extends VKApiBase {
     public VKMessageList getHistory(VKParameters params) {
         String respond =  prepareRequest(VKApiConst.GET_HISTORY, params).getRequest();
         JSONObject obj = new JSONObject(respond);
-//        if (obj.has(VKApiConst.ERROR)) {
-//            //FIXME
-//            return new VKMessageList();
-//        }
+        if (obj.has(VKApiConst.ERROR)) {
+            VKError error = VkJsonParser.parseError(obj.getJSONObject(VKApiConst.ERROR));
+            LOG.error("## error = " + error.toString());
+            return null;
+        }
         JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
         if (respondJson.has(VKApiConst.COUNT)) {
             int messageCount = respondJson.getInt(VKApiConst.COUNT);
