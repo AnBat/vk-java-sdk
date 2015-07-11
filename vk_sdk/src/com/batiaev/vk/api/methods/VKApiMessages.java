@@ -123,19 +123,12 @@ public class VKApiMessages extends VKApiBase {
             LOG.error("## error = " + error.toString());
             return null;
         }
-        JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
-        if (respondJson.has(VKApiConst.COUNT)) {
-            int messageCount = respondJson.getInt(VKApiConst.COUNT);
-            LOG.info("Total count of messages: " + messageCount);
-        }
-        if (respondJson.has(VKApiConst.UNREAD)) {
-            int messageUnread = respondJson.getInt(VKApiConst.UNREAD);
-            LOG.info("Count of unread messages: " + messageUnread);
-        }
-        final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
         VKMessageList result = new VKMessageList();
+        JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
+        if (respondJson.has(VKApiConst.COUNT)) result.totalCount = respondJson.getInt(VKApiConst.COUNT);
+        if (respondJson.has(VKApiConst.UNREAD)) result.upreadCount = respondJson.getInt(VKApiConst.UNREAD);
 
-        HashMap<Integer, String> userCache = new HashMap<>();
+        final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
         for (int i = 2; i < messageList.length(); ++i) {
             VKMessage message = new VKMessage();
             JSONObject messageJson = messageList.getJSONObject(i);
@@ -158,19 +151,6 @@ public class VKApiMessages extends VKApiBase {
                 message.emoji = messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1;
 
             result.add(message);
-
-            //get user by ID
-            if (!userCache.containsKey(message.user_id)) {
-                VKParameters userParams = new VKParameters();
-                userParams.setValue("user_id", message.user_id);
-                userParams.setValue("fields", "first_name, last_name");
-                VKUserList users = VKApi.users().get(userParams);
-
-                userCache.put(message.user_id, users.get(0).fullName());
-            }
-
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            LOG.info(userCache.get(message.user_id) + " " + dateFormat.format(message.date) + " " + message.body);
         }
         return result;
     }

@@ -10,4 +10,6 @@ import java.util.ArrayList;
  * www.batiaev.com
  */
 public class VKMessageList extends ArrayList<VKMessage> {
+    public int totalCount = 0;
+    public int upreadCount = 0;
 }

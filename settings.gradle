@@ -1,2 +1,1 @@
-include ':vk_sdk'
-include ':test_app'
+include ':vk_sdk', ':test_app'
