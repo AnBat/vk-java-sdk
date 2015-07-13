@@ -43,19 +43,27 @@ public class VKApiMessages extends VKApiBase {
     public VKMessageList get(VKParameters params) {
         String respond =  prepareRequest(VKApiConst.GET, params).getRequest();
         JSONObject obj = new JSONObject(respond);
-        final JSONArray messageList = obj.getJSONArray(VKApiConst.RESPONSE);
+        if (obj.has(VKApiConst.ERROR)) {
+            VKError error = VkJsonParser.parseError(obj.getJSONObject(VKApiConst.ERROR));
+            LOG.error("## error = " + error.toString());
+            return null;
+        }
         VKMessageList result = new VKMessageList();
-        int messageCount = messageList.getInt(0);
-        LOG.info("Total count of messages: " + messageCount);
+        JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
+        if (respondJson.has(VKApiConst.COUNT)) result.totalCount = respondJson.getInt(VKApiConst.COUNT);
+        if (respondJson.has(VKApiConst.UNREAD)) result.upreadCount = respondJson.getInt(VKApiConst.UNREAD);
+
+        final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
+
         HashMap<Integer, String> userCache = new HashMap<>();
-        for (int i = 1; i < messageList.length(); ++i) {
+        for (int i = 0; i < messageList.length(); ++i) {
             VKMessage message = new VKMessage();
             JSONObject messageJson = messageList.getJSONObject(i);
 
-            if (messageJson.has(VKApiMessagesConsts.MID))
-                message.id = messageJson.getInt(VKApiMessagesConsts.MID);
-            if (messageJson.has(VKApiMessagesConsts.UID))
-                message.user_id = messageJson.getInt(VKApiMessagesConsts.UID);
+            if (messageJson.has(VKApiMessagesConsts.ID))
+                message.id = messageJson.getInt(VKApiMessagesConsts.ID);
+            if (messageJson.has(VKApiMessagesConsts.USER_ID))
+                message.user_id = messageJson.getInt(VKApiMessagesConsts.USER_ID);
             if (messageJson.has(VKApiMessagesConsts.DATE))
                 message.date = new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000);
             if (messageJson.has(VKApiMessagesConsts.BODY))
@@ -70,7 +78,7 @@ public class VKApiMessages extends VKApiBase {
                 userParams.setValue("fields", "first_name, last_name");
                 VKUserList users = VKApi.users().get(userParams);
 
-                userCache.put(message.user_id, users.get(0).fullName());
+                if (users.size() > 0) userCache.put(message.user_id, users.get(0).fullName());
             }
 
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -129,7 +137,7 @@ public class VKApiMessages extends VKApiBase {
         if (respondJson.has(VKApiConst.UNREAD)) result.upreadCount = respondJson.getInt(VKApiConst.UNREAD);
 
         final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
-        for (int i = 2; i < messageList.length(); ++i) {
+        for (int i = 0; i < messageList.length(); ++i) {
             VKMessage message = new VKMessage();
             JSONObject messageJson = messageList.getJSONObject(i);
 

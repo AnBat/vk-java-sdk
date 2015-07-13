@@ -1,6 +1,8 @@
 import com.batiaev.vk.api.VKApi;
 import com.batiaev.vk.api.VKAuthorization;
 import com.batiaev.vk.api.VKParameters;
+import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VkApiMessagesParams;
 import com.batiaev.vk.api.dataTypes.VKMessage;
 import com.batiaev.vk.api.dataTypes.VKMessageList;
 import com.batiaev.vk.api.dataTypes.VKUserList;
@@ -26,9 +28,9 @@ public class Main {
         authorization.clientAuth();
 
         VKParameters parameters = new VKParameters();
-        parameters.setValue("count", 20);
-        parameters.setValue("user_id", "8475109");
-        parameters.setValue("access_token", VKAuthorization.accessToken());
+        parameters.setValue(VkApiMessagesParams.COUNT, 20);
+        parameters.setValue(VkApiMessagesParams.USER_ID, "8475109");
+        parameters.setValue(VKApiConst.ACCESS_TOKEN, VKAuthorization.accessToken());
         VKMessageList messages = VKApi.messages().getHistory(parameters);
         LOG.info("Total count of messages: " + messages.totalCount);
         LOG.info("Count of unread messages: " + messages.upreadCount);
