@@ -231,6 +231,10 @@ public class VKUser implements Serializable {
         this.hidden = hidden;
     }
 
+    public void setHidden(int hidden) {
+        this.hidden = hidden == 1;
+    }
+
     public boolean isVerified() {
         return verified;
     }
@@ -239,12 +243,20 @@ public class VKUser implements Serializable {
         this.verified = verified;
     }
 
+    public void setVerified(int verified) {
+        this.verified = verified ==1 ;
+    }
+
     public boolean isBlacklisted() {
         return blacklisted;
     }
 
     public void setBlacklisted(boolean blacklisted) {
         this.blacklisted = blacklisted;
+    }
+
+    public void setBlacklisted(int blacklisted) {
+        this.blacklisted = blacklisted == 1;
     }
 
     public String sex() {
@@ -393,6 +405,10 @@ public class VKUser implements Serializable {
 
     public void setOnline(boolean online) {
         this.online = online;
+    }
+
+    public void setOnline(int online) {
+        this.online = online == 1;
     }
 
     public boolean isOnlineMobile() {

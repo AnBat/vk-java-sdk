@@ -39,14 +39,34 @@ public class VkJsonParser {
             user.setFirstName(userJson.getString(VKApiUserConsts.FIRST_NAME));
         if (userJson.has(VKApiUserConsts.LAST_NAME))
             user.setLastName(userJson.getString(VKApiUserConsts.LAST_NAME));
+        if (userJson.has(VKApiUserConsts.DEACTIVATED))
+            user.setDeactivated(userJson.getInt(VKApiUserConsts.DEACTIVATED));
+        if (userJson.has(VKApiUserConsts.HIDDEN))
+            user.setHidden(userJson.getInt(VKApiUserConsts.HIDDEN));
+        if (userJson.has(VKApiUserConsts.VERIFIED))
+            user.setVerified(userJson.getInt(VKApiUserConsts.VERIFIED));
+        if (userJson.has(VKApiUserConsts.BLACKLISTED))
+            user.setBlacklisted(userJson.getInt(VKApiUserConsts.BLACKLISTED));
         if (userJson.has(VKApiUserConsts.SEX))
             user.setSex(userJson.getInt(VKApiUserConsts.SEX));
         if (userJson.has(VKApiUserConsts.NICKNAME))
             user.setNickname(userJson.getString(VKApiUserConsts.NICKNAME));
+        if (userJson.has(VKApiUserConsts.PHOTO_50))
+            user.setPhoto50(userJson.getString(VKApiUserConsts.PHOTO_50));
+        if (userJson.has(VKApiUserConsts.PHOTO_100))
+            user.setPhoto100(userJson.getString(VKApiUserConsts.PHOTO_100));
+        if (userJson.has(VKApiUserConsts.PHOTO_200))
+            user.setPhoto200(userJson.getString(VKApiUserConsts.PHOTO_200));
+        if (userJson.has(VKApiUserConsts.PHOTO_200_ORIG))
+            user.setPhoto200orig(userJson.getString(VKApiUserConsts.PHOTO_200_ORIG));
+        if (userJson.has(VKApiUserConsts.PHOTO_400_ORIG))
+            user.setPhoto400orig(userJson.getString(VKApiUserConsts.PHOTO_400_ORIG));
+        if (userJson.has(VKApiUserConsts.PHOTO_MAX))
+            user.setPhotoMax(userJson.getString(VKApiUserConsts.PHOTO_MAX));
         if (userJson.has(VKApiUserConsts.PHOTO_MAX_ORIG))
             user.setPhotoMaxOrig(userJson.getString(VKApiUserConsts.PHOTO_MAX_ORIG));
         if (userJson.has(VKApiUserConsts.ONLINE))
-            user.setOnline(userJson.getInt(VKApiUserConsts.ONLINE) == 1);
+            user.setOnline(userJson.getInt(VKApiUserConsts.ONLINE));
         if (userJson.has(VKApiUserConsts.CITY)) {
             JSONObject cityJson = userJson.getJSONObject(VKApiUserConsts.CITY);
             VKCity city = new VKCity();
