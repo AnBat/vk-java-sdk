@@ -2,9 +2,11 @@ package com.batiaev.vk.api.system;
 
 import com.batiaev.vk.api.VKError;
 import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiMessagesConsts;
 import com.batiaev.vk.api.consts.VKApiUserConsts;
 import com.batiaev.vk.api.dataTypes.VKCity;
 import com.batiaev.vk.api.dataTypes.VKCountry;
+import com.batiaev.vk.api.dataTypes.VKMessage;
 import com.batiaev.vk.api.dataTypes.VKUser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,6 +17,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -77,6 +80,30 @@ public class VkJsonParser {
             }
         }
         return user;
+    }
+
+    public static VKMessage parseMessage(JSONObject messageJson) {
+        VKMessage message = new VKMessage();
+
+        if (messageJson.has(VKApiMessagesConsts.ID))
+            message.id = messageJson.getInt(VKApiMessagesConsts.ID);
+        if (messageJson.has(VKApiMessagesConsts.USER_ID))
+            message.user_id = messageJson.getInt(VKApiMessagesConsts.USER_ID);
+        if (messageJson.has(VKApiMessagesConsts.FROM_ID))
+            message.user_id = messageJson.getInt(VKApiMessagesConsts.FROM_ID);
+        if (messageJson.has(VKApiMessagesConsts.OUT))
+            message.out = messageJson.getInt(VKApiMessagesConsts.OUT) == 1;
+        if (messageJson.has(VKApiMessagesConsts.READ_STATE))
+            message.read_state = messageJson.getInt(VKApiMessagesConsts.READ_STATE) == 1;
+        if (messageJson.has(VKApiMessagesConsts.TITLE))
+            message.title = messageJson.getString(VKApiMessagesConsts.TITLE);
+        if (messageJson.has(VKApiMessagesConsts.DATE))
+            message.date = new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000);
+        if (messageJson.has(VKApiMessagesConsts.BODY))
+            message.body = messageJson.getString(VKApiMessagesConsts.BODY);
+        if (messageJson.has(VKApiMessagesConsts.EMOJI))
+            message.emoji = messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1;
+        return message;
     }
 
     public static VKError parseError(JSONObject errorJson) {

@@ -57,18 +57,7 @@ public class VKApiMessages extends VKApiBase {
 
         HashMap<Integer, String> userCache = new HashMap<>();
         for (int i = 0; i < messageList.length(); ++i) {
-            VKMessage message = new VKMessage();
-            JSONObject messageJson = messageList.getJSONObject(i);
-
-            if (messageJson.has(VKApiMessagesConsts.ID))
-                message.id = messageJson.getInt(VKApiMessagesConsts.ID);
-            if (messageJson.has(VKApiMessagesConsts.USER_ID))
-                message.user_id = messageJson.getInt(VKApiMessagesConsts.USER_ID);
-            if (messageJson.has(VKApiMessagesConsts.DATE))
-                message.date = new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000);
-            if (messageJson.has(VKApiMessagesConsts.BODY))
-                message.body = messageJson.getString(VKApiMessagesConsts.BODY);
-
+            VKMessage message = VkJsonParser.parseMessage(messageList.getJSONObject(i));
             result.add(message);
 
             //get user by ID
@@ -138,26 +127,7 @@ public class VKApiMessages extends VKApiBase {
 
         final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
         for (int i = 0; i < messageList.length(); ++i) {
-            VKMessage message = new VKMessage();
-            JSONObject messageJson = messageList.getJSONObject(i);
-
-            if (messageJson.has(VKApiMessagesConsts.ID))
-                message.id = messageJson.getInt(VKApiMessagesConsts.ID);
-//            if (messageJson.has(VKApiMessagesConsts.USER_ID))
-//                message.user_id = messageJson.getInt(VKApiMessagesConsts.USER_ID);
-            if (messageJson.has(VKApiMessagesConsts.FROM_ID))
-                message.user_id = messageJson.getInt(VKApiMessagesConsts.FROM_ID);
-            if (messageJson.has(VKApiMessagesConsts.DATE))
-                message.date = new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000);
-            if (messageJson.has(VKApiMessagesConsts.BODY))
-                message.body = messageJson.getString(VKApiMessagesConsts.BODY);
-            if (messageJson.has(VKApiMessagesConsts.READ_STATE))
-                message.read_state = messageJson.getInt(VKApiMessagesConsts.READ_STATE) == 1;
-            if (messageJson.has(VKApiMessagesConsts.OUT))
-                message.out = messageJson.getInt(VKApiMessagesConsts.OUT) == 1;
-            if (messageJson.has(VKApiMessagesConsts.EMOJI))
-                message.emoji = messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1;
-
+            VKMessage message = VkJsonParser.parseMessage(messageList.getJSONObject(i));
             result.add(message);
         }
         return result;
