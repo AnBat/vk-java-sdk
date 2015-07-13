@@ -69,9 +69,6 @@ public class VKApiMessages extends VKApiBase {
 
                 if (users.size() > 0) userCache.put(message.user_id, users.get(0).fullName());
             }
-
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            LOG.info(userCache.get(message.user_id) + " " + dateFormat.format(message.date) + " " + message.body);
         }
         return result;
     }
