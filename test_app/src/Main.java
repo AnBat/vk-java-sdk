@@ -23,15 +23,16 @@ public class Main {
     private static final Logger LOG = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws IOException {
-        VKAuthorization authorization = new VKAuthorization();
+        VKAuthorization.loadProperties();
 //        authorization.serverAuth();
-        authorization.clientAuth();
+//        authorization.clientAuth();
 
         VKParameters parameters = new VKParameters();
         parameters.setValue(VkApiMessagesParams.COUNT, 20);
         parameters.setValue(VkApiMessagesParams.USER_ID, "8475109");
         parameters.setValue(VKApiConst.ACCESS_TOKEN, VKAuthorization.accessToken());
         VKMessageList messages = VKApi.messages().getHistory(parameters);
+
         LOG.info("Total count of messages: " + messages.totalCount);
         LOG.info("Count of unread messages: " + messages.upreadCount);
         HashMap<Integer, String> userCache = new HashMap<>();

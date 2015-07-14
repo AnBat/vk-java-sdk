@@ -13,12 +13,14 @@ import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
 import java.awt.*;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.attribute.PosixFilePermission;
+import java.util.HashSet;
 import java.util.Properties;
+import java.util.Set;
 
 /**
  * @author batiaev
@@ -37,7 +39,6 @@ public class VKAuthorization {
     private static String vk_access_token = "";
 
     public VKAuthorization() {
-        loadProperties();
     }
 
     public static String secureCode() {
@@ -153,16 +154,50 @@ public class VKAuthorization {
         return "";
     }
 
-    public void loadProperties() {
+    public static void loadProperties() {
 
         Properties prop = new Properties();
         String propFileName = "secure.properties";
 
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
+        String propPath = System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator + propFileName;
+        File file = new File(propPath);
+        if (!file.exists()) {
+            LOG.error("Property file '" + propPath + "' not found.");
+            return;
+        }
 
         try {
-            if (inputStream != null) prop.load(inputStream);
-            else throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
+            Set<PosixFilePermission> perms = Files.getPosixFilePermissions(file.toPath());
+            if (perms != null) {
+                if (perms.contains(PosixFilePermission.GROUP_READ))
+                    LOG.error("Wrong permissions for file '" + propPath + "'. It is group readable!");
+                if (perms.contains(PosixFilePermission.GROUP_WRITE))
+                    LOG.error("Wrong permissions for file '" + propPath + "'. It is group writable!");
+                if (perms.contains(PosixFilePermission.GROUP_EXECUTE))
+                    LOG.error("Wrong permissions for file '" + propPath + "'. It is group executable!");
+                if (perms.contains(PosixFilePermission.OTHERS_READ))
+                    LOG.error("Wrong permissions for file '" + propPath + "'. It is others readable!");
+                if (perms.contains(PosixFilePermission.OTHERS_WRITE))
+                    LOG.error("Wrong permissions for file '" + propPath + "'. It is others writable!");
+                if (perms.contains(PosixFilePermission.OTHERS_EXECUTE))
+                    LOG.error("Wrong permissions for file '" + propPath + "'. It is others executable!");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //set correct permissions
+        Set<PosixFilePermission> permissions = new HashSet<>();
+        permissions.add(PosixFilePermission.OWNER_READ);
+        try {
+            Files.setPosixFilePermissions(file.toPath(), permissions);
+            LOG.info("Setup 400 permissions for file " + propPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            prop.load(new FileInputStream(propPath));
         } catch (IOException e) {
             e.printStackTrace();
         }

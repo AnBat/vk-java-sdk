@@ -21,6 +21,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -55,20 +56,9 @@ public class VKApiMessages extends VKApiBase {
 
         final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
 
-        HashMap<Integer, String> userCache = new HashMap<>();
         for (int i = 0; i < messageList.length(); ++i) {
             VKMessage message = VkJsonParser.parseMessage(messageList.getJSONObject(i));
             result.add(message);
-
-            //get user by ID
-            if (!userCache.containsKey(message.user_id)) {
-                VKParameters userParams = new VKParameters();
-                userParams.setValue("user_id", message.user_id);
-                userParams.setValue("fields", "first_name, last_name");
-                VKUserList users = VKApi.users().get(userParams);
-
-                if (users.size() > 0) userCache.put(message.user_id, users.get(0).fullName());
-            }
         }
         return result;
     }
