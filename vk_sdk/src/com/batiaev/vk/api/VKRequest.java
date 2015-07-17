@@ -23,20 +23,11 @@ public class VKRequest {
 
     private static final Logger LOG = LogManager.getLogger(VKRequest.class);
     //    https://api.vk.com/method/METHOD_NAME?PARAMETERS&access_token=ACCESS_TOKEN
-    public String access_token;
     public String method_name;
     public String parameters;
     public final static String BASE_URL = "https://api.vk.com/method/";
     public final static String ACCESS_TOKEN_URL = "https://oauth.vk.com/access_token?";
     public final static String AUTH_URL = "https://oauth.vk.com/authorize?";
-
-    /**
-     *
-     * @param accessToken string for access to vk.com server
-     */
-    public void setAccessToken(String accessToken) {
-        access_token = accessToken;
-    }
 
     public void setMethodName(String methodName) {
         method_name = methodName;

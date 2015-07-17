@@ -22,7 +22,7 @@ public class Main {
                 " - friends.get()\n" +
                 " - users.get()\n" +
                 "\n" +
-                "Another methods return string with JSON respond" +
+                "Another methods return string with JSON respond\n" +
                 "==========");
     }
 }

@@ -7,6 +7,7 @@ package com.batiaev.vk.api.methods;
  * www.batyaev.com
  */
 
+import com.batiaev.vk.api.VKError;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.VKRequest;
 import com.batiaev.vk.api.consts.VKApiConst;
@@ -37,6 +38,12 @@ public class VKApiFriends extends VKApiBase {
         String respond = prepareRequest(VKApiConst.GET, params).getRequest();
 
         JSONObject obj = new JSONObject(respond);
+        if (obj.has(VKApiConst.ERROR)) {
+            VKError error = VkJsonParser.parseError(obj.getJSONObject(VKApiConst.ERROR));
+            LOG.error("## error = " + error.toString());
+            return null;
+        }
+
         final JSONArray friendList = obj.getJSONObject(VKApiConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
         VKUserList result = new VKUserList(obj.getJSONObject(VKApiConst.RESPONSE).getInt(VKApiConst.COUNT));
         for (int i = 0; i < friendList.length(); ++i) {
@@ -80,8 +87,25 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest getRequests(VKParameters params) {
-        return prepareRequest("getRequests", params);
+    public VKUserList getRequests(VKParameters params) {
+
+        String respond = prepareRequest("getRequests", params).getRequest();
+
+        JSONObject obj = new JSONObject(respond);
+        if (obj.has(VKApiConst.ERROR)) {
+            VKError error = VkJsonParser.parseError(obj.getJSONObject(VKApiConst.ERROR));
+            LOG.error("## error = " + error.toString());
+            return null;
+        }
+
+        final JSONArray friendList = obj.getJSONObject(VKApiConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
+        VKUserList result = new VKUserList(obj.getJSONObject(VKApiConst.RESPONSE).getInt(VKApiConst.COUNT));
+        for (int i = 0; i < friendList.length(); ++i) {
+            JSONObject userJson = friendList.getJSONObject(i);
+            VKUser user = VkJsonParser.parseUser(userJson);
+            result.add(user);
+        }
+        return result;
     }
 
     /**

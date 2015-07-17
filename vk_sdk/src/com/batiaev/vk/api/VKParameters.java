@@ -1,5 +1,7 @@
 package com.batiaev.vk.api;
 
+import com.batiaev.vk.api.consts.VKApiConst;
+
 import java.util.HashMap;
 
 /**
@@ -15,6 +17,7 @@ public class VKParameters {
     public VKParameters() {
         values.put("v", VKApiVersion.v5_34);
         values.put("lang", VKApiLang.en);
+        values.put(VKApiConst.ACCESS_TOKEN, VKAuthorization.accessToken());
 //        values.put("test_mode", "1");
     }
     public void setValue(String key, String value) {

@@ -24,15 +24,17 @@ public class Main {
     private static final Logger LOG = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws IOException {
+
         VKAuthorization.loadProperties();
         VkLocalCache.load();
 //        authorization.serverAuth();
 //        authorization.clientAuth();
 
+        LOG.error("## " + VKApi.friends().getRequests(new VKParameters()).size());
+
         VKParameters parameters = new VKParameters();
         parameters.setValue(VkApiMessagesParams.COUNT, 20);
         parameters.setValue(VkApiMessagesParams.USER_ID, "8475109");
-        parameters.setValue(VKApiConst.ACCESS_TOKEN, VKAuthorization.accessToken());
         VKMessageList messages = VKApi.messages().getHistory(parameters);
 
         LOG.info("Total count of messages: " + messages.totalCount);
