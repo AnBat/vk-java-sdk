@@ -1,14 +1,14 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 17/04/15.
+ * @author batiaev
+ * Created by batiaev on 17/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batyaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
  * Builds requests for API.notifications part
@@ -22,8 +22,8 @@ public class VKApiNotifications extends VKApiBase {
      *
      * You need the following rights to call this method: notifications.
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
     
     /**
@@ -31,8 +31,8 @@ public class VKApiNotifications extends VKApiBase {
      *
      * You need the following rights to call this method: notifications.
      */
-    public VKRequest markAsViewed(VKParameters params) {
-        return prepareRequest("markAsViewed", params);
+    public String markAsViewed(VKParameters params) {
+        return prepareRequest("markAsViewed", params).getRequest();
     }
 
     @Override

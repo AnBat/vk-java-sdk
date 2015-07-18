@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.secure part
  * 
  * https://vk.com/dev/secure
@@ -23,8 +24,8 @@ public class VKApiSecure extends VKApiBase {
      * This is a server method. It may only be called from your server.
      * This method doesn't require any specific rights.
      */
-    public VKRequest getAppBalance(VKParameters params) {
-        return prepareRequest("getAppBalance", params);
+    public String getAppBalance(VKParameters params) {
+        return prepareRequest("getAppBalance", params).getRequest();
     }
 
     /**
@@ -33,8 +34,8 @@ public class VKApiSecure extends VKApiBase {
      * This is a server method. It may only be called from your server.
      * This method doesn't require any specific rights.
      */
-    public VKRequest getTransactionsHistory(VKParameters params) {
-        return prepareRequest("getTransactionsHistory", params);
+    public String getTransactionsHistory(VKParameters params) {
+        return prepareRequest("getTransactionsHistory", params).getRequest();
     }
 
     /**
@@ -43,8 +44,8 @@ public class VKApiSecure extends VKApiBase {
      * This is a server method. It may only be called from your server.
      * This method doesn't require any specific rights.
      */
-    public VKRequest getSMSHistory(VKParameters params) {
-        return prepareRequest("getSMSHistory", params);
+    public String getSMSHistory(VKParameters params) {
+        return prepareRequest("getSMSHistory", params).getRequest();
     }
 
     /**
@@ -53,8 +54,8 @@ public class VKApiSecure extends VKApiBase {
      * This is a server method. It may only be called from your server.
      * This method doesn't require any specific rights.
      */
-    public VKRequest sendSMSNotification(VKParameters params) {
-        return prepareRequest("sendSMSNotification", params);
+    public String sendSMSNotification(VKParameters params) {
+        return prepareRequest("sendSMSNotification", params).getRequest();
     }
 
     /**
@@ -63,8 +64,8 @@ public class VKApiSecure extends VKApiBase {
      * This is a server method. It may only be called from your server.
      * This method doesn't require any specific rights.
      */
-    public VKRequest sendNotification(VKParameters params) {
-        return prepareRequest("sendNotification", params);
+    public String sendNotification(VKParameters params) {
+        return prepareRequest("sendNotification", params).getRequest();
     }
 
     /**
@@ -73,8 +74,8 @@ public class VKApiSecure extends VKApiBase {
      * This is a server method. It may only be called from your server.
      * This method doesn't require any specific rights.
      */
-    public VKRequest setCounter(VKParameters params) {
-        return prepareRequest("setCounter", params);
+    public String setCounter(VKParameters params) {
+        return prepareRequest("setCounter", params).getRequest();
     }
 
     /**
@@ -83,8 +84,8 @@ public class VKApiSecure extends VKApiBase {
      * This is a server method. It may only be called from your server.
      * This method doesn't require any specific rights.
      */
-    public VKRequest setUserLevel(VKParameters params) {
-        return prepareRequest("setUserLevel", params);
+    public String setUserLevel(VKParameters params) {
+        return prepareRequest("setUserLevel", params).getRequest();
     }
 
     /**
@@ -93,8 +94,8 @@ public class VKApiSecure extends VKApiBase {
      * This is a server method. It may only be called from your server.
      * This method doesn't require any specific rights.
      */
-    public VKRequest getUserLevel(VKParameters params) {
-        return prepareRequest("getUserLevel", params);
+    public String getUserLevel(VKParameters params) {
+        return prepareRequest("getUserLevel", params).getRequest();
     }
 
     /**
@@ -103,8 +104,8 @@ public class VKApiSecure extends VKApiBase {
      * This is a server method. It may only be called from your server.
      * This method doesn't require any specific rights.
      */
-    public VKRequest checkToken(VKParameters params) {
-        return prepareRequest("checkToken", params);
+    public String checkToken(VKParameters params) {
+        return prepareRequest("checkToken", params).getRequest();
     }
 
     @Override

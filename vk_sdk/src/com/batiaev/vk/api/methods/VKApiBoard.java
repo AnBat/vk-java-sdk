@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.board part
  * 
  * https://vk.com/dev/board
@@ -22,8 +23,8 @@ public class VKApiBoard extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getTopics(VKParameters params) {
-        return prepareRequest("getTopics", params);
+    public String getTopics(VKParameters params) {
+        return prepareRequest("getTopics", params).getRequest();
     }
 
     /**
@@ -31,8 +32,8 @@ public class VKApiBoard extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getComments(VKParameters params) {
-        return prepareRequest("getComments", params);
+    public String getComments(VKParameters params) {
+        return prepareRequest("getComments", params).getRequest();
     }
 
     /**
@@ -41,8 +42,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest addTopic(VKParameters params) {
-        return prepareRequest("addTopic", params);
+    public String addTopic(VKParameters params) {
+        return prepareRequest("addTopic", params).getRequest();
     }
 
     /**
@@ -51,8 +52,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest addComment(VKParameters params) {
-        return prepareRequest("addComment", params);
+    public String addComment(VKParameters params) {
+        return prepareRequest("addComment", params).getRequest();
     }
 
     /**
@@ -61,8 +62,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest deleteTopic(VKParameters params) {
-        return prepareRequest("deleteTopic", params);
+    public String deleteTopic(VKParameters params) {
+        return prepareRequest("deleteTopic", params).getRequest();
     }
 
     /**
@@ -71,8 +72,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest editTopic(VKParameters params) {
-        return prepareRequest("editTopic", params);
+    public String editTopic(VKParameters params) {
+        return prepareRequest("editTopic", params).getRequest();
     }
 
     /**
@@ -81,8 +82,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest editComment(VKParameters params) {
-        return prepareRequest("editComment", params);
+    public String editComment(VKParameters params) {
+        return prepareRequest("editComment", params).getRequest();
     }
 
     /**
@@ -91,8 +92,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest restoreComment(VKParameters params) {
-        return prepareRequest("restoreComment", params);
+    public String restoreComment(VKParameters params) {
+        return prepareRequest("restoreComment", params).getRequest();
     }
 
     /**
@@ -101,8 +102,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest deleteComment(VKParameters params) {
-        return prepareRequest("deleteComment", params);
+    public String deleteComment(VKParameters params) {
+        return prepareRequest("deleteComment", params).getRequest();
     }
 
     /**
@@ -111,8 +112,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest openTopic(VKParameters params) {
-        return prepareRequest("openTopic", params);
+    public String openTopic(VKParameters params) {
+        return prepareRequest("openTopic", params).getRequest();
     }
 
     /**
@@ -121,8 +122,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest closeTopic(VKParameters params) {
-        return prepareRequest("closeTopic", params);
+    public String closeTopic(VKParameters params) {
+        return prepareRequest("closeTopic", params).getRequest();
     }
 
     /**
@@ -131,8 +132,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest fixTopic(VKParameters params) {
-        return prepareRequest("fixTopic", params);
+    public String fixTopic(VKParameters params) {
+        return prepareRequest("fixTopic", params).getRequest();
     }
 
     /**
@@ -141,8 +142,8 @@ public class VKApiBoard extends VKApiBase {
      * You need the following rights to call this method: groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest unfixTopic(VKParameters params) {
-        return prepareRequest("unfixTopic", params);
+    public String unfixTopic(VKParameters params) {
+        return prepareRequest("unfixTopic", params).getRequest();
     }
 
     @Override

@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.utils part
  * 
  * https://vk.com/dev/utils
@@ -22,8 +23,8 @@ public class VKApiUtils extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest checkLink(VKParameters params) {
-        return prepareRequest("checkLink", params);
+    public String checkLink(VKParameters params) {
+        return prepareRequest("checkLink", params).getRequest();
     }
     
     /**
@@ -31,8 +32,8 @@ public class VKApiUtils extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest resolveScreenName(VKParameters params) {
-        return prepareRequest("resolveScreenName", params);
+    public String resolveScreenName(VKParameters params) {
+        return prepareRequest("resolveScreenName", params).getRequest();
     }
 
     /**
@@ -40,8 +41,8 @@ public class VKApiUtils extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getServerTime(VKParameters params) {
-        return prepareRequest("getServerTime", params);
+    public String getServerTime(VKParameters params) {
+        return prepareRequest("getServerTime", params).getRequest();
     }
 
     @Override

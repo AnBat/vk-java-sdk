@@ -1,14 +1,14 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 17/04/15.
+ * @author batiaev
+ * Created by batiaev on 17/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batyaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
  * Builds requests for API.notes part
@@ -22,8 +22,8 @@ public class VKApiNotes extends VKApiBase {
      *
      * You need the following rights to call this method: notes.
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
     
     /**
@@ -31,8 +31,8 @@ public class VKApiNotes extends VKApiBase {
      *
      * You need the following rights to call this method: notes.
      */
-    public VKRequest getById(VKParameters params) {
-        return prepareRequest("getById", params);
+    public String getById(VKParameters params) {
+        return prepareRequest("getById", params).getRequest();
     }
     
     /**
@@ -40,8 +40,8 @@ public class VKApiNotes extends VKApiBase {
      *
      * You need the following rights to call this method: notes.
      */
-    public VKRequest getFriendsNotes(VKParameters params) {
-        return prepareRequest("getFriendsNotes", params);
+    public String getFriendsNotes(VKParameters params) {
+        return prepareRequest("getFriendsNotes", params).getRequest();
     }
     
     /**
@@ -49,8 +49,8 @@ public class VKApiNotes extends VKApiBase {
      *
      * You need the following rights to call this method: notes.
      */
-    public VKRequest add(VKParameters params) {
-        return prepareRequest("add", params);
+    public String add(VKParameters params) {
+        return prepareRequest("add", params).getRequest();
     }
 
     /**
@@ -58,8 +58,8 @@ public class VKApiNotes extends VKApiBase {
      *
      * You need the following rights to call this method: notes.
      */
-    public VKRequest edit(VKParameters params) {
-        return prepareRequest("edit", params);
+    public String edit(VKParameters params) {
+        return prepareRequest("edit", params).getRequest();
     }
 
     /**
@@ -67,8 +67,8 @@ public class VKApiNotes extends VKApiBase {
      *
      * You need the following rights to call this method: notes.
      */
-    public VKRequest delete(VKParameters params) {
-        return prepareRequest("delete", params);
+    public String delete(VKParameters params) {
+        return prepareRequest("delete", params).getRequest();
     }
 
     /**
@@ -76,8 +76,8 @@ public class VKApiNotes extends VKApiBase {
      *
      * You need the following rights to call this method: notes.
      */
-    public VKRequest getComments(VKParameters params) {
-        return prepareRequest("getComments", params);
+    public String getComments(VKParameters params) {
+        return prepareRequest("getComments", params).getRequest();
     }
 
     /**
@@ -86,8 +86,8 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      * This method is available only to standalone-applications.
      */
-    public VKRequest createComment(VKParameters params) {
-        return prepareRequest("createComment", params);
+    public String createComment(VKParameters params) {
+        return prepareRequest("createComment", params).getRequest();
     }
 
     /**
@@ -96,8 +96,8 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      * This method is available only to standalone-applications.
      */
-    public VKRequest editComment(VKParameters params) {
-        return prepareRequest("editComment", params);
+    public String editComment(VKParameters params) {
+        return prepareRequest("editComment", params).getRequest();
     }
 
     /**
@@ -106,8 +106,8 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      * This method is available only to standalone-applications.
      */
-    public VKRequest deleteComment(VKParameters params) {
-        return prepareRequest("deleteComment", params);
+    public String deleteComment(VKParameters params) {
+        return prepareRequest("deleteComment", params).getRequest();
     }
 
     /**
@@ -116,8 +116,8 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      * This method is available only to standalone-applications.
      */
-    public VKRequest restoreComment(VKParameters params) {
-        return prepareRequest("restoreComment", params);
+    public String restoreComment(VKParameters params) {
+        return prepareRequest("restoreComment", params).getRequest();
     }
 
     @Override

@@ -18,6 +18,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
@@ -165,9 +166,9 @@ public class VKAuthorization {
             LOG.error("Property file '" + propPath + "' not found.");
             return;
         }
-
+        Set<PosixFilePermission> perms = null;
         try {
-            Set<PosixFilePermission> perms = Files.getPosixFilePermissions(file.toPath());
+            perms = Files.getPosixFilePermissions(file.toPath());
             if (perms != null) {
                 if (perms.contains(PosixFilePermission.GROUP_READ))
                     LOG.error("Wrong permissions for file '" + propPath + "'. It is group readable!");
@@ -187,13 +188,13 @@ public class VKAuthorization {
         }
 
         //set correct permissions
-        Set<PosixFilePermission> permissions = new HashSet<>();
-        permissions.add(PosixFilePermission.OWNER_READ);
-        try {
-            Files.setPosixFilePermissions(file.toPath(), permissions);
-            LOG.info("Setup 400 permissions for file " + propPath);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (perms != null && !PosixFilePermissions.toString(perms).equals("r--------")) {
+            try {
+                Files.setPosixFilePermissions(file.toPath(), PosixFilePermissions.fromString("r--------"));
+                LOG.info("Setup 400 permissions for file " + propPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         try {

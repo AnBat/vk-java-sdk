@@ -1,14 +1,14 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 15/04/15.
+ * @author batiaev
+ * Created by batiaev on 15/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batyaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
  * Builds requests for API.newsfeed part
@@ -22,8 +22,8 @@ public class VKApiNews extends VKApiBase {
      *
      * You need the following rights to call this method: wall and friends. 
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
 	
     /**
@@ -31,8 +31,8 @@ public class VKApiNews extends VKApiBase {
      *
      * You need the following rights to call this method: wall and friends. 
      */
-    public VKRequest getRecommended(VKParameters params) {
-        return prepareRequest("getRecommended", params);
+    public String getRecommended(VKParameters params) {
+        return prepareRequest("getRecommended", params).getRequest();
     }
 	
     /**
@@ -41,8 +41,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getComments(VKParameters params) {
-        return prepareRequest("getComments", params);
+    public String getComments(VKParameters params) {
+        return prepareRequest("getComments", params).getRequest();
     }
 	
     /**
@@ -50,8 +50,8 @@ public class VKApiNews extends VKApiBase {
      *
      * You need the following rights to call this method: wall.
      */
-    public VKRequest getMentions(VKParameters params) {
-        return prepareRequest("getMentions", params);
+    public String getMentions(VKParameters params) {
+        return prepareRequest("getMentions", params).getRequest();
     }
 	
     /**
@@ -60,8 +60,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getBanned(VKParameters params) {
-        return prepareRequest("getBanned", params);
+    public String getBanned(VKParameters params) {
+        return prepareRequest("getBanned", params).getRequest();
     }
 	
     /**
@@ -70,8 +70,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.  
      */
-    public VKRequest addBan(VKParameters params) {
-        return prepareRequest("addBan", params);
+    public String addBan(VKParameters params) {
+        return prepareRequest("addBan", params).getRequest();
     }
 	
     /**
@@ -80,8 +80,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest deleteBan(VKParameters params) {
-        return prepareRequest("deleteBan", params);
+    public String deleteBan(VKParameters params) {
+        return prepareRequest("deleteBan", params).getRequest();
     }
 	
     /**
@@ -90,8 +90,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest ignoreItem(VKParameters params) {
-        return prepareRequest("ignoreItem", params);
+    public String ignoreItem(VKParameters params) {
+        return prepareRequest("ignoreItem", params).getRequest();
     }
 	
     /**
@@ -100,8 +100,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest unignoreItem(VKParameters params) {
-        return prepareRequest("unignoreItem", params);
+    public String unignoreItem(VKParameters params) {
+        return prepareRequest("unignoreItem", params).getRequest();
     }
 	
     /**
@@ -109,8 +109,8 @@ public class VKApiNews extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params);
+    public String search(VKParameters params) {
+        return prepareRequest("search", params).getRequest();
     }
 	
     /**
@@ -119,8 +119,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest getLists(VKParameters params) {
-        return prepareRequest("getLists", params);
+    public String getLists(VKParameters params) {
+        return prepareRequest("getLists", params).getRequest();
     }
 	
     /**
@@ -129,8 +129,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest saveList(VKParameters params) {
-        return prepareRequest("saveList", params);
+    public String saveList(VKParameters params) {
+        return prepareRequest("saveList", params).getRequest();
     }
 	
     /**
@@ -139,8 +139,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest deleteList(VKParameters params) {
-        return prepareRequest("deleteList", params);
+    public String deleteList(VKParameters params) {
+        return prepareRequest("deleteList", params).getRequest();
     }
 	
     /**
@@ -149,8 +149,8 @@ public class VKApiNews extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest unsubscribe(VKParameters params) {
-        return prepareRequest("unsubscribe", params);
+    public String unsubscribe(VKParameters params) {
+        return prepareRequest("unsubscribe", params).getRequest();
     }
 	
     /**
@@ -158,8 +158,8 @@ public class VKApiNews extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest getSuggestedSources(VKParameters params) {
-        return prepareRequest("getSuggestedSources", params);
+    public String getSuggestedSources(VKParameters params) {
+        return prepareRequest("getSuggestedSources", params).getRequest();
     }
 
     @Override

@@ -8,7 +8,6 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.dataTypes.VKUserList;
 import com.batiaev.vk.api.system.VkJsonParser;
@@ -32,9 +31,8 @@ public class VKApiUsers extends VKApiBase {
      *
      */
     public VKUserList get(VKParameters params) {
-        String respond = prepareRequest(VKApiConst.GET, params).getRequest();
+        JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET, params).getRequest());
 
-        JSONObject obj = new JSONObject(respond);
         final JSONArray friendList = obj.getJSONArray(VKApiConst.RESPONSE);
         VKUserList result = new VKUserList();
         for (int i = 0; i < friendList.length(); ++i) {
@@ -50,8 +48,8 @@ public class VKApiUsers extends VKApiBase {
      * This method doesn't require any specific rights.
      *
      */
-    public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params);
+    public String search(VKParameters params) {
+        return prepareRequest("search", params).getRequest();
     }
 
     /**
@@ -59,8 +57,8 @@ public class VKApiUsers extends VKApiBase {
      *
      * This method doesn't require any specific rights.
      */
-    public VKRequest isAppUser(VKParameters params) {
-        return prepareRequest("isAppUser", params);
+    public String isAppUser(VKParameters params) {
+        return prepareRequest("isAppUser", params).getRequest();
     }
 
     /**
@@ -68,8 +66,8 @@ public class VKApiUsers extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getSubscriptions(VKParameters params) {
-        return prepareRequest("getSubscriptions", params);
+    public String getSubscriptions(VKParameters params) {
+        return prepareRequest("getSubscriptions", params).getRequest();
     }
 
     /**
@@ -77,8 +75,8 @@ public class VKApiUsers extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getFollowers(VKParameters params) {
-        return prepareRequest("getFollowers", params);
+    public String getFollowers(VKParameters params) {
+        return prepareRequest("getFollowers", params).getRequest();
     }
 
     /**
@@ -87,8 +85,8 @@ public class VKApiUsers extends VKApiBase {
      *
      * This method is available only to standalone-applications.
      */
-    public VKRequest report(VKParameters params) {
-        return prepareRequest("report", params);
+    public String report(VKParameters params) {
+        return prepareRequest("report", params).getRequest();
     }
 
     /**
@@ -96,8 +94,8 @@ public class VKApiUsers extends VKApiBase {
      *
      * This method is available only to standalone-applications.
      */
-    public VKRequest getNearby(VKParameters params) {
-        return prepareRequest("getNearby", params);
+    public String getNearby(VKParameters params) {
+        return prepareRequest("getNearby", params).getRequest();
     }
 
     @Override

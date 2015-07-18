@@ -1,5 +1,7 @@
 package com.batiaev.vk.api;
 
+import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.system.VkJsonParser;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
@@ -9,6 +11,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -71,6 +74,12 @@ public class VKRequest {
             }
         }
 
+        JSONObject obj = new JSONObject(responseBody);
+        if (obj.has(VKApiConst.ERROR)) {
+            VKError error = VkJsonParser.parseError(obj.getJSONObject(VKApiConst.ERROR));
+            LOG.error("Error respond: " + error.toString());
+            return null;
+        }
         return responseBody;
     }
 

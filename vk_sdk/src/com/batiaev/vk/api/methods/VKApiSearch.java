@@ -23,8 +23,8 @@ public class VKApiSearch extends VKApiBase {
      * You need the following rights to call this method: friends and groups.
      * This method is available only to standalone-applications.
      */
-    public VKRequest getHints(VKParameters params) {
-        return prepareRequest("getHints", params);
+    public String getHints(VKParameters params) {
+        return prepareRequest("getHints", params).getRequest();
     }
 
     @Override

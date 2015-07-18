@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.gifts part
  * 
  * https://vk.com/dev/gifts
@@ -22,8 +23,8 @@ public class VKApiGifts extends VKApiBase {
      *
      * This method is available only to standalone-applications.
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
 
     @Override

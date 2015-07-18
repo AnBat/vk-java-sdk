@@ -22,8 +22,8 @@ public class VKApiWidgets extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest getComments(VKParameters params) {
-        return prepareRequest("getComments", params);
+    public String getComments(VKParameters params) {
+        return prepareRequest("getComments", params).getRequest();
     }
 
     /**
@@ -31,8 +31,8 @@ public class VKApiWidgets extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest getPages(VKParameters params) {
-        return prepareRequest("getPages", params);
+    public String getPages(VKParameters params) {
+        return prepareRequest("getPages", params).getRequest();
     }
 
     @Override

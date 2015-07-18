@@ -8,17 +8,15 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiDatabaseConsts;
 import com.batiaev.vk.api.dataTypes.VKCity;
 import com.batiaev.vk.api.dataTypes.VKCountry;
+import com.batiaev.vk.sdk.VkLocalCache;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.util.HashMap;
 
 /**
  * Builds requests for API.database part
@@ -26,24 +24,15 @@ import java.util.HashMap;
  * https://vk.com/dev/database
  */
 public class VKApiDatabase extends VKApiBase {
-
-    public static HashMap<Integer, String> cities = new HashMap<Integer, String>();
-    public static HashMap<Integer, String> countries = new HashMap<Integer, String>();
-
-    private static final Logger LOG = LogManager.getLogger(VKRequest.class);
-
-    public VKApiDatabase() {
-        cities.put(0, "");
-        countries.put(0, "");
-    }
+    private static final Logger LOG = LogManager.getLogger(VKApiDatabase.class);
 
     /**
      * https://vk.com/dev/database.getCountries
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getCountries(VKParameters params) {
-        return prepareRequest("getCountries", params);
+    public String getCountries(VKParameters params) {
+        return prepareRequest("getCountries", params).getRequest();
     }
 
     /**
@@ -51,8 +40,8 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getRegions(VKParameters params) {
-        return prepareRequest("getRegions", params);
+    public String getRegions(VKParameters params) {
+        return prepareRequest("getRegions", params).getRequest();
     }
 
     /**
@@ -60,8 +49,8 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getStreetsById(VKParameters params) {
-        return prepareRequest("getStreetsById", params);
+    public String getStreetsById(VKParameters params) {
+        return prepareRequest("getStreetsById", params).getRequest();
     }
 
     /**
@@ -73,11 +62,10 @@ public class VKApiDatabase extends VKApiBase {
         VKCountry country = new VKCountry();
 
         int countryId = Integer.parseInt(params.value(VKApiDatabaseConsts.COUNTRY_IDS));
-        if (countries.containsKey(countryId)) {
+        if (VkLocalCache.countriesCashe.containsKey(countryId)) {
             country.id = countryId;
-            country.name = countries.get(countryId);
-        }
-        else {
+            country.name = VkLocalCache.countriesCashe.get(countryId);
+        } else {
             String respond = "";
             respond = prepareRequest("getCountriesById", params).getRequest();
 
@@ -94,7 +82,7 @@ public class VKApiDatabase extends VKApiBase {
             country.id = countryJson.getInt(VKApiDatabaseConsts.CID);
             country.name = countryJson.getString(VKApiDatabaseConsts.NAME);
 
-            countries.put(country.id, country.name);
+            VkLocalCache.countriesCashe.put(country.id, country.name);
         }
         return country;
     }
@@ -104,8 +92,8 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getCities(VKParameters params) {
-        return prepareRequest("getCities", params);
+    public String getCities(VKParameters params) {
+        return prepareRequest("getCities", params).getRequest();
     }
 
     /**
@@ -118,8 +106,8 @@ public class VKApiDatabase extends VKApiBase {
         int cityId = Integer.parseInt(params.value(VKApiDatabaseConsts.CITY_IDS));
         city.id = cityId;
 
-        if (cities.containsKey(cityId)) {
-            city.name = cities.get(cityId);
+        if (VkLocalCache.citiesCashe.containsKey(cityId)) {
+            city.name = VkLocalCache.citiesCashe.get(cityId);
         }
         else {
             String respond = "";
@@ -138,7 +126,7 @@ public class VKApiDatabase extends VKApiBase {
             city.id = cityJson.getInt(VKApiDatabaseConsts.CID);
             city.name = cityJson.getString(VKApiDatabaseConsts.NAME);
 
-            cities.put(city.id, city.name);
+            VkLocalCache.citiesCashe.put(city.id, city.name);
         }
 
         return city;
@@ -149,8 +137,8 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getUniversities(VKParameters params) {
-        return prepareRequest("getUniversities", params);
+    public String getUniversities(VKParameters params) {
+        return prepareRequest("getUniversities", params).getRequest();
     }
 
     /**
@@ -158,8 +146,8 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getSchools(VKParameters params) {
-        return prepareRequest("getSchools", params);
+    public String getSchools(VKParameters params) {
+        return prepareRequest("getSchools", params).getRequest();
     }
 
     /**
@@ -167,8 +155,8 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getSchoolClasses(VKParameters params) {
-        return prepareRequest("getSchoolClasses", params);
+    public String getSchoolClasses(VKParameters params) {
+        return prepareRequest("getSchoolClasses", params).getRequest();
     }
 
     /**
@@ -176,8 +164,8 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getFaculties(VKParameters params) {
-        return prepareRequest("getFaculties", params);
+    public String getFaculties(VKParameters params) {
+        return prepareRequest("getFaculties", params).getRequest();
     }
 
     /**
@@ -185,8 +173,8 @@ public class VKApiDatabase extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getChairs(VKParameters params) {
-        return prepareRequest("getChairs", params);
+    public String getChairs(VKParameters params) {
+        return prepareRequest("getChairs", params).getRequest();
     }
 
     @Override

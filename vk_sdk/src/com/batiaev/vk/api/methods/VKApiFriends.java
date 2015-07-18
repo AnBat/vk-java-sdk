@@ -7,9 +7,7 @@ package com.batiaev.vk.api.methods;
  * www.batyaev.com
  */
 
-import com.batiaev.vk.api.VKError;
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.dataTypes.VKUser;
 import com.batiaev.vk.api.dataTypes.VKUserList;
@@ -35,14 +33,7 @@ public class VKApiFriends extends VKApiBase {
      */
     public VKUserList get(VKParameters params) {
 
-        String respond = prepareRequest(VKApiConst.GET, params).getRequest();
-
-        JSONObject obj = new JSONObject(respond);
-        if (obj.has(VKApiConst.ERROR)) {
-            VKError error = VkJsonParser.parseError(obj.getJSONObject(VKApiConst.ERROR));
-            LOG.error("## error = " + error.toString());
-            return null;
-        }
+        JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET, params).getRequest());
 
         final JSONArray friendList = obj.getJSONObject(VKApiConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
         VKUserList result = new VKUserList(obj.getJSONObject(VKApiConst.RESPONSE).getInt(VKApiConst.COUNT));
@@ -59,8 +50,8 @@ public class VKApiFriends extends VKApiBase {
      *
      * You need the following rights to call this method: friends. 
      */
-    public VKRequest getOnline(VKParameters params) {
-        return prepareRequest("getOnline", params);
+    public String getOnline(VKParameters params) {
+        return prepareRequest("getOnline", params).getRequest();
     }
 
     /**
@@ -68,8 +59,8 @@ public class VKApiFriends extends VKApiBase {
      *
      * You need the following rights to call this method: friends. 
      */
-    public VKRequest getMutual(VKParameters params) {
-        return prepareRequest("getMutual", params);
+    public String getMutual(VKParameters params) {
+        return prepareRequest("getMutual", params).getRequest();
     }
 
     /**
@@ -77,8 +68,8 @@ public class VKApiFriends extends VKApiBase {
      *
      * You need the following rights to call this method: friends. 
      */
-    public VKRequest getRecent(VKParameters params) {
-        return prepareRequest("getRecent", params);
+    public String getRecent(VKParameters params) {
+        return prepareRequest("getRecent", params).getRequest();
     }
 
     /**
@@ -89,14 +80,9 @@ public class VKApiFriends extends VKApiBase {
      */
     public VKUserList getRequests(VKParameters params) {
 
-        String respond = prepareRequest("getRequests", params).getRequest();
-
-        JSONObject obj = new JSONObject(respond);
-        if (obj.has(VKApiConst.ERROR)) {
-            VKError error = VkJsonParser.parseError(obj.getJSONObject(VKApiConst.ERROR));
-            LOG.error("## error = " + error.toString());
-            return null;
-        }
+        //some magic for getting method name
+//        String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
+        JSONObject obj = new JSONObject(prepareRequest("getRequests", params).getRequest());
 
         final JSONArray friendList = obj.getJSONObject(VKApiConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
         VKUserList result = new VKUserList(obj.getJSONObject(VKApiConst.RESPONSE).getInt(VKApiConst.COUNT));
@@ -114,8 +100,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest add(VKParameters params) {
-        return prepareRequest("add", params);
+    public String add(VKParameters params) {
+        return prepareRequest("add", params).getRequest();
     }
 
     /**
@@ -124,8 +110,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest edit(VKParameters params) {
-        return prepareRequest("edit", params);
+    public String edit(VKParameters params) {
+        return prepareRequest("edit", params).getRequest();
     }
 
     /**
@@ -134,8 +120,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest delete(VKParameters params) {
-        return prepareRequest("delete", params);
+    public String delete(VKParameters params) {
+        return prepareRequest("delete", params).getRequest();
     }
 
     /**
@@ -144,8 +130,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest getLists(VKParameters params) {
-        return prepareRequest("getLists", params);
+    public String getLists(VKParameters params) {
+        return prepareRequest("getLists", params).getRequest();
     }
 
     /**
@@ -154,8 +140,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest addList(VKParameters params) {
-        return prepareRequest("addList", params);
+    public String addList(VKParameters params) {
+        return prepareRequest("addList", params).getRequest();
     }
 
     /**
@@ -164,8 +150,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest editList(VKParameters params) {
-        return prepareRequest("editList", params);
+    public String editList(VKParameters params) {
+        return prepareRequest("editList", params).getRequest();
     }
 
     /**
@@ -174,8 +160,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest deleteList(VKParameters params) {
-        return prepareRequest("deleteList", params);
+    public String deleteList(VKParameters params) {
+        return prepareRequest("deleteList", params).getRequest();
     }
 
     /**
@@ -183,8 +169,8 @@ public class VKApiFriends extends VKApiBase {
      *
      * You need the following rights to call this method: friends.
      */
-    public VKRequest getAppUsers(VKParameters params) {
-        return prepareRequest("getAppUsers", params);
+    public String getAppUsers(VKParameters params) {
+        return prepareRequest("getAppUsers", params).getRequest();
     }
 
     /**
@@ -193,8 +179,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest getByPhones(VKParameters params) {
-        return prepareRequest("getByPhones", params);
+    public String getByPhones(VKParameters params) {
+        return prepareRequest("getByPhones", params).getRequest();
     }
 
     /**
@@ -203,8 +189,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest deleteAllRequests(VKParameters params) {
-        return prepareRequest("deleteAllRequests", params);
+    public String deleteAllRequests(VKParameters params) {
+        return prepareRequest("deleteAllRequests", params).getRequest();
     }
 
     /**
@@ -213,8 +199,8 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
      */
-    public VKRequest getSuggestions(VKParameters params) {
-        return prepareRequest("getSuggestions", params);
+    public String getSuggestions(VKParameters params) {
+        return prepareRequest("getSuggestions", params).getRequest();
     }
 
     /**
@@ -222,8 +208,8 @@ public class VKApiFriends extends VKApiBase {
      *
      * You need the following rights to call this method: friends.
      */
-    public VKRequest areFriends(VKParameters params) {
-        return prepareRequest("areFriends", params);
+    public String areFriends(VKParameters params) {
+        return prepareRequest("areFriends", params).getRequest();
     }
 
     /**
@@ -231,8 +217,8 @@ public class VKApiFriends extends VKApiBase {
      *
      * You need the following rights to call this method: friends.
      */
-    public VKRequest getAvailableForCall(VKParameters params) {
-        return prepareRequest("getAvailableForCall", params);
+    public String getAvailableForCall(VKParameters params) {
+        return prepareRequest("getAvailableForCall", params).getRequest();
     }
 
     /**
@@ -240,8 +226,8 @@ public class VKApiFriends extends VKApiBase {
      *
      * You need the following rights to call this method: friends.
      */
-    public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params);
+    public String search(VKParameters params) {
+        return prepareRequest("search", params).getRequest();
     }
 
     @Override

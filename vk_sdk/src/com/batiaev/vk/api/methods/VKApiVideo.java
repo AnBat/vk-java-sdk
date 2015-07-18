@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.video part
  * 
  * https://vk.com/dev/video
@@ -22,8 +23,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
 
     /**
@@ -31,8 +32,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest edit(VKParameters params) {
-        return prepareRequest("edit", params);
+    public String edit(VKParameters params) {
+        return prepareRequest("edit", params).getRequest();
     }
 
     /**
@@ -40,8 +41,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest add(VKParameters params) {
-        return prepareRequest("add", params);
+    public String add(VKParameters params) {
+        return prepareRequest("add", params).getRequest();
     }
 
     /**
@@ -49,8 +50,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest save(VKParameters params) {
-        return prepareRequest("save", params);
+    public String save(VKParameters params) {
+        return prepareRequest("save", params).getRequest();
     }
 
     /**
@@ -58,8 +59,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest delete(VKParameters params) {
-        return prepareRequest("delete", params);
+    public String delete(VKParameters params) {
+        return prepareRequest("delete", params).getRequest();
     }
 
     /**
@@ -67,8 +68,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest restore(VKParameters params) {
-        return prepareRequest("restore", params);
+    public String restore(VKParameters params) {
+        return prepareRequest("restore", params).getRequest();
     }
 
     /**
@@ -76,8 +77,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params);
+    public String search(VKParameters params) {
+        return prepareRequest("search", params).getRequest();
     }
 
     /**
@@ -85,8 +86,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest getUserVideos(VKParameters params) {
-        return prepareRequest("getUserVideos", params);
+    public String getUserVideos(VKParameters params) {
+        return prepareRequest("getUserVideos", params).getRequest();
     }
 
     /**
@@ -94,8 +95,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest getAlbums(VKParameters params) {
-        return prepareRequest("getAlbums", params);
+    public String getAlbums(VKParameters params) {
+        return prepareRequest("getAlbums", params).getRequest();
     }
 
     /**
@@ -103,8 +104,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest getAlbumById(VKParameters params) {
-        return prepareRequest("getAlbumById", params);
+    public String getAlbumById(VKParameters params) {
+        return prepareRequest("getAlbumById", params).getRequest();
     }
 
     /**
@@ -112,8 +113,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest addAlbum(VKParameters params) {
-        return prepareRequest("addAlbum", params);
+    public String addAlbum(VKParameters params) {
+        return prepareRequest("addAlbum", params).getRequest();
     }
 
     /**
@@ -121,8 +122,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest editAlbum(VKParameters params) {
-        return prepareRequest("editAlbum", params);
+    public String editAlbum(VKParameters params) {
+        return prepareRequest("editAlbum", params).getRequest();
     }
 
     /**
@@ -130,8 +131,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest deleteAlbum(VKParameters params) {
-        return prepareRequest("deleteAlbum", params);
+    public String deleteAlbum(VKParameters params) {
+        return prepareRequest("deleteAlbum", params).getRequest();
     }
 
     /**
@@ -139,8 +140,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest reorderAlbums(VKParameters params) {
-        return prepareRequest("reorderAlbums", params);
+    public String reorderAlbums(VKParameters params) {
+        return prepareRequest("reorderAlbums", params).getRequest();
     }
 
     /**
@@ -148,8 +149,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest addToAlbum(VKParameters params) {
-        return prepareRequest("addToAlbum", params);
+    public String addToAlbum(VKParameters params) {
+        return prepareRequest("addToAlbum", params).getRequest();
     }
 
     /**
@@ -157,8 +158,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest removeFromAlbum(VKParameters params) {
-        return prepareRequest("removeFromAlbum", params);
+    public String removeFromAlbum(VKParameters params) {
+        return prepareRequest("removeFromAlbum", params).getRequest();
     }
 
     /**
@@ -166,8 +167,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest getAlbumsByVideo(VKParameters params) {
-        return prepareRequest("getAlbumsByVideo", params);
+    public String getAlbumsByVideo(VKParameters params) {
+        return prepareRequest("getAlbumsByVideo", params).getRequest();
     }
 
     /**
@@ -175,8 +176,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest getComments(VKParameters params) {
-        return prepareRequest("getComments", params);
+    public String getComments(VKParameters params) {
+        return prepareRequest("getComments", params).getRequest();
     }
 
     /**
@@ -184,8 +185,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest createComment(VKParameters params) {
-        return prepareRequest("createComment", params);
+    public String createComment(VKParameters params) {
+        return prepareRequest("createComment", params).getRequest();
     }
 
     /**
@@ -193,8 +194,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest deleteComment(VKParameters params) {
-        return prepareRequest("deleteComment", params);
+    public String deleteComment(VKParameters params) {
+        return prepareRequest("deleteComment", params).getRequest();
     }
 
     /**
@@ -202,8 +203,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest restoreComment(VKParameters params) {
-        return prepareRequest("restoreComment", params);
+    public String restoreComment(VKParameters params) {
+        return prepareRequest("restoreComment", params).getRequest();
     }
 
     /**
@@ -211,8 +212,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest editComment(VKParameters params) {
-        return prepareRequest("editComment", params);
+    public String editComment(VKParameters params) {
+        return prepareRequest("editComment", params).getRequest();
     }
 
     /**
@@ -220,8 +221,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest getTags(VKParameters params) {
-        return prepareRequest("getTags", params);
+    public String getTags(VKParameters params) {
+        return prepareRequest("getTags", params).getRequest();
     }
 
     /**
@@ -229,8 +230,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest putTag(VKParameters params) {
-        return prepareRequest("putTag", params);
+    public String putTag(VKParameters params) {
+        return prepareRequest("putTag", params).getRequest();
     }
 
     /**
@@ -238,8 +239,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest removeTag(VKParameters params) {
-        return prepareRequest("removeTag", params);
+    public String removeTag(VKParameters params) {
+        return prepareRequest("removeTag", params).getRequest();
     }
 
     /**
@@ -247,8 +248,8 @@ public class VKApiVideo extends VKApiBase {
      *
      * You need the following rights to call this method: video.
      */
-    public VKRequest getNewTags(VKParameters params) {
-        return prepareRequest("getNewTags", params);
+    public String getNewTags(VKParameters params) {
+        return prepareRequest("getNewTags", params).getRequest();
     }
 
     /**
@@ -257,8 +258,8 @@ public class VKApiVideo extends VKApiBase {
      * You need the following rights to call this method: video.
      * This method is available only to standalone-applications.
      */
-    public VKRequest report(VKParameters params) {
-        return prepareRequest("report", params);
+    public String report(VKParameters params) {
+        return prepareRequest("report", params).getRequest();
     }
 
     /**
@@ -267,8 +268,8 @@ public class VKApiVideo extends VKApiBase {
      * You need the following rights to call this method: video.
      * This method is available only to standalone-applications.
      */
-    public VKRequest reportComment(VKParameters params) {
-        return prepareRequest("reportComment", params);
+    public String reportComment(VKParameters params) {
+        return prepareRequest("reportComment", params).getRequest();
     }
 
     @Override

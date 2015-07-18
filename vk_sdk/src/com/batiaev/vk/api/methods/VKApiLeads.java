@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.leads part
  * 
  * https://vk.com/dev/leads
@@ -22,8 +23,8 @@ public class VKApiLeads extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest complete(VKParameters params) {
-        return prepareRequest("complete", params);
+    public String complete(VKParameters params) {
+        return prepareRequest("complete", params).getRequest();
     }
     
     /**
@@ -31,8 +32,8 @@ public class VKApiLeads extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest start(VKParameters params) {
-        return prepareRequest("start", params);
+    public String start(VKParameters params) {
+        return prepareRequest("start", params).getRequest();
     }
 
     /**
@@ -40,8 +41,8 @@ public class VKApiLeads extends VKApiBase {
      *
      * You need the following rights to call this method: leads.
      */
-    public VKRequest getStats(VKParameters params) {
-        return prepareRequest("getStats", params);
+    public String getStats(VKParameters params) {
+        return prepareRequest("getStats", params).getRequest();
     }
 
     /**
@@ -49,8 +50,8 @@ public class VKApiLeads extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getUsers(VKParameters params) {
-        return prepareRequest("getUsers", params);
+    public String getUsers(VKParameters params) {
+        return prepareRequest("getUsers", params).getRequest();
     }
 
     /**
@@ -58,8 +59,8 @@ public class VKApiLeads extends VKApiBase {
      *
      * This method doesn't require any specific rights.
      */
-    public VKRequest checkUser(VKParameters params) {
-        return prepareRequest("checkUser", params);
+    public String checkUser(VKParameters params) {
+        return prepareRequest("checkUser", params).getRequest();
     }
 
     /**
@@ -67,8 +68,8 @@ public class VKApiLeads extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest metricHit(VKParameters params) {
-        return prepareRequest("metricHit", params);
+    public String metricHit(VKParameters params) {
+        return prepareRequest("metricHit", params).getRequest();
     }
 
     @Override

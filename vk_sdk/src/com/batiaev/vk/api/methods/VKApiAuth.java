@@ -8,7 +8,6 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
  * Builds requests for API.auth part
@@ -22,8 +21,8 @@ public class VKApiAuth extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest checkPhone(VKParameters params) {
-        return prepareRequest("checkPhone", params);
+    public String checkPhone(VKParameters params) {
+        return prepareRequest("checkPhone", params).getRequest();
     }
 
     /**
@@ -31,8 +30,8 @@ public class VKApiAuth extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest signup(VKParameters params) {
-        return prepareRequest("signup", params);
+    public String signup(VKParameters params) {
+        return prepareRequest("signup", params).getRequest();
     }
 
     /**
@@ -40,8 +39,8 @@ public class VKApiAuth extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest confirm(VKParameters params) {
-        return prepareRequest("confirm", params);
+    public String confirm(VKParameters params) {
+        return prepareRequest("confirm", params).getRequest();
     }
 
     /**
@@ -50,8 +49,8 @@ public class VKApiAuth extends VKApiBase {
      * This method is only available for apps with Direct authorization access.
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest restore(VKParameters params) {
-        return prepareRequest("restore", params);
+    public String restore(VKParameters params) {
+        return prepareRequest("restore", params).getRequest();
     }
 
     @Override

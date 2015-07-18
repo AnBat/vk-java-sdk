@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.status part
  * 
  * https://vk.com/dev/status
@@ -22,8 +23,8 @@ public class VKApiStatus extends VKApiBase {
      *
      * You need the following rights to call this method: status. (Read more on rights)
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
     
     /**
@@ -32,8 +33,8 @@ public class VKApiStatus extends VKApiBase {
      * You need the following rights to call this method: status. (Read more on rights)
      * This method is available only to standalone-applications. 
      */
-    public VKRequest set(VKParameters params) {
-        return prepareRequest("set", params);
+    public String set(VKParameters params) {
+        return prepareRequest("set", params).getRequest();
     }
 
     @Override

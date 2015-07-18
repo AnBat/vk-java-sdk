@@ -15,6 +15,8 @@ public class VkLocalCache {
     private static final Logger LOG = LogManager.getLogger(VkLocalCache.class);
 
     public static HashMap<Integer, String> userCache = null;
+    public static HashMap<Integer, String> citiesCashe = new HashMap<Integer, String>();
+    public static HashMap<Integer, String> countriesCashe = new HashMap<Integer, String>();
 
     public static void saveFriends(VKUserList friends, String user_id) {
         //generate html file
@@ -109,10 +111,10 @@ public class VkLocalCache {
     private static File createCacheFile(String fileName, String user_id) {
         File user_data = user_id.isEmpty() ? new File(System.getProperty("user.home") + File.separator + ".vk_sdk")
                 : new File(System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator + user_id);
-        if (!user_data.mkdirs()) LOG.error("Cannot create folder : " + user_data.getAbsolutePath());
+        if (!user_data.exists() && !user_data.mkdirs()) LOG.error("Cannot create folder : " + user_data.getAbsolutePath());
         File user_friends = new File(user_data.getPath() + File.separator + fileName);
         try {
-            if (!user_friends.createNewFile()) LOG.error("Cannot create file : " + user_friends.getAbsolutePath());
+            if (!user_friends.exists() && !user_friends.createNewFile()) LOG.error("Cannot create file : " + user_friends.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
         }

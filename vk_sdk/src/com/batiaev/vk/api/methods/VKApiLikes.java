@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.likes part
  * 
  * https://vk.com/dev/likes
@@ -22,8 +23,8 @@ public class VKApiLikes extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest getList(VKParameters params) {
-        return prepareRequest("getList", params);
+    public String getList(VKParameters params) {
+        return prepareRequest("getList", params).getRequest();
     }
     
     /**
@@ -32,8 +33,8 @@ public class VKApiLikes extends VKApiBase {
      * You need the following rights to call this method: wall. (Read more on rights)
      * This method is available only to standalone-applications. 
      */
-    public VKRequest add(VKParameters params) {
-        return prepareRequest("add", params);
+    public String add(VKParameters params) {
+        return prepareRequest("add", params).getRequest();
     }
     
     /**
@@ -42,8 +43,8 @@ public class VKApiLikes extends VKApiBase {
      * You need the following rights to call this method: wall. (Read more on rights)
      * This method is available only to standalone-applications.  
      */
-    public VKRequest delete(VKParameters params) {
-        return prepareRequest("delete", params);
+    public String delete(VKParameters params) {
+        return prepareRequest("delete", params).getRequest();
     }
     
     /**
@@ -52,8 +53,8 @@ public class VKApiLikes extends VKApiBase {
      * You need the following rights to call this method: wall. (Read more on rights)
      * This method is available only to standalone-applications.  
      */
-    public VKRequest isLiked(VKParameters params) {
-        return prepareRequest("isLiked", params);
+    public String isLiked(VKParameters params) {
+        return prepareRequest("isLiked", params).getRequest();
     }
 
     @Override

@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.storage part
  * 
  * https://vk.com/dev/storage
@@ -22,8 +23,8 @@ public class VKApiStorage extends VKApiBase {
      *
      * This method doesn't require any specific rights.
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
 
     /**
@@ -31,8 +32,8 @@ public class VKApiStorage extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest set(VKParameters params) {
-        return prepareRequest("set", params);
+    public String set(VKParameters params) {
+        return prepareRequest("set", params).getRequest();
     }
 
     /**
@@ -40,8 +41,8 @@ public class VKApiStorage extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest getKeys(VKParameters params) {
-        return prepareRequest("getKeys", params);
+    public String getKeys(VKParameters params) {
+        return prepareRequest("getKeys", params).getRequest();
     }
 
     @Override

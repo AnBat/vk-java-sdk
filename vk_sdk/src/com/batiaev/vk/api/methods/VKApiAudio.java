@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
  
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.audio part
  */
 public class VKApiAudio extends VKApiBase {
@@ -20,8 +21,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
 
     /**
@@ -29,8 +30,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest getById(VKParameters params) {
-        return prepareRequest("getById", params);
+    public String getById(VKParameters params) {
+        return prepareRequest("getById", params).getRequest();
     }
 
     /**
@@ -38,8 +39,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest getLyrics(VKParameters params) {
-        return prepareRequest("getLyrics", params);
+    public String getLyrics(VKParameters params) {
+        return prepareRequest("getLyrics", params).getRequest();
     }
 
     /**
@@ -47,8 +48,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params);
+    public String search(VKParameters params) {
+        return prepareRequest("search", params).getRequest();
     }
 
     /**
@@ -56,8 +57,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest getUploadServer(VKParameters params) {
-        return prepareRequest("getUploadServer", params);
+    public String getUploadServer(VKParameters params) {
+        return prepareRequest("getUploadServer", params).getRequest();
     }
 
     /**
@@ -65,8 +66,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest save(VKParameters params) {
-        return prepareRequest("save", params);
+    public String save(VKParameters params) {
+        return prepareRequest("save", params).getRequest();
     }
 
     /**
@@ -74,8 +75,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest add(VKParameters params) {
-        return prepareRequest("add", params);
+    public String add(VKParameters params) {
+        return prepareRequest("add", params).getRequest();
     }
 
     /**
@@ -83,8 +84,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest delete(VKParameters params) {
-        return prepareRequest("delete", params);
+    public String delete(VKParameters params) {
+        return prepareRequest("delete", params).getRequest();
     }
 
     /**
@@ -92,8 +93,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest edit(VKParameters params) {
-        return prepareRequest("edit", params);
+    public String edit(VKParameters params) {
+        return prepareRequest("edit", params).getRequest();
     }
 
     /**
@@ -101,8 +102,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest reorder(VKParameters params) {
-        return prepareRequest("reorder", params);
+    public String reorder(VKParameters params) {
+        return prepareRequest("reorder", params).getRequest();
     }
 
     /**
@@ -110,8 +111,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest restore(VKParameters params) {
-        return prepareRequest("restore", params);
+    public String restore(VKParameters params) {
+        return prepareRequest("restore", params).getRequest();
     }
 
     /**
@@ -119,8 +120,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest getAlbums(VKParameters params) {
-        return prepareRequest("getAlbums", params);
+    public String getAlbums(VKParameters params) {
+        return prepareRequest("getAlbums", params).getRequest();
     }
 
     /**
@@ -128,8 +129,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest addAlbum(VKParameters params) {
-        return prepareRequest("addAlbum", params);
+    public String addAlbum(VKParameters params) {
+        return prepareRequest("addAlbum", params).getRequest();
     }
 
     /**
@@ -137,8 +138,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest editAlbum(VKParameters params) {
-        return prepareRequest("editAlbum", params);
+    public String editAlbum(VKParameters params) {
+        return prepareRequest("editAlbum", params).getRequest();
     }
 
     /**
@@ -146,8 +147,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest deleteAlbum(VKParameters params) {
-        return prepareRequest("deleteAlbum", params);
+    public String deleteAlbum(VKParameters params) {
+        return prepareRequest("deleteAlbum", params).getRequest();
     }
 
     /**
@@ -155,8 +156,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest moveToAlbum(VKParameters params) {
-        return prepareRequest("moveToAlbum", params);
+    public String moveToAlbum(VKParameters params) {
+        return prepareRequest("moveToAlbum", params).getRequest();
     }
 
     /**
@@ -164,8 +165,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest setBroadcast(VKParameters params) {
-        return prepareRequest("setBroadcast", params);
+    public String setBroadcast(VKParameters params) {
+        return prepareRequest("setBroadcast", params).getRequest();
     }
 
     /**
@@ -173,8 +174,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest getBroadcastList(VKParameters params) {
-        return prepareRequest("getBroadcastList", params);
+    public String getBroadcastList(VKParameters params) {
+        return prepareRequest("getBroadcastList", params).getRequest();
     }
 
     /**
@@ -182,8 +183,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest getRecommendations(VKParameters params) {
-        return prepareRequest("getRecommendations", params);
+    public String getRecommendations(VKParameters params) {
+        return prepareRequest("getRecommendations", params).getRequest();
     }
 
     /**
@@ -191,8 +192,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest getPopular(VKParameters params) {
-        return prepareRequest("getPopular", params);
+    public String getPopular(VKParameters params) {
+        return prepareRequest("getPopular", params).getRequest();
     }
 
     /**
@@ -200,8 +201,8 @@ public class VKApiAudio extends VKApiBase {
      *
      * You need the following rights to call this method: audio.
      */
-    public VKRequest getCount(VKParameters params) {
-        return prepareRequest("getCount", params);
+    public String getCount(VKParameters params) {
+        return prepareRequest("getCount", params).getRequest();
     }
 
     @Override

@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.polls part
  * 
  * https://vk.com/dev/polls
@@ -22,8 +23,8 @@ public class VKApiPolls extends VKApiBase {
      *
      * You need the following rights to call this method: wall.
      */
-    public VKRequest getById(VKParameters params) {
-        return prepareRequest("getById", params);
+    public String getById(VKParameters params) {
+        return prepareRequest("getById", params).getRequest();
     }
 
     /**
@@ -32,8 +33,8 @@ public class VKApiPolls extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest addVote(VKParameters params) {
-        return prepareRequest("addVote", params);
+    public String addVote(VKParameters params) {
+        return prepareRequest("addVote", params).getRequest();
     }
 
     /**
@@ -42,8 +43,8 @@ public class VKApiPolls extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest deleteVote(VKParameters params) {
-        return prepareRequest("deleteVote", params);
+    public String deleteVote(VKParameters params) {
+        return prepareRequest("deleteVote", params).getRequest();
     }
 
     /**
@@ -51,8 +52,8 @@ public class VKApiPolls extends VKApiBase {
      *
      * This method doesn't require any specific rights.
      */
-    public VKRequest getVoters(VKParameters params) {
-        return prepareRequest("getVoters", params);
+    public String getVoters(VKParameters params) {
+        return prepareRequest("getVoters", params).getRequest();
     }
 
     /**
@@ -61,8 +62,8 @@ public class VKApiPolls extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest create(VKParameters params) {
-        return prepareRequest("create", params);
+    public String create(VKParameters params) {
+        return prepareRequest("create", params).getRequest();
     }
 
     /**
@@ -71,8 +72,8 @@ public class VKApiPolls extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest edit(VKParameters params) {
-        return prepareRequest("edit", params);
+    public String edit(VKParameters params) {
+        return prepareRequest("edit", params).getRequest();
     }
 
     @Override

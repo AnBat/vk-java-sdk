@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.photos part
  * 
  * https://vk.com/dev/photos
@@ -22,8 +23,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest createAlbum(VKParameters params) {
-        return prepareRequest("createAlbum", params);
+    public String createAlbum(VKParameters params) {
+        return prepareRequest("createAlbum", params).getRequest();
     }
 
     /**
@@ -31,8 +32,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest editAlbum(VKParameters params) {
-        return prepareRequest("editAlbum", params);
+    public String editAlbum(VKParameters params) {
+        return prepareRequest("editAlbum", params).getRequest();
     }
     
     /**
@@ -40,8 +41,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest getAlbums(VKParameters params) {
-        return prepareRequest("getAlbums", params);
+    public String getAlbums(VKParameters params) {
+        return prepareRequest("getAlbums", params).getRequest();
     }
     
     /**
@@ -49,8 +50,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
     
     /**
@@ -58,8 +59,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest getAlbumsCount(VKParameters params) {
-        return prepareRequest("getAlbumsCount", params);
+    public String getAlbumsCount(VKParameters params) {
+        return prepareRequest("getAlbumsCount", params).getRequest();
     }
     
     /**
@@ -67,8 +68,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest getProfile(VKParameters params) {
-        return prepareRequest("getProfile", params);
+    public String getProfile(VKParameters params) {
+        return prepareRequest("getProfile", params).getRequest();
     }
     
     /**
@@ -76,8 +77,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest getById(VKParameters params) {
-        return prepareRequest("getById", params);
+    public String getById(VKParameters params) {
+        return prepareRequest("getById", params).getRequest();
     }
     
     /**
@@ -85,8 +86,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest getUploadServer(VKParameters params) {
-        return prepareRequest("getUploadServer", params);
+    public String getUploadServer(VKParameters params) {
+        return prepareRequest("getUploadServer", params).getRequest();
     }
     
     /**
@@ -94,8 +95,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest getOwnerPhotoUploadServer(VKParameters params) {
-        return prepareRequest("getOwnerPhotoUploadServer", params);
+    public String getOwnerPhotoUploadServer(VKParameters params) {
+        return prepareRequest("getOwnerPhotoUploadServer", params).getRequest();
     }
     
     /**
@@ -104,8 +105,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getChatUploadServer(VKParameters params) {
-        return prepareRequest("getChatUploadServer", params);
+    public String getChatUploadServer(VKParameters params) {
+        return prepareRequest("getChatUploadServer", params).getRequest();
     }
     
     /**
@@ -113,8 +114,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest saveOwnerPhoto(VKParameters params) {
-        return prepareRequest("saveOwnerPhoto", params);
+    public String saveOwnerPhoto(VKParameters params) {
+        return prepareRequest("saveOwnerPhoto", params).getRequest();
     }
     
     /**
@@ -122,8 +123,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest saveWallPhoto(VKParameters params) {
-        return prepareRequest("saveWallPhoto", params);
+    public String saveWallPhoto(VKParameters params) {
+        return prepareRequest("saveWallPhoto", params).getRequest();
     }
     
     /**
@@ -131,8 +132,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest getWallUploadServer(VKParameters params) {
-        return prepareRequest("getWallUploadServer", params);
+    public String getWallUploadServer(VKParameters params) {
+        return prepareRequest("getWallUploadServer", params).getRequest();
     }
     
     /**
@@ -141,8 +142,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getMessagesUploadServer(VKParameters params) {
-        return prepareRequest("getMessagesUploadServer", params);
+    public String getMessagesUploadServer(VKParameters params) {
+        return prepareRequest("getMessagesUploadServer", params).getRequest();
     }
     
     /**
@@ -151,8 +152,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest saveMessagesPhoto(VKParameters params) {
-        return prepareRequest("saveMessagesPhoto", params);
+    public String saveMessagesPhoto(VKParameters params) {
+        return prepareRequest("saveMessagesPhoto", params).getRequest();
     }
     
     /**
@@ -161,8 +162,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest report(VKParameters params) {
-        return prepareRequest("report", params);
+    public String report(VKParameters params) {
+        return prepareRequest("report", params).getRequest();
     }
     
     /**
@@ -171,8 +172,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest reportComment(VKParameters params) {
-        return prepareRequest("reportComment", params);
+    public String reportComment(VKParameters params) {
+        return prepareRequest("reportComment", params).getRequest();
     }
     
     /**
@@ -180,17 +181,17 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This is an open method; it does not require an access_token. 
      */
-    public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params);
+    public String search(VKParameters params) {
+        return prepareRequest("search", params).getRequest();
     }
-    
+
     /**
      * https://vk.com/dev/photos.save
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest save(VKParameters params) {
-        return prepareRequest("save", params);
+    public String save(VKParameters params) {
+        return prepareRequest("save", params).getRequest();
     }
     
     /**
@@ -199,8 +200,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest copy(VKParameters params) {
-        return prepareRequest("copy", params);
+    public String copy(VKParameters params) {
+        return prepareRequest("copy", params).getRequest();
     }
     
     /**
@@ -208,8 +209,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos. 
      */
-    public VKRequest edit(VKParameters params) {
-        return prepareRequest("edit", params);
+    public String edit(VKParameters params) {
+        return prepareRequest("edit", params).getRequest();
     }
     
     /**
@@ -217,8 +218,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos. 
      */
-    public VKRequest move(VKParameters params) {
-        return prepareRequest("move", params);
+    public String move(VKParameters params) {
+        return prepareRequest("move", params).getRequest();
     }
     
     /**
@@ -226,8 +227,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest makeCover(VKParameters params) {
-        return prepareRequest("makeCover", params);
+    public String makeCover(VKParameters params) {
+        return prepareRequest("makeCover", params).getRequest();
     }
     
     /**
@@ -235,8 +236,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest reorderAlbums(VKParameters params) {
-        return prepareRequest("reorderAlbums", params);
+    public String reorderAlbums(VKParameters params) {
+        return prepareRequest("reorderAlbums", params).getRequest();
     }
     
     /**
@@ -244,8 +245,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest reorderPhotos(VKParameters params) {
-        return prepareRequest("reorderPhotos", params);
+    public String reorderPhotos(VKParameters params) {
+        return prepareRequest("reorderPhotos", params).getRequest();
     }
     
     /**
@@ -253,8 +254,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest getAll(VKParameters params) {
-        return prepareRequest("getAll", params);
+    public String getAll(VKParameters params) {
+        return prepareRequest("getAll", params).getRequest();
     }
     
     /**
@@ -262,8 +263,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest getUserPhotos(VKParameters params) {
-        return prepareRequest("getUserPhotos", params);
+    public String getUserPhotos(VKParameters params) {
+        return prepareRequest("getUserPhotos", params).getRequest();
     }
     
     /**
@@ -272,8 +273,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest deleteAlbum(VKParameters params) {
-        return prepareRequest("deleteAlbum", params);
+    public String deleteAlbum(VKParameters params) {
+        return prepareRequest("deleteAlbum", params).getRequest();
     }
     
     /**
@@ -282,8 +283,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest delete(VKParameters params) {
-        return prepareRequest("delete", params);
+    public String delete(VKParameters params) {
+        return prepareRequest("delete", params).getRequest();
     }
     
     /**
@@ -292,8 +293,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest restore(VKParameters params) {
-        return prepareRequest("restore", params);
+    public String restore(VKParameters params) {
+        return prepareRequest("restore", params).getRequest();
     }
     
     /**
@@ -302,8 +303,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest confirmTag(VKParameters params) {
-        return prepareRequest("confirmTag", params);
+    public String confirmTag(VKParameters params) {
+        return prepareRequest("confirmTag", params).getRequest();
     }
     
     /**
@@ -311,8 +312,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest getComments(VKParameters params) {
-        return prepareRequest("getComments", params);
+    public String getComments(VKParameters params) {
+        return prepareRequest("getComments", params).getRequest();
     }
     
     /**
@@ -320,8 +321,8 @@ public class VKApiPhotos extends VKApiBase {
      *
      * You need the following rights to call this method: photos.
      */
-    public VKRequest getAllComments(VKParameters params) {
-        return prepareRequest("getAllComments", params);
+    public String getAllComments(VKParameters params) {
+        return prepareRequest("getAllComments", params).getRequest();
     }
     
     /**
@@ -330,8 +331,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest createComment(VKParameters params) {
-        return prepareRequest("createComment", params);
+    public String createComment(VKParameters params) {
+        return prepareRequest("createComment", params).getRequest();
     }
     
     /**
@@ -340,8 +341,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest deleteComment(VKParameters params) {
-        return prepareRequest("deleteComment", params);
+    public String deleteComment(VKParameters params) {
+        return prepareRequest("deleteComment", params).getRequest();
     }
     
     /**
@@ -350,8 +351,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest restoreComment(VKParameters params) {
-        return prepareRequest("restoreComment", params);
+    public String restoreComment(VKParameters params) {
+        return prepareRequest("restoreComment", params).getRequest();
     }
     
     /**
@@ -360,8 +361,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest editComment(VKParameters params) {
-        return prepareRequest("editComment", params);
+    public String editComment(VKParameters params) {
+        return prepareRequest("editComment", params).getRequest();
     }
     
     /**
@@ -370,8 +371,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getTags(VKParameters params) {
-        return prepareRequest("getTags", params);
+    public String getTags(VKParameters params) {
+        return prepareRequest("getTags", params).getRequest();
     }
     
     /**
@@ -380,8 +381,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest putTag(VKParameters params) {
-        return prepareRequest("putTag", params);
+    public String putTag(VKParameters params) {
+        return prepareRequest("putTag", params).getRequest();
     }
     
     /**
@@ -390,8 +391,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest removeTag(VKParameters params) {
-        return prepareRequest("removeTag", params);
+    public String removeTag(VKParameters params) {
+        return prepareRequest("removeTag", params).getRequest();
     }
     
     /**
@@ -400,8 +401,8 @@ public class VKApiPhotos extends VKApiBase {
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getNewTags(VKParameters params) {
-        return prepareRequest("getNewTags", params);
+    public String getNewTags(VKParameters params) {
+        return prepareRequest("getNewTags", params).getRequest();
     }
 
     @Override

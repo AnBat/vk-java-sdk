@@ -15,7 +15,8 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 /**
- * Created by anton on 28/06/15.
+ * @author batiaev
+ * Created by batiaev on 28/06/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batiaev.com
@@ -30,7 +31,7 @@ public class Main {
 //        authorization.serverAuth();
 //        authorization.clientAuth();
 
-        LOG.error("## " + VKApi.friends().getRequests(new VKParameters()).size());
+        LOG.error("Friends requests count: " + VKApi.friends().getRequests(new VKParameters()).size());
 
         VKParameters parameters = new VKParameters();
         parameters.setValue(VkApiMessagesParams.COUNT, 20);

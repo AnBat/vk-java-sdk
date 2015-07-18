@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.docs part
  * 
  * https://vk.com/dev/docs
@@ -22,8 +23,8 @@ public class VKApiDocs extends VKApiBase {
      *
      * You need the following rights to call this method: docs.
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
     
     /**
@@ -31,8 +32,8 @@ public class VKApiDocs extends VKApiBase {
      *
      * You need the following rights to call this method: docs
      */
-    public VKRequest getById(VKParameters params) {
-        return prepareRequest("getById", params);
+    public String getById(VKParameters params) {
+        return prepareRequest("getById", params).getRequest();
     }
     
     /**
@@ -40,8 +41,8 @@ public class VKApiDocs extends VKApiBase {
      *
      * You need the following rights to call this method: docs.
      */
-    public VKRequest getUploadServer(VKParameters params) {
-        return prepareRequest("getUploadServer", params);
+    public String getUploadServer(VKParameters params) {
+        return prepareRequest("getUploadServer", params).getRequest();
     }
     
     /**
@@ -49,8 +50,8 @@ public class VKApiDocs extends VKApiBase {
      *
      * You need the following rights to call this method: docs.
      */
-    public VKRequest getWallUploadServer(VKParameters params) {
-        return prepareRequest("getWallUploadServer", params);
+    public String getWallUploadServer(VKParameters params) {
+        return prepareRequest("getWallUploadServer", params).getRequest();
     }
 
     /**
@@ -58,8 +59,8 @@ public class VKApiDocs extends VKApiBase {
      *
      * You need the following rights to call this method: docs.
      */
-    public VKRequest save(VKParameters params) {
-        return prepareRequest("save", params);
+    public String save(VKParameters params) {
+        return prepareRequest("save", params).getRequest();
     }
 
     /**
@@ -67,8 +68,8 @@ public class VKApiDocs extends VKApiBase {
      *
      * You need the following rights to call this method: docs.
      */
-    public VKRequest delete(VKParameters params) {
-        return prepareRequest("delete", params);
+    public String delete(VKParameters params) {
+        return prepareRequest("delete", params).getRequest();
     }
 
     /**
@@ -76,8 +77,8 @@ public class VKApiDocs extends VKApiBase {
      *
      * You need the following rights to call this method: docs.
      */
-    public VKRequest add(VKParameters params) {
-        return prepareRequest("add", params);
+    public String add(VKParameters params) {
+        return prepareRequest("add", params).getRequest();
     }
 
     @Override

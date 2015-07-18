@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
  
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.groups part
  * 
  * https://vk.com/dev/groups
@@ -23,8 +24,8 @@ public class VKApiGroups extends VKApiBase {
      * This is an open method; it does not require an access_token.
      *
      */
-    public VKRequest isMember(VKParameters params) {
-        return prepareRequest("isMember", params);
+    public String isMember(VKParameters params) {
+        return prepareRequest("isMember", params).getRequest();
     }
 
     /**
@@ -33,8 +34,8 @@ public class VKApiGroups extends VKApiBase {
      * This is an open method; it does not require an access_token.
      *
      */
-    public VKRequest getById(VKParameters params) {
-        return prepareRequest("getById", params);
+    public String getById(VKParameters params) {
+        return prepareRequest("getById", params).getRequest();
     }
 
     /**
@@ -43,8 +44,8 @@ public class VKApiGroups extends VKApiBase {
      * This method doesn't require any specific rights.
      *
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
 
     /**
@@ -53,8 +54,8 @@ public class VKApiGroups extends VKApiBase {
      * This is an open method; it does not require an access_token.
      *
      */
-    public VKRequest getMembers(VKParameters params) {
-        return prepareRequest("getMembers", params);
+    public String getMembers(VKParameters params) {
+        return prepareRequest("getMembers", params).getRequest();
     }
 
     /**
@@ -64,8 +65,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest join(VKParameters params) {
-        return prepareRequest("join", params);
+    public String join(VKParameters params) {
+        return prepareRequest("join", params).getRequest();
     }
 
     /**
@@ -75,8 +76,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest leave(VKParameters params) {
-        return prepareRequest("leave", params);
+    public String leave(VKParameters params) {
+        return prepareRequest("leave", params).getRequest();
     }
 
     /**
@@ -85,8 +86,8 @@ public class VKApiGroups extends VKApiBase {
      * This method doesn't require any specific rights.
      *
      */
-    public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params);
+    public String search(VKParameters params) {
+        return prepareRequest("search", params).getRequest();
     }
 
     /**
@@ -96,8 +97,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest getInvites(VKParameters params) {
-        return prepareRequest("getInvites", params);
+    public String getInvites(VKParameters params) {
+        return prepareRequest("getInvites", params).getRequest();
     }
 
     /**
@@ -107,8 +108,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest getInvitedUsers(VKParameters params) {
-        return prepareRequest("getInvitedUsers", params);
+    public String getInvitedUsers(VKParameters params) {
+        return prepareRequest("getInvitedUsers", params).getRequest();
     }
 
     /**
@@ -118,8 +119,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest banUser(VKParameters params) {
-        return prepareRequest("banUser", params);
+    public String banUser(VKParameters params) {
+        return prepareRequest("banUser", params).getRequest();
     }
 
     /**
@@ -129,8 +130,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest unbanUser(VKParameters params) {
-        return prepareRequest("unbanUser", params);
+    public String unbanUser(VKParameters params) {
+        return prepareRequest("unbanUser", params).getRequest();
     }
 
     /**
@@ -140,8 +141,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest getBanned(VKParameters params) {
-        return prepareRequest("getBanned", params);
+    public String getBanned(VKParameters params) {
+        return prepareRequest("getBanned", params).getRequest();
     }
 
     /**
@@ -151,8 +152,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest create(VKParameters params) {
-        return prepareRequest("create", params);
+    public String create(VKParameters params) {
+        return prepareRequest("create", params).getRequest();
     }
 
     /**
@@ -162,8 +163,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest edit(VKParameters params) {
-        return prepareRequest("edit", params);
+    public String edit(VKParameters params) {
+        return prepareRequest("edit", params).getRequest();
     }
 
     /**
@@ -173,8 +174,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest editPlace(VKParameters params) {
-        return prepareRequest("editPlace", params);
+    public String editPlace(VKParameters params) {
+        return prepareRequest("editPlace", params).getRequest();
     }
 
     /**
@@ -184,8 +185,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest getSettings(VKParameters params) {
-        return prepareRequest("getSettings", params);
+    public String getSettings(VKParameters params) {
+        return prepareRequest("getSettings", params).getRequest();
     }
 
     /**
@@ -195,8 +196,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest getRequests(VKParameters params) {
-        return prepareRequest("getRequests", params);
+    public String getRequests(VKParameters params) {
+        return prepareRequest("getRequests", params).getRequest();
     }
 
     /**
@@ -206,8 +207,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest editManager(VKParameters params) {
-        return prepareRequest("editManager", params);
+    public String editManager(VKParameters params) {
+        return prepareRequest("editManager", params).getRequest();
     }
 
     /**
@@ -217,8 +218,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest invite(VKParameters params) {
-        return prepareRequest("invite", params);
+    public String invite(VKParameters params) {
+        return prepareRequest("invite", params).getRequest();
     }
 
     /**
@@ -228,8 +229,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest addLink(VKParameters params) {
-        return prepareRequest("addLink", params);
+    public String addLink(VKParameters params) {
+        return prepareRequest("addLink", params).getRequest();
     }
 
     /**
@@ -239,8 +240,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest deleteLink(VKParameters params) {
-        return prepareRequest("deleteLink", params);
+    public String deleteLink(VKParameters params) {
+        return prepareRequest("deleteLink", params).getRequest();
     }
 
     /**
@@ -250,8 +251,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest editLink(VKParameters params) {
-        return prepareRequest("editLink", params);
+    public String editLink(VKParameters params) {
+        return prepareRequest("editLink", params).getRequest();
     }
 
     /**
@@ -261,8 +262,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest reorderLink(VKParameters params) {
-        return prepareRequest("reorderLink", params);
+    public String reorderLink(VKParameters params) {
+        return prepareRequest("reorderLink", params).getRequest();
     }
 
     /**
@@ -272,8 +273,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest removeUser(VKParameters params) {
-        return prepareRequest("removeUser", params);
+    public String removeUser(VKParameters params) {
+        return prepareRequest("removeUser", params).getRequest();
     }
 
     /**
@@ -283,8 +284,8 @@ public class VKApiGroups extends VKApiBase {
      * This method is available only to standalone-applications.
      *
      */
-    public VKRequest approveRequest(VKParameters params) {
-        return prepareRequest("approveRequest", params);
+    public String approveRequest(VKParameters params) {
+        return prepareRequest("approveRequest", params).getRequest();
     }
 
     @Override

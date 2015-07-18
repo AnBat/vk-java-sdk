@@ -1,36 +1,26 @@
 package com.batiaev.vk.api.methods;
 
-/**
- * Created by anton on 15/04/15.
- * ---
- * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
- */
-
-import com.batiaev.vk.api.VKApi;
-import com.batiaev.vk.api.VKError;
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 import com.batiaev.vk.api.consts.VKApiConst;
-import com.batiaev.vk.api.consts.VKApiMessagesConsts;
 import com.batiaev.vk.api.dataTypes.VKMessage;
 import com.batiaev.vk.api.dataTypes.VKMessageList;
-import com.batiaev.vk.api.dataTypes.VKUserList;
 import com.batiaev.vk.api.system.VkJsonParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
 
 /**
+ * @author batiaev
+ * Created by anton on 15/04/15.
+ * ---
+ *
  * Builds requests for API.messages part
  * 
  * https://vk.com/dev/messages
+ * ---
+ * Copyright © 2015. Anton Batiaev. All Rights Reserved.
+ * www.batyaev.com
  */
 public class VKApiMessages extends VKApiBase {
 
@@ -42,13 +32,8 @@ public class VKApiMessages extends VKApiBase {
      * This method is available only to standalone-applications. 
      */
     public VKMessageList get(VKParameters params) {
-        String respond =  prepareRequest(VKApiConst.GET, params).getRequest();
-        JSONObject obj = new JSONObject(respond);
-        if (obj.has(VKApiConst.ERROR)) {
-            VKError error = VkJsonParser.parseError(obj.getJSONObject(VKApiConst.ERROR));
-            LOG.error("## error = " + error.toString());
-            return null;
-        }
+        JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET, params).getRequest());
+
         VKMessageList result = new VKMessageList();
         JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
         if (respondJson.has(VKApiConst.COUNT)) result.totalCount = respondJson.getInt(VKApiConst.COUNT);
@@ -79,8 +64,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getById(VKParameters params) {
-        return prepareRequest("getById", params);
+    public String getById(VKParameters params) {
+        return prepareRequest("getById", params).getRequest();
     }
     
     /**
@@ -89,8 +74,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params);
+    public String search(VKParameters params) {
+        return prepareRequest("search", params).getRequest();
     }
     
     /**
@@ -100,13 +85,8 @@ public class VKApiMessages extends VKApiBase {
      * This method is available only to standalone-applications. 
      */
     public VKMessageList getHistory(VKParameters params) {
-        String respond =  prepareRequest(VKApiConst.GET_HISTORY, params).getRequest();
-        JSONObject obj = new JSONObject(respond);
-        if (obj.has(VKApiConst.ERROR)) {
-            VKError error = VkJsonParser.parseError(obj.getJSONObject(VKApiConst.ERROR));
-            LOG.error("## error = " + error.toString());
-            return null;
-        }
+        JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET_HISTORY, params).getRequest());
+
         VKMessageList result = new VKMessageList();
         JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
         if (respondJson.has(VKApiConst.COUNT)) result.totalCount = respondJson.getInt(VKApiConst.COUNT);
@@ -126,8 +106,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest send(VKParameters params) {
-        return prepareRequest("send", params);
+    public String send(VKParameters params) {
+        return prepareRequest("send", params).getRequest();
     }
     
     /**
@@ -136,8 +116,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest delete(VKParameters params) {
-        return prepareRequest("delete", params);
+    public String delete(VKParameters params) {
+        return prepareRequest("delete", params).getRequest();
     }
     
     /**
@@ -146,8 +126,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest deleteDialog(VKParameters params) {
-        return prepareRequest("deleteDialog", params);
+    public String deleteDialog(VKParameters params) {
+        return prepareRequest("deleteDialog", params).getRequest();
     }
     
     /**
@@ -156,8 +136,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest restore(VKParameters params) {
-        return prepareRequest("restore", params);
+    public String restore(VKParameters params) {
+        return prepareRequest("restore", params).getRequest();
     }
     
     /**
@@ -166,8 +146,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest markAsRead(VKParameters params) {
-        return prepareRequest("markAsRead", params);
+    public String markAsRead(VKParameters params) {
+        return prepareRequest("markAsRead", params).getRequest();
     }
     
     /**
@@ -176,8 +156,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest markAsImportant(VKParameters params) {
-        return prepareRequest("markAsImportant", params);
+    public String markAsImportant(VKParameters params) {
+        return prepareRequest("markAsImportant", params).getRequest();
     }
     
     /**
@@ -186,8 +166,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getLongPollServer(VKParameters params) {
-        return prepareRequest("getLongPollServer", params);
+    public String getLongPollServer(VKParameters params) {
+        return prepareRequest("getLongPollServer", params).getRequest();
     }
     
     /**
@@ -196,8 +176,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getLongPollHistory(VKParameters params) {
-        return prepareRequest("getLongPollHistory", params);
+    public String getLongPollHistory(VKParameters params) {
+        return prepareRequest("getLongPollHistory", params).getRequest();
     }
     
     /**
@@ -206,8 +186,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getChat(VKParameters params) {
-        return prepareRequest("getChat", params);
+    public String getChat(VKParameters params) {
+        return prepareRequest("getChat", params).getRequest();
     }
     
     /**
@@ -216,8 +196,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest createChat(VKParameters params) {
-        return prepareRequest("createChat", params);
+    public String createChat(VKParameters params) {
+        return prepareRequest("createChat", params).getRequest();
     }
     
     /**
@@ -226,8 +206,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest editChat(VKParameters params) {
-        return prepareRequest("editChat", params);
+    public String editChat(VKParameters params) {
+        return prepareRequest("editChat", params).getRequest();
     }
     
     /**
@@ -236,8 +216,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getChatUsers(VKParameters params) {
-        return prepareRequest("getChatUsers", params);
+    public String getChatUsers(VKParameters params) {
+        return prepareRequest("getChatUsers", params).getRequest();
     }
     
     /**
@@ -246,8 +226,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest setActivity(VKParameters params) {
-        return prepareRequest("setActivity", params);
+    public String setActivity(VKParameters params) {
+        return prepareRequest("setActivity", params).getRequest();
     }
     
     /**
@@ -256,8 +236,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest searchDialogs(VKParameters params) {
-        return prepareRequest("searchDialogs", params);
+    public String searchDialogs(VKParameters params) {
+        return prepareRequest("searchDialogs", params).getRequest();
     }
     
     /**
@@ -266,8 +246,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest addChatUser(VKParameters params) {
-        return prepareRequest("addChatUser", params);
+    public String addChatUser(VKParameters params) {
+        return prepareRequest("addChatUser", params).getRequest();
     }
     
     /**
@@ -276,8 +256,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest removeChatUser(VKParameters params) {
-        return prepareRequest("removeChatUser", params);
+    public String removeChatUser(VKParameters params) {
+        return prepareRequest("removeChatUser", params).getRequest();
     }
     
     /**
@@ -286,8 +266,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest getLastActivity(VKParameters params) {
-        return prepareRequest("getLastActivity", params);
+    public String getLastActivity(VKParameters params) {
+        return prepareRequest("getLastActivity", params).getRequest();
     }
     
     /**
@@ -296,8 +276,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest setChatPhoto(VKParameters params) {
-        return prepareRequest("setChatPhoto", params);
+    public String setChatPhoto(VKParameters params) {
+        return prepareRequest("setChatPhoto", params).getRequest();
     }
     
     /**
@@ -306,8 +286,8 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public VKRequest deleteChatPhoto(VKParameters params) {
-        return prepareRequest("deleteChatPhoto", params);
+    public String deleteChatPhoto(VKParameters params) {
+        return prepareRequest("deleteChatPhoto", params).getRequest();
     }
 
     @Override

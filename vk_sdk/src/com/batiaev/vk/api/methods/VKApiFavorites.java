@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.favorites part
  * 
  * https://vk.com/dev/favorites
@@ -23,8 +24,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest getUsers(VKParameters params) {
-        return prepareRequest("getUsers", params);
+    public String getUsers(VKParameters params) {
+        return prepareRequest("getUsers", params).getRequest();
     }
     
     /**
@@ -33,8 +34,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest getPhotos(VKParameters params) {
-        return prepareRequest("getPhotos", params);
+    public String getPhotos(VKParameters params) {
+        return prepareRequest("getPhotos", params).getRequest();
     }
     
     /**
@@ -43,8 +44,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest getPosts(VKParameters params) {
-        return prepareRequest("getPosts", params);
+    public String getPosts(VKParameters params) {
+        return prepareRequest("getPosts", params).getRequest();
     }
     
     /**
@@ -53,8 +54,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest getVideos(VKParameters params) {
-        return prepareRequest("getVideos", params);
+    public String getVideos(VKParameters params) {
+        return prepareRequest("getVideos", params).getRequest();
     }
 
     /**
@@ -63,8 +64,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest getLinks(VKParameters params) {
-        return prepareRequest("getLinks", params);
+    public String getLinks(VKParameters params) {
+        return prepareRequest("getLinks", params).getRequest();
     }
 
     /**
@@ -73,8 +74,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest addUser(VKParameters params) {
-        return prepareRequest("addUser", params);
+    public String addUser(VKParameters params) {
+        return prepareRequest("addUser", params).getRequest();
     }
 
     /**
@@ -83,8 +84,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest removeUser(VKParameters params) {
-        return prepareRequest("removeUser", params);
+    public String removeUser(VKParameters params) {
+        return prepareRequest("removeUser", params).getRequest();
     }
 
     /**
@@ -93,8 +94,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest addGroup(VKParameters params) {
-        return prepareRequest("addGroup", params);
+    public String addGroup(VKParameters params) {
+        return prepareRequest("addGroup", params).getRequest();
     }
 
     /**
@@ -103,8 +104,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest removeGroup(VKParameters params) {
-        return prepareRequest("removeGroup", params);
+    public String removeGroup(VKParameters params) {
+        return prepareRequest("removeGroup", params).getRequest();
     }
 
     /**
@@ -113,8 +114,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest addLink(VKParameters params) {
-        return prepareRequest("addLink", params);
+    public String addLink(VKParameters params) {
+        return prepareRequest("addLink", params).getRequest();
     }
 
     /**
@@ -123,8 +124,8 @@ public class VKApiFavorites extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      */
-    public VKRequest removeLink(VKParameters params) {
-        return prepareRequest("removeLink", params);
+    public String removeLink(VKParameters params) {
+        return prepareRequest("removeLink", params).getRequest();
     }
 
     @Override

@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.pages part
  * 
  * https://vk.com/dev/pages
@@ -22,8 +23,8 @@ public class VKApiPages extends VKApiBase {
      *
      * You need the following rights to call this method: pages.
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
 
     /**
@@ -31,8 +32,8 @@ public class VKApiPages extends VKApiBase {
      *
      * You need the following rights to call this method: pages.
      */
-    public VKRequest save(VKParameters params) {
-        return prepareRequest("save", params);
+    public String save(VKParameters params) {
+        return prepareRequest("save", params).getRequest();
     }
 
     /**
@@ -40,8 +41,8 @@ public class VKApiPages extends VKApiBase {
      *
      * You need the following rights to call this method: pages.
      */
-    public VKRequest saveAccess(VKParameters params) {
-        return prepareRequest("saveAccess", params);
+    public String saveAccess(VKParameters params) {
+        return prepareRequest("saveAccess", params).getRequest();
     }
 
     /**
@@ -49,8 +50,8 @@ public class VKApiPages extends VKApiBase {
      *
      * You need the following rights to call this method: pages.
      */
-    public VKRequest getHistory(VKParameters params) {
-        return prepareRequest("getHistory", params);
+    public String getHistory(VKParameters params) {
+        return prepareRequest("getHistory", params).getRequest();
     }
 
     /**
@@ -58,8 +59,8 @@ public class VKApiPages extends VKApiBase {
      *
      * You need the following rights to call this method: pages.
      */
-    public VKRequest getTitles(VKParameters params) {
-        return prepareRequest("getTitles", params);
+    public String getTitles(VKParameters params) {
+        return prepareRequest("getTitles", params).getRequest();
     }
 
     /**
@@ -67,8 +68,8 @@ public class VKApiPages extends VKApiBase {
      *
      * This method doesn't require any specific rights.
      */
-    public VKRequest getVersion(VKParameters params) {
-        return prepareRequest("getVersion", params);
+    public String getVersion(VKParameters params) {
+        return prepareRequest("getVersion", params).getRequest();
     }
 
     /**
@@ -76,8 +77,8 @@ public class VKApiPages extends VKApiBase {
      *
      * This method doesn't require any specific rights.
      */
-    public VKRequest parseWiki(VKParameters params) {
-        return prepareRequest("parseWiki", params);
+    public String parseWiki(VKParameters params) {
+        return prepareRequest("parseWiki", params).getRequest();
     }
 
     /**
@@ -85,8 +86,8 @@ public class VKApiPages extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest clearCache(VKParameters params) {
-        return prepareRequest("clearCache", params);
+    public String clearCache(VKParameters params) {
+        return prepareRequest("clearCache", params).getRequest();
     }
 
     @Override

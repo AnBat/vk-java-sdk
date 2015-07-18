@@ -8,7 +8,6 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
  * Builds requests for API.places part
@@ -21,8 +20,8 @@ public class VKApiPlaces extends VKApiBase {
      *
      * This method doesn't require any specific rights.
      */
-    public VKRequest add(VKParameters params) {
-        return prepareRequest("add", params);
+    public String add(VKParameters params) {
+        return prepareRequest("add", params).getRequest();
     }
 
     /**
@@ -30,8 +29,8 @@ public class VKApiPlaces extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest getById(VKParameters params) {
-        return prepareRequest("getById", params);
+    public String getById(VKParameters params) {
+        return prepareRequest("getById", params).getRequest();
     }
 
     /**
@@ -39,8 +38,8 @@ public class VKApiPlaces extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest search(VKParameters params) {
-        return prepareRequest("search", params);
+    public String search(VKParameters params) {
+        return prepareRequest("search", params).getRequest();
     }
 
     /**
@@ -49,8 +48,8 @@ public class VKApiPlaces extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.  
      */
-    public VKRequest checkin(VKParameters params) {
-        return prepareRequest("checkin", params);
+    public String checkin(VKParameters params) {
+        return prepareRequest("checkin", params).getRequest();
     }
 
     /**
@@ -58,8 +57,8 @@ public class VKApiPlaces extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest getCheckins(VKParameters params) {
-        return prepareRequest("getCheckins", params);
+    public String getCheckins(VKParameters params) {
+        return prepareRequest("getCheckins", params).getRequest();
     }
 
     /**
@@ -67,8 +66,8 @@ public class VKApiPlaces extends VKApiBase {
      *
      * This method doesn't require any specific rights. 
      */
-    public VKRequest getTypes(VKParameters params) {
-        return prepareRequest("getTypes", params);
+    public String getTypes(VKParameters params) {
+        return prepareRequest("getTypes", params).getRequest();
     }
 
     @Override

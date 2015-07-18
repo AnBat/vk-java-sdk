@@ -8,9 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.wall part
  * 
  * https://vk.com/dev/wall
@@ -22,8 +23,8 @@ public class VKApiWall extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest get(VKParameters params) {
-		return prepareRequest("get", params);
+    public String get(VKParameters params) {
+		return prepareRequest("get", params).getRequest();
     }
 
     /**
@@ -31,8 +32,8 @@ public class VKApiWall extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest search(VKParameters params) {
-		return prepareRequest("search", params);
+    public String search(VKParameters params) {
+		return prepareRequest("search", params).getRequest();
     }
 
     /**
@@ -40,8 +41,8 @@ public class VKApiWall extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getById(VKParameters params) {
-        return prepareRequest("getById", params);
+    public String getById(VKParameters params) {
+        return prepareRequest("getById", params).getRequest();
     }
 
     /**
@@ -50,8 +51,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is only available to Standalone-apps and web clients using the confirmation window.
      */
-    public VKRequest post(VKParameters parameters) {
-        return prepareRequest("post", parameters);
+    public String post(VKParameters parameters) {
+        return prepareRequest("post", parameters).getRequest();
     }
 
     /**
@@ -60,8 +61,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest repost(VKParameters params) {
-        return prepareRequest("repost", params);
+    public String repost(VKParameters params) {
+        return prepareRequest("repost", params).getRequest();
     }
 
     /**
@@ -69,8 +70,8 @@ public class VKApiWall extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest getReposts(VKParameters params) {
-        return prepareRequest("getReposts", params);
+    public String getReposts(VKParameters params) {
+        return prepareRequest("getReposts", params).getRequest();
     }
 
     /**
@@ -79,8 +80,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest edit(VKParameters params) {
-        return prepareRequest("edit", params);
+    public String edit(VKParameters params) {
+        return prepareRequest("edit", params).getRequest();
     }
 
     /**
@@ -89,8 +90,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest delete(VKParameters params) {
-        return prepareRequest("delete", params);
+    public String delete(VKParameters params) {
+        return prepareRequest("delete", params).getRequest();
     }
 
     /**
@@ -99,8 +100,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest restore(VKParameters params) {
-        return prepareRequest("restore", params);
+    public String restore(VKParameters params) {
+        return prepareRequest("restore", params).getRequest();
     }
 
     /**
@@ -109,8 +110,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest pin(VKParameters params) {
-        return prepareRequest("pin", params);
+    public String pin(VKParameters params) {
+        return prepareRequest("pin", params).getRequest();
     }
 
     /**
@@ -119,8 +120,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest unpin(VKParameters params) {
-        return prepareRequest("unpin", params);
+    public String unpin(VKParameters params) {
+        return prepareRequest("unpin", params).getRequest();
     }
 
 
@@ -130,8 +131,8 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      * Your app needs the following rights to access data on a user's behalf: wall.
      */
-    public VKRequest getComments(VKParameters params) {
-        return prepareRequest("getComments", params);
+    public String getComments(VKParameters params) {
+        return prepareRequest("getComments", params).getRequest();
     }
 
     /**
@@ -140,8 +141,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest addComment(VKParameters params) {
-        return prepareRequest("addComment", params);
+    public String addComment(VKParameters params) {
+        return prepareRequest("addComment", params).getRequest();
     }
 
     /**
@@ -150,8 +151,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest editComment(VKParameters params) {
-        return prepareRequest("editComment", params);
+    public String editComment(VKParameters params) {
+        return prepareRequest("editComment", params).getRequest();
     }
 
     /**
@@ -160,8 +161,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest deleteComment(VKParameters params) {
-        return prepareRequest("deleteComment", params);
+    public String deleteComment(VKParameters params) {
+        return prepareRequest("deleteComment", params).getRequest();
     }
 
     /**
@@ -170,8 +171,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest restoreComment(VKParameters params) {
-        return prepareRequest("restoreComment", params);
+    public String restoreComment(VKParameters params) {
+        return prepareRequest("restoreComment", params).getRequest();
     }
 
     /**
@@ -180,8 +181,8 @@ public class VKApiWall extends VKApiBase {
      * You need the following rights to call this method: wall.
      * This method is available only to standalone-applications.
      */
-    public VKRequest reportPost(VKParameters params) {
-        return prepareRequest("reportPost", params);
+    public String reportPost(VKParameters params) {
+        return prepareRequest("reportPost", params).getRequest();
     }
 
     /**
@@ -189,8 +190,8 @@ public class VKApiWall extends VKApiBase {
      *
      * This is an open method; it does not require an access_token.
      */
-    public VKRequest reportComment(VKParameters params) {
-        return prepareRequest("reportComment", params);
+    public String reportComment(VKParameters params) {
+        return prepareRequest("reportComment", params).getRequest();
     }
 
     @Override

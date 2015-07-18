@@ -11,6 +11,8 @@ import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.VKRequest;
 
 /**
+ * @author batiaev
+ *
  * Builds requests for API.stats part
  * 
  * https://vk.com/dev/stats
@@ -22,8 +24,8 @@ public class VKApiStats extends VKApiBase {
      *
      * This method doesn't require any specific rights.
      */
-    public VKRequest get(VKParameters params) {
-        return prepareRequest("get", params);
+    public String get(VKParameters params) {
+        return prepareRequest("get", params).getRequest();
     }
 
     /**
@@ -31,8 +33,8 @@ public class VKApiStats extends VKApiBase {
      *
      * This method is available only to standalone-applications.
      */
-    public VKRequest trackVisitor(VKParameters params) {
-        return prepareRequest("trackVisitor", params);
+    public String trackVisitor(VKParameters params) {
+        return prepareRequest("trackVisitor", params).getRequest();
     }
 
     @Override
