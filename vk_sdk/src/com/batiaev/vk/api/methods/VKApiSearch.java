@@ -18,6 +18,8 @@ import com.batiaev.vk.api.VKRequest;
 public class VKApiSearch extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/search.getHints
      *
      * You need the following rights to call this method: friends and groups.

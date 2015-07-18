@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiGifts extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/gifts.get
      *
      * This method is available only to standalone-applications.

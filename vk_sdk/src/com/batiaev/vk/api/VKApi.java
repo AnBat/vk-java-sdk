@@ -20,6 +20,7 @@ public class VKApi extends VKApiBase {
     private static final Logger LOG = LogManager.getLogger(VKApi.class);
 
     /**
+     * @return Vk Api for account methods
      * https://vk.com/dev/account
      */
     public static VKApiAccount account() {
@@ -27,6 +28,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for ads methods
      * https://vk.com/dev/ads
      */
     public static VKApiAds ads() {
@@ -34,6 +36,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for apps methods
      * https://vk.com/dev/apps
      */
     public static VKApiApps apps() {
@@ -41,6 +44,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for audio methods
      * https://vk.com/dev/audio
      */
     public static VKApiAudio audio() {
@@ -48,6 +52,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for auth methods
      * https://vk.com/dev/auth
      */
     public static VKApiAuth auth() {
@@ -55,6 +60,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for board methods
      * https://vk.com/dev/board
      */
     public static VKApiBoard board() {
@@ -62,6 +68,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for database methods
      * https://vk.com/dev/database
      */
     public static VKApiDatabase database() {
@@ -69,6 +76,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for docs methods
      * https://vk.com/dev/docs
      */
     public static VKApiDocs docs() {
@@ -76,6 +84,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for favorites methods
      * https://vk.com/dev/favorites
      */
     public static VKApiFavorites favorites() {
@@ -83,6 +92,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for friends methods
      * https://vk.com/dev/friends
      */
     public static VKApiFriends friends() {
@@ -90,6 +100,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for gifts methods
      * https://vk.com/dev/gifts
      */
     public static VKApiGifts gifts() {
@@ -97,6 +108,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for groups methods
      * https://vk.com/dev/groups
      */
     public static VKApiGroups groups() {
@@ -104,6 +116,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for leads methods
      * https://vk.com/dev/leads
      */
     public static VKApiLeads leads() {
@@ -111,6 +124,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for likes methods
      * https://vk.com/dev/likes
      */
     public static VKApiLikes likes() {
@@ -118,6 +132,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for messages methods
      * https://vk.com/dev/messages
      */
     public static VKApiMessages messages() {
@@ -125,6 +140,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for newsfeed methods
      * https://vk.com/dev/newsfeed
      */
     public static VKApiNews newsfeed() {
@@ -132,6 +148,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for notes methods
      * https://vk.com/dev/notes
      */
     public static VKApiNotes notes() {
@@ -139,6 +156,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for notifications methods
      * https://vk.com/dev/notifications
      */
     public static VKApiNotifications notifications() {
@@ -146,6 +164,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for orders methods
      * https://vk.com/dev/orders
      */
     public static VKApiOrders orders() {
@@ -153,6 +172,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for pages methods
      * https://vk.com/dev/pages
      */
     public static VKApiPages pages() {
@@ -160,6 +180,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for photos methods
      * https://vk.com/dev/photos
      */
     public static VKApiPhotos photos() {
@@ -167,6 +188,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for places methods
      * https://vk.com/dev/places
      */
     public static VKApiPlaces places() {
@@ -174,6 +196,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for polls methods
      * https://vk.com/dev/polls
      */
     public static VKApiPolls polls() {
@@ -181,6 +204,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for search methods
      * https://vk.com/dev/search
      */
     public static VKApiSearch search() {
@@ -188,6 +212,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for secure methods
      * https://vk.com/dev/secure
      */
     public static VKApiSecure secure() {
@@ -195,6 +220,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for stats methods
      * https://vk.com/dev/stats
      */
     public static VKApiStats stats() {
@@ -202,6 +228,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for status methods
      * https://vk.com/dev/status
      */
     public static VKApiStatus status() {
@@ -209,6 +236,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for storage methods
      * https://vk.com/dev/storage
      */
     public static VKApiStorage storage() {
@@ -216,6 +244,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for users methods
      * https://vk.com/dev/users
      */
     public static VKApiUsers users() {
@@ -223,6 +252,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for utils methods
      * https://vk.com/dev/utils
      */
     public static VKApiUtils utils() {
@@ -230,6 +260,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for video methods
      * https://vk.com/dev/video
      */
     public static VKApiVideo video() {
@@ -237,6 +268,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for wall methods
      * https://vk.com/dev/wall
      */
     public static VKApiWall wall() {
@@ -244,6 +276,7 @@ public class VKApi extends VKApiBase {
     }
 
     /**
+     * @return Vk Api for widgets methods
      * https://vk.com/dev/widgets
      */
     public static VKApiWidgets widgets() {

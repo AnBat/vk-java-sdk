@@ -18,6 +18,8 @@ import com.batiaev.vk.api.VKRequest;
 public class VKApiWidgets extends VKApiBase {
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/widgets.getComments
      *
      * This is an open method; it does not require an access_token. 
@@ -27,6 +29,8 @@ public class VKApiWidgets extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/widgets.getPages
      *
      * This is an open method; it does not require an access_token. 

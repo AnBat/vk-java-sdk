@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiUtils extends VKApiBase {
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/utils.checkLink
      *
      * This is an open method; it does not require an access_token.
@@ -28,6 +30,8 @@ public class VKApiUtils extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/utils.resolveScreenName
      *
      * This is an open method; it does not require an access_token.
@@ -37,6 +41,8 @@ public class VKApiUtils extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/utils.getServerTime
      *
      * This is an open method; it does not require an access_token.

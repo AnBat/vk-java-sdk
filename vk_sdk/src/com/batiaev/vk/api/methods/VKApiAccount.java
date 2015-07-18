@@ -21,7 +21,9 @@ import com.batiaev.vk.api.consts.VKApiRigths;
 public class VKApiAccount extends VKApiBase {
 
     /**
-     * @link https://vk.com/dev/account.getCounters
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.getCounters">API account.getCounters()</a>
      */
     @Rights(VKApiRigths.NOTHING)
     public String getCounters(VKParameters params) {
@@ -29,7 +31,9 @@ public class VKApiAccount extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/account.setNameInMenu
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.setNameInMenu">API account.setNameInMenu()</a>
      */
     @Rights(VKApiRigths.NOTHING)
     public String setNameInMenu(VKParameters params) {
@@ -37,7 +41,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.setOnline
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.setOnline">API account.setOnline()</a>
      */
     @Rights(standAloneOnly = true)
     public String setOnline(VKParameters params) {
@@ -45,7 +51,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.setOffline
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.setOffline">API account.setOffline()</a>
      */
     @Rights(standAloneOnly = true)
     public String setOffline(VKParameters params) {
@@ -53,7 +61,9 @@ public class VKApiAccount extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/account.lookupContacts
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.lookupContacts">API account.lookupContacts()</a>
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String lookupContacts(VKParameters params) {
@@ -61,7 +71,9 @@ public class VKApiAccount extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/account.registerDevice
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.registerDevice">API account.registerDevice()</a>
      */
     @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public String registerDevice(VKParameters params) {
@@ -69,7 +81,9 @@ public class VKApiAccount extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/account.unregisterDevice
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.unregisterDevice">API account.unregisterDevice()</a>
      */
     @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public String unregisterDevice(VKParameters params) {
@@ -77,7 +91,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.setSilenceMode
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.setSilenceMode">API account.setSilenceMode()</a>
      */
     @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public String setSilenceMode(VKParameters params) {
@@ -85,7 +101,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.getPushSettings
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.getPushSettings">API account.getPushSettings()</a>
      */
     @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public String getPushSettings(VKParameters params) {
@@ -93,7 +111,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.getAppPermissions
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.getAppPermissions">API account.getAppPermissions()</a>
      */
     @Rights(VKApiRigths.NOTHING)
     public String getAppPermissions(VKParameters params) {
@@ -101,7 +121,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.getActiveOffers
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.getActiveOffers">API account.getActiveOffers()</a>
      */
     @Rights(VKApiRigths.NOTHING)
     public String getActiveOffers(VKParameters params) {
@@ -109,7 +131,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.banUser
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.banUser">API account.banUser()</a>
      */
     @Rights(standAloneOnly = true)
     public String banUser(VKParameters params) {
@@ -117,7 +141,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.unbanUser
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.unbanUser">API account.unbanUser()</a>
      */
     @Rights(standAloneOnly = true)
     public String unbanUser(VKParameters params) {
@@ -125,7 +151,9 @@ public class VKApiAccount extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/account.getBanned
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.getBanned">API account.getBanned()</a>
      */
     @Rights(standAloneOnly = true)
     public String getBanned(VKParameters params) {
@@ -133,7 +161,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.getInfo
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.getInfo">API account.getInfo()</a>
      */
     @Rights(standAloneOnly = true)
     public String getInfo(VKParameters params) {
@@ -141,7 +171,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.setInfo
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.setInfo">API account.setInfo()</a>
      */
     @Rights(standAloneOnly = true)
     public String setInfo(VKParameters params) {
@@ -149,7 +181,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.changePassword
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.changePassword">API account.changePassword()</a>
      */
     @Rights(standAloneOnly = true)
     public String changePassword(VKParameters params) {
@@ -157,7 +191,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.getProfileInfo
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.getProfileInfo">API account.getProfileInfo()</a>
      */
     @Rights(standAloneOnly = true)
     public String getProfileInfo(VKParameters params) {
@@ -165,7 +201,9 @@ public class VKApiAccount extends VKApiBase {
     }
     
     /**
-     * @link https://vk.com/dev/account.saveProfileInfo
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/account.saveProfileInfo">API account.saveProfileInfo()</a>
      */
     @Rights(standAloneOnly = true)
     public String saveProfileInfo(VKParameters params) {

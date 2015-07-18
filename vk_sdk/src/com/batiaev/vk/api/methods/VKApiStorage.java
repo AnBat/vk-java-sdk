@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiStorage extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/storage.get
      *
      * This method doesn't require any specific rights.
@@ -28,6 +30,8 @@ public class VKApiStorage extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/storage.set
      *
      * This method doesn't require any specific rights. 
@@ -37,6 +41,8 @@ public class VKApiStorage extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/storage.getKeys
      *
      * This method doesn't require any specific rights. 

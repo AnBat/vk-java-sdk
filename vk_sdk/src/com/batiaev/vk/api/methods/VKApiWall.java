@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiWall extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.get
      *
      * This is an open method; it does not require an access_token.
@@ -28,6 +30,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.search
      *
      * This is an open method; it does not require an access_token.
@@ -37,6 +41,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.getById
      *
      * This is an open method; it does not require an access_token.
@@ -46,16 +52,20 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.post
      *
      * You need the following rights to call this method: wall.
      * This method is only available to Standalone-apps and web clients using the confirmation window.
      */
-    public String post(VKParameters parameters) {
-        return prepareRequest("post", parameters).getRequest();
+    public String post(VKParameters params) {
+        return prepareRequest("post", params).getRequest();
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.repost
      *
      * You need the following rights to call this method: wall.
@@ -66,6 +76,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.getReposts
      *
      * This is an open method; it does not require an access_token.
@@ -75,6 +87,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.edit
      *
      * You need the following rights to call this method: wall.
@@ -85,6 +99,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.delete
      *
      * You need the following rights to call this method: wall.
@@ -95,6 +111,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.restore
      *
      * You need the following rights to call this method: wall.
@@ -105,6 +123,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.pin
      *
      * You need the following rights to call this method: wall.
@@ -115,6 +135,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.unpin
      *
      * You need the following rights to call this method: wall.
@@ -126,6 +148,8 @@ public class VKApiWall extends VKApiBase {
 
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.getComments
      *
      * This is an open method; it does not require an access_token.
@@ -136,6 +160,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.addComment
      *
      * You need the following rights to call this method: wall.
@@ -146,6 +172,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.editComment
      *
      * You need the following rights to call this method: wall.
@@ -156,6 +184,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.deleteComment
      *
      * You need the following rights to call this method: wall.
@@ -166,6 +196,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.restoreComment
      *
      * You need the following rights to call this method: wall.
@@ -176,6 +208,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.reportPost
      *
      * You need the following rights to call this method: wall.
@@ -186,6 +220,8 @@ public class VKApiWall extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/wall.reportComment
      *
      * This is an open method; it does not require an access_token.

@@ -17,6 +17,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiAuth extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/auth.checkPhone
      *
      * This is an open method; it does not require an access_token. 
@@ -26,6 +28,8 @@ public class VKApiAuth extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/auth.signup
      *
      * This is an open method; it does not require an access_token. 
@@ -35,6 +39,8 @@ public class VKApiAuth extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/auth.confirm
      *
      * This is an open method; it does not require an access_token. 
@@ -44,6 +50,8 @@ public class VKApiAuth extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/auth.restore
      *
      * This method is only available for apps with Direct authorization access.

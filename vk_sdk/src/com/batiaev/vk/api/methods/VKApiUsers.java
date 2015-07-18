@@ -25,6 +25,8 @@ public class VKApiUsers extends VKApiBase {
     private static final Logger LOG = LogManager.getLogger(VKApiUsers.class);
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/users.get
      *
      * This is an open method; it does not require an access_token.
@@ -43,6 +45,8 @@ public class VKApiUsers extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/users.search
      *
      * This method doesn't require any specific rights.
@@ -53,6 +57,8 @@ public class VKApiUsers extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/users.isAppUser
      *
      * This method doesn't require any specific rights.
@@ -62,6 +68,8 @@ public class VKApiUsers extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/users.getSubscriptions
      *
      * This is an open method; it does not require an access_token.
@@ -71,6 +79,8 @@ public class VKApiUsers extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/users.getFollowers
      *
      * This is an open method; it does not require an access_token.
@@ -80,6 +90,9 @@ public class VKApiUsers extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
+     *
      * https://vk.com/dev/users.report
      * Created on 29.01.14.
      *
@@ -90,6 +103,8 @@ public class VKApiUsers extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/users.getNearby
      *
      * This method is available only to standalone-applications.

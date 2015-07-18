@@ -16,6 +16,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiOrders extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/orders.get
      *
      * This is a server method. It may only be called from your server. Read more »
@@ -26,6 +28,8 @@ public class VKApiOrders extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/orders.getById
      *
      * This is a server method. It may only be called from your server. Read more »
@@ -36,6 +40,8 @@ public class VKApiOrders extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/orders.changeState
      *
      * This is a server method. It may only be called from your server. Read more »

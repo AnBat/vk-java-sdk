@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiBoard extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.getTopics
      *
      * This is an open method; it does not require an access_token.
@@ -28,6 +30,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.getComments
      *
      * This is an open method; it does not require an access_token.
@@ -37,6 +41,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.addTopic
      *
      * You need the following rights to call this method: groups.
@@ -47,6 +53,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.addComment
      *
      * You need the following rights to call this method: groups.
@@ -57,6 +65,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.deleteTopic
      *
      * You need the following rights to call this method: groups.
@@ -67,6 +77,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.editTopic
      *
      * You need the following rights to call this method: groups.
@@ -77,6 +89,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.editComment
      *
      * You need the following rights to call this method: groups.
@@ -87,6 +101,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.restoreComment
      *
      * You need the following rights to call this method: groups.
@@ -97,6 +113,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.deleteComment
      *
      * You need the following rights to call this method: groups.
@@ -107,6 +125,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.openTopic
      *
      * You need the following rights to call this method: groups.
@@ -117,6 +137,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.closeTopic
      *
      * You need the following rights to call this method: groups.
@@ -127,6 +149,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.fixTopic
      *
      * You need the following rights to call this method: groups.
@@ -137,6 +161,8 @@ public class VKApiBoard extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/board.unfixTopic
      *
      * You need the following rights to call this method: groups.

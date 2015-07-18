@@ -26,7 +26,9 @@ import com.batiaev.vk.api.consts.VKApiRigths;
 public class VKApiAds extends VKApiBase {
 
     /**
-     * @link https://vk.com/dev/ads.getAccounts
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getAccounts">API ads.getAccounts()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getAccounts(VKParameters params) {
@@ -34,7 +36,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getClients
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getClients">API ads.getClients()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getClients(VKParameters params) {
@@ -42,7 +46,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.createClients
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.createClients">API ads.createClients()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String createClients(VKParameters params) {
@@ -50,7 +56,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.updateClients
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.updateClients">API ads.updateClients()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String updateClients(VKParameters params) {
@@ -58,7 +66,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.deleteClients
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.deleteClients">API ads.deleteClients()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String deleteClients(VKParameters params) {
@@ -66,7 +76,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getCampaigns
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getCampaigns">API ads.getCampaigns()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getCampaigns(VKParameters params) {
@@ -74,7 +86,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.createCampaigns
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.createCampaigns">API ads.createCampaigns()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String createCampaigns(VKParameters params) {
@@ -82,7 +96,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.updateCampaigns
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.updateCampaigns">API ads.updateCampaigns()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String updateCampaigns(VKParameters params) {
@@ -90,7 +106,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.deleteCampaigns
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.deleteCampaigns">API ads.deleteCampaigns()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String deleteCampaigns(VKParameters params) {
@@ -98,7 +116,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getAds
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getAds">API ads.getAds()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getAds(VKParameters params) {
@@ -106,7 +126,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getAdsLayout
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getAdsLayout">API ads.getAdsLayout()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getAdsLayout(VKParameters params) {
@@ -114,7 +136,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getAdsTargeting
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getAdsTargeting">API ads.getAdsTargeting()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getAdsTargeting(VKParameters params) {
@@ -122,7 +146,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.createAds
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.createAds">API ads.createAds()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String createAds(VKParameters params) {
@@ -130,7 +156,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.updateAds
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.updateAds">API ads.updateAds()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String updateAds(VKParameters params) {
@@ -138,7 +166,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.deleteAds
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.deleteAds">API ads.deleteAds()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String deleteAds(VKParameters params) {
@@ -146,7 +176,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getStatistics
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getStatistics">API ads.getStatistics()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getStatistics(VKParameters params) {
@@ -154,7 +186,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getDemographics
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getDemographics">API ads.getDemographics()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getDemographics(VKParameters params) {
@@ -162,7 +196,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getBudget
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getBudget">API ads.getBudget()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getBudget(VKParameters params) {
@@ -170,7 +206,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getOfficeUsers
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getOfficeUsers">API ads.getOfficeUsers()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getOfficeUsers(VKParameters params) {
@@ -178,7 +216,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.addOfficeUsers
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.addOfficeUsers">API ads.addOfficeUsers()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String addOfficeUsers(VKParameters params) {
@@ -186,7 +226,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.removeOfficeUsers
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.removeOfficeUsers">API ads.removeOfficeUsers()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String removeOfficeUsers(VKParameters params) {
@@ -194,7 +236,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getTargetingStats
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getTargetingStats">API ads.getTargetingStats()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getTargetingStats(VKParameters params) {
@@ -202,7 +246,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getSuggestions
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getSuggestions">API ads.getSuggestions()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getSuggestions(VKParameters params) {
@@ -210,7 +256,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getCategories
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getCategories">API ads.getCategories()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getCategories(VKParameters params) {
@@ -218,7 +266,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getUploadURL
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getUploadURL">API ads.getUploadURL()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getUploadURL(VKParameters params) {
@@ -226,7 +276,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getVideoUploadURL
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getVideoUploadURL">API ads.getVideoUploadURL()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getVideoUploadURL(VKParameters params) {
@@ -234,7 +286,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getFloodStats
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getFloodStats">API ads.getFloodStats()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getFloodStats(VKParameters params) {
@@ -242,7 +296,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getRejectionReason
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getRejectionReason">API ads.getRejectionReason()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getRejectionReason(VKParameters params) {
@@ -250,7 +306,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.createTargetGroup
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.createTargetGroup">API ads.createTargetGroup()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String createTargetGroup(VKParameters params) {
@@ -258,7 +316,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.updateTargetGroup
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.updateTargetGroup">API ads.updateTargetGroup()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String updateTargetGroup(VKParameters params) {
@@ -266,7 +326,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.deleteTargetGroup
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.deleteTargetGroup">API ads.deleteTargetGroup()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String deleteTargetGroup(VKParameters params) {
@@ -274,7 +336,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.getTargetGroups
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.getTargetGroups">API ads.getTargetGroups()</a>
      */
     @Rights(VKApiRigths.ADS)
     public String getTargetGroups(VKParameters params) {
@@ -282,7 +346,9 @@ public class VKApiAds extends VKApiBase {
     }
 
     /**
-     * @link https://vk.com/dev/ads.importTargetContacts
+     * @param params method parameters
+     * @return String with json respond
+     * @see <a href="https://vk.com/dev/ads.importTargetContacts">API ads.importTargetContacts()</a>=
      */
     @Rights(VKApiRigths.ADS)
     public String importTargetContacts(VKParameters params) {

@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiSecure extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/secure.getAppBalance
      *
      * This is a server method. It may only be called from your server.
@@ -29,6 +31,8 @@ public class VKApiSecure extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/secure.getTransactionsHistory
      *
      * This is a server method. It may only be called from your server.
@@ -39,6 +43,8 @@ public class VKApiSecure extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/secure.getSMSHistory
      *
      * This is a server method. It may only be called from your server.
@@ -49,6 +55,8 @@ public class VKApiSecure extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/secure.sendSMSNotification
      *
      * This is a server method. It may only be called from your server.
@@ -59,6 +67,8 @@ public class VKApiSecure extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/secure.sendNotification
      *
      * This is a server method. It may only be called from your server.
@@ -69,6 +79,8 @@ public class VKApiSecure extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/secure.setCounter
      *
      * This is a server method. It may only be called from your server.
@@ -79,6 +91,8 @@ public class VKApiSecure extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/secure.setUserLevel
      *
      * This is a server method. It may only be called from your server.
@@ -89,6 +103,8 @@ public class VKApiSecure extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/secure.getUserLevel
      *
      * This is a server method. It may only be called from your server.
@@ -99,6 +115,8 @@ public class VKApiSecure extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/secure.checkToken
      *
      * This is a server method. It may only be called from your server.

@@ -18,6 +18,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiNotes extends VKApiBase {
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/notes.get
      *
      * You need the following rights to call this method: notes.
@@ -27,6 +29,8 @@ public class VKApiNotes extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/notes.getById
      *
      * You need the following rights to call this method: notes.
@@ -36,6 +40,8 @@ public class VKApiNotes extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/notes.getFriendsNotes
      *
      * You need the following rights to call this method: notes.
@@ -45,6 +51,8 @@ public class VKApiNotes extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/notes.add
      *
      * You need the following rights to call this method: notes.
@@ -54,6 +62,8 @@ public class VKApiNotes extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/notes.edit
      *
      * You need the following rights to call this method: notes.
@@ -63,6 +73,8 @@ public class VKApiNotes extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/notes.delete
      *
      * You need the following rights to call this method: notes.
@@ -72,6 +84,8 @@ public class VKApiNotes extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/notes.getComments
      *
      * You need the following rights to call this method: notes.
@@ -81,6 +95,8 @@ public class VKApiNotes extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/notes.createComment
      *
      * You need the following rights to call this method: notes.
@@ -91,6 +107,8 @@ public class VKApiNotes extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/notes.editComment
      *
      * You need the following rights to call this method: notes.
@@ -101,6 +119,8 @@ public class VKApiNotes extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/notes.deleteComment
      *
      * You need the following rights to call this method: notes.
@@ -111,6 +131,8 @@ public class VKApiNotes extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/notes.restoreComment
      *
      * You need the following rights to call this method: notes.

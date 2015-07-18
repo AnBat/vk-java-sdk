@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiPages extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/pages.get
      *
      * You need the following rights to call this method: pages.
@@ -28,6 +30,8 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/pages.save
      *
      * You need the following rights to call this method: pages.
@@ -37,6 +41,8 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/pages.saveAccess
      *
      * You need the following rights to call this method: pages.
@@ -46,6 +52,8 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/pages.getHistory
      *
      * You need the following rights to call this method: pages.
@@ -55,6 +63,8 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/pages.getTitles
      *
      * You need the following rights to call this method: pages.
@@ -64,6 +74,8 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/pages.getVersion
      *
      * This method doesn't require any specific rights.
@@ -73,6 +85,8 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/pages.parseWiki
      *
      * This method doesn't require any specific rights.
@@ -82,6 +96,8 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/pages.clearCache
      *
      * This is an open method; it does not require an access_token.

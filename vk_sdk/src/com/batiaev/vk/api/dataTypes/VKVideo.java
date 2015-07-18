@@ -1,16 +1,15 @@
 package com.batiaev.vk.api.dataTypes;
 
 /**
- * Created by anton on 19/04/15.
- * ---
- * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
- */
-
-/**
+ * @author batiaev
+ * Created by batiaev on 19/04/15.
+ *
  * Video object describes video file
  * API version 5.0 and higher
- * @link https://vk.com/dev/video_object
+ * @see <a href="https://vk.com/dev/video_object">API: video object</a>
+ * ---
+ * Copyright © 2015. Anton Batiaev. All Rights Reserved.
+ * www.batiaev.com
  */
 public class VKVideo {
 

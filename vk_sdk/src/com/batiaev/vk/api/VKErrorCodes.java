@@ -29,7 +29,8 @@ public class VKErrorCodes {
     /**
      * Incorrect signature
      *
-     * Check if the signature has been formed correctly: @link https://vk.com/dev/api_nohttps.
+     * Check if the signature has been formed correctly:
+     * @see <a href="https://vk.com/dev/api_nohttps">API nohttps</a>.
      */
     public final static int INCORRECT_SIGNATURE = 4;
     /**
@@ -37,21 +38,23 @@ public class VKErrorCodes {
      *
      * Make sure that you use a correct authorization type.
      * To work with the methods without a secureprefix you need to authorize a user with one of these ways:
-     * @link http://vk.com/dev/auth_sites, @link http://vk.com/dev/auth_mobile.
+     * @see <a href="https://vk.com/dev/auth_sites">Auth sites</a>.
+     * @see <a href="https://vk.com/dev/auth_mobile">Auth mobile</a>.
      */
     public final static int AUTHORIZATION_FAILED = 5;
     /**
      * Too many requests per second
      *
      * Decrease the request frequency or use the execute method.
-     * More details on frequency limits here: @link http://vk.com/dev/api_requests.
+     * More details on frequency limits here:
+     * @see <a href="https://vk.com/dev/api_requests">API requests</a>.
      */
     public final static int TOO_MANY_REQUEST = 6;
     /**
      * Permission to perform this action is denied
      *
      * Make sure that your have received required permissions during the authorization.
-     * You can do it with the @link account.getAppPermissions method.
+     * You can do it with the account.getAppPermissions method.
      */
     public final static int PERMISSION_DENIED = 7;
     /**
@@ -75,7 +78,7 @@ public class VKErrorCodes {
     /**
      * In test mode application should be disabled or user should be authorized
      *
-     * Switch the app off in Settings: @link https://vk.com/editapp?id={Your API_ID}.
+     * Switch the app off in Settings: https://vk.com/editapp?id={Your API_ID}.
      */
     public final static int TEST_MODE_OR_USER_NOT_AUTHORIZED = 11;
     /**
@@ -100,7 +103,7 @@ public class VKErrorCodes {
     /**
      * Validation required
      *
-     * Make sure that you don't use a token received with @link http://vk.com/dev/auth_mobile
+     * Make sure that you don't use a token received with <a href="https://vk.com/dev/auth_mobile">auth_mobile</a>.
      * for a request from the server. It's restricted. The validation process is described on the @link separate page.
      */
     public final static int VALIDATION_REQUEST = 17;
@@ -108,7 +111,8 @@ public class VKErrorCodes {
      * Permission to perform this action is denied for non-standalone applications
      *
      * If you see this error despite your app has the Standalone type, make sure that you use
-     * @link redirect_uri=https://oauth.vk.com/blank.html. Details here: @link http://vk.com/dev/auth_mobile.
+     * redirect_uri=<a href="https://oauth.vk.com/blank.html">https://oauth.vk.com/blank.html</a>. Details here:
+     * @see <a href="https://vk.com/dev/auth_mobile">Auth mobile</a>.
      */
     public final static int PERMISSON_DENIED_FOR_NON_STAND_ALONE_APP = 20;
     /**
@@ -118,7 +122,7 @@ public class VKErrorCodes {
     /**
      * This method was disabled
      *
-     * All the methods available now are listed here: @link http://vk.com/dev/methods.
+     * All the methods available now are listed here: <a href="https://vk.com/dev/methods">Auth mobile</a>.
      */
     public final static int METHOD_DISABLED = 23;
     /**
@@ -183,7 +187,7 @@ public class VKErrorCodes {
     /**
      * Permission denied. You must enable votes processing in application settings
      *
-     * Check the app settings: @link http://vk.com/editapp?id={Your API_ID}&section=payments
+     * Check the app settings: http://vk.com/editapp?id={Your API_ID}&amp;section=payments
      */
     public final static int PERMISSION_DENIED_DESABLED_VOTES = 500;
     /**

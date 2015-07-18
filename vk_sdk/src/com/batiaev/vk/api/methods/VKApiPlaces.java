@@ -16,6 +16,8 @@ import com.batiaev.vk.api.VKParameters;
  */
 public class VKApiPlaces extends VKApiBase {
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.add
      *
      * This method doesn't require any specific rights.
@@ -25,6 +27,8 @@ public class VKApiPlaces extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.getById
      *
      * This method doesn't require any specific rights. 
@@ -34,6 +38,8 @@ public class VKApiPlaces extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.search
      *
      * This method doesn't require any specific rights. 
@@ -43,6 +49,8 @@ public class VKApiPlaces extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.checkin
      *
      * You need the following rights to call this method: wall.
@@ -53,6 +61,8 @@ public class VKApiPlaces extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.getCheckins
      *
      * This method doesn't require any specific rights. 
@@ -62,6 +72,8 @@ public class VKApiPlaces extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.getTypes
      *
      * This method doesn't require any specific rights. 

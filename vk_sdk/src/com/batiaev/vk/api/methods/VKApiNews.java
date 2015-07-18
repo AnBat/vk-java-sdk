@@ -18,6 +18,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiNews extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.get
      *
      * You need the following rights to call this method: wall and friends. 
@@ -27,6 +29,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.getRecommended
      *
      * You need the following rights to call this method: wall and friends. 
@@ -36,6 +40,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.getComments
      *
      * You need the following rights to call this method: wall.
@@ -46,6 +52,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.getMentions
      *
      * You need the following rights to call this method: wall.
@@ -55,6 +63,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.getBanned
      *
      * You need the following rights to call this method: wall.
@@ -65,6 +75,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.addBan
      *
      * You need the following rights to call this method: wall.
@@ -75,6 +87,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.deleteBan
      *
      * You need the following rights to call this method: wall.
@@ -85,6 +99,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.ignoreItem
      *
      * You need the following rights to call this method: wall.
@@ -95,6 +111,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.unignoreItem
      *
      * You need the following rights to call this method: wall.
@@ -105,6 +123,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.search
      *
      * This is an open method; it does not require an access_token. 
@@ -114,6 +134,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.getLists
      *
      * You need the following rights to call this method: wall.
@@ -124,6 +146,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.saveList
      *
      * You need the following rights to call this method: wall.
@@ -134,6 +158,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.deleteList
      *
      * You need the following rights to call this method: wall.
@@ -142,8 +168,10 @@ public class VKApiNews extends VKApiBase {
     public String deleteList(VKParameters params) {
         return prepareRequest("deleteList", params).getRequest();
     }
-	
+
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.unsubscribe
      *
      * You need the following rights to call this method: wall.
@@ -154,6 +182,8 @@ public class VKApiNews extends VKApiBase {
     }
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/newsfeed.getSuggestedSources
      *
      * This method doesn't require any specific rights. 

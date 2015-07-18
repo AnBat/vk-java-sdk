@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiStatus extends VKApiBase {
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/status.get
      *
      * You need the following rights to call this method: status. (Read more on rights)
@@ -28,6 +30,8 @@ public class VKApiStatus extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/status.set
      *
      * You need the following rights to call this method: status. (Read more on rights)

@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiDocs extends VKApiBase {
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/docs.get
      *
      * You need the following rights to call this method: docs.
@@ -28,6 +30,8 @@ public class VKApiDocs extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/docs.getById
      *
      * You need the following rights to call this method: docs
@@ -37,6 +41,8 @@ public class VKApiDocs extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/docs.getUploadServer
      *
      * You need the following rights to call this method: docs.
@@ -46,6 +52,8 @@ public class VKApiDocs extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/docs.getWallUploadServer
      *
      * You need the following rights to call this method: docs.
@@ -55,6 +63,8 @@ public class VKApiDocs extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/docs.save
      *
      * You need the following rights to call this method: docs.
@@ -64,6 +74,8 @@ public class VKApiDocs extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/docs.delete
      *
      * You need the following rights to call this method: docs.
@@ -73,6 +85,8 @@ public class VKApiDocs extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/docs.add
      *
      * You need the following rights to call this method: docs.

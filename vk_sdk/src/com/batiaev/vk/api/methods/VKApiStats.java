@@ -20,6 +20,8 @@ import com.batiaev.vk.api.VKRequest;
 public class VKApiStats extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/stats.get
      *
      * This method doesn't require any specific rights.
@@ -29,6 +31,8 @@ public class VKApiStats extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/stats.trackVisitor
      *
      * This method is available only to standalone-applications.

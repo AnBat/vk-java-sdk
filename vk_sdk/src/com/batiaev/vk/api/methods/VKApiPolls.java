@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiPolls extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/polls.getById
      *
      * You need the following rights to call this method: wall.
@@ -28,6 +30,8 @@ public class VKApiPolls extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.addVote
      *
      * You need the following rights to call this method: wall.
@@ -38,6 +42,8 @@ public class VKApiPolls extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.deleteVote
      *
      * You need the following rights to call this method: wall.
@@ -48,6 +54,8 @@ public class VKApiPolls extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.getVoters
      *
      * This method doesn't require any specific rights.
@@ -57,6 +65,8 @@ public class VKApiPolls extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.create
      *
      * You need the following rights to call this method: wall.
@@ -67,6 +77,8 @@ public class VKApiPolls extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/places.edit
      *
      * You need the following rights to call this method: wall.

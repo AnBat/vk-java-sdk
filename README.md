@@ -5,7 +5,7 @@ Library for working with [VK API](https://vk.com/dev/openapi), authorization thr
 
 Run
 ===
-gradle clean build jacocoTestReport run
+gradle clean build javaDoc jacocoTestReport run
 
 Prerequisites
 =============

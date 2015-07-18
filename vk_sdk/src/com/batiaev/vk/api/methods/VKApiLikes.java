@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiLikes extends VKApiBase {
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/likes.getList
      *
      * This is an open method; it does not require an access_token. 
@@ -28,6 +30,8 @@ public class VKApiLikes extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/likes.add
      *
      * You need the following rights to call this method: wall. (Read more on rights)
@@ -38,6 +42,8 @@ public class VKApiLikes extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/likes.delete
      *
      * You need the following rights to call this method: wall. (Read more on rights)
@@ -48,6 +54,8 @@ public class VKApiLikes extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/likes.isLiked
      *
      * You need the following rights to call this method: wall. (Read more on rights)

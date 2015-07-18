@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiFavorites extends VKApiBase {
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/fave.getUsers
      *
      * You need the following rights to call this method: friends.
@@ -29,6 +31,8 @@ public class VKApiFavorites extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/fave.getPhotos
      *
      * You need the following rights to call this method: friends.
@@ -39,6 +43,8 @@ public class VKApiFavorites extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/fave.getPosts
      *
      * You need the following rights to call this method: friends.
@@ -49,6 +55,8 @@ public class VKApiFavorites extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/fave.getVideos
      *
      * You need the following rights to call this method: friends.
@@ -59,6 +67,8 @@ public class VKApiFavorites extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/fave.getLinks
      *
      * You need the following rights to call this method: friends.
@@ -69,6 +79,8 @@ public class VKApiFavorites extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/fave.addUser
      *
      * You need the following rights to call this method: friends.
@@ -79,6 +91,8 @@ public class VKApiFavorites extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/fave.removeUser
      *
      * You need the following rights to call this method: friends.
@@ -89,6 +103,8 @@ public class VKApiFavorites extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/fave.addGroup
      *
      * You need the following rights to call this method: friends.
@@ -99,6 +115,8 @@ public class VKApiFavorites extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/fave.removeGroup
      *
      * You need the following rights to call this method: friends.
@@ -109,6 +127,8 @@ public class VKApiFavorites extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/fave.addLink
      *
      * You need the following rights to call this method: friends.
@@ -119,6 +139,8 @@ public class VKApiFavorites extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/fave.removeLink
      *
      * You need the following rights to call this method: friends.

@@ -25,7 +25,9 @@ import org.json.JSONObject;
 public class VKApiMessages extends VKApiBase {
 
     private static final Logger LOG = LogManager.getLogger(VKApiMessages.class);
+
     /**
+     * @param params method parameters
      * https://vk.com/dev/messages.get
      * 
      * You need the following rights to call this method: messages.
@@ -49,6 +51,8 @@ public class VKApiMessages extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.getDialogs
      * 
      * You need the following rights to call this method: messages.
@@ -59,6 +63,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.getById
      * 
      * You need the following rights to call this method: messages.
@@ -69,6 +75,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.search
      * 
      * You need the following rights to call this method: messages.
@@ -79,6 +87,7 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
      * https://vk.com/dev/messages.getHistory
      * 
      * You need the following rights to call this method: messages.
@@ -101,6 +110,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.send
      * 
      * You need the following rights to call this method: messages.
@@ -111,6 +122,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.delete
      * 
      * You need the following rights to call this method: messages.
@@ -121,6 +134,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.deleteDialog
      * 
      * You need the following rights to call this method: messages.
@@ -131,6 +146,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.restore
      * 
      * You need the following rights to call this method: messages.
@@ -141,6 +158,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.markAsRead
      * 
      * You need the following rights to call this method: messages.
@@ -151,6 +170,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.markAsImportant
      * 
      * You need the following rights to call this method: messages.
@@ -161,6 +182,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.getLongPollServer
      * 
      * You need the following rights to call this method: messages.
@@ -171,6 +194,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.getLongPollHistory
      * 
      * You need the following rights to call this method: messages.
@@ -181,6 +206,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.getChat
      * 
      * You need the following rights to call this method: messages.
@@ -191,6 +218,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.createChat
      * 
      * You need the following rights to call this method: messages.
@@ -201,6 +230,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.editChat
      * 
      * You need the following rights to call this method: messages.
@@ -211,6 +242,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.getChatUsers
      * 
      * You need the following rights to call this method: messages.
@@ -221,6 +254,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.setActivity
      * 
      * You need the following rights to call this method: messages.
@@ -231,6 +266,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.searchDialogs
      * 
      * You need the following rights to call this method: messages.
@@ -241,6 +278,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.addChatUser
      * 
      * You need the following rights to call this method: messages.
@@ -251,6 +290,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.removeChatUser
      * 
      * You need the following rights to call this method: messages.
@@ -261,6 +302,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.getLastActivity
      * 
      * You need the following rights to call this method: messages.
@@ -271,6 +314,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.setChatPhoto
      * 
      * You need the following rights to call this method: messages.
@@ -281,6 +326,8 @@ public class VKApiMessages extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/messages.deleteChatPhoto
      * 
      * You need the following rights to call this method: messages.

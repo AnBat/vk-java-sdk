@@ -27,6 +27,8 @@ public class VKApiDatabase extends VKApiBase {
     private static final Logger LOG = LogManager.getLogger(VKApiDatabase.class);
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/database.getCountries
      *
      * This is an open method; it does not require an access_token.
@@ -36,6 +38,8 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/database.getRegions
      *
      * This is an open method; it does not require an access_token.
@@ -45,6 +49,8 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/database.getStreetsById
      *
      * This is an open method; it does not require an access_token.
@@ -54,6 +60,8 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return VKCountry with required id
      * https://vk.com/dev/database.getCountriesById
      *
      * This is an open method; it does not require an access_token.
@@ -88,6 +96,8 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/database.getCities
      *
      * This is an open method; it does not require an access_token.
@@ -97,6 +107,7 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
      * https://vk.com/dev/database.getCitiesById
      *
      * This is an open method; it does not require an access_token.
@@ -133,6 +144,8 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/database.getUniversities
      *
      * This is an open method; it does not require an access_token.
@@ -142,6 +155,8 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/database.getSchools
      *
      * This is an open method; it does not require an access_token.
@@ -151,6 +166,8 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/database.getSchoolClasses
      *
      * This is an open method; it does not require an access_token.
@@ -160,6 +177,8 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/database.getFaculties
      *
      * This is an open method; it does not require an access_token.
@@ -169,6 +188,8 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/database.getChairs
      *
      * This is an open method; it does not require an access_token.

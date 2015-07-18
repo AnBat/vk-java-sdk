@@ -20,6 +20,7 @@ public class Main {
                 " - messages.get()\n" +
                 " - messages.getHistory()\n" +
                 " - friends.get()\n" +
+                " - friends.getRequests()\n" +
                 " - users.get()\n" +
                 "\n" +
                 "Another methods return string with JSON respond\n" +

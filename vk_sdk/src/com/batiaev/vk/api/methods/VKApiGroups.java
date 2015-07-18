@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiGroups extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.isMember
      *
      * This is an open method; it does not require an access_token.
@@ -29,6 +31,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.getById
      *
      * This is an open method; it does not require an access_token.
@@ -39,6 +43,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.get
      *
      * This method doesn't require any specific rights.
@@ -49,6 +55,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.getMembers
      *
      * This is an open method; it does not require an access_token.
@@ -59,6 +67,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.join
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -70,6 +80,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.leave
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -81,6 +93,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.search
      *
      * This method doesn't require any specific rights.
@@ -91,6 +105,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.getInvites
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -102,6 +118,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.getInvitedUsers
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -113,6 +131,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.banUser
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -124,6 +144,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.unbanUser
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -135,6 +157,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.getBanned
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -146,6 +170,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.create
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -157,6 +183,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.edit
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -168,6 +196,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.editPlace
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -179,6 +209,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.getSettings
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -190,6 +222,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.getRequests
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -201,6 +235,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.editManager
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -212,6 +248,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.invite
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -223,6 +261,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.addLink
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -234,6 +274,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.deleteLink
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -245,6 +287,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.editLink
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -256,6 +300,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.reorderLink
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -267,6 +313,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.removeUser
      *
      * You need the following rights to call this method: groups. (Read more on rights)
@@ -278,6 +326,8 @@ public class VKApiGroups extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/groups.approveRequest
      *
      * You need the following rights to call this method: groups. (Read more on rights)

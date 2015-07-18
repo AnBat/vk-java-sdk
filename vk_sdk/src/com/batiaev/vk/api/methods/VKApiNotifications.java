@@ -18,6 +18,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiNotifications extends VKApiBase {
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/notifications.get
      *
      * You need the following rights to call this method: notifications.
@@ -27,6 +29,8 @@ public class VKApiNotifications extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
 	 * https://vk.com/dev/notifications.markAsViewed
      *
      * You need the following rights to call this method: notifications.

@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiLeads extends VKApiBase {
 	
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/leads.complete
      *
      * This is an open method; it does not require an access_token.
@@ -28,6 +30,8 @@ public class VKApiLeads extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/leads.start
      *
      * This is an open method; it does not require an access_token.
@@ -37,6 +41,8 @@ public class VKApiLeads extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/leads.getStats
      *
      * You need the following rights to call this method: leads.
@@ -46,6 +52,8 @@ public class VKApiLeads extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/leads.getUsers
      *
      * This is an open method; it does not require an access_token.
@@ -55,6 +63,8 @@ public class VKApiLeads extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/leads.checkUser
      *
      * This method doesn't require any specific rights.
@@ -64,6 +74,8 @@ public class VKApiLeads extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/leads.metricHit
      *
      * This is an open method; it does not require an access_token.

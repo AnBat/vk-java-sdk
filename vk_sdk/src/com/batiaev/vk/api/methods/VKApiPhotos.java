@@ -19,6 +19,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiPhotos extends VKApiBase {
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.createAlbum
      *
      * You need the following rights to call this method: photos.
@@ -28,6 +30,8 @@ public class VKApiPhotos extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.editAlbum
      *
      * You need the following rights to call this method: photos.
@@ -37,6 +41,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getAlbums
      *
      * This is an open method; it does not require an access_token. 
@@ -46,6 +52,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.get
      *
      * This is an open method; it does not require an access_token. 
@@ -55,6 +63,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getAlbumsCount
      *
      * This method doesn't require any specific rights. 
@@ -64,6 +74,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getProfile
      *
      * This method doesn't require any specific rights. 
@@ -73,6 +85,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getById
      *
      * This is an open method; it does not require an access_token. 
@@ -82,6 +96,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getUploadServer
      *
      * You need the following rights to call this method: photos.
@@ -91,6 +107,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getOwnerPhotoUploadServer
      *
      * This method doesn't require any specific rights. 
@@ -100,6 +118,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getChatUploadServer
      * 
      * You need the following rights to call this method: messages.
@@ -110,6 +130,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.saveOwnerPhoto
      *
      * This method doesn't require any specific rights. 
@@ -119,6 +141,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.saveWallPhoto
      *
      * This method doesn't require any specific rights. 
@@ -128,6 +152,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getWallUploadServer
      *
      * You need the following rights to call this method: photos.
@@ -137,6 +163,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getMessagesUploadServer
      *
      * You need the following rights to call this method: photos.
@@ -147,6 +175,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.saveMessagesPhoto
      * 
      * You need the following rights to call this method: photos.
@@ -157,6 +187,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.report
      *
      * You need the following rights to call this method: photos.
@@ -167,6 +199,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.reportComment
      *
      * You need the following rights to call this method: photos.
@@ -177,6 +211,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.search
      *
      * This is an open method; it does not require an access_token. 
@@ -186,6 +222,8 @@ public class VKApiPhotos extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.save
      *
      * You need the following rights to call this method: photos.
@@ -195,6 +233,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.copy
      *
      * You need the following rights to call this method: photos.
@@ -205,6 +245,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.edit
      *
      * You need the following rights to call this method: photos. 
@@ -214,6 +256,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.move
      *
      * You need the following rights to call this method: photos. 
@@ -223,6 +267,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.makeCover
      *
      * You need the following rights to call this method: photos.
@@ -232,6 +278,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.reorderAlbums
      *
      * You need the following rights to call this method: photos.
@@ -241,6 +289,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.reorderPhotos
      *
      * You need the following rights to call this method: photos.
@@ -250,6 +300,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getAll
      *
      * You need the following rights to call this method: photos.
@@ -259,6 +311,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getUserPhotos
      *
      * This method doesn't require any specific rights. 
@@ -268,6 +322,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.deleteAlbum
      *
      * You need the following rights to call this method: photos.
@@ -278,6 +334,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.delete
      *
      * You need the following rights to call this method: photos.
@@ -288,6 +346,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.restore
      *
      * You need the following rights to call this method: photos.
@@ -298,6 +358,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.confirmTag
      *
      * You need the following rights to call this method: photos.
@@ -308,6 +370,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getComments
      *
      * You need the following rights to call this method: photos.
@@ -317,6 +381,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getAllComments
      *
      * You need the following rights to call this method: photos.
@@ -326,6 +392,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.createComment
      *
      * You need the following rights to call this method: photos.
@@ -336,6 +404,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.deleteComment
      *
      * You need the following rights to call this method: photos.
@@ -346,6 +416,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.restoreComment
      *
      * You need the following rights to call this method: photos.
@@ -356,6 +428,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.editComment
      *
      * You need the following rights to call this method: photos.
@@ -366,6 +440,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getTags
      *
      * You need the following rights to call this method: photos.
@@ -376,6 +452,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.putTag
      *
      * You need the following rights to call this method: photos.
@@ -386,6 +464,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.removeTag
      *
      * You need the following rights to call this method: photos.
@@ -396,6 +476,8 @@ public class VKApiPhotos extends VKApiBase {
     }
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/photos.getNewTags
      *
      * You need the following rights to call this method: photos.

@@ -17,6 +17,8 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiAudio extends VKApiBase {
     
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.get
      *
      * You need the following rights to call this method: audio.
@@ -26,6 +28,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.getById
      *
      * You need the following rights to call this method: audio.
@@ -35,6 +39,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.getLyrics
      *
      * You need the following rights to call this method: audio.
@@ -44,6 +50,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.search
      *
      * You need the following rights to call this method: audio.
@@ -53,6 +61,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.getUploadServer
      *
      * You need the following rights to call this method: audio.
@@ -62,6 +72,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.save
      *
      * You need the following rights to call this method: audio.
@@ -71,6 +83,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.add
      *
      * You need the following rights to call this method: audio.
@@ -80,6 +94,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.delete
      *
      * You need the following rights to call this method: audio.
@@ -89,6 +105,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.edit
      *
      * You need the following rights to call this method: audio.
@@ -98,6 +116,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.reorder
      *
      * You need the following rights to call this method: audio.
@@ -107,6 +127,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.restore
      *
      * You need the following rights to call this method: audio.
@@ -116,6 +138,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.getAlbums
      *
      * You need the following rights to call this method: audio.
@@ -125,6 +149,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.addAlbum
      *
      * You need the following rights to call this method: audio.
@@ -134,6 +160,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.editAlbum
      *
      * You need the following rights to call this method: audio.
@@ -143,6 +171,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.deleteAlbum
      *
      * You need the following rights to call this method: audio.
@@ -152,6 +182,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.moveToAlbum
      *
      * You need the following rights to call this method: audio.
@@ -161,6 +193,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.setBroadcast
      *
      * You need the following rights to call this method: audio.
@@ -170,6 +204,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.getBroadcastList
      *
      * You need the following rights to call this method: audio.
@@ -179,6 +215,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.getRecommendations
      *
      * You need the following rights to call this method: audio.
@@ -188,6 +226,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.getPopular
      *
      * You need the following rights to call this method: audio.
@@ -197,6 +237,8 @@ public class VKApiAudio extends VKApiBase {
     }
 
     /**
+     * @param params method parameters
+     * @return String with json respond
      * https://vk.com/dev/audio.getCount
      *
      * You need the following rights to call this method: audio.
