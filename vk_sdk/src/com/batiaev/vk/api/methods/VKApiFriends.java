@@ -8,7 +8,9 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
+import com.batiaev.vk.api.annotation.Rights;
 import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiRigths;
 import com.batiaev.vk.api.dataTypes.VKUser;
 import com.batiaev.vk.api.dataTypes.VKUserList;
 import com.batiaev.vk.api.system.VkJsonParser;
@@ -28,10 +30,9 @@ public class VKApiFriends extends VKApiBase {
 
     /**
      * @param params method parameters
-     * https://vk.com/dev/friends.get
-     *
-     * This is an open method; it does not require an access_token. 
+     * @see <a href="https://vk.com/dev/friends.get">API friends.get()</a>
      */
+    @Rights(VKApiRigths.OPEN_METHOD)
     public VKUserList get(VKParameters params) {
 
         JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET, params).getRequest());

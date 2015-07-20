@@ -5,7 +5,7 @@ package com.batiaev.vk.api.annotation;
  * Created by batiaev on 18/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 public @interface Rights {

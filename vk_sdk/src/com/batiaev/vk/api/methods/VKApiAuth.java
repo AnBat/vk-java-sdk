@@ -19,7 +19,7 @@ public class VKApiAuth extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/auth.checkPhone
+     * @see <a href="https://vk.com/dev/auth.checkPhone">API auth.checkPhone()</a>
      *
      * This is an open method; it does not require an access_token. 
      */
@@ -30,7 +30,7 @@ public class VKApiAuth extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/auth.signup
+     * @see <a href="https://vk.com/dev/auth.signup">API auth.signup()</a>
      *
      * This is an open method; it does not require an access_token. 
      */
@@ -41,7 +41,7 @@ public class VKApiAuth extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/auth.confirm
+     * @see <a href="https://vk.com/dev/auth.confirm">API auth.confirm()</a>
      *
      * This is an open method; it does not require an access_token. 
      */
@@ -52,7 +52,7 @@ public class VKApiAuth extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/auth.restore
+     * @see <a href="https://vk.com/dev/auth.restore">API auth.restore()</a>
      *
      * This method is only available for apps with Direct authorization access.
      * This is an open method; it does not require an access_token. 

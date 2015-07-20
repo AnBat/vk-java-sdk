@@ -28,6 +28,10 @@ public class VKParameters {
         values.put(key, String.valueOf(value));
     }
 
+    public void removeValue(String key) {
+        values.remove(key);
+    }
+
     public String value(String key) {
         return values.get(key);
     }

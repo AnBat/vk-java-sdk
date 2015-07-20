@@ -8,8 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
+import com.batiaev.vk.api.annotation.Rights;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiDatabaseConsts;
+import com.batiaev.vk.api.consts.VKApiRigths;
 import com.batiaev.vk.api.dataTypes.VKCity;
 import com.batiaev.vk.api.dataTypes.VKCountry;
 import com.batiaev.vk.sdk.VkLocalCache;
@@ -29,10 +31,9 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/database.getCountries
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getCountries">API database.getCountries()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getCountries(VKParameters params) {
         return prepareRequest("getCountries", params).getRequest();
     }
@@ -40,10 +41,9 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/database.getRegions
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getRegions">API database.getRegions()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getRegions(VKParameters params) {
         return prepareRequest("getRegions", params).getRequest();
     }
@@ -51,10 +51,9 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/database.getStreetsById
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getStreetsById">API database.getStreetsById()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getStreetsById(VKParameters params) {
         return prepareRequest("getStreetsById", params).getRequest();
     }
@@ -62,10 +61,9 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return VKCountry with required id
-     * https://vk.com/dev/database.getCountriesById
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getCountriesById">API database.getCountriesById()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public VKCountry getCountriesById(VKParameters params) {
         VKCountry country = new VKCountry();
 
@@ -98,20 +96,18 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/database.getCities
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getCities">API database.getCities()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getCities(VKParameters params) {
         return prepareRequest("getCities", params).getRequest();
     }
 
     /**
      * @param params method parameters
-     * https://vk.com/dev/database.getCitiesById
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getCitiesById">API database.getCitiesById()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public VKCity getCitiesById(VKParameters params) {
         VKCity city = new VKCity();
         int cityId = Integer.parseInt(params.value(VKApiDatabaseConsts.CITY_IDS));
@@ -146,10 +142,9 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/database.getUniversities
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getUniversities">API database.getUniversities()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getUniversities(VKParameters params) {
         return prepareRequest("getUniversities", params).getRequest();
     }
@@ -157,10 +152,9 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/database.getSchools
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getSchools">API database.getSchools()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getSchools(VKParameters params) {
         return prepareRequest("getSchools", params).getRequest();
     }
@@ -168,10 +162,9 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/database.getSchoolClasses
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getSchoolClasses">API database.getSchoolClasses()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getSchoolClasses(VKParameters params) {
         return prepareRequest("getSchoolClasses", params).getRequest();
     }
@@ -179,10 +172,9 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/database.getFaculties
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getFaculties">API database.getFaculties()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getFaculties(VKParameters params) {
         return prepareRequest("getFaculties", params).getRequest();
     }
@@ -190,10 +182,9 @@ public class VKApiDatabase extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/database.getChairs
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/database.getChairs">API database.getChairs()</a>
      */
+    @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getChairs(VKParameters params) {
         return prepareRequest("getChairs", params).getRequest();
     }

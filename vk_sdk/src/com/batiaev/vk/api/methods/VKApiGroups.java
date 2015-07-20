@@ -8,6 +8,8 @@ package com.batiaev.vk.api.methods;
  */
  
 import com.batiaev.vk.api.VKParameters;
+import com.batiaev.vk.api.annotation.Rights;
+import com.batiaev.vk.api.consts.VKApiRigths;
 
 /**
  * @author batiaev
@@ -21,11 +23,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.isMember
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/groups.isMember">API groups.isMember()</a>
      *
      */
+    @Rights(VKApiRigths.OPEN_METHOD)
     public String isMember(VKParameters params) {
         return prepareRequest("isMember", params).getRequest();
     }
@@ -33,11 +34,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.getById
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/groups.getById">API groups.getById()</a>
      *
      */
+    @Rights(VKApiRigths.OPEN_METHOD)
     public String getById(VKParameters params) {
         return prepareRequest("getById", params).getRequest();
     }
@@ -45,11 +45,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.get
-     *
-     * This method doesn't require any specific rights.
+     * @see <a href="https://vk.com/dev/groups.get">API groups.get()</a>
      *
      */
+    @Rights(VKApiRigths.NOTHING)
     public String get(VKParameters params) {
         return prepareRequest("get", params).getRequest();
     }
@@ -57,11 +56,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.getMembers
-     *
-     * This is an open method; it does not require an access_token.
+     * @see <a href="https://vk.com/dev/groups.getMembers">API groups.getMembers()</a>
      *
      */
+    @Rights(VKApiRigths.OPEN_METHOD)
     public String getMembers(VKParameters params) {
         return prepareRequest("getMembers", params).getRequest();
     }
@@ -69,12 +67,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.join
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.join">API groups.join()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String join(VKParameters params) {
         return prepareRequest("join", params).getRequest();
     }
@@ -82,12 +78,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.leave
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.leave">API groups.leave()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String leave(VKParameters params) {
         return prepareRequest("leave", params).getRequest();
     }
@@ -95,11 +89,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.search
-     *
-     * This method doesn't require any specific rights.
+     * @see <a href="https://vk.com/dev/groups.search">API groups.search()</a>
      *
      */
+    @Rights(VKApiRigths.NOTHING)
     public String search(VKParameters params) {
         return prepareRequest("search", params).getRequest();
     }
@@ -107,12 +100,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.getInvites
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.getInvites">API groups.getInvites()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getInvites(VKParameters params) {
         return prepareRequest("getInvites", params).getRequest();
     }
@@ -120,12 +111,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.getInvitedUsers
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.getInvitedUsers">API groups.getInvitedUsers()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getInvitedUsers(VKParameters params) {
         return prepareRequest("getInvitedUsers", params).getRequest();
     }
@@ -133,12 +122,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.banUser
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.banUser">API groups.banUser()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String banUser(VKParameters params) {
         return prepareRequest("banUser", params).getRequest();
     }
@@ -146,12 +133,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.unbanUser
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.unbanUser">API groups.unbanUser()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String unbanUser(VKParameters params) {
         return prepareRequest("unbanUser", params).getRequest();
     }
@@ -159,12 +144,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.getBanned
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.getBanned">API groups.getBanned()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getBanned(VKParameters params) {
         return prepareRequest("getBanned", params).getRequest();
     }
@@ -172,12 +155,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.create
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.create">API groups.create()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String create(VKParameters params) {
         return prepareRequest("create", params).getRequest();
     }
@@ -185,12 +166,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.edit
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.edit">API groups.edit()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String edit(VKParameters params) {
         return prepareRequest("edit", params).getRequest();
     }
@@ -198,12 +177,10 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.editPlace
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/groups.editPlace">API groups.editPlace()</a>
      *
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editPlace(VKParameters params) {
         return prepareRequest("editPlace", params).getRequest();
     }
@@ -211,12 +188,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.getSettings
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.getSettings">API groups.getSettings()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getSettings(VKParameters params) {
         return prepareRequest("getSettings", params).getRequest();
     }
@@ -224,12 +198,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.getRequests
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.getRequests">API groups.getRequests()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getRequests(VKParameters params) {
         return prepareRequest("getRequests", params).getRequest();
     }
@@ -237,12 +208,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.editManager
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.editManager">API groups.editManager()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editManager(VKParameters params) {
         return prepareRequest("editManager", params).getRequest();
     }
@@ -250,12 +218,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.invite
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.invite">API groups.invite()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String invite(VKParameters params) {
         return prepareRequest("invite", params).getRequest();
     }
@@ -263,12 +228,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.addLink
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.addLink">API groups.addLink()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String addLink(VKParameters params) {
         return prepareRequest("addLink", params).getRequest();
     }
@@ -276,12 +238,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.deleteLink
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.deleteLink">API groups.deleteLink()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String deleteLink(VKParameters params) {
         return prepareRequest("deleteLink", params).getRequest();
     }
@@ -289,12 +248,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.editLink
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.editLink">API groups.editLink()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editLink(VKParameters params) {
         return prepareRequest("editLink", params).getRequest();
     }
@@ -302,12 +258,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.reorderLink
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.reorderLink">API groups.reorderLink()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String reorderLink(VKParameters params) {
         return prepareRequest("reorderLink", params).getRequest();
     }
@@ -315,12 +268,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.removeUser
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.removeUser">API groups.removeUser()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String removeUser(VKParameters params) {
         return prepareRequest("removeUser", params).getRequest();
     }
@@ -328,12 +278,9 @@ public class VKApiGroups extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/groups.approveRequest
-     *
-     * You need the following rights to call this method: groups. (Read more on rights)
-     * This method is available only to standalone-applications.
-     *
+     * @see <a href="https://vk.com/dev/groups.approveRequest">API groups.approveRequest()</a>
      */
+    @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String approveRequest(VKParameters params) {
         return prepareRequest("approveRequest", params).getRequest();
     }

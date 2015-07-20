@@ -8,23 +8,23 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
+import com.batiaev.vk.api.annotation.Rights;
 
 /**
  * @author batiaev
  *
  * Builds requests for API.gifts part
- * 
- * https://vk.com/dev/gifts
+ *
+ * @see <a href="https://vk.com/dev/gifts">API gifts</a>
  */
 public class VKApiGifts extends VKApiBase {
 
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/gifts.get
-     *
-     * This method is available only to standalone-applications.
+     * @see <a href="https://vk.com/dev/gifts.get">API gifts.get()</a>
      */
+    @Rights(standAloneOnly = true)
     public String get(VKParameters params) {
         return prepareRequest("get", params).getRequest();
     }
