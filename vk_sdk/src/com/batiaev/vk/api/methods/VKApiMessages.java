@@ -38,6 +38,7 @@ public class VKApiMessages extends VKApiBase {
 
         VKMessageList result = new VKMessageList();
         JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
+
         if (respondJson.has(VKApiConst.COUNT)) result.totalCount = respondJson.getInt(VKApiConst.COUNT);
         if (respondJson.has(VKApiConst.UNREAD)) result.upreadCount = respondJson.getInt(VKApiConst.UNREAD);
 

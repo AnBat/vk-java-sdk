@@ -19,4 +19,5 @@ public class VKApiMessagesConsts {
     public final static String OUT = "out";
     public final static String EMOJI = "emoji";
     public final static String TITLE = "title";
+    public final static String ATTACHMENTS = "attachments";
 }

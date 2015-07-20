@@ -1,7 +1,6 @@
 package com.batiaev.vk.api.dataTypes;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author batiaev
@@ -23,17 +22,22 @@ public class VKMessage {
     public boolean out;
     public String title;
     public String body;
-    public List<String> attachments;
-    public List<String> fwd_messages;
+    public ArrayList<VkAttachment> attachments;
+    public ArrayList<String> fwd_messages;
     public boolean emoji;
     public boolean deleted;
     //Additional fields for group chat only
     public int chat_id;
-    public List<String> chat_active;
+    public ArrayList<String> chat_active;
     public String users_count;
     public int admin_id;
     public String photo_50;
     public String photo_100;
     public String photo_200;
 
+    public VKMessage() {
+        attachments = new ArrayList<>();
+        fwd_messages = new ArrayList<>();
+        chat_active = new ArrayList<>();
+    }
 }

@@ -4,10 +4,8 @@ import com.batiaev.vk.api.VKError;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiMessagesConsts;
 import com.batiaev.vk.api.consts.VKApiUserConsts;
-import com.batiaev.vk.api.dataTypes.VKCity;
-import com.batiaev.vk.api.dataTypes.VKCountry;
-import com.batiaev.vk.api.dataTypes.VKMessage;
-import com.batiaev.vk.api.dataTypes.VKUser;
+import com.batiaev.vk.api.dataTypes.*;
+import com.batiaev.vk.api.methods.VKApiMessages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
@@ -120,6 +118,15 @@ public class VkJsonParser {
         if (messageJson.has(VKApiMessagesConsts.DATE))
             message.date = new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000);
         if (messageJson.has(VKApiMessagesConsts.BODY))
+            message.body = messageJson.getString(VKApiMessagesConsts.BODY);
+        if (messageJson.has(VKApiMessagesConsts.ATTACHMENTS)) {
+            JSONArray attachments = messageJson.getJSONArray(VKApiMessagesConsts.ATTACHMENTS);
+            for (int i = 0; i < attachments.length(); ++i) {
+                VkAttachment attachment = new VkAttachment();
+                attachment.setValue(attachments.get(i).toString());
+                message.attachments.add(attachment);
+            }
+        }
             message.body = messageJson.getString(VKApiMessagesConsts.BODY);
         if (messageJson.has(VKApiMessagesConsts.EMOJI))
             message.emoji = messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1;
