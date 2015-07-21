@@ -13,15 +13,15 @@ import com.batiaev.vk.api.VKParameters;
  * @author batiaev
  *
  * Builds requests for API.leads part
- * 
- * https://vk.com/dev/leads
+ *
+ * @see <a href="https://vk.com/dev/leads">API leads</a>
  */
 public class VKApiLeads extends VKApiBase {
 	
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/leads.complete
+     * @see <a href="https://vk.com/dev/leads.complete">API leads.complete()</a>
      *
      * This is an open method; it does not require an access_token.
      */
@@ -32,7 +32,7 @@ public class VKApiLeads extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/leads.start
+     * @see <a href="https://vk.com/dev/leads.start">API leads.start()</a>
      *
      * This is an open method; it does not require an access_token.
      */
@@ -43,7 +43,7 @@ public class VKApiLeads extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/leads.getStats
+     * @see <a href="https://vk.com/dev/leads.getStats">API leads.getStats()</a>
      *
      * You need the following rights to call this method: leads.
      */
@@ -54,7 +54,7 @@ public class VKApiLeads extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/leads.getUsers
+     * @see <a href="https://vk.com/dev/leads.getUsers">API leads.getUsers()</a>
      *
      * This is an open method; it does not require an access_token.
      */
@@ -65,7 +65,7 @@ public class VKApiLeads extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/leads.checkUser
+     * @see <a href="https://vk.com/dev/leads.checkUser">API leads.checkUser()</a>
      *
      * This method doesn't require any specific rights.
      */
@@ -76,7 +76,7 @@ public class VKApiLeads extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/leads.metricHit
+     * @see <a href="https://vk.com/dev/leads.metricHit">API leads.metricHit()</a>
      *
      * This is an open method; it does not require an access_token.
      */

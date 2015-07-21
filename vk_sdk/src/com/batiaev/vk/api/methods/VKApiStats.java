@@ -1,10 +1,10 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 17/04/15.
+ * Created by batiaev on 17/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
@@ -14,15 +14,15 @@ import com.batiaev.vk.api.VKRequest;
  * @author batiaev
  *
  * Builds requests for API.stats part
- * 
- * https://vk.com/dev/stats
+ *
+ * @see <a href="https://vk.com/dev/stats">API stats</a>
  */
 public class VKApiStats extends VKApiBase {
 
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/stats.get
+     * @see <a href="https://vk.com/dev/stats.get">API stats.get()</a>
      *
      * This method doesn't require any specific rights.
      */
@@ -33,7 +33,7 @@ public class VKApiStats extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/stats.trackVisitor
+     * @see <a href="https://vk.com/dev/stats.trackVisitor">API stats.trackVisitor()</a>
      *
      * This method is available only to standalone-applications.
      */

@@ -12,15 +12,15 @@ import org.json.JSONObject;
 
 /**
  * @author batiaev
- * Created by anton on 15/04/15.
+ * Created by batiaev on 15/04/15.
  * ---
  *
  * Builds requests for API.messages part
- * 
- * https://vk.com/dev/messages
+ *
+ * @see <a href="https://vk.com/dev/messages">API messages</a>
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 public class VKApiMessages extends VKApiBase {
 
@@ -28,7 +28,8 @@ public class VKApiMessages extends VKApiBase {
 
     /**
      * @param params method parameters
-     * https://vk.com/dev/messages.get
+     * @return list of required messages
+     * @see <a href="https://vk.com/dev/messages.get">API messages.get()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -54,7 +55,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.getDialogs
+     * @see <a href="https://vk.com/dev/messages.getDialogs">API messages.getDialogs()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -66,7 +67,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.getById
+     * @see <a href="https://vk.com/dev/messages.getById">API messages.getById()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -78,7 +79,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.search
+     * @see <a href="https://vk.com/dev/messages.search">API messages.search()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -89,7 +90,8 @@ public class VKApiMessages extends VKApiBase {
     
     /**
      * @param params method parameters
-     * https://vk.com/dev/messages.getHistory
+     * @return return list of messages from history with concrete user or chat
+     * @see <a href="https://vk.com/dev/messages.getHistory">API messages.getHistory()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -113,7 +115,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.send
+     * @see <a href="https://vk.com/dev/messages.send">API messages.send()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -125,7 +127,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.delete
+     * @see <a href="https://vk.com/dev/messages.delete">API messages.delete()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -137,7 +139,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.deleteDialog
+     * @see <a href="https://vk.com/dev/messages.deleteDialog">API messages.deleteDialog()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -149,7 +151,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.restore
+     * @see <a href="https://vk.com/dev/messages.restore">API messages.restore()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -161,7 +163,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.markAsRead
+     * @see <a href="https://vk.com/dev/messages.markAsRead">API messages.markAsRead()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -173,7 +175,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.markAsImportant
+     * @see <a href="https://vk.com/dev/messages.markAsImportant">API messages.markAsImportant()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -185,7 +187,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.getLongPollServer
+     * @see <a href="https://vk.com/dev/messages.getLongPollServer">API messages.getLongPollServer()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -197,7 +199,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.getLongPollHistory
+     * @see <a href="https://vk.com/dev/messages.getLongPollHistory">API messages.getLongPollHistory()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -209,7 +211,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.getChat
+     * @see <a href="https://vk.com/dev/messages.getChat">API messages.getChat()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -221,7 +223,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.createChat
+     * @see <a href="https://vk.com/dev/messages.createChat">API messages.createChat()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -233,7 +235,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.editChat
+     * @see <a href="https://vk.com/dev/messages.editChat">API messages.editChat()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -245,7 +247,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.getChatUsers
+     * @see <a href="https://vk.com/dev/messages.getChatUsers">API messages.getChatUsers()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -257,7 +259,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.setActivity
+     * @see <a href="https://vk.com/dev/messages.setActivity">API messages.setActivity()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -269,7 +271,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.searchDialogs
+     * @see <a href="https://vk.com/dev/messages.searchDialogs">API messages.searchDialogs()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -281,7 +283,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.addChatUser
+     * @see <a href="https://vk.com/dev/messages.addChatUser">API messages.addChatUser()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -293,7 +295,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.removeChatUser
+     * @see <a href="https://vk.com/dev/messages.removeChatUser">API messages.removeChatUser()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -305,7 +307,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.getLastActivity
+     * @see <a href="https://vk.com/dev/messages.getLastActivity">API messages.getLastActivity()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -317,7 +319,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.setChatPhoto
+     * @see <a href="https://vk.com/dev/messages.setChatPhoto">API messages.setChatPhoto()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -329,7 +331,7 @@ public class VKApiMessages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/messages.deleteChatPhoto
+     * @see <a href="https://vk.com/dev/messages.deleteChatPhoto">API messages.deleteChatPhoto()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 

@@ -20,7 +20,7 @@ public class VKApiNotifications extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/notifications.get
+     * @see <a href="https://vk.com/dev/notifications.get">API notifications.get()</a>
      *
      * You need the following rights to call this method: notifications.
      */
@@ -31,7 +31,7 @@ public class VKApiNotifications extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/notifications.markAsViewed
+     * @see <a href="https://vk.com/dev/notifications.markAsViewed">API notifications.markAsViewed()</a>
      *
      * You need the following rights to call this method: notifications.
      */

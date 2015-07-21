@@ -7,18 +7,18 @@ import com.batiaev.vk.api.VKParameters;
  * Created by batiaev on 15/04/15.
  *
  * Builds requests for API.orders part
- * 
- * https://vk.com/dev/orders
+ *
+ * @see <a href="https://vk.com/dev/orders">API orders</a>
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 public class VKApiOrders extends VKApiBase {
 
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/orders.get
+     * @see <a href="https://vk.com/dev/orders.get">API orders.get()</a>
      *
      * This is a server method. It may only be called from your server. Read more »
      * This method doesn't require any specific rights. 
@@ -30,7 +30,7 @@ public class VKApiOrders extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/orders.getById
+     * @see <a href="https://vk.com/dev/orders.getById">API orders.getById()</a>
      *
      * This is a server method. It may only be called from your server. Read more »
      * This method doesn't require any specific rights. 
@@ -42,7 +42,7 @@ public class VKApiOrders extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/orders.changeState
+     * @see <a href="https://vk.com/dev/orders.changeState">API orders.changeState()</a>
      *
      * This is a server method. It may only be called from your server. Read more »
      * This method doesn't require any specific rights. 

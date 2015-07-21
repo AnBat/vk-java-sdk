@@ -1,10 +1,10 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 15/04/15.
+ * Created by batiaev on 15/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
@@ -13,15 +13,15 @@ import com.batiaev.vk.api.VKParameters;
  * @author batiaev
  *
  * Builds requests for API.photos part
- * 
- * https://vk.com/dev/photos
+ *
+ * @see <a href="https://vk.com/dev/photos">API photos</a>
  */
 public class VKApiPhotos extends VKApiBase {
 
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.createAlbum
+     * @see <a href="https://vk.com/dev/photos.createAlbum">API photos.createAlbum()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -32,7 +32,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.editAlbum
+     * @see <a href="https://vk.com/dev/photos.editAlbum">API photos.editAlbum()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -43,7 +43,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getAlbums
+     * @see <a href="https://vk.com/dev/photos.getAlbums">API photos.getAlbums()</a>
      *
      * This is an open method; it does not require an access_token. 
      */
@@ -54,7 +54,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.get
+     * @see <a href="https://vk.com/dev/photos.get">API photos.get()</a>
      *
      * This is an open method; it does not require an access_token. 
      */
@@ -65,7 +65,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getAlbumsCount
+     * @see <a href="https://vk.com/dev/photos.getAlbumsCount">API photos.getAlbumsCount()</a>
      *
      * This method doesn't require any specific rights. 
      */
@@ -76,7 +76,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getProfile
+     * @see <a href="https://vk.com/dev/photos.getProfile">API photos.getProfile()</a>
      *
      * This method doesn't require any specific rights. 
      */
@@ -87,7 +87,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getById
+     * @see <a href="https://vk.com/dev/photos.getById">API photos.getById()</a>
      *
      * This is an open method; it does not require an access_token. 
      */
@@ -98,7 +98,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getUploadServer
+     * @see <a href="https://vk.com/dev/photos.getUploadServer">API photos.getUploadServer()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -109,7 +109,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getOwnerPhotoUploadServer
+     * @see <a href="https://vk.com/dev/photos.getOwnerPhotoUploadServer">API photos.getOwnerPhotoUploadServer()</a>
      *
      * This method doesn't require any specific rights. 
      */
@@ -120,7 +120,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getChatUploadServer
+     * @see <a href="https://vk.com/dev/photos.getChatUploadServer">API photos.getChatUploadServer()</a>
      * 
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
@@ -132,7 +132,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.saveOwnerPhoto
+     * @see <a href="https://vk.com/dev/photos.saveOwnerPhoto">API photos.saveOwnerPhoto()</a>
      *
      * This method doesn't require any specific rights. 
      */
@@ -143,7 +143,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.saveWallPhoto
+     * @see <a href="https://vk.com/dev/photos.saveWallPhoto">API photos.saveWallPhoto()</a>
      *
      * This method doesn't require any specific rights. 
      */
@@ -154,7 +154,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getWallUploadServer
+     * @see <a href="https://vk.com/dev/photos.getWallUploadServer">API photos.getWallUploadServer()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -165,7 +165,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getMessagesUploadServer
+     * @see <a href="https://vk.com/dev/photos.getMessagesUploadServer">API photos.getMessagesUploadServer()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -177,7 +177,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.saveMessagesPhoto
+     * @see <a href="https://vk.com/dev/photos.saveMessagesPhoto">API photos.saveMessagesPhoto()</a>
      * 
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -189,7 +189,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.report
+     * @see <a href="https://vk.com/dev/photos.report">API photos.report()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -201,7 +201,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.reportComment
+     * @see <a href="https://vk.com/dev/photos.reportComment">API photos.reportComment()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -213,7 +213,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.search
+     * @see <a href="https://vk.com/dev/photos.search">API photos.search()</a>
      *
      * This is an open method; it does not require an access_token. 
      */
@@ -224,7 +224,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.save
+     * @see <a href="https://vk.com/dev/photos.save">API photos.save()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -235,7 +235,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.copy
+     * @see <a href="https://vk.com/dev/photos.copy">API photos.copy()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -247,7 +247,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.edit
+     * @see <a href="https://vk.com/dev/photos.edit">API photos.edit()</a>
      *
      * You need the following rights to call this method: photos. 
      */
@@ -258,7 +258,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.move
+     * @see <a href="https://vk.com/dev/photos.move">API photos.move()</a>
      *
      * You need the following rights to call this method: photos. 
      */
@@ -269,7 +269,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.makeCover
+     * @see <a href="https://vk.com/dev/photos.makeCover">API photos.makeCover()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -280,7 +280,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.reorderAlbums
+     * @see <a href="https://vk.com/dev/photos.reorderAlbums">API photos.reorderAlbums()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -291,7 +291,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.reorderPhotos
+     * @see <a href="https://vk.com/dev/photos.reorderPhotos">API photos.reorderPhotos()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -302,7 +302,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getAll
+     * @see <a href="https://vk.com/dev/photos.getAll">API photos.getAll()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -313,7 +313,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getUserPhotos
+     * @see <a href="https://vk.com/dev/photos.getUserPhotos">API photos.getUserPhotos()</a>
      *
      * This method doesn't require any specific rights. 
      */
@@ -324,7 +324,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.deleteAlbum
+     * @see <a href="https://vk.com/dev/photos.deleteAlbum">API photos.deleteAlbum()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -336,7 +336,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.delete
+     * @see <a href="https://vk.com/dev/photos.delete">API photos.delete()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -348,7 +348,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.restore
+     * @see <a href="https://vk.com/dev/photos.restore">API photos.restore()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -360,7 +360,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.confirmTag
+     * @see <a href="https://vk.com/dev/photos.confirmTag">API photos.confirmTag()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -372,7 +372,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getComments
+     * @see <a href="https://vk.com/dev/photos.getComments">API photos.getComments()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -383,7 +383,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getAllComments
+     * @see <a href="https://vk.com/dev/photos.getAllComments">API photos.getAllComments()</a>
      *
      * You need the following rights to call this method: photos.
      */
@@ -394,7 +394,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.createComment
+     * @see <a href="https://vk.com/dev/photos.createComment">API photos.createComment()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -406,7 +406,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.deleteComment
+     * @see <a href="https://vk.com/dev/photos.deleteComment">API photos.deleteComment()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -418,7 +418,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.restoreComment
+     * @see <a href="https://vk.com/dev/photos.restoreComment">API photos.restoreComment()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -430,7 +430,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.editComment
+     * @see <a href="https://vk.com/dev/photos.editComment">API photos.editComment()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -442,7 +442,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getTags
+     * @see <a href="https://vk.com/dev/photos.getTags">API photos.getTags()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -454,7 +454,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.putTag
+     * @see <a href="https://vk.com/dev/photos.putTag">API photos.putTag()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -466,7 +466,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.removeTag
+     * @see <a href="https://vk.com/dev/photos.removeTag">API photos.removeTag()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 
@@ -478,7 +478,7 @@ public class VKApiPhotos extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/photos.getNewTags
+     * @see <a href="https://vk.com/dev/photos.getNewTags">API photos.getNewTags()</a>
      *
      * You need the following rights to call this method: photos.
      * This method is available only to standalone-applications. 

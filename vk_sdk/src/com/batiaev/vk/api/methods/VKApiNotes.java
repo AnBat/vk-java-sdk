@@ -5,22 +5,22 @@ package com.batiaev.vk.api.methods;
  * Created by batiaev on 17/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
 
 /**
  * Builds requests for API.notes part
- * 
- * https://vk.com/dev/notes
+ *
+ * @see <a href="https://vk.com/dev/notes">API notes()</a>
  */
 public class VKApiNotes extends VKApiBase {
 	
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/notes.get
+     * @see <a href="https://vk.com/dev/newsfeed.get">API newsfeed.get()</a>
      *
      * You need the following rights to call this method: notes.
      */
@@ -31,7 +31,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/notes.getById
+     * @see <a href="https://vk.com/dev/newsfeed.getById">API newsfeed.getById()</a>
      *
      * You need the following rights to call this method: notes.
      */
@@ -42,7 +42,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/notes.getFriendsNotes
+     * @see <a href="https://vk.com/dev/newsfeed.getFriendsNotes">API newsfeed.getFriendsNotes()</a>
      *
      * You need the following rights to call this method: notes.
      */
@@ -53,7 +53,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/notes.add
+     * @see <a href="https://vk.com/dev/newsfeed.add">API newsfeed.add()</a>
      *
      * You need the following rights to call this method: notes.
      */
@@ -64,7 +64,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/notes.edit
+     * @see <a href="https://vk.com/dev/newsfeed.edit">API newsfeed.edit()</a>
      *
      * You need the following rights to call this method: notes.
      */
@@ -75,7 +75,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/notes.delete
+     * @see <a href="https://vk.com/dev/newsfeed.delete">API newsfeed.delete()</a>
      *
      * You need the following rights to call this method: notes.
      */
@@ -86,7 +86,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/notes.getComments
+     * @see <a href="https://vk.com/dev/newsfeed.getComments">API newsfeed.getComments()</a>
      *
      * You need the following rights to call this method: notes.
      */
@@ -97,7 +97,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/notes.createComment
+     * @see <a href="https://vk.com/dev/newsfeed.createComment">API newsfeed.createComment()</a>
      *
      * You need the following rights to call this method: notes.
      * This method is available only to standalone-applications.
@@ -109,7 +109,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/notes.editComment
+     * @see <a href="https://vk.com/dev/newsfeed.editComment">API newsfeed.editComment()</a>
      *
      * You need the following rights to call this method: notes.
      * This method is available only to standalone-applications.
@@ -121,7 +121,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/notes.deleteComment
+     * @see <a href="https://vk.com/dev/newsfeed.deleteComment">API newsfeed.deleteComment()</a>
      *
      * You need the following rights to call this method: notes.
      * This method is available only to standalone-applications.
@@ -133,7 +133,7 @@ public class VKApiNotes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/notes.restoreComment
+     * @see <a href="https://vk.com/dev/newsfeed.restoreComment">API newsfeed.restoreComment()</a>
      *
      * You need the following rights to call this method: notes.
      * This method is available only to standalone-applications.

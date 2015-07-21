@@ -1,10 +1,10 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 15/04/15.
+ * Created by batiaev on 15/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
@@ -13,15 +13,15 @@ import com.batiaev.vk.api.VKParameters;
  * @author batiaev
  *
  * Builds requests for API.likes part
- * 
- * https://vk.com/dev/likes
+ *
+ * @see <a href="https://vk.com/dev/likes">API likes</a>
  */
 public class VKApiLikes extends VKApiBase {
 	
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/likes.getList
+     * @see <a href="https://vk.com/dev/likes.getList">API likes.getList()</a>
      *
      * This is an open method; it does not require an access_token. 
      */
@@ -32,7 +32,7 @@ public class VKApiLikes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/likes.add
+     * @see <a href="https://vk.com/dev/likes.add">API likes.add()</a>
      *
      * You need the following rights to call this method: wall. (Read more on rights)
      * This method is available only to standalone-applications. 
@@ -44,7 +44,7 @@ public class VKApiLikes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/likes.delete
+     * @see <a href="https://vk.com/dev/likes.delete">API likes.delete()</a>
      *
      * You need the following rights to call this method: wall. (Read more on rights)
      * This method is available only to standalone-applications.  
@@ -56,7 +56,7 @@ public class VKApiLikes extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/likes.isLiked
+     * @see <a href="https://vk.com/dev/likes.isLiked">API likes.isLiked()</a>
      *
      * You need the following rights to call this method: wall. (Read more on rights)
      * This method is available only to standalone-applications.  

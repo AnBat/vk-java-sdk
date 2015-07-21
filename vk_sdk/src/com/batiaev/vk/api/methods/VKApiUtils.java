@@ -1,10 +1,10 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 17/04/15.
+ * Created by batiaev on 17/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
@@ -13,15 +13,15 @@ import com.batiaev.vk.api.VKParameters;
  * @author batiaev
  *
  * Builds requests for API.utils part
- * 
- * https://vk.com/dev/utils
+ *
+ * @see <a href="https://vk.com/dev/utils">API utils</a>
  */
 public class VKApiUtils extends VKApiBase {
 	
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/utils.checkLink
+     * @see <a href="https://vk.com/dev/utils.checkLink">API utils.checkLink()</a>
      *
      * This is an open method; it does not require an access_token.
      */
@@ -32,7 +32,7 @@ public class VKApiUtils extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-	 * https://vk.com/dev/utils.resolveScreenName
+     * @see <a href="https://vk.com/dev/utils.resolveScreenName">API utils.resolveScreenName()</a>
      *
      * This is an open method; it does not require an access_token.
      */
@@ -43,7 +43,7 @@ public class VKApiUtils extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/utils.getServerTime
+     * @see <a href="https://vk.com/dev/utils.getServerTime">API utils.getServerTime()</a>
      *
      * This is an open method; it does not require an access_token.
      */

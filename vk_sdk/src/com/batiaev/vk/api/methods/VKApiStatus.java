@@ -1,10 +1,10 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 15/04/15.
+ * Created by batiaev on 15/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
@@ -13,15 +13,15 @@ import com.batiaev.vk.api.VKParameters;
  * @author batiaev
  *
  * Builds requests for API.status part
- * 
- * https://vk.com/dev/status
+ *
+ * @see <a href="https://vk.com/dev/status">API status</a>
  */
 public class VKApiStatus extends VKApiBase {
 	
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/status.get
+     * @see <a href="https://vk.com/dev/status.get">API status.get()</a>
      *
      * You need the following rights to call this method: status. (Read more on rights)
      */
@@ -32,7 +32,7 @@ public class VKApiStatus extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/status.set
+     * @see <a href="https://vk.com/dev/status.set">API status.set()</a>
      *
      * You need the following rights to call this method: status. (Read more on rights)
      * This method is available only to standalone-applications. 

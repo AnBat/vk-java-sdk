@@ -1,10 +1,10 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 14/04/15.
+ * Created by batiaev on 14/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
@@ -21,8 +21,8 @@ import org.json.JSONObject;
 
 /**
  * Builds requests for API.friends part
- * 
- * https://vk.com/dev/friends
+ *
+ * @see <a href="https://vk.com/dev/friends">API friends()</a>
  */
 public class VKApiFriends extends VKApiBase {
 
@@ -30,6 +30,7 @@ public class VKApiFriends extends VKApiBase {
 
     /**
      * @param params method parameters
+     * @return list of required friends
      * @see <a href="https://vk.com/dev/friends.get">API friends.get()</a>
      */
     @Rights(VKApiRigths.OPEN_METHOD)
@@ -50,7 +51,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.getOnline
+     * @see <a href="https://vk.com/dev/friends.getOnline">API friends.getOnline()</a>
      *
      * You need the following rights to call this method: friends. 
      */
@@ -61,7 +62,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.getMutual
+     * @see <a href="https://vk.com/dev/friends.getMutual">API friends.getMutual()</a>
      *
      * You need the following rights to call this method: friends. 
      */
@@ -72,7 +73,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.getRecent
+     * @see <a href="https://vk.com/dev/friends.getRecent">API friends.getRecent()</a>
      *
      * You need the following rights to call this method: friends. 
      */
@@ -107,7 +108,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.add
+     * @see <a href="https://vk.com/dev/friends.add">API friends.add()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -119,7 +120,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.edit
+     * @see <a href="https://vk.com/dev/friends.edit">API friends.edit()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -131,7 +132,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.delete
+     * @see <a href="https://vk.com/dev/friends.delete">API friends.delete()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -143,7 +144,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.getLists
+     * @see <a href="https://vk.com/dev/friends.getLists">API friends.getLists()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -155,7 +156,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.addList
+     * @see <a href="https://vk.com/dev/friends.addList">API friends.addList()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -167,7 +168,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.editList
+     * @see <a href="https://vk.com/dev/friends.editList">API friends.editList()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -179,7 +180,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.deleteList
+     * @see <a href="https://vk.com/dev/friends.deleteList">API friends.deleteList()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -191,7 +192,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.getAppUsers
+     * @see <a href="https://vk.com/dev/friends.getAppUsers">API friends.getAppUsers()</a>
      *
      * You need the following rights to call this method: friends.
      */
@@ -202,7 +203,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.getByPhones
+     * @see <a href="https://vk.com/dev/friends.getByPhones">API friends.getByPhones()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -214,7 +215,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.deleteAllRequests
+     * @see <a href="https://vk.com/dev/friends.deleteAllRequests">API friends.deleteAllRequests()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -226,7 +227,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.getSuggestions
+     * @see <a href="https://vk.com/dev/friends.getSuggestions">API friends.getSuggestions()</a>
      *
      * You need the following rights to call this method: friends. 
      * This method is available only to standalone-applications.
@@ -238,7 +239,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.areFriends
+     * @see <a href="https://vk.com/dev/friends.areFriends">API friends.areFriends()</a>
      *
      * You need the following rights to call this method: friends.
      */
@@ -249,7 +250,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.getAvailableForCall
+     * @see <a href="https://vk.com/dev/friends.getAvailableForCall">API friends.getAvailableForCall()</a>
      *
      * You need the following rights to call this method: friends.
      */
@@ -260,7 +261,7 @@ public class VKApiFriends extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/friends.search
+     * @see <a href="https://vk.com/dev/friends.search">API friends.search()</a>
      *
      * You need the following rights to call this method: friends.
      */

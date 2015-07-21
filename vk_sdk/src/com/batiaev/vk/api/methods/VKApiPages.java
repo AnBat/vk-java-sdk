@@ -1,10 +1,10 @@
 package com.batiaev.vk.api.methods;
 
 /**
- * Created by anton on 17/04/15.
+ * Created by batiaev on 17/04/15.
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batyaev.com
+ * www.batiaev.com
  */
 
 import com.batiaev.vk.api.VKParameters;
@@ -13,15 +13,15 @@ import com.batiaev.vk.api.VKParameters;
  * @author batiaev
  *
  * Builds requests for API.pages part
- * 
- * https://vk.com/dev/pages
+ *
+ * @see <a href="https://vk.com/dev/pages">API pages</a>
  */
 public class VKApiPages extends VKApiBase {
 
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/pages.get
+     * @see <a href="https://vk.com/dev/pages.get">API pages.get()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -32,7 +32,7 @@ public class VKApiPages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/pages.save
+     * @see <a href="https://vk.com/dev/pages.save">API pages.save()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -43,7 +43,7 @@ public class VKApiPages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/pages.saveAccess
+     * @see <a href="https://vk.com/dev/pages.saveAccess">API pages.saveAccess()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -54,7 +54,7 @@ public class VKApiPages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/pages.getHistory
+     * @see <a href="https://vk.com/dev/pages.getHistory">API pages.getHistory()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -65,7 +65,7 @@ public class VKApiPages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/pages.getTitles
+     * @see <a href="https://vk.com/dev/pages.getTitles">API pages.getTitles()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -76,7 +76,7 @@ public class VKApiPages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/pages.getVersion
+     * @see <a href="https://vk.com/dev/pages.getVersion">API pages.getVersion()</a>
      *
      * This method doesn't require any specific rights.
      */
@@ -87,7 +87,7 @@ public class VKApiPages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/pages.parseWiki
+     * @see <a href="https://vk.com/dev/pages.parseWiki">API pages.parseWiki()</a>
      *
      * This method doesn't require any specific rights.
      */
@@ -98,7 +98,7 @@ public class VKApiPages extends VKApiBase {
     /**
      * @param params method parameters
      * @return String with json respond
-     * https://vk.com/dev/pages.clearCache
+     * @see <a href="https://vk.com/dev/pages.clearCache">API pages.clearCache()</a>
      *
      * This is an open method; it does not require an access_token.
      */
