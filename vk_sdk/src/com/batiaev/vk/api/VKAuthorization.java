@@ -1,6 +1,7 @@
 package com.batiaev.vk.api;
 
 import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.system.VkPropertyLoader;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
@@ -156,58 +157,13 @@ public class VKAuthorization {
     }
 
     public static void loadProperties() {
+        VkPropertyLoader.loadProperties();
 
-        Properties prop = new Properties();
-        String propFileName = "secure.properties";
-
-        String propPath = System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator + propFileName;
-        File file = new File(propPath);
-        if (!file.exists()) {
-            LOG.error("Property file '" + propPath + "' not found.");
-            return;
-        }
-        Set<PosixFilePermission> perms = null;
-        try {
-            perms = Files.getPosixFilePermissions(file.toPath());
-            if (perms != null) {
-                if (perms.contains(PosixFilePermission.GROUP_READ))
-                    LOG.error("Wrong permissions for file '" + propPath + "'. It is group readable!");
-                if (perms.contains(PosixFilePermission.GROUP_WRITE))
-                    LOG.error("Wrong permissions for file '" + propPath + "'. It is group writable!");
-                if (perms.contains(PosixFilePermission.GROUP_EXECUTE))
-                    LOG.error("Wrong permissions for file '" + propPath + "'. It is group executable!");
-                if (perms.contains(PosixFilePermission.OTHERS_READ))
-                    LOG.error("Wrong permissions for file '" + propPath + "'. It is others readable!");
-                if (perms.contains(PosixFilePermission.OTHERS_WRITE))
-                    LOG.error("Wrong permissions for file '" + propPath + "'. It is others writable!");
-                if (perms.contains(PosixFilePermission.OTHERS_EXECUTE))
-                    LOG.error("Wrong permissions for file '" + propPath + "'. It is others executable!");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        //set correct permissions
-        if (perms != null && !PosixFilePermissions.toString(perms).equals("r--------")) {
-            try {
-                Files.setPosixFilePermissions(file.toPath(), PosixFilePermissions.fromString("r--------"));
-                LOG.info("Setup 400 permissions for file " + propPath);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        try {
-            prop.load(new FileInputStream(propPath));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        setUserId(prop.getProperty("vk.user.id"));
-        setUserEmail(prop.getProperty("vk.user.email"));
-        setUserPassword(prop.getProperty("vk.user.password"));
-        setAppId(prop.getProperty("vk.app.id"));
-        setSecureCode(prop.getProperty("vk.app.secure_code"));
-        setAccessToken(prop.getProperty("vk.access_token"));
+        setUserId(VkPropertyLoader.userId());
+        setUserEmail(VkPropertyLoader.userEmail());
+        setUserPassword(VkPropertyLoader.userPassword());
+        setAppId(VkPropertyLoader.appId());
+        setSecureCode(VkPropertyLoader.secureCode());
+        setAccessToken(VkPropertyLoader.accessToken());
     }
 }

@@ -1,11 +1,13 @@
 package com.batiaev.vk.sdk;
 
 import com.batiaev.vk.api.dataTypes.VKUserList;
+import com.batiaev.vk.api.system.VkPropertyLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.Properties;
 
 /**
  * @author batiaev
@@ -78,30 +80,16 @@ public class VkLocalCache {
     }
 
     public static void save() {
-        FileWriter writer = null;
-        try {
-            writer = new FileWriter(createCacheFile("users.properties"), false);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        final FileWriter finalWriter = writer;
-        if (finalWriter == null) return;
-        userCache.keySet().forEach(key -> {
-            try {
-                finalWriter.write(key + " = " + userCache.get(key) + "\n");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        try {
-            writer.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        VkPropertyLoader.setPropertyFileName("users");
+        userCache.keySet().forEach(key -> VkPropertyLoader.setProperty(String.valueOf(key), userCache.get(key)));
     }
 
     public static void load() {
-        //FIXME
+        if (userCache == null)
+            userCache = new HashMap<>();
+        VkPropertyLoader.setPropertyFileName("users");
+        VkPropertyLoader.loadProperties();
+        VkPropertyLoader.properties().forEach((id, name) -> userCache.put(Integer.parseInt((String) id), (String) name));
     }
 
     private static File createCacheFile(String fileName) {
