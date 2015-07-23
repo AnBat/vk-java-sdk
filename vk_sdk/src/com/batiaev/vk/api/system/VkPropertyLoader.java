@@ -15,15 +15,11 @@ import java.util.Set;
  * Created by batiaev on 7/22/15.
  */
 public class VkPropertyLoader {
-    private static final Logger LOG = LogManager.getLogger(VkPropertyLoader.class);
+    protected static final Logger LOG = LogManager.getLogger(VkPropertyLoader.class);
 
     private static Properties props = new Properties();
-    private static String defaultFileName = System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator + "secure.properties";
-    private static String propName = defaultFileName;
-
-    public static String propertyName() {
-        return propName;
-    }
+    protected static String defaultFileName = System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator + "cache.properties";
+    protected static String propName = defaultFileName;
 
     public static void setPropertyFileName(String fileName) {
         propName = System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator + fileName + ".properties";
@@ -32,13 +28,15 @@ public class VkPropertyLoader {
         File file = new File(propName);
         if (!file.exists()) {
             try {
-                file.createNewFile();
+                final boolean isCreated = file.createNewFile();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+        loadProperties();
     }
 
+    //FIXME asap
     public static Properties properties() {
         return props;
     }
@@ -113,51 +111,7 @@ public class VkPropertyLoader {
         saveParamChanges();
     }
 
-    public static String secureCode() {
-        return props.getProperty("vk.app.secure_code");
-    }
-
-    public static void setSecureCode(String secureCode) {
-        setProperty("vk.app.secure_code", secureCode);
-    }
-
-    public static String appId() {
-        return props.getProperty("vk.app.id");
-    }
-
-    public static void setAppId(String id) {
-        setProperty("vk.app.id", id);
-    }
-
-    public static String userId() {
-        return props.getProperty("vk.user.id");
-    }
-
-    public static void setUserId(String id) {
-        setProperty("vk.user.id", id);
-    }
-
-    public static String userEmail() {
-        return props.getProperty("vk.user.email");
-    }
-
-    public static void setUserEmail(String email) {
-        setProperty("vk.user.email", email);
-    }
-
-    public static String userPassword() {
-        return props.getProperty("vk.user.password");
-    }
-
-    public static void setUserPassword(String pass) {
-        setProperty("vk.user.password", pass);
-    }
-
-    public static String accessToken() {
-        return props.getProperty("vk.access_token");
-    }
-
-    public static void setAccessToken(String accessToken) {
-        setProperty("vk.access_token", accessToken);
+    public static boolean hasProperty(String key) {
+        return props.contains(key);
     }
 }

@@ -20,7 +20,7 @@ public class VkLocalCache {
     public static HashMap<Integer, String> citiesCashe = new HashMap<Integer, String>();
     public static HashMap<Integer, String> countriesCashe = new HashMap<Integer, String>();
 
-    public static void saveFriends(VKUserList friends, String user_id) {
+    public static void saveFriendsPage(VKUserList friends, String user_id) {
         //generate html file
         FileWriter writer = null;
         try {
@@ -55,28 +55,8 @@ public class VkLocalCache {
         }
 
         //generate properties file
-        FileWriter propWriter = null;
-        try {
-            propWriter = new FileWriter(createCacheFile("friends.properties", user_id), false);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (propWriter == null) return;
-        final int[] propIndex = {0};
-        final FileWriter finalPropWriter = propWriter;
-        friends.forEach(user -> {
-            try {
-                finalPropWriter.write(user.userId() + " = " + user.fullName() + "\n");
-                ++propIndex[0];
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        try {
-            propWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        VkPropertyLoader.setPropertyFileName(user_id + File.separator + "friends");
+        friends.forEach(user -> VkPropertyLoader.setProperty(String.valueOf(user.userId()), user.fullName()));
     }
 
     public static void save() {
@@ -88,12 +68,7 @@ public class VkLocalCache {
         if (userCache == null)
             userCache = new HashMap<>();
         VkPropertyLoader.setPropertyFileName("users");
-        VkPropertyLoader.loadProperties();
         VkPropertyLoader.properties().forEach((id, name) -> userCache.put(Integer.parseInt((String) id), (String) name));
-    }
-
-    private static File createCacheFile(String fileName) {
-        return createCacheFile(fileName, "");
     }
 
     private static File createCacheFile(String fileName, String user_id) {
@@ -108,5 +83,23 @@ public class VkLocalCache {
         }
 
         return user_friends;
+    }
+
+    public static String getUser(int id) {
+        return userCache.get(id);
+//        VkPropertyLoader.setPropertyFileName("users");
+//        return VkPropertyLoader.getProperty(String.valueOf(id));
+    }
+
+    public static void setUser(int id, String name) {
+        userCache.put(id, name);
+//        VkPropertyLoader.setPropertyFileName("users");
+//        VkPropertyLoader.setProperty(String.valueOf(id), name);
+    }
+
+    public static boolean hasUser(int id) {
+        return userCache.containsKey(id);
+//        VkPropertyLoader.setPropertyFileName("users");
+//        return VkPropertyLoader.hasProperty(String.valueOf(id));
     }
 }

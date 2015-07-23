@@ -40,19 +40,17 @@ public class Main {
 
         LOG.info("Total count of messages: " + messages.totalCount);
         LOG.info("Count of unread messages: " + messages.upreadCount);
-        if (VkLocalCache.userCache == null)
-            VkLocalCache.userCache = new HashMap<>();
         for (VKMessage message : messages) {
-            if (!VkLocalCache.userCache.containsKey(message.user_id)) {
+            if (!VkLocalCache.hasUser(message.user_id)) {
                 VKParameters userParams = new VKParameters();
                 userParams.setValue("user_id", message.user_id);
                 userParams.setValue("fields", "first_name, last_name");
                 VKUserList users = VKApi.users().get(userParams);
 
-                VkLocalCache.userCache.put(message.user_id, users.get(0).fullName());
+                VkLocalCache.setUser(message.user_id, users.get(0).fullName());
             }
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            LOG.info(VkLocalCache.userCache.get(message.user_id) + " " + dateFormat.format(message.date) + " " + message.body);
+            LOG.info(VkLocalCache.getUser(message.user_id) + " " + dateFormat.format(message.date) + " " + message.body);
         }
 
         VkLocalCache.save();

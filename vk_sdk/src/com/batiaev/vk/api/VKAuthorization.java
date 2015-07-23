@@ -1,7 +1,7 @@
 package com.batiaev.vk.api;
 
 import com.batiaev.vk.api.consts.VKApiConst;
-import com.batiaev.vk.api.system.VkPropertyLoader;
+import com.batiaev.vk.api.system.VkSecureProperties;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
@@ -17,12 +17,6 @@ import java.awt.*;
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.attribute.PosixFilePermission;
-import java.nio.file.attribute.PosixFilePermissions;
-import java.util.HashSet;
-import java.util.Properties;
-import java.util.Set;
 
 /**
  * @author batiaev
@@ -157,13 +151,14 @@ public class VKAuthorization {
     }
 
     public static void loadProperties() {
-        VkPropertyLoader.loadProperties();
 
-        setUserId(VkPropertyLoader.userId());
-        setUserEmail(VkPropertyLoader.userEmail());
-        setUserPassword(VkPropertyLoader.userPassword());
-        setAppId(VkPropertyLoader.appId());
-        setSecureCode(VkPropertyLoader.secureCode());
-        setAccessToken(VkPropertyLoader.accessToken());
+        VkSecureProperties prop = new VkSecureProperties();
+
+        setUserId(prop.userId());
+        setUserEmail(prop.userEmail());
+        setUserPassword(prop.userPassword());
+        setAppId(prop.appId());
+        setSecureCode(prop.secureCode());
+        setAccessToken(prop.accessToken());
     }
 }
