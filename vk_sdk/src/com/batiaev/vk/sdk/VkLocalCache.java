@@ -102,4 +102,19 @@ public class VkLocalCache {
 //        VkPropertyLoader.setPropertyFileName("users");
 //        return VkPropertyLoader.hasProperty(String.valueOf(id));
     }
+
+    public static String getPhoto(int id) {
+        VkPropertyLoader.setPropertyFileName("photo");
+        return VkPropertyLoader.getProperty(String.valueOf(id));
+    }
+
+    public static void setPhoto(int id, String name) {
+        VkPropertyLoader.setPropertyFileName("photo");
+        VkPropertyLoader.setProperty(String.valueOf(id), name);
+    }
+
+    public static boolean hasPhoto(int id) {
+        VkPropertyLoader.setPropertyFileName("photo");
+        return VkPropertyLoader.hasProperty(String.valueOf(id));
+    }
 }
