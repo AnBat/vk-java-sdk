@@ -13,6 +13,7 @@ package com.batiaev.vk.api.dataTypes;
  * @see <a href="http://vk.com/dev/attachments_m">Types of attachments()</a>
  */
 public class VkAttachment {
+    public static final String Photo = "photo";
     enum Type {
         Photo,
         Posted_photo,
@@ -27,11 +28,15 @@ public class VkAttachment {
         Page
     }
 
-    protected Type type;
+    protected String type;
     private String value;
 
-    public Type type() {
+    public String type() {
         return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getValue() {

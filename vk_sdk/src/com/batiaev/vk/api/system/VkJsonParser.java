@@ -2,10 +2,10 @@ package com.batiaev.vk.api.system;
 
 import com.batiaev.vk.api.VKError;
 import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.consts.VKApiMessagesConsts;
 import com.batiaev.vk.api.consts.VKApiUserConsts;
 import com.batiaev.vk.api.dataTypes.*;
-import com.batiaev.vk.api.methods.VKApiMessages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
@@ -119,12 +119,22 @@ public class VkJsonParser {
             message.date = new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000);
         if (messageJson.has(VKApiMessagesConsts.BODY))
             message.body = messageJson.getString(VKApiMessagesConsts.BODY);
-        if (messageJson.has(VKApiMessagesConsts.ATTACHMENTS)) {
-            JSONArray attachments = messageJson.getJSONArray(VKApiMessagesConsts.ATTACHMENTS);
+        if (messageJson.has(VKApiJsonConst.ATTACHMENTS)) {
+            JSONArray attachments = messageJson.getJSONArray(VKApiJsonConst.ATTACHMENTS);
             for (int i = 0; i < attachments.length(); ++i) {
-                VkAttachment attachment = new VkAttachment();
-                attachment.setValue(attachments.get(i).toString());
-                message.attachments.add(attachment);
+                JSONObject attachJSON = attachments.getJSONObject(i);
+                String type = attachJSON.getString(VKApiJsonConst.TYPE);
+                if (type.equals(VKApiConst.PHOTO)) {
+                    VkPhotoAttachment attachment = new VkPhotoAttachment();
+                    attachment.setPhoto(parsePhoto(attachJSON.getJSONObject(VKApiConst.PHOTO)));
+                    attachment.setValue(attachJSON.toString());
+                    message.attachments.add(attachment);
+                } else {
+                    VkAttachment attachment = new VkAttachment();
+                    attachment.setType(type);
+                    attachment.setValue(attachJSON.toString());
+                    message.attachments.add(attachment);
+                }
             }
         }
             message.body = messageJson.getString(VKApiMessagesConsts.BODY);
@@ -135,13 +145,48 @@ public class VkJsonParser {
 
     public static VKError parseError(JSONObject errorJson) {
         VKError error = new VKError();
-        error.error_code = errorJson.getInt(VKApiConst.ERROR_CODE);
-        error.error_msg = errorJson.getString(VKApiConst.ERROR_MSG);
+        error.error_code = errorJson.getInt(VKApiJsonConst.ERROR_CODE);
+        error.error_msg = errorJson.getString(VKApiJsonConst.ERROR_MSG);
         JSONArray requestParams = errorJson.getJSONArray(VKApiConst.REQUEST_PARAMS);
         for (int i = 0; i < requestParams.length(); ++i) {
             JSONObject param = requestParams.getJSONObject(i);
             error.request_params.put(param.getString(VKApiConst.KEY), param.getString(VKApiConst.VALUE));
         }
         return error;
+    }
+
+    public static VKPhoto parsePhoto(JSONObject photoJson) {
+
+        VKPhoto photo = new VKPhoto();
+        if (photoJson.has(VKApiJsonConst.ID))
+            photo.id = photoJson.getInt(VKApiJsonConst.ID);
+        if (photoJson.has(VKApiJsonConst.USER_ID))
+            photo.user_id = photoJson.getInt(VKApiMessagesConsts.USER_ID);
+        if (photoJson.has(VKApiJsonConst.OWNER_ID))
+            photo.owner_id = photoJson.getInt(VKApiJsonConst.OWNER_ID);
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID))
+            photo.album_id = photoJson.getInt(VKApiJsonConst.ALBUM_ID);
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID))
+            photo.date = photoJson.getInt(VKApiJsonConst.DATE);
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID))
+            photo.text = photoJson.getString(VKApiJsonConst.TEXT);
+        if (photoJson.has(VKApiJsonConst.HEIGHT))
+            photo.height = photoJson.getInt(VKApiJsonConst.HEIGHT);
+        if (photoJson.has(VKApiJsonConst.WIDTH))
+            photo.width = photoJson.getInt(VKApiJsonConst.WIDTH);
+        if (photoJson.has(VKApiJsonConst.PHOTO_75))
+            photo.photo_75 = photoJson.getString(VKApiJsonConst.PHOTO_75);
+        if (photoJson.has(VKApiJsonConst.PHOTO_130))
+            photo.photo_130 = photoJson.getString(VKApiJsonConst.PHOTO_130);
+        if (photoJson.has(VKApiJsonConst.PHOTO_604))
+            photo.photo_604 = photoJson.getString(VKApiJsonConst.PHOTO_604);
+        if (photoJson.has(VKApiJsonConst.PHOTO_807))
+            photo.photo_807 = photoJson.getString(VKApiJsonConst.PHOTO_807);
+        if (photoJson.has(VKApiJsonConst.PHOTO_1280))
+            photo.photo_1280 = photoJson.getString(VKApiJsonConst.PHOTO_1280);
+        if (photoJson.has(VKApiJsonConst.PHOTO_2560))
+            photo.photo_2560 = photoJson.getString(VKApiJsonConst.PHOTO_2560);
+
+        return new VKPhoto();
     }
 }

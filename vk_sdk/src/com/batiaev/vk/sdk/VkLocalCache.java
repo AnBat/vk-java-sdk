@@ -16,10 +16,6 @@ import java.util.Properties;
 public class VkLocalCache {
     private static final Logger LOG = LogManager.getLogger(VkLocalCache.class);
 
-    public static HashMap<Integer, String> userCache = null;
-    public static HashMap<Integer, String> citiesCashe = new HashMap<Integer, String>();
-    public static HashMap<Integer, String> countriesCashe = new HashMap<Integer, String>();
-
     public static void saveFriendsPage(VKUserList friends, String user_id) {
         //generate html file
         FileWriter writer = null;
@@ -59,18 +55,6 @@ public class VkLocalCache {
         friends.forEach(user -> VkPropertyLoader.setProperty(String.valueOf(user.userId()), user.fullName()));
     }
 
-    public static void save() {
-        VkPropertyLoader.setPropertyFileName("users");
-        userCache.keySet().forEach(key -> VkPropertyLoader.setProperty(String.valueOf(key), userCache.get(key)));
-    }
-
-    public static void load() {
-        if (userCache == null)
-            userCache = new HashMap<>();
-        VkPropertyLoader.setPropertyFileName("users");
-        VkPropertyLoader.properties().forEach((id, name) -> userCache.put(Integer.parseInt((String) id), (String) name));
-    }
-
     private static File createCacheFile(String fileName, String user_id) {
         File user_data = user_id.isEmpty() ? new File(System.getProperty("user.home") + File.separator + ".vk_sdk")
                 : new File(System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator + user_id);
@@ -86,35 +70,65 @@ public class VkLocalCache {
     }
 
     public static String getUser(int id) {
-        return userCache.get(id);
-//        VkPropertyLoader.setPropertyFileName("users");
-//        return VkPropertyLoader.getProperty(String.valueOf(id));
+        return getItem(id, "users");
     }
 
     public static void setUser(int id, String name) {
-        userCache.put(id, name);
-//        VkPropertyLoader.setPropertyFileName("users");
-//        VkPropertyLoader.setProperty(String.valueOf(id), name);
+        setItem(id, name, "users");
     }
 
     public static boolean hasUser(int id) {
-        return userCache.containsKey(id);
-//        VkPropertyLoader.setPropertyFileName("users");
-//        return VkPropertyLoader.hasProperty(String.valueOf(id));
+        return hasItem(id, "users");
     }
 
     public static String getPhoto(int id) {
-        VkPropertyLoader.setPropertyFileName("photo");
-        return VkPropertyLoader.getProperty(String.valueOf(id));
+        return getItem(id, "photo");
     }
 
     public static void setPhoto(int id, String name) {
-        VkPropertyLoader.setPropertyFileName("photo");
-        VkPropertyLoader.setProperty(String.valueOf(id), name);
+        setItem(id, name, "photo");
     }
 
     public static boolean hasPhoto(int id) {
-        VkPropertyLoader.setPropertyFileName("photo");
+        return hasItem(id, "photo");
+    }
+
+    public static String getCity(int id) {
+        return getItem(id, "city");
+    }
+
+    public static void setCity(int id, String name) {
+        setItem(id, name, "city");
+    }
+
+    public static boolean hastCity(int id) {
+        return hasItem(id, "city");
+    }
+
+    public static String getCountry(int id) {
+        return getItem(id, "country");
+    }
+
+    public static void setCountry(int id, String name) {
+        setItem(id, name, "country");
+    }
+
+    public static boolean hastCountry(int id) {
+        return hasItem(id, "country");
+    }
+
+    public static String getItem(int id, String type) {
+        VkPropertyLoader.setPropertyFileName(type);
+        return VkPropertyLoader.getProperty(String.valueOf(id));
+    }
+
+    public static void setItem(int id, String name, String type) {
+        VkPropertyLoader.setPropertyFileName(type);
+        VkPropertyLoader.setProperty(String.valueOf(id), name);
+    }
+
+    public static boolean hasItem(int id, String type) {
+        VkPropertyLoader.setPropertyFileName(type);
         return VkPropertyLoader.hasProperty(String.valueOf(id));
     }
 }

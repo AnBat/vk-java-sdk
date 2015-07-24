@@ -27,7 +27,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         VKAuthorization.loadProperties();
-        VkLocalCache.load();
 //        authorization.serverAuth();
 //        authorization.clientAuth();
 
@@ -52,7 +51,5 @@ public class Main {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             LOG.info(VkLocalCache.getUser(message.user_id) + " " + dateFormat.format(message.date) + " " + message.body);
         }
-
-        VkLocalCache.save();
     }
 }

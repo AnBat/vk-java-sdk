@@ -92,10 +92,10 @@ public class VkPropertyLoader {
     }
 
     private static void saveParamChanges() {
-        File f = new File(propName);
+        File file = new File(propName);
         OutputStream out = null;
         try {
-            out = new FileOutputStream( f );
+            out = new FileOutputStream(file);
             props.store(out, null);
         } catch (IOException e) {
             e.printStackTrace();
@@ -112,6 +112,6 @@ public class VkPropertyLoader {
     }
 
     public static boolean hasProperty(String key) {
-        return props.contains(key);
+        return props.containsKey(key);
     }
 }

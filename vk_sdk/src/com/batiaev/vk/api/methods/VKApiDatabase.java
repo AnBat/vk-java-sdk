@@ -11,6 +11,7 @@ import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.annotation.Rights;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiDatabaseConsts;
+import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.consts.VKApiRigths;
 import com.batiaev.vk.api.dataTypes.VKCity;
 import com.batiaev.vk.api.dataTypes.VKCountry;
@@ -68,27 +69,25 @@ public class VKApiDatabase extends VKApiBase {
         VKCountry country = new VKCountry();
 
         int countryId = Integer.parseInt(params.value(VKApiDatabaseConsts.COUNTRY_IDS));
-        if (VkLocalCache.countriesCashe.containsKey(countryId)) {
+        if (VkLocalCache.hastCountry(countryId)) {
             country.id = countryId;
-            country.name = VkLocalCache.countriesCashe.get(countryId);
+            country.name = VkLocalCache.getCountry(countryId);
         } else {
-            String respond = "";
-            respond = prepareRequest("getCountriesById", params).getRequest();
+            String respond = prepareRequest("getCountriesById", params).getRequest();
 
             LOG.info(respond);
 
             JSONObject obj = new JSONObject(respond);
-            final JSONArray countryList = obj.getJSONArray(VKApiConst.RESPONSE);
+            final JSONArray countryList = obj.getJSONArray(VKApiJsonConst.RESPONSE);
 
-            if (countryList.length() == 0)
-                return country;
+            if (countryList.length() == 0) return country;
 
             JSONObject countryJson = countryList.getJSONObject(0);
 
             country.id = countryJson.getInt(VKApiDatabaseConsts.CID);
             country.name = countryJson.getString(VKApiDatabaseConsts.NAME);
 
-            VkLocalCache.countriesCashe.put(country.id, country.name);
+            VkLocalCache.setCountry(country.id, country.name);
         }
         return country;
     }
@@ -113,27 +112,24 @@ public class VKApiDatabase extends VKApiBase {
         int cityId = Integer.parseInt(params.value(VKApiDatabaseConsts.CITY_IDS));
         city.id = cityId;
 
-        if (VkLocalCache.citiesCashe.containsKey(cityId)) {
-            city.name = VkLocalCache.citiesCashe.get(cityId);
-        }
-        else {
-            String respond = "";
-            respond = prepareRequest("getCitiesById", params).getRequest();
+        if (VkLocalCache.hastCity(cityId)) {
+            city.name = VkLocalCache.getCity(cityId);
+        } else {
+            String respond = prepareRequest("getCitiesById", params).getRequest();
 
             LOG.info(respond);
 
             JSONObject obj = new JSONObject(respond);
-            final JSONArray cityList = obj.getJSONArray(VKApiConst.RESPONSE);
+            final JSONArray cityList = obj.getJSONArray(VKApiJsonConst.RESPONSE);
 
-            if (cityList.length() == 0)
-                return city;
+            if (cityList.length() == 0) return city;
 
             JSONObject cityJson = cityList.getJSONObject(0);
 
             city.id = cityJson.getInt(VKApiDatabaseConsts.CID);
             city.name = cityJson.getString(VKApiDatabaseConsts.NAME);
 
-            VkLocalCache.citiesCashe.put(city.id, city.name);
+            VkLocalCache.setCity(city.id, city.name);
         }
 
         return city;

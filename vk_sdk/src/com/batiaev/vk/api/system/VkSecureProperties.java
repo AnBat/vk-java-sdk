@@ -15,16 +15,8 @@ public class VkSecureProperties extends VkPropertyLoader {
         return getProperty("vk.app.secure_code");
     }
 
-    public void setSecureCode(String secureCode) {
-        setProperty("vk.app.secure_code", secureCode);
-    }
-
     public String appId() {
         return getProperty("vk.app.id");
-    }
-
-    public void setAppId(String id) {
-        setProperty("vk.app.id", id);
     }
 
     public String userId() {

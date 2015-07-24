@@ -9,6 +9,15 @@ package com.batiaev.vk.api.dataTypes;
  */
 public class VkPhotoAttachment extends VkAttachment {
     public VkPhotoAttachment() {
-        type = Type.Photo;
+        type = Photo;
+    }
+    private VKPhoto photo;
+
+    public VKPhoto photo() {
+        return photo;
+    }
+
+    public void setPhoto(VKPhoto photo) {
+        this.photo = photo;
     }
 }

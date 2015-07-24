@@ -10,6 +10,7 @@ package com.batiaev.vk.api.methods;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.annotation.Rights;
 import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.consts.VKApiRigths;
 import com.batiaev.vk.api.dataTypes.VKUser;
 import com.batiaev.vk.api.dataTypes.VKUserList;
@@ -38,8 +39,8 @@ public class VKApiFriends extends VKApiBase {
 
         JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET, params).getRequest());
 
-        final JSONArray friendList = obj.getJSONObject(VKApiConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
-        VKUserList result = new VKUserList(obj.getJSONObject(VKApiConst.RESPONSE).getInt(VKApiConst.COUNT));
+        final JSONArray friendList = obj.getJSONObject(VKApiJsonConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
+        VKUserList result = new VKUserList(obj.getJSONObject(VKApiJsonConst.RESPONSE).getInt(VKApiConst.COUNT));
         for (int i = 0; i < friendList.length(); ++i) {
             JSONObject userJson = friendList.getJSONObject(i);
             VKUser user = VkJsonParser.parseUser(userJson);
@@ -95,8 +96,8 @@ public class VKApiFriends extends VKApiBase {
 //        String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
         JSONObject obj = new JSONObject(prepareRequest("getRequests", params).getRequest());
 
-        final JSONArray friendList = obj.getJSONObject(VKApiConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
-        VKUserList result = new VKUserList(obj.getJSONObject(VKApiConst.RESPONSE).getInt(VKApiConst.COUNT));
+        final JSONArray friendList = obj.getJSONObject(VKApiJsonConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
+        VKUserList result = new VKUserList(obj.getJSONObject(VKApiJsonConst.RESPONSE).getInt(VKApiConst.COUNT));
         for (int i = 0; i < friendList.length(); ++i) {
             JSONObject userJson = friendList.getJSONObject(i);
             VKUser user = VkJsonParser.parseUser(userJson);

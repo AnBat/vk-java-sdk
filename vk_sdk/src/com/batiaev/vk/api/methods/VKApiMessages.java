@@ -2,6 +2,7 @@ package com.batiaev.vk.api.methods;
 
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.dataTypes.VKMessage;
 import com.batiaev.vk.api.dataTypes.VKMessageList;
 import com.batiaev.vk.api.system.VkJsonParser;
@@ -38,7 +39,7 @@ public class VKApiMessages extends VKApiBase {
         JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET, params).getRequest());
 
         VKMessageList result = new VKMessageList();
-        JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
+        JSONObject respondJson = obj.getJSONObject(VKApiJsonConst.RESPONSE);
 
         if (respondJson.has(VKApiConst.COUNT)) result.totalCount = respondJson.getInt(VKApiConst.COUNT);
         if (respondJson.has(VKApiConst.UNREAD)) result.upreadCount = respondJson.getInt(VKApiConst.UNREAD);
@@ -100,7 +101,7 @@ public class VKApiMessages extends VKApiBase {
         JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET_HISTORY, params).getRequest());
 
         VKMessageList result = new VKMessageList();
-        JSONObject respondJson = obj.getJSONObject(VKApiConst.RESPONSE);
+        JSONObject respondJson = obj.getJSONObject(VKApiJsonConst.RESPONSE);
         if (respondJson.has(VKApiConst.COUNT)) result.totalCount = respondJson.getInt(VKApiConst.COUNT);
         if (respondJson.has(VKApiConst.UNREAD)) result.upreadCount = respondJson.getInt(VKApiConst.UNREAD);
 
