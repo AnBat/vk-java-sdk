@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.Set;
 
 /**
  * @author batiaev
@@ -69,6 +70,11 @@ public class VkLocalCache {
         return user_friends;
     }
 
+    public static Set<Object> getUserIdList() {
+        VkPropertyLoader.properties().keySet();
+        return getKeySet("users");
+    }
+
     public static String getUser(int id) {
         return getItem(id, "users");
     }
@@ -115,6 +121,11 @@ public class VkLocalCache {
 
     public static boolean hastCountry(int id) {
         return hasItem(id, "country");
+    }
+
+    public static Set<Object> getKeySet(String type) {
+        VkPropertyLoader.setPropertyFileName(type);
+        return VkPropertyLoader.properties().keySet();
     }
 
     public static String getItem(int id, String type) {
