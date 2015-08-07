@@ -1,6 +1,5 @@
 package com.batiaev.vk.api;
 
-import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.system.VkJsonParser;
 import org.apache.http.HttpEntity;

@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.Set;
@@ -71,8 +72,11 @@ public class VkLocalCache {
     }
 
     public static Set<Object> getUserIdList() {
-        VkPropertyLoader.properties().keySet();
         return getKeySet("users");
+    }
+
+    public static Collection<Object> getUserNameList() {
+        return getValues("users");
     }
 
     public static String getUser(int id) {
@@ -126,6 +130,11 @@ public class VkLocalCache {
     public static Set<Object> getKeySet(String type) {
         VkPropertyLoader.setPropertyFileName(type);
         return VkPropertyLoader.properties().keySet();
+    }
+
+    public static Collection<Object> getValues(String type) {
+        VkPropertyLoader.setPropertyFileName(type);
+        return VkPropertyLoader.properties().values();
     }
 
     public static String getItem(int id, String type) {

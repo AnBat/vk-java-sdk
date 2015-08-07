@@ -2,6 +2,8 @@ package com.batiaev.vk.api;
 
 import com.batiaev.vk.api.consts.VKApiConst;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 
 /**
@@ -41,7 +43,11 @@ public class VKParameters {
         for (String key : values.keySet()) {
             if (!result.isEmpty())
                 result += "&";
-            result += key + "=" + values.get(key);
+            try {
+                result += key + "=" + URLEncoder.encode(values.get(key), "UTF-8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
         }
         return result.replace(" ", "");
     }
