@@ -23,7 +23,7 @@ public class VKMessage {
     public String title;
     public String body;
     public ArrayList<VkAttachment> attachments;
-    public ArrayList<String> fwd_messages;
+    public ArrayList<VKMessage> fwd_messages;
     public boolean emoji;
     public boolean deleted;
     //Additional fields for group chat only

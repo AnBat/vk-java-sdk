@@ -31,4 +31,5 @@ public class VKApiJsonConst {
     public final static String PHOTO_807 = "photo_807";
     public final static String PHOTO_1280 = "photo_1280";
     public final static String PHOTO_2560 = "photo_2560";
+    public final static String FWD_MESSAGES = "fwd_messages";
 }

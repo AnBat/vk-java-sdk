@@ -137,7 +137,14 @@ public class VkJsonParser {
                 }
             }
         }
-            message.body = messageJson.getString(VKApiMessagesConsts.BODY);
+        if (messageJson.has(VKApiJsonConst.FWD_MESSAGES)) {
+            JSONArray fwd_messages = messageJson.getJSONArray(VKApiJsonConst.FWD_MESSAGES);
+            for (int i = 0; i < fwd_messages.length(); ++i) {
+                JSONObject msgJson = fwd_messages.getJSONObject(i);
+                message.fwd_messages.add(parseMessage(msgJson));
+            }
+        }
+
         if (messageJson.has(VKApiMessagesConsts.EMOJI))
             message.emoji = messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1;
         return message;

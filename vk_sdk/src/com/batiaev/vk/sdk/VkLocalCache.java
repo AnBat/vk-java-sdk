@@ -80,7 +80,8 @@ public class VkLocalCache {
     }
 
     public static String getUser(int id) {
-        return getItem(id, "users");
+        String fullName = getItem(id, "users");
+        return fullName == null ? String.valueOf(id) : fullName;
     }
 
     public static void setUser(int id, String name) {
