@@ -102,7 +102,7 @@ public class VkPropertyLoader {
         }
     }
 
-    public static String getProperty(String key) {
+    public static String getProperty(final String key) {
         return props.getProperty(key);
     }
 

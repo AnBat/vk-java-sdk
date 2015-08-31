@@ -79,7 +79,7 @@ public class VkLocalCache {
         return getValues("users");
     }
 
-    public static String getUser(int id) {
+    public static String getUser(final int id) {
         String fullName = getItem(id, "users");
         return fullName == null ? String.valueOf(id) : fullName;
     }
@@ -138,7 +138,7 @@ public class VkLocalCache {
         return VkPropertyLoader.properties().values();
     }
 
-    public static String getItem(int id, String type) {
+    public static String getItem(final int id, String type) {
         VkPropertyLoader.setPropertyFileName(type);
         return VkPropertyLoader.getProperty(String.valueOf(id));
     }
