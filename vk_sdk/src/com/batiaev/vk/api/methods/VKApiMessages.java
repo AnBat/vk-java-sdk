@@ -3,6 +3,8 @@ package com.batiaev.vk.api.methods;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiJsonConst;
+import com.batiaev.vk.api.dataTypes.VKChat;
+import com.batiaev.vk.api.dataTypes.VKChatList;
 import com.batiaev.vk.api.dataTypes.VKMessage;
 import com.batiaev.vk.api.dataTypes.VKMessageList;
 import com.batiaev.vk.api.system.VkJsonParser;
@@ -61,8 +63,22 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications. 
      */
-    public String getDialogs(VKParameters params) {
-        return prepareRequest("getDialogs", params).getRequest();
+    public VKChatList getDialogs(VKParameters params) {
+        JSONObject obj = new JSONObject(prepareRequest("getDialogs", params).getRequest());
+
+        VKChatList result = new VKChatList();
+        JSONObject respondJson = obj.getJSONObject(VKApiJsonConst.RESPONSE);
+
+        if (respondJson.has(VKApiConst.COUNT)) result.totalCount = respondJson.getInt(VKApiConst.COUNT);
+        if (respondJson.has(VKApiConst.UNREAD)) result.upreadCount = respondJson.getInt(VKApiConst.UNREAD);
+
+        final JSONArray chatList = respondJson.getJSONArray(VKApiConst.ITEMS);
+
+        for (int i = 0; i < chatList.length(); ++i) {
+            VKChat chat = VkJsonParser.parseChat(chatList.getJSONObject(i));
+            result.add(chat);
+        }
+        return result;
     }
     
     /**

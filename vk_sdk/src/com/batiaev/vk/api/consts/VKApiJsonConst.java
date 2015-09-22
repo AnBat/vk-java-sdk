@@ -12,6 +12,11 @@ public class VKApiJsonConst {
     public final static String ERROR_CODE = "error_code";
     public final static String ERROR_MSG = "error_msg";
 
+    //for chats
+    public final static String MESSAGE = "message";
+    public final static String BODY = "body";
+    public final static String TITLE = "title";
+
     //for messages
     public final static String ATTACHMENTS = "attachments";
     public final static String TYPE = "type";

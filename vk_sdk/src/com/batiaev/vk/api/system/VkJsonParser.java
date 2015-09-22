@@ -165,35 +165,33 @@ public class VkJsonParser {
     public static VKPhoto parsePhoto(JSONObject photoJson) {
 
         VKPhoto photo = new VKPhoto();
-        if (photoJson.has(VKApiJsonConst.ID))
-            photo.id = photoJson.getInt(VKApiJsonConst.ID);
-        if (photoJson.has(VKApiJsonConst.USER_ID))
-            photo.user_id = photoJson.getInt(VKApiMessagesConsts.USER_ID);
-        if (photoJson.has(VKApiJsonConst.OWNER_ID))
-            photo.owner_id = photoJson.getInt(VKApiJsonConst.OWNER_ID);
-        if (photoJson.has(VKApiJsonConst.ALBUM_ID))
-            photo.album_id = photoJson.getInt(VKApiJsonConst.ALBUM_ID);
-        if (photoJson.has(VKApiJsonConst.ALBUM_ID))
-            photo.date = photoJson.getInt(VKApiJsonConst.DATE);
-        if (photoJson.has(VKApiJsonConst.ALBUM_ID))
-            photo.text = photoJson.getString(VKApiJsonConst.TEXT);
-        if (photoJson.has(VKApiJsonConst.HEIGHT))
-            photo.height = photoJson.getInt(VKApiJsonConst.HEIGHT);
-        if (photoJson.has(VKApiJsonConst.WIDTH))
-            photo.width = photoJson.getInt(VKApiJsonConst.WIDTH);
-        if (photoJson.has(VKApiJsonConst.PHOTO_75))
-            photo.photo_75 = photoJson.getString(VKApiJsonConst.PHOTO_75);
-        if (photoJson.has(VKApiJsonConst.PHOTO_130))
-            photo.photo_130 = photoJson.getString(VKApiJsonConst.PHOTO_130);
-        if (photoJson.has(VKApiJsonConst.PHOTO_604))
-            photo.photo_604 = photoJson.getString(VKApiJsonConst.PHOTO_604);
-        if (photoJson.has(VKApiJsonConst.PHOTO_807))
-            photo.photo_807 = photoJson.getString(VKApiJsonConst.PHOTO_807);
-        if (photoJson.has(VKApiJsonConst.PHOTO_1280))
-            photo.photo_1280 = photoJson.getString(VKApiJsonConst.PHOTO_1280);
-        if (photoJson.has(VKApiJsonConst.PHOTO_2560))
-            photo.photo_2560 = photoJson.getString(VKApiJsonConst.PHOTO_2560);
+        if (photoJson.has(VKApiJsonConst.ID)) photo.id = photoJson.getInt(VKApiJsonConst.ID);
+        if (photoJson.has(VKApiJsonConst.USER_ID)) photo.user_id = photoJson.getInt(VKApiMessagesConsts.USER_ID);
+        if (photoJson.has(VKApiJsonConst.OWNER_ID)) photo.owner_id = photoJson.getInt(VKApiJsonConst.OWNER_ID);
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.album_id = photoJson.getInt(VKApiJsonConst.ALBUM_ID);
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.date = photoJson.getInt(VKApiJsonConst.DATE);
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.text = photoJson.getString(VKApiJsonConst.TEXT);
+        if (photoJson.has(VKApiJsonConst.HEIGHT)) photo.height = photoJson.getInt(VKApiJsonConst.HEIGHT);
+        if (photoJson.has(VKApiJsonConst.WIDTH)) photo.width = photoJson.getInt(VKApiJsonConst.WIDTH);
+        if (photoJson.has(VKApiJsonConst.PHOTO_75)) photo.photo_75 = photoJson.getString(VKApiJsonConst.PHOTO_75);
+        if (photoJson.has(VKApiJsonConst.PHOTO_130)) photo.photo_130 = photoJson.getString(VKApiJsonConst.PHOTO_130);
+        if (photoJson.has(VKApiJsonConst.PHOTO_604)) photo.photo_604 = photoJson.getString(VKApiJsonConst.PHOTO_604);
+        if (photoJson.has(VKApiJsonConst.PHOTO_807)) photo.photo_807 = photoJson.getString(VKApiJsonConst.PHOTO_807);
+        if (photoJson.has(VKApiJsonConst.PHOTO_1280)) photo.photo_1280 = photoJson.getString(VKApiJsonConst.PHOTO_1280);
+        if (photoJson.has(VKApiJsonConst.PHOTO_2560)) photo.photo_2560 = photoJson.getString(VKApiJsonConst.PHOTO_2560);
 
         return new VKPhoto();
+    }
+
+    public static VKChat parseChat(JSONObject jsonObject) {
+
+        JSONObject message = jsonObject.getJSONObject(VKApiJsonConst.MESSAGE);
+
+        VKChat chat = new VKChat();
+        if (message.has(VKApiJsonConst.ID)) chat.setId(message.getInt(VKApiJsonConst.ID));
+        if (message.has(VKApiJsonConst.USER_ID)) chat.setUserId(message.getInt(VKApiJsonConst.USER_ID));
+        if (message.has(VKApiJsonConst.BODY)) chat.setBody(message.getString(VKApiJsonConst.BODY));
+        if (message.has(VKApiJsonConst.TITLE)) chat.setTitle(message.getString(VKApiJsonConst.TITLE));
+        return chat;
     }
 }
