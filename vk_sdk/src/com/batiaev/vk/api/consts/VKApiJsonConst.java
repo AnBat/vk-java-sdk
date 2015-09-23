@@ -16,6 +16,9 @@ public class VKApiJsonConst {
     public final static String MESSAGE = "message";
     public final static String BODY = "body";
     public final static String TITLE = "title";
+    public final static String ADMIN_ID = "admin_id";
+    public final static String CHAT_ID = "chat_id";
+    public final static String USER_COUNT = "user_count";
 
     //for messages
     public final static String ATTACHMENTS = "attachments";

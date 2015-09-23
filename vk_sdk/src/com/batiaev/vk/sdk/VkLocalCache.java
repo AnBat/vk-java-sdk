@@ -84,6 +84,10 @@ public class VkLocalCache {
         return fullName == null ? String.valueOf(id) : fullName;
     }
 
+    public static void setUser(long id, String name) {
+        setItem(id, name, "users");
+    }
+
     public static void setUser(int id, String name) {
         setItem(id, name, "users");
     }
@@ -144,6 +148,11 @@ public class VkLocalCache {
     }
 
     public static void setItem(int id, String name, String type) {
+        VkPropertyLoader.setPropertyFileName(type);
+        VkPropertyLoader.setProperty(String.valueOf(id), name);
+    }
+
+    public static void setItem(long id, String name, String type) {
         VkPropertyLoader.setPropertyFileName(type);
         VkPropertyLoader.setProperty(String.valueOf(id), name);
     }

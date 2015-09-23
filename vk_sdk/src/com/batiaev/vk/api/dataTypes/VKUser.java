@@ -37,7 +37,7 @@ public class VKUser implements Serializable {
      * Gets the value deleted or banned.
      * Keep in mind that in this case no additional fields are returned.
      */
-    private int deactivated;
+    private String deactivated;
 
     /**
      * Returns while operating without access_token
@@ -215,11 +215,15 @@ public class VKUser implements Serializable {
         return first_name + ' ' + last_name;
     }
 
-    public int deactivated() {
+    public boolean isDeactivated() {
+        return deactivated.isEmpty();
+    }
+
+    public String deactivated() {
         return deactivated;
     }
 
-    public void setDeactivated(int deactivated) {
+    public void setDeactivated(String deactivated) {
         this.deactivated = deactivated;
     }
 

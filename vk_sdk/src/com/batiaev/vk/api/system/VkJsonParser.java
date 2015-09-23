@@ -31,6 +31,8 @@ public class VkJsonParser {
     public static VKUser parseUser(JSONObject userJson) {
         VKUser user = new VKUser();
 
+        if (userJson.has(VKApiJsonConst.ID))
+            user.setUserId(userJson.getInt(VKApiJsonConst.ID));
         if (userJson.has(VKApiUserConsts.UID))
             user.setUserId(userJson.getInt(VKApiUserConsts.UID));
         if (userJson.has(VKApiUserConsts.FIRST_NAME))
@@ -38,7 +40,7 @@ public class VkJsonParser {
         if (userJson.has(VKApiUserConsts.LAST_NAME))
             user.setLastName(userJson.getString(VKApiUserConsts.LAST_NAME));
         if (userJson.has(VKApiUserConsts.DEACTIVATED))
-            user.setDeactivated(userJson.getInt(VKApiUserConsts.DEACTIVATED));
+            user.setDeactivated(userJson.getString(VKApiUserConsts.DEACTIVATED));
         if (userJson.has(VKApiUserConsts.HIDDEN))
             user.setHidden(userJson.getInt(VKApiUserConsts.HIDDEN));
         if (userJson.has(VKApiUserConsts.VERIFIED))
@@ -189,9 +191,12 @@ public class VkJsonParser {
 
         VKChat chat = new VKChat();
         if (message.has(VKApiJsonConst.ID)) chat.setId(message.getInt(VKApiJsonConst.ID));
+        if (message.has(VKApiJsonConst.ADMIN_ID)) chat.setAdminId(message.getInt(VKApiJsonConst.ADMIN_ID));
         if (message.has(VKApiJsonConst.USER_ID)) chat.setUserId(message.getInt(VKApiJsonConst.USER_ID));
+        if (message.has(VKApiJsonConst.CHAT_ID)) chat.setChatId(message.getInt(VKApiJsonConst.CHAT_ID));
         if (message.has(VKApiJsonConst.BODY)) chat.setBody(message.getString(VKApiJsonConst.BODY));
         if (message.has(VKApiJsonConst.TITLE)) chat.setTitle(message.getString(VKApiJsonConst.TITLE));
+        if (message.has(VKApiJsonConst.USER_COUNT)) chat.setUserCount(message.getInt(VKApiJsonConst.USER_COUNT));
         return chat;
     }
 }

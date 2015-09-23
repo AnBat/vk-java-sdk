@@ -1,6 +1,7 @@
 package com.batiaev.vk.api.dataTypes;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * @author batiaev
@@ -12,4 +13,8 @@ import java.util.ArrayList;
 public class VKChatList extends ArrayList<VKChat> {
     public int totalCount = 0;
     public int upreadCount = 0;
+
+    public void removeAll() {
+        removeAll(this);
+    }
 }
