@@ -28,6 +28,7 @@ public class VKChat {
 
     public VKChat() {
         message = new VKMessage();
+        chat_id = -1;
     }
 
     public String title() {
@@ -40,6 +41,10 @@ public class VKChat {
 
     public void setId(int id) {
         message.id = id;
+    }
+
+    public long userId() {
+        return message.user_id;
     }
 
     public void setUserId(int userId) {
