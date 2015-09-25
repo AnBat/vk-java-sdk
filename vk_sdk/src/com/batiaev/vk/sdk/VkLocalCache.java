@@ -1,11 +1,17 @@
 package com.batiaev.vk.sdk;
 
+import com.batiaev.vk.api.VKApi;
+import com.batiaev.vk.api.VKAuthorization;
+import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.dataTypes.VKUserList;
 import com.batiaev.vk.api.system.VkPropertyLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
+import java.net.URL;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Properties;
@@ -160,5 +166,41 @@ public class VkLocalCache {
     public static boolean hasItem(int id, String type) {
         VkPropertyLoader.setPropertyFileName(type);
         return VkPropertyLoader.hasProperty(String.valueOf(id));
+    }
+
+    public static void cachingFriends() {
+        VKAuthorization.loadProperties();
+        VKParameters params = new VKParameters();
+        params.setValue("user_id", VKAuthorization.userId());
+        params.setValue("order", "hints");
+        params.setValue("fields", "uid, first_name, last_name, photo_max_orig");
+        setUsers(VKApi.friends().get(params));
+    }
+
+    public static void setUsers(VKUserList users) {
+        VkPropertyLoader.setPropertyFileName("users");
+        users.forEach(user -> VkPropertyLoader.setProperty(String.valueOf(user.userId()), user.fullName()));
+
+        VkPropertyLoader.setPropertyFileName("photo");
+        String root_path = System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator
+                + VKAuthorization.userId() + File.separator;
+        users.forEach(user -> {
+            VkPropertyLoader.setProperty(String.valueOf(user.userId()), user.photoMaxOrig());
+
+            String fileName = root_path + String.valueOf(user.userId()) + ".jpg";
+            File userPhotoFile = new File(fileName);
+            if (!userPhotoFile.exists()) {
+                try {
+                    URL url = new URL(user.photoMaxOrig());
+                    BufferedImage image = ImageIO.read(url);
+
+                    ImageIO.write(image, "jpg", userPhotoFile); //same with gif and png formats
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            System.out.println("Loaded [" + user.userId() + "] " + user.fullName());
+        });
     }
 }

@@ -27,6 +27,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         VKAuthorization.loadProperties();
+        VkLocalCache.cachingFriends();
 //        authorization.serverAuth();
 //        authorization.clientAuth();
 
