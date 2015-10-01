@@ -30,6 +30,7 @@ public class VkAttachment {
 
     protected String type;
     private String value;
+    private String json;
 
     public String type() {
         return type;
@@ -45,6 +46,14 @@ public class VkAttachment {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getJson() {
+        return json;
+    }
+
+    public void setJson(String value) {
+        this.json = value;
     }
 
 }

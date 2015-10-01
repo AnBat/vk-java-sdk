@@ -10,8 +10,8 @@ package com.batiaev.vk.api.dataTypes;
 public class VkPhotoAttachment extends VkAttachment {
     public VkPhotoAttachment() {
         type = Photo;
+        photo = new VKPhoto();
     }
-    private VKPhoto photo;
 
     public VKPhoto photo() {
         return photo;
@@ -20,4 +20,11 @@ public class VkPhotoAttachment extends VkAttachment {
     public void setPhoto(VKPhoto photo) {
         this.photo = photo;
     }
+
+    @Override
+    public String getValue() {
+        return photo.photoMax();
+    }
+
+    private VKPhoto photo;
 }

@@ -123,36 +123,38 @@ public class VkJsonParser {
             message.body = messageJson.getString(VKApiMessagesConsts.BODY);
         if (messageJson.has(VKApiJsonConst.ATTACHMENTS)) {
             JSONArray attachments = messageJson.getJSONArray(VKApiJsonConst.ATTACHMENTS);
-            for (int i = 0; i < attachments.length(); ++i) {
-                JSONObject attachJSON = attachments.getJSONObject(i);
-                String type = attachJSON.getString(VKApiJsonConst.TYPE);
-                if (type.equals(VKApiConst.PHOTO)) {
-                    VkPhotoAttachment attachment = new VkPhotoAttachment();
-                    attachment.setPhoto(parsePhoto(attachJSON.getJSONObject(VKApiConst.PHOTO)));
-                    attachment.setValue(attachJSON.toString());
-                    message.attachments.add(attachment);
-                } else {
-                    VkAttachment attachment = new VkAttachment();
-                    attachment.setType(type);
-                    attachment.setValue(attachJSON.toString());
-                    message.attachments.add(attachment);
-                }
-            }
+            for (int i = 0; i < attachments.length(); ++i)
+                message.attachments.add(parseAttachment(attachments.getJSONObject(i)));
         }
         if (messageJson.has(VKApiJsonConst.FWD_MESSAGES)) {
             JSONArray fwd_messages = messageJson.getJSONArray(VKApiJsonConst.FWD_MESSAGES);
-            for (int i = 0; i < fwd_messages.length(); ++i) {
-                JSONObject msgJson = fwd_messages.getJSONObject(i);
-                message.fwd_messages.add(parseMessage(msgJson));
-            }
+            for (int i = 0; i < fwd_messages.length(); ++i)
+                message.fwd_messages.add(parseMessage(fwd_messages.getJSONObject(i)));
         }
 
         if (messageJson.has(VKApiMessagesConsts.EMOJI))
             message.emoji = messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1;
         return message;
     }
+    public static VkAttachment parseAttachment(JSONObject attachJSON) {
+        String type = attachJSON.getString(VKApiJsonConst.TYPE);
+        switch (type) {
+            case VKApiConst.PHOTO:
+                VkPhotoAttachment photoAttach = new VkPhotoAttachment();
+                photoAttach.setPhoto(parsePhoto(attachJSON.getJSONObject(VKApiConst.PHOTO)));
+                photoAttach.setJson(attachJSON.toString());
+                photoAttach.setValue(photoAttach.photo().photoMax());
+                return photoAttach;
+            default:
+                VkAttachment attach = new VkAttachment();
+                attach.setType(type);
+                attach.setJson(attachJSON.toString());
+                attach.setValue(attachJSON.toString());
+                return attach;
+        }
+    }
 
-    public static VKError parseError(JSONObject errorJson) {
+        public static VKError parseError(JSONObject errorJson) {
         VKError error = new VKError();
         error.error_code = errorJson.getInt(VKApiJsonConst.ERROR_CODE);
         error.error_msg = errorJson.getString(VKApiJsonConst.ERROR_MSG);
@@ -182,7 +184,7 @@ public class VkJsonParser {
         if (photoJson.has(VKApiJsonConst.PHOTO_1280)) photo.photo_1280 = photoJson.getString(VKApiJsonConst.PHOTO_1280);
         if (photoJson.has(VKApiJsonConst.PHOTO_2560)) photo.photo_2560 = photoJson.getString(VKApiJsonConst.PHOTO_2560);
 
-        return new VKPhoto();
+        return photo;
     }
 
     public static VKChat parseChat(JSONObject jsonObject) {

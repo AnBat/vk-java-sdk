@@ -13,6 +13,31 @@ package com.batiaev.vk.api.dataTypes;
  */
 public class VKPhoto {
 
+    public VKPhoto() {
+        photo_75 = "";
+        photo_130 = "";
+        photo_604 = "";
+        photo_807 = "";
+        photo_1280 = "";
+        photo_2560 = "";
+    }
+
+    public String photoMax() {
+        if (!photo_2560.isEmpty())
+            return photo_2560;
+        else if (!photo_1280.isEmpty())
+            return photo_1280;
+        else if (!photo_807.isEmpty())
+            return photo_807;
+        else if (!photo_604.isEmpty())
+            return photo_604;
+        else if (!photo_130.isEmpty())
+            return photo_130;
+        else if (!photo_75.isEmpty())
+            return photo_75;
+        else
+            return "";
+    }
     public int id; //Photo ID.
     public int album_id; //Photo album ID.
     public int owner_id; //ID of the user or community that owns the photo.
