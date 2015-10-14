@@ -106,34 +106,34 @@ public class VkJsonParser {
         VKMessage message = new VKMessage();
 
         if (messageJson.has(VKApiMessagesConsts.ID))
-            message.id = messageJson.getInt(VKApiMessagesConsts.ID);
+            message.setId(messageJson.getInt(VKApiMessagesConsts.ID));
         if (messageJson.has(VKApiMessagesConsts.USER_ID))
-            message.user_id = messageJson.getInt(VKApiMessagesConsts.USER_ID);
+            message.setUserId(messageJson.getInt(VKApiMessagesConsts.USER_ID));
         if (messageJson.has(VKApiMessagesConsts.FROM_ID))
-            message.user_id = messageJson.getInt(VKApiMessagesConsts.FROM_ID);
+            message.setFromId(messageJson.getInt(VKApiMessagesConsts.FROM_ID));
         if (messageJson.has(VKApiMessagesConsts.OUT))
-            message.out = messageJson.getInt(VKApiMessagesConsts.OUT) == 1;
+            message.setOut(messageJson.getInt(VKApiMessagesConsts.OUT) == 1);
         if (messageJson.has(VKApiMessagesConsts.READ_STATE))
-            message.read_state = messageJson.getInt(VKApiMessagesConsts.READ_STATE) == 1;
+            message.setReadState(messageJson.getInt(VKApiMessagesConsts.READ_STATE) == 1);
         if (messageJson.has(VKApiMessagesConsts.TITLE))
-            message.title = messageJson.getString(VKApiMessagesConsts.TITLE);
+            message.setTitle(messageJson.getString(VKApiMessagesConsts.TITLE));
         if (messageJson.has(VKApiMessagesConsts.DATE))
-            message.date = new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000);
+            message.setDate(new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000));
         if (messageJson.has(VKApiMessagesConsts.BODY))
-            message.body = messageJson.getString(VKApiMessagesConsts.BODY);
+            message.setBody(messageJson.getString(VKApiMessagesConsts.BODY));
         if (messageJson.has(VKApiJsonConst.ATTACHMENTS)) {
             JSONArray attachments = messageJson.getJSONArray(VKApiJsonConst.ATTACHMENTS);
             for (int i = 0; i < attachments.length(); ++i)
-                message.attachments.add(parseAttachment(attachments.getJSONObject(i)));
+                message.addAttachment(parseAttachment(attachments.getJSONObject(i)));
         }
         if (messageJson.has(VKApiJsonConst.FWD_MESSAGES)) {
             JSONArray fwd_messages = messageJson.getJSONArray(VKApiJsonConst.FWD_MESSAGES);
             for (int i = 0; i < fwd_messages.length(); ++i)
-                message.fwd_messages.add(parseMessage(fwd_messages.getJSONObject(i)));
+                message.addFwdMessage(parseMessage(fwd_messages.getJSONObject(i)));
         }
 
         if (messageJson.has(VKApiMessagesConsts.EMOJI))
-            message.emoji = messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1;
+            message.setEmoji(messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1);
         return message;
     }
     public static VkAttachment parseAttachment(JSONObject attachJSON) {

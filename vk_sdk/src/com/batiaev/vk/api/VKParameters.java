@@ -26,6 +26,10 @@ public class VKParameters {
         values.put(key, value);
     }
 
+    public void setValue(String key, long value) {
+        values.put(key, String.valueOf(value));
+    }
+
     public void setValue(String key, int value) {
         values.put(key, String.valueOf(value));
     }

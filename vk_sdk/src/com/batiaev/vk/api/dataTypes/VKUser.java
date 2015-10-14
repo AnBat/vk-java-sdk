@@ -180,7 +180,7 @@ public class VKUser implements Serializable {
     }
 
     /**
-     * @return user_id and full user name
+     * @return userId and full user name
      */
     @Override
     public String toString() {

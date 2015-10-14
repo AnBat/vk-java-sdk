@@ -23,7 +23,7 @@ test {
     }
 }
 
-mainClassName = "TestApp"
+mainClassName = "MessageLoader"
 
 jar {
     manifest.attributes("Main-Class": mainClassName);

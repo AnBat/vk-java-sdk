@@ -6,7 +6,6 @@ package com.batiaev.vk.api.dataTypes;
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batyaev.com
  */
-import com.batiaev.vk.api.VKAuthorization;
 import com.batiaev.vk.sdk.VkLocalCache;
 
 import java.util.List;
@@ -32,7 +31,7 @@ public class VKChat {
     }
 
     public String title() {
-        return title.equals(DEFAULT_NAME) ? VkLocalCache.getUser(message.user_id) : title;
+        return title.equals(DEFAULT_NAME) ? VkLocalCache.getUser(message.userId()) : title;
     }
 
     public void setTitle(String title) {
@@ -40,15 +39,15 @@ public class VKChat {
     }
 
     public void setId(int id) {
-        message.id = id;
+        message.setId(id);
     }
 
     public long userId() {
-        return message.user_id;
+        return message.userId();
     }
 
     public void setUserId(int userId) {
-        message.user_id = userId;
+        message.setUserId(userId);
     }
 
     public String body() {
