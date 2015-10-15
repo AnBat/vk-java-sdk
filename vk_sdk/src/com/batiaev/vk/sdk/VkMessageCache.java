@@ -23,7 +23,7 @@ public class VkMessageCache {
         parameters.setValue(VkApiMessagesParams.USER_ID, userId);
         VKMessageList messages = VKApi.messages().getHistory(parameters);
 
-        long count = messages.totalCount;
+        long count = messages.totalCount();
         long loaded = packSize;
         while (loaded < count) {
             parameters.setValue(VkApiMessagesParams.OFFSET, loaded);

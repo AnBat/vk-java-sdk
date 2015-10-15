@@ -14,71 +14,71 @@ import com.batiaev.vk.api.VKParameters;
  *
  * Builds requests for API.leads part
  *
- * @see <a href="https://vk.com/dev/leads">API leads</a>
+ * <a href="https://vk.com/dev/leads">API leads</a>
  */
 public class VKApiLeads extends VKApiBase {
 	
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/leads.complete">API leads.complete()</a>
+     * <a href="https://vk.com/dev/leads.complete">API leads.complete()</a>
      *
      * This is an open method; it does not require an access_token.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String complete(VKParameters params) {
         return prepareRequest("complete", params).getRequest();
     }
     
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/leads.start">API leads.start()</a>
+     * <a href="https://vk.com/dev/leads.start">API leads.start()</a>
      *
      * This is an open method; it does not require an access_token.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String start(VKParameters params) {
         return prepareRequest("start", params).getRequest();
     }
 
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/leads.getStats">API leads.getStats()</a>
+     * <a href="https://vk.com/dev/leads.getStats">API leads.getStats()</a>
      *
      * You need the following rights to call this method: leads.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String getStats(VKParameters params) {
         return prepareRequest("getStats", params).getRequest();
     }
 
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/leads.getUsers">API leads.getUsers()</a>
+     * <a href="https://vk.com/dev/leads.getUsers">API leads.getUsers()</a>
      *
      * This is an open method; it does not require an access_token.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String getUsers(VKParameters params) {
         return prepareRequest("getUsers", params).getRequest();
     }
 
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/leads.checkUser">API leads.checkUser()</a>
+     * <a href="https://vk.com/dev/leads.checkUser">API leads.checkUser()</a>
      *
      * This method doesn't require any specific rights.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String checkUser(VKParameters params) {
         return prepareRequest("checkUser", params).getRequest();
     }
 
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/leads.metricHit">API leads.metricHit()</a>
+     * <a href="https://vk.com/dev/leads.metricHit">API leads.metricHit()</a>
      *
      * This is an open method; it does not require an access_token.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String metricHit(VKParameters params) {
         return prepareRequest("metricHit", params).getRequest();

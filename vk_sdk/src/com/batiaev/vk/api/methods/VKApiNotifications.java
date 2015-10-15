@@ -18,22 +18,22 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiNotifications extends VKApiBase {
 	
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/notifications.get">API notifications.get()</a>
+     * <a href="https://vk.com/dev/notifications.get">API notifications.get()</a>
      *
      * You need the following rights to call this method: notifications.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String get(VKParameters params) {
         return prepareRequest("get", params).getRequest();
     }
     
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/notifications.markAsViewed">API notifications.markAsViewed()</a>
+     * <a href="https://vk.com/dev/notifications.markAsViewed">API notifications.markAsViewed()</a>
      *
      * You need the following rights to call this method: notifications.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String markAsViewed(VKParameters params) {
         return prepareRequest("markAsViewed", params).getRequest();

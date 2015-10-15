@@ -9,7 +9,6 @@ package com.batiaev.vk.api.methods;
 
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.annotation.Rights;
-import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiDatabaseConsts;
 import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.consts.VKApiRigths;
@@ -22,6 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
+ * @author anbat
  * Builds requests for API.database part
  * 
  * https://vk.com/dev/database
@@ -30,9 +30,9 @@ public class VKApiDatabase extends VKApiBase {
     private static final Logger LOG = LogManager.getLogger(VKApiDatabase.class);
 
     /**
+     * <a href="https://vk.com/dev/database.getCountries">API database.getCountries()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/database.getCountries">API database.getCountries()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getCountries(VKParameters params) {
@@ -40,9 +40,9 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getRegions">API database.getRegions()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/database.getRegions">API database.getRegions()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getRegions(VKParameters params) {
@@ -50,9 +50,9 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getStreetsById">API database.getStreetsById()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/database.getStreetsById">API database.getStreetsById()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getStreetsById(VKParameters params) {
@@ -60,9 +60,9 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getCountriesById">API database.getCountriesById()</a>
      * @param params method parameters
      * @return VKCountry with required id
-     * @see <a href="https://vk.com/dev/database.getCountriesById">API database.getCountriesById()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public VKCountry getCountriesById(VKParameters params) {
@@ -70,8 +70,8 @@ public class VKApiDatabase extends VKApiBase {
 
         int countryId = Integer.parseInt(params.value(VKApiDatabaseConsts.COUNTRY_IDS));
         if (VkLocalCache.hastCountry(countryId)) {
-            country.id = countryId;
-            country.name = VkLocalCache.getCountry(countryId);
+            country.setId(countryId);
+            country.setName(VkLocalCache.getCountry(countryId));
         } else {
             String respond = prepareRequest("getCountriesById", params).getRequest();
 
@@ -84,18 +84,18 @@ public class VKApiDatabase extends VKApiBase {
 
             JSONObject countryJson = countryList.getJSONObject(0);
 
-            country.id = countryJson.getInt(VKApiDatabaseConsts.CID);
-            country.name = countryJson.getString(VKApiDatabaseConsts.NAME);
+            country.setId(countryJson.getInt(VKApiDatabaseConsts.CID));
+            country.setName(countryJson.getString(VKApiDatabaseConsts.NAME));
 
-            VkLocalCache.setCountry(country.id, country.name);
+            VkLocalCache.setCountry(country.id(), country.name());
         }
         return country;
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getCities">API database.getCities()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/database.getCities">API database.getCities()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getCities(VKParameters params) {
@@ -103,17 +103,18 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getCitiesById">API database.getCitiesById()</a>
      * @param params method parameters
-     * @see <a href="https://vk.com/dev/database.getCitiesById">API database.getCitiesById()</a>
+     * @return city with required id
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public VKCity getCitiesById(VKParameters params) {
         VKCity city = new VKCity();
         int cityId = Integer.parseInt(params.value(VKApiDatabaseConsts.CITY_IDS));
-        city.id = cityId;
+        city.setId(cityId);
 
         if (VkLocalCache.hastCity(cityId)) {
-            city.name = VkLocalCache.getCity(cityId);
+            city.setName(VkLocalCache.getCity(cityId));
         } else {
             String respond = prepareRequest("getCitiesById", params).getRequest();
 
@@ -126,19 +127,19 @@ public class VKApiDatabase extends VKApiBase {
 
             JSONObject cityJson = cityList.getJSONObject(0);
 
-            city.id = cityJson.getInt(VKApiDatabaseConsts.CID);
-            city.name = cityJson.getString(VKApiDatabaseConsts.NAME);
+            city.setId(cityJson.getInt(VKApiDatabaseConsts.CID));
+            city.setName(cityJson.getString(VKApiDatabaseConsts.NAME));
 
-            VkLocalCache.setCity(city.id, city.name);
+            VkLocalCache.setCity(city.id(), city.name());
         }
 
         return city;
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getUniversities">API database.getUniversities()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/database.getUniversities">API database.getUniversities()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getUniversities(VKParameters params) {
@@ -146,9 +147,9 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getSchools">API database.getSchools()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/database.getSchools">API database.getSchools()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getSchools(VKParameters params) {
@@ -156,9 +157,9 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getSchoolClasses">API database.getSchoolClasses()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/database.getSchoolClasses">API database.getSchoolClasses()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getSchoolClasses(VKParameters params) {
@@ -166,9 +167,9 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getFaculties">API database.getFaculties()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/database.getFaculties">API database.getFaculties()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getFaculties(VKParameters params) {
@@ -176,9 +177,9 @@ public class VKApiDatabase extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/database.getChairs">API database.getChairs()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/database.getChairs">API database.getChairs()</a>
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getChairs(VKParameters params) {

@@ -5,12 +5,12 @@ import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.consts.VKApiRigths;
 
 /**
- * @author bataev
+ * @author anbat
  * Created by anton on 17/04/15.
  *
  * Builds requests for API.apps part
  *
- * @see <a href="https://vk.com/dev/apps">API apps</a>
+ * <a href="https://vk.com/dev/apps">API apps</a>
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batiaev.com

@@ -14,28 +14,28 @@ import com.batiaev.vk.api.VKParameters;
  *
  * Builds requests for API.status part
  *
- * @see <a href="https://vk.com/dev/status">API status</a>
+ * <a href="https://vk.com/dev/status">API status</a>
  */
 public class VKApiStatus extends VKApiBase {
 	
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/status.get">API status.get()</a>
+     * <a href="https://vk.com/dev/status.get">API status.get()</a>
      *
      * You need the following rights to call this method: status. (Read more on rights)
+     * @param params method parameters
+     * @return String with json respond
      */
     public String get(VKParameters params) {
         return prepareRequest("get", params).getRequest();
     }
     
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/status.set">API status.set()</a>
+     * <a href="https://vk.com/dev/status.set">API status.set()</a>
      *
      * You need the following rights to call this method: status. (Read more on rights)
-     * This method is available only to standalone-applications. 
+     * This method is available only to standalone-applications.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String set(VKParameters params) {
         return prepareRequest("set", params).getRequest();

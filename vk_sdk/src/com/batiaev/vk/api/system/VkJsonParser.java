@@ -70,15 +70,15 @@ public class VkJsonParser {
         if (userJson.has(VKApiUserConsts.CITY)) {
             JSONObject cityJson = userJson.getJSONObject(VKApiUserConsts.CITY);
             VKCity city = new VKCity();
-            city.id = cityJson.getInt(VKApiConst.ID);
-            city.name = cityJson.getString(VKApiConst.TITLE);
+            city.setId(cityJson.getInt(VKApiConst.ID));
+            city.setName(cityJson.getString(VKApiConst.TITLE));
             user.setCity(city);
         }
         if (userJson.has(VKApiUserConsts.COUNTRY)) {
             JSONObject countryJson = userJson.getJSONObject(VKApiUserConsts.COUNTRY);
             VKCountry country = new VKCountry();
-            country.id = countryJson.getInt(VKApiConst.ID);
-            country.name = countryJson.getString(VKApiConst.TITLE);
+            country.setId(countryJson.getInt(VKApiConst.ID));
+            country.setName(countryJson.getString(VKApiConst.TITLE));
             user.setCountry(country);
         }
         if (userJson.has(VKApiUserConsts.BDATE)) {
@@ -169,20 +169,20 @@ public class VkJsonParser {
     public static VKPhoto parsePhoto(JSONObject photoJson) {
 
         VKPhoto photo = new VKPhoto();
-        if (photoJson.has(VKApiJsonConst.ID)) photo.id = photoJson.getInt(VKApiJsonConst.ID);
-        if (photoJson.has(VKApiJsonConst.USER_ID)) photo.user_id = photoJson.getInt(VKApiMessagesConsts.USER_ID);
-        if (photoJson.has(VKApiJsonConst.OWNER_ID)) photo.owner_id = photoJson.getInt(VKApiJsonConst.OWNER_ID);
-        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.album_id = photoJson.getInt(VKApiJsonConst.ALBUM_ID);
-        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.date = photoJson.getInt(VKApiJsonConst.DATE);
-        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.text = photoJson.getString(VKApiJsonConst.TEXT);
-        if (photoJson.has(VKApiJsonConst.HEIGHT)) photo.height = photoJson.getInt(VKApiJsonConst.HEIGHT);
-        if (photoJson.has(VKApiJsonConst.WIDTH)) photo.width = photoJson.getInt(VKApiJsonConst.WIDTH);
-        if (photoJson.has(VKApiJsonConst.PHOTO_75)) photo.photo_75 = photoJson.getString(VKApiJsonConst.PHOTO_75);
-        if (photoJson.has(VKApiJsonConst.PHOTO_130)) photo.photo_130 = photoJson.getString(VKApiJsonConst.PHOTO_130);
-        if (photoJson.has(VKApiJsonConst.PHOTO_604)) photo.photo_604 = photoJson.getString(VKApiJsonConst.PHOTO_604);
-        if (photoJson.has(VKApiJsonConst.PHOTO_807)) photo.photo_807 = photoJson.getString(VKApiJsonConst.PHOTO_807);
-        if (photoJson.has(VKApiJsonConst.PHOTO_1280)) photo.photo_1280 = photoJson.getString(VKApiJsonConst.PHOTO_1280);
-        if (photoJson.has(VKApiJsonConst.PHOTO_2560)) photo.photo_2560 = photoJson.getString(VKApiJsonConst.PHOTO_2560);
+        if (photoJson.has(VKApiJsonConst.ID)) photo.setId(photoJson.getInt(VKApiJsonConst.ID));
+        if (photoJson.has(VKApiJsonConst.USER_ID)) photo.setUserId(photoJson.getInt(VKApiMessagesConsts.USER_ID));
+        if (photoJson.has(VKApiJsonConst.OWNER_ID)) photo.setOwnerId(photoJson.getInt(VKApiJsonConst.OWNER_ID));
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setAlbumId(photoJson.getInt(VKApiJsonConst.ALBUM_ID));
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setDate(photoJson.getInt(VKApiJsonConst.DATE));
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setText(photoJson.getString(VKApiJsonConst.TEXT));
+        if (photoJson.has(VKApiJsonConst.HEIGHT)) photo.setHeight(photoJson.getInt(VKApiJsonConst.HEIGHT));
+        if (photoJson.has(VKApiJsonConst.WIDTH)) photo.setWidth(photoJson.getInt(VKApiJsonConst.WIDTH));
+        if (photoJson.has(VKApiJsonConst.PHOTO_75)) photo.setPhoto75(photoJson.getString(VKApiJsonConst.PHOTO_75));
+        if (photoJson.has(VKApiJsonConst.PHOTO_130)) photo.setPhoto130(photoJson.getString(VKApiJsonConst.PHOTO_130));
+        if (photoJson.has(VKApiJsonConst.PHOTO_604)) photo.setPhoto604(photoJson.getString(VKApiJsonConst.PHOTO_604));
+        if (photoJson.has(VKApiJsonConst.PHOTO_807)) photo.setPhoto807(photoJson.getString(VKApiJsonConst.PHOTO_807));
+        if (photoJson.has(VKApiJsonConst.PHOTO_1280)) photo.setPhoto1280(photoJson.getString(VKApiJsonConst.PHOTO_1280));
+        if (photoJson.has(VKApiJsonConst.PHOTO_2560)) photo.setPhoto2560(photoJson.getString(VKApiJsonConst.PHOTO_2560));
 
         return photo;
     }

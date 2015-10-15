@@ -17,45 +17,45 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiAuth extends VKApiBase {
 
     /**
+     * <a href="https://vk.com/dev/auth.checkPhone">API auth.checkPhone()</a>
+     *
+     * This is an open method; it does not require an access_token.
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/auth.checkPhone">API auth.checkPhone()</a>
-     *
-     * This is an open method; it does not require an access_token. 
      */
     public String checkPhone(VKParameters params) {
         return prepareRequest("checkPhone", params).getRequest();
     }
 
     /**
+     * <a href="https://vk.com/dev/auth.signup">API auth.signup()</a>
+     *
+     * This is an open method; it does not require an access_token.
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/auth.signup">API auth.signup()</a>
-     *
-     * This is an open method; it does not require an access_token. 
      */
     public String signup(VKParameters params) {
         return prepareRequest("signup", params).getRequest();
     }
 
     /**
+     * <a href="https://vk.com/dev/auth.confirm">API auth.confirm()</a>
+     *
+     * This is an open method; it does not require an access_token.
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/auth.confirm">API auth.confirm()</a>
-     *
-     * This is an open method; it does not require an access_token. 
      */
     public String confirm(VKParameters params) {
         return prepareRequest("confirm", params).getRequest();
     }
 
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/auth.restore">API auth.restore()</a>
+     * <a href="https://vk.com/dev/auth.restore">API auth.restore()</a>
      *
      * This method is only available for apps with Direct authorization access.
-     * This is an open method; it does not require an access_token. 
+     * This is an open method; it does not require an access_token.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String restore(VKParameters params) {
         return prepareRequest("restore", params).getRequest();

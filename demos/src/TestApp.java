@@ -35,8 +35,8 @@ public class TestApp {
         parameters.setValue(VkApiMessagesParams.USER_ID, "8475109");
         VKMessageList messages = VKApi.messages().getHistory(parameters);
 
-        LOG.info("Total count of messages: " + messages.totalCount);
-        LOG.info("Count of unread messages: " + messages.upreadCount);
+        LOG.info("Total count of messages: " + messages.totalCount());
+        LOG.info("Count of unread messages: " + messages.upreadCount());
         for (VKMessage message : messages) {
             int userId = message.userId();
             if (!VkLocalCache.hasUser(userId)) {

@@ -3,6 +3,8 @@ package com.batiaev.vk.api.dataTypes;
 /**
  * Created by anton on 19/04/15.
  * ---
+ * @see VKAudio
+ * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batyaev.com
  */

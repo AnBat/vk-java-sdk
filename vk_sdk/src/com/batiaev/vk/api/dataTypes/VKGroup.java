@@ -9,6 +9,7 @@ package com.batiaev.vk.api.dataTypes;
 
 /**
  * Group object describes a community
+ * @see VKPost
  */
 public class VKGroup {
 

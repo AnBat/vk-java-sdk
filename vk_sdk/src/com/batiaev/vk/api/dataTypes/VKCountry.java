@@ -5,6 +5,11 @@ package com.batiaev.vk.api.dataTypes;
  *
  * Created by batiaev on 09/05/15.
  * ---
+ * @see VkPlace
+ * @see VKCity
+ * @see VkStreet
+ * @see VkSchool
+ * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batiaev.com
  */

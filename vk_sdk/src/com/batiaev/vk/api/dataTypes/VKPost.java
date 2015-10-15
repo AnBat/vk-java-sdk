@@ -12,25 +12,193 @@ package com.batiaev.vk.api.dataTypes;
  */
 public class VKPost {
 
-    public int id;
-    public int to_id;
-    public int from_id;
-    public String date;
-    public String text;
-    public String reply_owner_id;
-    public String reply_post_id;
-    public String friends_only;
-    public String comments;
-    public String likes;
-    public String reposts;
-    public String post_type;
-    public String post_source;
-    public String attachments;
-    public String geo;
-    public String signer_id;
-    public String copy_post_date;
-    public String copy_post_type;
-    public String copy_owner_id;
-    public String copy_post_id;
-    public String copy_text;
+    public int id() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int toId() {
+        return to_id;
+    }
+
+    public void setToId(int to_id) {
+        this.to_id = to_id;
+    }
+
+    public int fromId() {
+        return from_id;
+    }
+
+    public void setFromId(int from_id) {
+        this.from_id = from_id;
+    }
+
+    public String date() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String text() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String replyOwnerId() {
+        return reply_owner_id;
+    }
+
+    public void setReplyOwnerId(String reply_owner_id) {
+        this.reply_owner_id = reply_owner_id;
+    }
+
+    public String replyPostId() {
+        return reply_post_id;
+    }
+
+    public void setReplyPostId(String reply_post_id) {
+        this.reply_post_id = reply_post_id;
+    }
+
+    public String friendsOnly() {
+        return friends_only;
+    }
+
+    public void setFriendsOnly(String friends_only) {
+        this.friends_only = friends_only;
+    }
+
+    public String comments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public String likes() {
+        return likes;
+    }
+
+    public void setLikes(String likes) {
+        this.likes = likes;
+    }
+
+    public String reposts() {
+        return reposts;
+    }
+
+    public void setReposts(String reposts) {
+        this.reposts = reposts;
+    }
+
+    public String postType() {
+        return post_type;
+    }
+
+    public void setPostType(String post_type) {
+        this.post_type = post_type;
+    }
+
+    public String postSource() {
+        return post_source;
+    }
+
+    public void setPostSource(String post_source) {
+        this.post_source = post_source;
+    }
+
+    public String attachments() {
+        return attachments;
+    }
+
+    public void setAttachments(String attachments) {
+        this.attachments = attachments;
+    }
+
+    public String geo() {
+        return geo;
+    }
+
+    public void setGeo(String geo) {
+        this.geo = geo;
+    }
+
+    public String signerId() {
+        return signer_id;
+    }
+
+    public void setSignerId(String signer_id) {
+        this.signer_id = signer_id;
+    }
+
+    public String copyPostDate() {
+        return copy_post_date;
+    }
+
+    public void setCopyPostDate(String copy_post_date) {
+        this.copy_post_date = copy_post_date;
+    }
+
+    public String copyPostType() {
+        return copy_post_type;
+    }
+
+    public void setCopyPostType(String copy_post_type) {
+        this.copy_post_type = copy_post_type;
+    }
+
+    public String copyOwnerId() {
+        return copy_owner_id;
+    }
+
+    public void setCopyOwnerId(String copy_owner_id) {
+        this.copy_owner_id = copy_owner_id;
+    }
+
+    public String copyPostId() {
+        return copy_post_id;
+    }
+
+    public void setCopyPostId(String copy_post_id) {
+        this.copy_post_id = copy_post_id;
+    }
+
+    public String copyText() {
+        return copy_text;
+    }
+
+    public void setCopyText(String copy_text) {
+        this.copy_text = copy_text;
+    }
+
+    private int id;
+    private int to_id;
+    private int from_id;
+    private String date;
+    private String text;
+    private String reply_owner_id;
+    private String reply_post_id;
+    private String friends_only;
+    private String comments;
+    private String likes;
+    private String reposts;
+    private String post_type;
+    private String post_source;
+    private String attachments;
+    private String geo;
+    private String signer_id;
+    private String copy_post_date;
+    private String copy_post_type;
+    private String copy_owner_id;
+    private String copy_post_id;
+    private String copy_text;
 }

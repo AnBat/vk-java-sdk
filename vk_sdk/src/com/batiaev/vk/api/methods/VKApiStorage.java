@@ -14,38 +14,38 @@ import com.batiaev.vk.api.VKParameters;
  *
  * Builds requests for API.storage part
  *
- * @see <a href="https://vk.com/dev/storage">API storage</a>
+ * <a href="https://vk.com/dev/storage">API storage</a>
  */
 public class VKApiStorage extends VKApiBase {
 
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/storage.get">API storage.get()</a>
+     * <a href="https://vk.com/dev/storage.get">API storage.get()</a>
      *
      * This method doesn't require any specific rights.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String get(VKParameters params) {
         return prepareRequest("get", params).getRequest();
     }
 
     /**
+     * <a href="https://vk.com/dev/storage.set">API storage.set()</a>
+     *
+     * This method doesn't require any specific rights.
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/storage.set">API storage.set()</a>
-     *
-     * This method doesn't require any specific rights. 
      */
     public String set(VKParameters params) {
         return prepareRequest("set", params).getRequest();
     }
 
     /**
+     * <a href="https://vk.com/dev/storage.getKeys">API storage.getKeys()</a>
+     *
+     * This method doesn't require any specific rights.
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/storage.getKeys">API storage.getKeys()</a>
-     *
-     * This method doesn't require any specific rights. 
      */
     public String getKeys(VKParameters params) {
         return prepareRequest("getKeys", params).getRequest();

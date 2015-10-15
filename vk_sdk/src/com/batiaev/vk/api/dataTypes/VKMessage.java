@@ -8,6 +8,8 @@ import java.util.*;
  * ---
  * A message object describes a private message
  * API version 5.0 and higher
+ * @see VKMessageList
+ * @see VkDialog
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batiaev.com

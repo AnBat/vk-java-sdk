@@ -1,10 +1,12 @@
 package com.batiaev.vk.api;
+/**
+ * Copyright © 2015. Anton Batiaev. All Rights Reserved.
+ * www.batiaev.com
+ */
 
 /**
  * Created by anton on 03/05/15.
- * ---
- * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batiaev.com
+ * @author anbat
  */
 public class VKErrorCodes {
     /**
@@ -16,21 +18,21 @@ public class VKErrorCodes {
     /**
      * Application is disabled. Enable your application or use test mode
      *
-     * You need to switch on the app in Settings (@link https://vk.com/editapp?id={Your API_ID}
+     * You need to switch on the app in Settings (https://vk.com/editapp?id={Your API_ID})
      * or use the test mode (test_mode=1).
      */
     public final static int APP_DISABLED = 2;
     /**
      * Unknown method passed
      *
-     * Check the method name: @link http://vk.com/dev/methods .
+     * Check the method name: <a href="https://vk.com/dev/methods">https://vk.com/dev/methods</a> .
      */
     public final static int UNKNOWN_METHOD = 3;
     /**
      * Incorrect signature
      *
      * Check if the signature has been formed correctly:
-     * @see <a href="https://vk.com/dev/api_nohttps">API nohttps</a>.
+     * <a href="https://vk.com/dev/api_nohttps">API nohttps</a>
      */
     public final static int INCORRECT_SIGNATURE = 4;
     /**
@@ -38,8 +40,8 @@ public class VKErrorCodes {
      *
      * Make sure that you use a correct authorization type.
      * To work with the methods without a secureprefix you need to authorize a user with one of these ways:
-     * @see <a href="https://vk.com/dev/auth_sites">Auth sites</a>.
-     * @see <a href="https://vk.com/dev/auth_mobile">Auth mobile</a>.
+     * <a href="https://vk.com/dev/auth_sites">Auth sites</a>.
+     * <a href="https://vk.com/dev/auth_mobile">Auth mobile</a>.
      */
     public final static int AUTHORIZATION_FAILED = 5;
     /**
@@ -47,7 +49,7 @@ public class VKErrorCodes {
      *
      * Decrease the request frequency or use the execute method.
      * More details on frequency limits here:
-     * @see <a href="https://vk.com/dev/api_requests">API requests</a>.
+     * <a href="https://vk.com/dev/api_requests">API requests</a>.
      */
     public final static int TOO_MANY_REQUEST = 6;
     /**
@@ -112,7 +114,7 @@ public class VKErrorCodes {
      *
      * If you see this error despite your app has the Standalone type, make sure that you use
      * redirect_uri=<a href="https://oauth.vk.com/blank.html">https://oauth.vk.com/blank.html</a>. Details here:
-     * @see <a href="https://vk.com/dev/auth_mobile">Auth mobile</a>.
+     * <a href="https://vk.com/dev/auth_mobile">Auth mobile</a>.
      */
     public final static int PERMISSON_DENIED_FOR_NON_STAND_ALONE_APP = 20;
     /**

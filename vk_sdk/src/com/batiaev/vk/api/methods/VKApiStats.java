@@ -8,32 +8,29 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
  * @author batiaev
  *
  * Builds requests for API.stats part
  *
- * @see <a href="https://vk.com/dev/stats">API stats</a>
+ * <a href="https://vk.com/dev/stats">API stats</a>
  */
 public class VKApiStats extends VKApiBase {
 
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/stats.get">API stats.get()</a>
+     * <a href="https://vk.com/dev/stats.get">API stats.get()</a>
      *
      * This method doesn't require any specific rights.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String get(VKParameters params) {
         return prepareRequest("get", params).getRequest();
     }
 
     /**
-     * @param params method parameters
-     * @return String with json respond
-     * @see <a href="https://vk.com/dev/stats.trackVisitor">API stats.trackVisitor()</a>
+     * <a href="https://vk.com/dev/stats.trackVisitor">API stats.trackVisitor()</a>
      *
      * Adds information about the current session in the attendance statistics application.
      * After the first call of this method in the "Statistics" section of your application settings
@@ -46,6 +43,8 @@ public class VKApiStats extends VKApiBase {
      *
      * result
      * In case of successful processing method will return 1.
+     * @param params method parameters
+     * @return String with json respond
      */
     public String trackVisitor(VKParameters params) {
         return prepareRequest("trackVisitor", params).getRequest();

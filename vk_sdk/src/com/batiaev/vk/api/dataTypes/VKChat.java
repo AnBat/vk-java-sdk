@@ -13,6 +13,7 @@ import java.util.List;
 /**
  * Chat object describes a chat
  * API version 5.0 and higher
+ * @see VKChatList
  */
 public class VKChat {
 

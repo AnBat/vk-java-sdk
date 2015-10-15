@@ -19,9 +19,9 @@ import com.batiaev.vk.api.VKParameters;
 public class VKApiPages extends VKApiBase {
 
     /**
+     * <a href="https://vk.com/dev/pages.get">API pages.get()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/pages.get">API pages.get()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -30,9 +30,9 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/pages.save">API pages.save()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/pages.save">API pages.save()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -41,9 +41,9 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/pages.saveAccess">API pages.saveAccess()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/pages.saveAccess">API pages.saveAccess()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -52,9 +52,9 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/pages.getHistory">API pages.getHistory()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/pages.getHistory">API pages.getHistory()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -63,9 +63,9 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/pages.getTitles">API pages.getTitles()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/pages.getTitles">API pages.getTitles()</a>
      *
      * You need the following rights to call this method: pages.
      */
@@ -74,9 +74,9 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/pages.getVersion">API pages.getVersion()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/pages.getVersion">API pages.getVersion()</a>
      *
      * This method doesn't require any specific rights.
      */
@@ -85,9 +85,9 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/pages.parseWiki">API pages.parseWiki()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/pages.parseWiki">API pages.parseWiki()</a>
      *
      * This method doesn't require any specific rights.
      */
@@ -96,9 +96,9 @@ public class VKApiPages extends VKApiBase {
     }
 
     /**
+     * <a href="https://vk.com/dev/pages.clearCache">API pages.clearCache()</a>
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/pages.clearCache">API pages.clearCache()</a>
      *
      * This is an open method; it does not require an access_token.
      */

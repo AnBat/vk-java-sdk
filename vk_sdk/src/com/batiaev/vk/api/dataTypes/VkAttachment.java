@@ -11,6 +11,9 @@ package com.batiaev.vk.api.dataTypes;
  * Information about media attachments in posts is returned as attachments array with elements,
  * each containing type field and an object with a field set defined by attachment type.
  * @see <a href="http://vk.com/dev/attachments_m">Types of attachments()</a>
+ * @see VKMessage
+ * @see VKPost
+ * @see VkPhotoAttachment
  */
 public class VkAttachment {
     public static final String Photo = "photo";

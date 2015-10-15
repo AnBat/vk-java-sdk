@@ -8,7 +8,6 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.VKRequest;
 
 /**
  * @author batiaev
@@ -19,22 +18,22 @@ import com.batiaev.vk.api.VKRequest;
 public class VKApiWidgets extends VKApiBase {
 	
     /**
+     * <a href="https://vk.com/dev/widgets.getComments">API widgets.getComments()</a>
+     *
+     * This is an open method; it does not require an access_token.
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/widgets.getComments">API widgets.getComments()</a>
-     *
-     * This is an open method; it does not require an access_token. 
      */
     public String getComments(VKParameters params) {
         return prepareRequest("getComments", params).getRequest();
     }
 
     /**
+     * <a href="https://vk.com/dev/widgets.getPages">API widgets.getPages()</a>
+     *
+     * This is an open method; it does not require an access_token.
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/widgets.getPages">API widgets.getPages()</a>
-     *
-     * This is an open method; it does not require an access_token. 
      */
     public String getPages(VKParameters params) {
         return prepareRequest("getPages", params).getRequest();
