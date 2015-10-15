@@ -1,1 +1,1 @@
-include ':vk_sdk', ':demo', ':message_loader'
+include ':vk_sdk', ':demos'

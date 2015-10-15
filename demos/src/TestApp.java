@@ -6,11 +6,9 @@ import com.batiaev.vk.api.dataTypes.VKMessage;
 import com.batiaev.vk.api.dataTypes.VKMessageList;
 import com.batiaev.vk.api.dataTypes.VKUserList;
 import com.batiaev.vk.sdk.VkLocalCache;
-import com.batiaev.vk.sdk.VkMessageCache;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 
 /**
@@ -23,7 +21,7 @@ import java.text.SimpleDateFormat;
 public class TestApp {
     private static final Logger LOG = LogManager.getLogger(TestApp.class);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         VKAuthorization.loadProperties();
         VkLocalCache.cachingFriends();
