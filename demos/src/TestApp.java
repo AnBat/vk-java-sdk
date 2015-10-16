@@ -41,7 +41,7 @@ public class TestApp {
             int userId = message.userId();
             if (!VkLocalCache.hasUser(userId)) {
                 VKParameters userParams = new VKParameters();
-                userParams.setValue("userId", userId);
+                userParams.setValue("user_id", userId);
                 userParams.setValue("fields", "first_name, last_name");
                 VKUserList users = VKApi.users().get(userParams);
 

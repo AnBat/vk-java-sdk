@@ -39,6 +39,11 @@ sourceSets {
             srcDir 'resources'
         }
     }
+    test {
+        java {
+            srcDir 'tests'
+        }
+    }
 }
 
 def httpClientVersion = '4.5'
