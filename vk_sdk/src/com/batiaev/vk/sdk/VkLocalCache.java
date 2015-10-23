@@ -85,7 +85,7 @@ public class VkLocalCache {
         return getValues("users");
     }
 
-    public static String getUser(final int id) {
+    public static String getUser(final long id) {
         String fullName = getItem(id, "users");
         return fullName == null ? String.valueOf(id) : fullName;
     }
@@ -98,7 +98,7 @@ public class VkLocalCache {
         setItem(id, name, "users");
     }
 
-    public static boolean hasUser(int id) {
+    public static boolean hasUser(long id) {
         return hasItem(id, "users");
     }
 
@@ -148,6 +148,11 @@ public class VkLocalCache {
         return VkPropertyLoader.properties().values();
     }
 
+    public static String getItem(final long id, String type) {
+        VkPropertyLoader.setPropertyFileName(type);
+        return VkPropertyLoader.getProperty(String.valueOf(id));
+    }
+
     public static String getItem(final int id, String type) {
         VkPropertyLoader.setPropertyFileName(type);
         return VkPropertyLoader.getProperty(String.valueOf(id));
@@ -161,6 +166,11 @@ public class VkLocalCache {
     public static void setItem(long id, String name, String type) {
         VkPropertyLoader.setPropertyFileName(type);
         VkPropertyLoader.setProperty(String.valueOf(id), name);
+    }
+
+    public static boolean hasItem(long id, String type) {
+        VkPropertyLoader.setPropertyFileName(type);
+        return VkPropertyLoader.hasProperty(String.valueOf(id));
     }
 
     public static boolean hasItem(int id, String type) {

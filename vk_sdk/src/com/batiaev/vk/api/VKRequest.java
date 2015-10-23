@@ -40,12 +40,15 @@ public class VKRequest {
         parameters = params;
     }
 
-    public String getRequest() {
+    public static VKRequest create() {
+        return new VKRequest();
+    }
+    public String getRequest(String methodName, String params) {
 //        https://hc.apache.org/httpcomponents-client-4.4.x/httpclient/examples/org/apache/http/examples/client/ClientWithResponseHandler.java /
         CloseableHttpClient httpclient = HttpClients.createDefault();
         String responseBody = "";
         try {
-            HttpGet httpget = new HttpGet(BASE_URL + method_name + "?" + parameters);
+            HttpGet httpget = new HttpGet(BASE_URL + methodName + "?" + params);
 
             LOG.debug("Executing request " + httpget.getRequestLine());
 
@@ -83,8 +86,8 @@ public class VKRequest {
         return responseBody;
     }
 
-    public String postRequest() throws IOException {
-
-        return "";
+    @Deprecated
+    public String getRequest() {
+        return getRequest(method_name, parameters);
     }
 }

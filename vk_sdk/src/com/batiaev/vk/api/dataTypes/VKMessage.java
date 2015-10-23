@@ -40,19 +40,19 @@ public class VKMessage {
     }
 
     public int fromId() {
-        return fromId;
+        return from_id;
     }
 
-    public void setFromId(int fromId) {
-        this.fromId = fromId;
+    public void setFrom_id(int from_id) {
+        this.from_id = from_id;
     }
 
-    public int userId() {
-        return userId;
+    public long userId() {
+        return user_id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserId(long user_id) {
+        this.user_id = user_id;
     }
 
     public Date getDate() {
@@ -127,65 +127,9 @@ public class VKMessage {
         this.deleted = deleted;
     }
 
-    public int chatId() {
-        return chat_id;
-    }
-
-    public void setChatId(int chat_id) {
-        this.chat_id = chat_id;
-    }
-
-    public ArrayList<String> chatActive() {
-        return chat_active;
-    }
-
-    public void setChatActive(ArrayList<String> chat_active) {
-        this.chat_active = chat_active;
-    }
-
-    public String usersCount() {
-        return users_count;
-    }
-
-    public void setUsersCount(String users_count) {
-        this.users_count = users_count;
-    }
-
-    public int adminId() {
-        return admin_id;
-    }
-
-    public void setAdminId(int admin_id) {
-        this.admin_id = admin_id;
-    }
-
-    public String photo50() {
-        return photo_50;
-    }
-
-    public void setPhoto50(String photo_50) {
-        this.photo_50 = photo_50;
-    }
-
-    public String photo100() {
-        return photo_100;
-    }
-
-    public void setPhoto100(String photo_100) {
-        this.photo_100 = photo_100;
-    }
-
-    public String photo200() {
-        return photo_200;
-    }
-
-    public void setPhoto200(String photo_200) {
-        this.photo_200 = photo_200;
-    }
-
     private int id;
-    private int fromId;
-    private int userId;
+    private int from_id;
+    private long user_id;
     private Date date;
     private boolean read_state;
     private boolean out;
@@ -195,18 +139,9 @@ public class VKMessage {
     private ArrayList<VKMessage> fwd_messages;
     private boolean emoji;
     private boolean deleted;
-    //Additional fields for group chat only
-    private int chat_id;
-    private ArrayList<String> chat_active;
-    private String users_count;
-    private int admin_id;
-    private String photo_50;
-    private String photo_100;
-    private String photo_200;
 
     public VKMessage() {
         attachments = new ArrayList<>();
         fwd_messages = new ArrayList<>();
-        chat_active = new ArrayList<>();
     }
 }

@@ -2,9 +2,8 @@ package com.batiaev.vk.api.methods;
 
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.consts.VKApiConst;
-import com.batiaev.vk.api.consts.VKApiJsonConst;
-import com.batiaev.vk.api.dataTypes.VKChat;
-import com.batiaev.vk.api.dataTypes.VKChatList;
+import com.batiaev.vk.api.dataTypes.VkChatMessage;
+import com.batiaev.vk.api.dataTypes.VkChatList;
 import com.batiaev.vk.api.dataTypes.VKMessage;
 import com.batiaev.vk.api.dataTypes.VKMessageList;
 import com.batiaev.vk.api.system.VkJsonParser;
@@ -38,10 +37,11 @@ public class VKApiMessages extends VKApiBase {
      * @return list of required messages
      */
     public VKMessageList get(VKParameters params) {
-        JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET, params).getRequest());
+
+        JSONObject respondJson = execute(VKApiConst.GET, params);
+        if (respondJson == null) return null;
 
         VKMessageList result = new VKMessageList();
-        JSONObject respondJson = obj.getJSONObject(VKApiJsonConst.RESPONSE);
 
         if (respondJson.has(VKApiConst.COUNT)) result.setTotalCount(respondJson.getInt(VKApiConst.COUNT));
         if (respondJson.has(VKApiConst.UNREAD)) result.setUpreadCount(respondJson.getInt(VKApiConst.UNREAD));
@@ -63,19 +63,20 @@ public class VKApiMessages extends VKApiBase {
      * @param params method parameters
      * @return String with json respond
      */
-    public VKChatList getDialogs(VKParameters params) {
-        JSONObject obj = new JSONObject(prepareRequest("getDialogs", params).getRequest());
+    public VkChatList getDialogs(VKParameters params) {
 
-        VKChatList result = new VKChatList();
-        JSONObject respondJson = obj.getJSONObject(VKApiJsonConst.RESPONSE);
+        JSONObject respondJson = execute("getDialogs", params);
+        if (respondJson == null) return null;
+
+        VkChatList result = new VkChatList();
 
         if (respondJson.has(VKApiConst.COUNT)) result.setTotalCount(respondJson.getInt(VKApiConst.COUNT));
-        if (respondJson.has(VKApiConst.UNREAD)) result.setUpreadCount(respondJson.getInt(VKApiConst.UNREAD));
+        if (respondJson.has(VKApiConst.UNREAD)) result.setUnreadCount(respondJson.getInt(VKApiConst.UNREAD));
 
         final JSONArray chatList = respondJson.getJSONArray(VKApiConst.ITEMS);
 
         for (int i = 0; i < chatList.length(); ++i) {
-            VKChat chat = VkJsonParser.parseChat(chatList.getJSONObject(i));
+            VkChatMessage chat = VkJsonParser.parseChat(chatList.getJSONObject(i));
             result.add(chat);
         }
         return result;
@@ -89,8 +90,23 @@ public class VKApiMessages extends VKApiBase {
      * @param params method parameters
      * @return String with json respond
      */
-    public String getById(VKParameters params) {
-        return prepareRequest("getById", params).getRequest();
+    public VKMessageList getById(VKParameters params) {
+
+        JSONObject respondJson = execute("getById", params);
+        if (respondJson == null) return null;
+
+        VKMessageList result = new VKMessageList();
+
+        if (respondJson.has(VKApiConst.COUNT)) result.setTotalCount(respondJson.getInt(VKApiConst.COUNT));
+        if (respondJson.has(VKApiConst.UNREAD)) result.setUpreadCount(respondJson.getInt(VKApiConst.UNREAD));
+
+        final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
+
+        for (int i = 0; i < messageList.length(); ++i) {
+            VKMessage message = VkJsonParser.parseMessage(messageList.getJSONObject(i));
+            result.add(message);
+        }
+        return result;
     }
     
     /**
@@ -102,7 +118,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String search(VKParameters params) {
-        return prepareRequest("search", params).getRequest();
+        return execute("search", params).toString();
     }
     
     /**
@@ -114,10 +130,12 @@ public class VKApiMessages extends VKApiBase {
      * @return return list of messages from history with concrete user or chat
      */
     public VKMessageList getHistory(VKParameters params) {
-        JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET_HISTORY, params).getRequest());
+
+        JSONObject respondJson = execute(VKApiConst.GET_HISTORY, params);
+        if (respondJson == null) return null;
 
         VKMessageList result = new VKMessageList();
-        JSONObject respondJson = obj.getJSONObject(VKApiJsonConst.RESPONSE);
+
         if (respondJson.has(VKApiConst.COUNT)) result.setTotalCount(respondJson.getInt(VKApiConst.COUNT));
         if (respondJson.has(VKApiConst.UNREAD)) result.setUpreadCount(respondJson.getInt(VKApiConst.UNREAD));
 
@@ -135,10 +153,10 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications.
      * @param params method parameters
-     * @return String with json respond
+     * @return ID of the sent message (mid).
      */
     public String send(VKParameters params) {
-        return prepareRequest("send", params).getRequest();
+        return execute("send", params).toString();
     }
     
     /**
@@ -147,10 +165,10 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications.
      * @param params method parameters
-     * @return String with json respond
+     * @return 1
      */
     public String delete(VKParameters params) {
-        return prepareRequest("delete", params).getRequest();
+        return execute("delete", params).toString();
     }
     
     /**
@@ -162,7 +180,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String deleteDialog(VKParameters params) {
-        return prepareRequest("deleteDialog", params).getRequest();
+        return execute("deleteDialog", params).toString();
     }
     
     /**
@@ -171,10 +189,10 @@ public class VKApiMessages extends VKApiBase {
      * You need the following rights to call this method: messages.
      * This method is available only to standalone-applications.
      * @param params method parameters
-     * @return String with json respond
+     * @return 1
      */
     public String restore(VKParameters params) {
-        return prepareRequest("restore", params).getRequest();
+        return execute("restore", params).toString();
     }
     
     /**
@@ -186,7 +204,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String markAsRead(VKParameters params) {
-        return prepareRequest("markAsRead", params).getRequest();
+        return execute("markAsRead", params).toString();
     }
     
     /**
@@ -198,7 +216,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String markAsImportant(VKParameters params) {
-        return prepareRequest("markAsImportant", params).getRequest();
+        return execute("markAsImportant", params).toString();
     }
     
     /**
@@ -210,7 +228,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getLongPollServer(VKParameters params) {
-        return prepareRequest("getLongPollServer", params).getRequest();
+        return execute("getLongPollServer", params).toString();
     }
     
     /**
@@ -222,7 +240,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getLongPollHistory(VKParameters params) {
-        return prepareRequest("getLongPollHistory", params).getRequest();
+        return execute("getLongPollHistory", params).toString();
     }
     
     /**
@@ -234,7 +252,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getChat(VKParameters params) {
-        return prepareRequest("getChat", params).getRequest();
+        return execute("getChat", params).toString();
     }
     
     /**
@@ -246,7 +264,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String createChat(VKParameters params) {
-        return prepareRequest("createChat", params).getRequest();
+        return execute("createChat", params).toString();
     }
     
     /**
@@ -258,7 +276,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String editChat(VKParameters params) {
-        return prepareRequest("editChat", params).getRequest();
+        return execute("editChat", params).toString();
     }
     
     /**
@@ -270,7 +288,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getChatUsers(VKParameters params) {
-        return prepareRequest("getChatUsers", params).getRequest();
+        return execute("getChatUsers", params).toString();
     }
     
     /**
@@ -282,7 +300,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String setActivity(VKParameters params) {
-        return prepareRequest("setActivity", params).getRequest();
+        return execute("setActivity", params).toString();
     }
     
     /**
@@ -294,7 +312,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String searchDialogs(VKParameters params) {
-        return prepareRequest("searchDialogs", params).getRequest();
+        return execute("searchDialogs", params).toString();
     }
     
     /**
@@ -306,7 +324,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String addChatUser(VKParameters params) {
-        return prepareRequest("addChatUser", params).getRequest();
+        return execute("addChatUser", params).toString();
     }
     
     /**
@@ -318,7 +336,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String removeChatUser(VKParameters params) {
-        return prepareRequest("removeChatUser", params).getRequest();
+        return execute("removeChatUser", params).toString();
     }
     
     /**
@@ -330,7 +348,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getLastActivity(VKParameters params) {
-        return prepareRequest("getLastActivity", params).getRequest();
+        return execute("getLastActivity", params).toString();
     }
     
     /**
@@ -342,7 +360,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String setChatPhoto(VKParameters params) {
-        return prepareRequest("setChatPhoto", params).getRequest();
+        return execute("setChatPhoto", params).toString();
     }
     
     /**
@@ -354,7 +372,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String deleteChatPhoto(VKParameters params) {
-        return prepareRequest("deleteChatPhoto", params).getRequest();
+        return execute("deleteChatPhoto", params).toString();
     }
 
     @Override

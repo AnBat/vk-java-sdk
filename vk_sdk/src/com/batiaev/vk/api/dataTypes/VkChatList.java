@@ -6,12 +6,12 @@ import java.util.ArrayList;
  * @author batiaev
  * Created by batiaev on 05/07/15.
  * ---
- * @see VKChat
+ * @see VkChatMessage
  * ---
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batiaev.com
  */
-public class VKChatList extends ArrayList<VKChat> {
+public class VkChatList extends ArrayList<VkChatMessage> {
     public int totalCount() {
         return totalCount;
     }
@@ -24,8 +24,8 @@ public class VKChatList extends ArrayList<VKChat> {
         return upreadCount;
     }
 
-    public void setUpreadCount(int upreadCount) {
-        this.upreadCount = upreadCount;
+    public void setUnreadCount(int unreadCount) {
+        this.upreadCount = unreadCount;
     }
 
     public void removeAll() {

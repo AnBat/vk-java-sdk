@@ -30,19 +30,19 @@ public class TestApp {
 
         LOG.error("Friends requests count: " + VKApi.friends().getRequests(new VKParameters()).size());
 
-        VKParameters parameters = new VKParameters();
-        parameters.setValue(VkApiMessagesParams.COUNT, 20);
-        parameters.setValue(VkApiMessagesParams.USER_ID, "8475109");
+        VKParameters parameters = VKParameters.create()
+                .add(VkApiMessagesParams.COUNT, 20)
+                .add(VkApiMessagesParams.USER_ID, "8475109");
         VKMessageList messages = VKApi.messages().getHistory(parameters);
 
         LOG.info("Total count of messages: " + messages.totalCount());
         LOG.info("Count of unread messages: " + messages.upreadCount());
         for (VKMessage message : messages) {
-            int userId = message.userId();
+            long userId = message.userId();
             if (!VkLocalCache.hasUser(userId)) {
-                VKParameters userParams = new VKParameters();
-                userParams.setValue("user_id", userId);
-                userParams.setValue("fields", "first_name, last_name");
+                VKParameters userParams = VKParameters.create()
+                        .add("user_id", userId)
+                        .add("fields", "first_name, last_name");
                 VKUserList users = VKApi.users().get(userParams);
 
                 VkLocalCache.setUser(userId, users.get(0).fullName());

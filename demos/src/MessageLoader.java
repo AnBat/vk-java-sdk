@@ -28,10 +28,10 @@ public class MessageLoader extends TimerTask {
     public MessageLoader() {
         VKAuthorization.loadProperties();
 
-        VKParameters params = new VKParameters();
-        params.setValue("user_id", VKAuthorization.userId());
-        params.setValue("order", "hints");
-        params.setValue("fields", "uid");
+        VKParameters params = VKParameters.create()
+                .add("user_id", VKAuthorization.userId())
+                .add("order", "hints")
+                .add("fields", "uid");
         friends = VKApi.friends().get(params);
         currentIndex = 0;
     }

@@ -3,7 +3,6 @@ package com.batiaev.vk.api.system;
 import com.batiaev.vk.api.VKError;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiJsonConst;
-import com.batiaev.vk.api.consts.VKApiMessagesConsts;
 import com.batiaev.vk.api.consts.VKApiUserConsts;
 import com.batiaev.vk.api.dataTypes.*;
 import org.apache.logging.log4j.LogManager;
@@ -102,38 +101,30 @@ public class VkJsonParser {
         return user;
     }
 
-    public static VKMessage parseMessage(JSONObject messageJson) {
+    public static VKMessage parseMessage(JSONObject json) {
         VKMessage message = new VKMessage();
 
-        if (messageJson.has(VKApiMessagesConsts.ID))
-            message.setId(messageJson.getInt(VKApiMessagesConsts.ID));
-        if (messageJson.has(VKApiMessagesConsts.USER_ID))
-            message.setUserId(messageJson.getInt(VKApiMessagesConsts.USER_ID));
-        if (messageJson.has(VKApiMessagesConsts.FROM_ID))
-            message.setFromId(messageJson.getInt(VKApiMessagesConsts.FROM_ID));
-        if (messageJson.has(VKApiMessagesConsts.OUT))
-            message.setOut(messageJson.getInt(VKApiMessagesConsts.OUT) == 1);
-        if (messageJson.has(VKApiMessagesConsts.READ_STATE))
-            message.setReadState(messageJson.getInt(VKApiMessagesConsts.READ_STATE) == 1);
-        if (messageJson.has(VKApiMessagesConsts.TITLE))
-            message.setTitle(messageJson.getString(VKApiMessagesConsts.TITLE));
-        if (messageJson.has(VKApiMessagesConsts.DATE))
-            message.setDate(new Date((long)messageJson.getInt(VKApiMessagesConsts.DATE)*1000));
-        if (messageJson.has(VKApiMessagesConsts.BODY))
-            message.setBody(messageJson.getString(VKApiMessagesConsts.BODY));
-        if (messageJson.has(VKApiJsonConst.ATTACHMENTS)) {
-            JSONArray attachments = messageJson.getJSONArray(VKApiJsonConst.ATTACHMENTS);
+        if (json.has(VKApiJsonConst.ID)) message.setId(json.getInt(VKApiJsonConst.ID));
+        if (json.has(VKApiJsonConst.USER_ID)) message.setUserId(json.getInt(VKApiJsonConst.USER_ID));
+        if (json.has(VKApiJsonConst.FROM_ID)) message.setFrom_id(json.getInt(VKApiJsonConst.FROM_ID));
+        if (json.has(VKApiJsonConst.OUT)) message.setOut(json.getInt(VKApiJsonConst.OUT) == 1);
+        if (json.has(VKApiJsonConst.READ_STATE)) message.setReadState(json.getInt(VKApiJsonConst.READ_STATE) == 1);
+        if (json.has(VKApiJsonConst.TITLE)) message.setTitle(json.getString(VKApiJsonConst.TITLE));
+        if (json.has(VKApiJsonConst.DATE)) message.setDate(new Date((long)json.getInt(VKApiJsonConst.DATE) * 1000));
+        if (json.has(VKApiJsonConst.BODY)) message.setBody(json.getString(VKApiJsonConst.BODY));
+        if (json.has(VKApiJsonConst.ATTACHMENTS)) {
+            JSONArray attachments = json.getJSONArray(VKApiJsonConst.ATTACHMENTS);
             for (int i = 0; i < attachments.length(); ++i)
                 message.addAttachment(parseAttachment(attachments.getJSONObject(i)));
         }
-        if (messageJson.has(VKApiJsonConst.FWD_MESSAGES)) {
-            JSONArray fwd_messages = messageJson.getJSONArray(VKApiJsonConst.FWD_MESSAGES);
+        if (json.has(VKApiJsonConst.FWD_MESSAGES)) {
+            JSONArray fwd_messages = json.getJSONArray(VKApiJsonConst.FWD_MESSAGES);
             for (int i = 0; i < fwd_messages.length(); ++i)
                 message.addFwdMessage(parseMessage(fwd_messages.getJSONObject(i)));
         }
 
-        if (messageJson.has(VKApiMessagesConsts.EMOJI))
-            message.setEmoji(messageJson.getInt(VKApiMessagesConsts.EMOJI) == 1);
+        if (json.has(VKApiJsonConst.EMOJI))
+            message.setEmoji(json.getInt(VKApiJsonConst.EMOJI) == 1);
         return message;
     }
     public static VkAttachment parseAttachment(JSONObject attachJSON) {
@@ -170,7 +161,7 @@ public class VkJsonParser {
 
         VKPhoto photo = new VKPhoto();
         if (photoJson.has(VKApiJsonConst.ID)) photo.setId(photoJson.getInt(VKApiJsonConst.ID));
-        if (photoJson.has(VKApiJsonConst.USER_ID)) photo.setUserId(photoJson.getInt(VKApiMessagesConsts.USER_ID));
+        if (photoJson.has(VKApiJsonConst.USER_ID)) photo.setUserId(photoJson.getInt(VKApiJsonConst.USER_ID));
         if (photoJson.has(VKApiJsonConst.OWNER_ID)) photo.setOwnerId(photoJson.getInt(VKApiJsonConst.OWNER_ID));
         if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setAlbumId(photoJson.getInt(VKApiJsonConst.ALBUM_ID));
         if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setDate(photoJson.getInt(VKApiJsonConst.DATE));
@@ -187,18 +178,26 @@ public class VkJsonParser {
         return photo;
     }
 
-    public static VKChat parseChat(JSONObject jsonObject) {
+    public static VkChatMessage parseChat(JSONObject jsonObject) {
 
-        JSONObject message = jsonObject.getJSONObject(VKApiJsonConst.MESSAGE);
+        JSONObject json = jsonObject.getJSONObject(VKApiJsonConst.MESSAGE);
 
-        VKChat chat = new VKChat();
-        if (message.has(VKApiJsonConst.ID)) chat.setId(message.getInt(VKApiJsonConst.ID));
-        if (message.has(VKApiJsonConst.ADMIN_ID)) chat.setAdminId(message.getInt(VKApiJsonConst.ADMIN_ID));
-        if (message.has(VKApiJsonConst.USER_ID)) chat.setUserId(message.getInt(VKApiJsonConst.USER_ID));
-        if (message.has(VKApiJsonConst.CHAT_ID)) chat.setChatId(message.getInt(VKApiJsonConst.CHAT_ID));
-        if (message.has(VKApiJsonConst.BODY)) chat.setBody(message.getString(VKApiJsonConst.BODY));
-        if (message.has(VKApiJsonConst.TITLE)) chat.setTitle(message.getString(VKApiJsonConst.TITLE));
-        if (message.has(VKApiJsonConst.USER_COUNT)) chat.setUserCount(message.getInt(VKApiJsonConst.USER_COUNT));
+        VkChatMessage chat = new VkChatMessage();
+
+        //for chat only
+        if (json.has(VKApiJsonConst.ADMIN_ID)) chat.setAdminId(json.getInt(VKApiJsonConst.ADMIN_ID));
+        if (json.has(VKApiJsonConst.CHAT_ID)) chat.setChatId(json.getInt(VKApiJsonConst.CHAT_ID));
+        if (json.has(VKApiJsonConst.USER_COUNT)) chat.setUsersCount(json.getInt(VKApiJsonConst.USER_COUNT));
+
+        //TODO replace on parseMessage()
+        if (json.has(VKApiJsonConst.ID)) chat.setId(json.getInt(VKApiJsonConst.ID));
+        if (json.has(VKApiJsonConst.USER_ID)) chat.setUserId(json.getInt(VKApiJsonConst.USER_ID));
+        if (json.has(VKApiJsonConst.FROM_ID)) chat.setFrom_id(json.getInt(VKApiJsonConst.FROM_ID));
+        if (json.has(VKApiJsonConst.OUT)) chat.setOut(json.getInt(VKApiJsonConst.OUT) == 1);
+        if (json.has(VKApiJsonConst.READ_STATE)) chat.setReadState(json.getInt(VKApiJsonConst.READ_STATE) == 1);
+        if (json.has(VKApiJsonConst.TITLE)) chat.setTitle(json.getString(VKApiJsonConst.TITLE));
+        if (json.has(VKApiJsonConst.DATE)) chat.setDate(new Date((long) json.getInt(VKApiJsonConst.DATE) * 1000));
+        if (json.has(VKApiJsonConst.BODY)) chat.setBody(json.getString(VKApiJsonConst.BODY));
         return chat;
     }
 }

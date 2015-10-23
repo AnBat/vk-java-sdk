@@ -93,9 +93,8 @@ public class VkPropertyLoader {
 
     private static void saveParamChanges() {
         File file = new File(propName);
-        OutputStream out = null;
         try {
-            out = new FileOutputStream(file);
+            OutputStream out = new FileOutputStream(file);
             props.store(out, null);
         } catch (IOException e) {
             e.printStackTrace();

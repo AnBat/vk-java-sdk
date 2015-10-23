@@ -9,7 +9,6 @@ package com.batiaev.vk.api.methods;
 
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.annotation.Rights;
-import com.batiaev.vk.api.consts.VKApiDatabaseConsts;
 import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.consts.VKApiRigths;
 import com.batiaev.vk.api.dataTypes.VKCity;
@@ -68,7 +67,7 @@ public class VKApiDatabase extends VKApiBase {
     public VKCountry getCountriesById(VKParameters params) {
         VKCountry country = new VKCountry();
 
-        int countryId = Integer.parseInt(params.value(VKApiDatabaseConsts.COUNTRY_IDS));
+        int countryId = Integer.parseInt(params.value(VKApiJsonConst.COUNTRY_IDS));
         if (VkLocalCache.hastCountry(countryId)) {
             country.setId(countryId);
             country.setName(VkLocalCache.getCountry(countryId));
@@ -84,8 +83,8 @@ public class VKApiDatabase extends VKApiBase {
 
             JSONObject countryJson = countryList.getJSONObject(0);
 
-            country.setId(countryJson.getInt(VKApiDatabaseConsts.CID));
-            country.setName(countryJson.getString(VKApiDatabaseConsts.NAME));
+            country.setId(countryJson.getInt(VKApiJsonConst.CID));
+            country.setName(countryJson.getString(VKApiJsonConst.NAME));
 
             VkLocalCache.setCountry(country.id(), country.name());
         }
@@ -110,7 +109,7 @@ public class VKApiDatabase extends VKApiBase {
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public VKCity getCitiesById(VKParameters params) {
         VKCity city = new VKCity();
-        int cityId = Integer.parseInt(params.value(VKApiDatabaseConsts.CITY_IDS));
+        int cityId = Integer.parseInt(params.value(VKApiJsonConst.CITY_IDS));
         city.setId(cityId);
 
         if (VkLocalCache.hastCity(cityId)) {
@@ -127,8 +126,8 @@ public class VKApiDatabase extends VKApiBase {
 
             JSONObject cityJson = cityList.getJSONObject(0);
 
-            city.setId(cityJson.getInt(VKApiDatabaseConsts.CID));
-            city.setName(cityJson.getString(VKApiDatabaseConsts.NAME));
+            city.setId(cityJson.getInt(VKApiJsonConst.CID));
+            city.setName(cityJson.getString(VKApiJsonConst.NAME));
 
             VkLocalCache.setCity(city.id(), city.name());
         }

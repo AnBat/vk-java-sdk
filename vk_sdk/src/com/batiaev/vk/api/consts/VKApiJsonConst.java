@@ -23,6 +23,12 @@ public class VKApiJsonConst {
     //for messages
     public final static String ATTACHMENTS = "attachments";
     public final static String TYPE = "type";
+    public final static String MID = "mid";
+    public final static String UID = "uid";
+    public final static String FROM_ID = "from_id";
+    public final static String READ_STATE = "read_state";
+    public final static String OUT = "out";
+    public final static String EMOJI = "emoji";
 
     //for photo attach
     public final static String ID = "id";
@@ -40,4 +46,11 @@ public class VKApiJsonConst {
     public final static String PHOTO_1280 = "photo_1280";
     public final static String PHOTO_2560 = "photo_2560";
     public final static String FWD_MESSAGES = "fwd_messages";
+
+    //for database
+    public final static String CID = "cid";
+    public final static String NAME = "name";
+    public final static String CITY_IDS = "city_ids";
+    public final static String COUNTRY_IDS = "country_ids";
+    public final static String NEED_ALL = "need_all";
 }
