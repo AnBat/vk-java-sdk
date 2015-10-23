@@ -28,7 +28,9 @@ public abstract class VKApiBase {
      * @param methodName method name in currect group
      * @param methodParameters method parameters required for method
      * @return prepared request with full method name and parameters
+     * Method is deprecated. Use execute()
      */
+    @Deprecated
     protected VKRequest prepareRequest(String methodName, VKParameters methodParameters) {
 
         VKRequest request = new VKRequest();
