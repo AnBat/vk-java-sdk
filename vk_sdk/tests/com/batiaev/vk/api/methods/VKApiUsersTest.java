@@ -37,6 +37,8 @@ public class VKApiUsersTest extends TestCase {
     public void testGet() {
 
         VKUserList users = VKApi.users().get(parameters);
+        assertNotNull(users);
+        assertNotNull(users.get(0));
         assertEquals(users.get(0).firstName(), "Pavel");
         assertEquals(users.get(0).lastName(), "Durov");
         assertEquals(users.get(0).userId(), userId);
