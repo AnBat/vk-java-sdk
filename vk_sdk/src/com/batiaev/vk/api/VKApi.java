@@ -7,9 +7,12 @@ package com.batiaev.vk.api;
  * www.batiaev.com
  */
 
+import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.methods.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONObject;
 
 /**
  * Common interface for VK API
@@ -281,6 +284,23 @@ public class VKApi extends VKApiBase {
      */
     public static VKApiWidgets widgets() {
         return new VKApiWidgets();
+    }
+
+    /**
+     * A universal method for calling a sequence of other methods while saving and filtering interim results.
+     * This method doesn't require any specific rights.
+     * @param params code to execution
+     *               Algorithm code in VKScript — a format similar to JavaSсript or ActionScript
+     *               and assuming compatibility with ECMAScript.
+     *               Separate operators by semicolons. Terminate the algorithm with the command return %expression%.
+     * @return result
+     */
+    public static String execute(VKParameters params) {
+        String respond = VKRequest.create().getRequest("execute", params.toString());
+        if (respond == null) return null;
+
+        JSONObject obj = new JSONObject(respond);
+        return obj.toString();
     }
 
     @Override
