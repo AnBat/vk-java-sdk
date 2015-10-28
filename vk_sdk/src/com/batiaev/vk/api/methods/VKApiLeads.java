@@ -26,7 +26,7 @@ public class VKApiLeads extends VKApiBase {
      * @return String with json respond
      */
     public String complete(VKParameters params) {
-        return prepareRequest("complete", params).getRequest();
+        return execute("complete", params).toString();
     }
     
     /**
@@ -37,7 +37,7 @@ public class VKApiLeads extends VKApiBase {
      * @return String with json respond
      */
     public String start(VKParameters params) {
-        return prepareRequest("start", params).getRequest();
+        return execute("start", params).toString();
     }
 
     /**
@@ -48,7 +48,7 @@ public class VKApiLeads extends VKApiBase {
      * @return String with json respond
      */
     public String getStats(VKParameters params) {
-        return prepareRequest("getStats", params).getRequest();
+        return execute("getStats", params).toString();
     }
 
     /**
@@ -59,7 +59,7 @@ public class VKApiLeads extends VKApiBase {
      * @return String with json respond
      */
     public String getUsers(VKParameters params) {
-        return prepareRequest("getUsers", params).getRequest();
+        return execute("getUsers", params).toString();
     }
 
     /**
@@ -70,7 +70,7 @@ public class VKApiLeads extends VKApiBase {
      * @return String with json respond
      */
     public String checkUser(VKParameters params) {
-        return prepareRequest("checkUser", params).getRequest();
+        return execute("checkUser", params).toString();
     }
 
     /**
@@ -81,7 +81,7 @@ public class VKApiLeads extends VKApiBase {
      * @return String with json respond
      */
     public String metricHit(VKParameters params) {
-        return prepareRequest("metricHit", params).getRequest();
+        return execute("metricHit", params).toString();
     }
 
     @Override

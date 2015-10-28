@@ -26,7 +26,7 @@ public class VKApiPolls extends VKApiBase {
      * You need the following rights to call this method: wall.
      */
     public String getById(VKParameters params) {
-        return prepareRequest("getById", params).getRequest();
+        return execute("getById", params).toString();
     }
 
     /**
@@ -38,7 +38,7 @@ public class VKApiPolls extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String addVote(VKParameters params) {
-        return prepareRequest("addVote", params).getRequest();
+        return execute("addVote", params).toString();
     }
 
     /**
@@ -50,7 +50,7 @@ public class VKApiPolls extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String deleteVote(VKParameters params) {
-        return prepareRequest("deleteVote", params).getRequest();
+        return execute("deleteVote", params).toString();
     }
 
     /**
@@ -61,7 +61,7 @@ public class VKApiPolls extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getVoters(VKParameters params) {
-        return prepareRequest("getVoters", params).getRequest();
+        return execute("getVoters", params).toString();
     }
 
     /**
@@ -73,7 +73,7 @@ public class VKApiPolls extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String create(VKParameters params) {
-        return prepareRequest("create", params).getRequest();
+        return execute("create", params).toString();
     }
 
     /**
@@ -85,7 +85,7 @@ public class VKApiPolls extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String edit(VKParameters params) {
-        return prepareRequest("edit", params).getRequest();
+        return execute("edit", params).toString();
     }
 
     @Override

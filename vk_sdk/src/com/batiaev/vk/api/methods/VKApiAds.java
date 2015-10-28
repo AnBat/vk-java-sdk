@@ -32,7 +32,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getAccounts(VKParameters params) {
-        return prepareRequest("getAccounts", params).getRequest();
+        return execute("getAccounts", params).toString();
     }
 
     /**
@@ -42,7 +42,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getClients(VKParameters params) {
-        return prepareRequest("getClients", params).getRequest();
+        return execute("getClients", params).toString();
     }
 
     /**
@@ -52,7 +52,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String createClients(VKParameters params) {
-        return prepareRequest("createClients", params).getRequest();
+        return execute("createClients", params).toString();
     }
 
     /**
@@ -62,7 +62,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String updateClients(VKParameters params) {
-        return prepareRequest("updateClients", params).getRequest();
+        return execute("updateClients", params).toString();
     }
 
     /**
@@ -72,7 +72,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String deleteClients(VKParameters params) {
-        return prepareRequest("deleteClients", params).getRequest();
+        return execute("deleteClients", params).toString();
     }
 
     /**
@@ -82,7 +82,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getCampaigns(VKParameters params) {
-        return prepareRequest("getCampaigns", params).getRequest();
+        return execute("getCampaigns", params).toString();
     }
 
     /**
@@ -92,7 +92,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String createCampaigns(VKParameters params) {
-        return prepareRequest("createCampaigns", params).getRequest();
+        return execute("createCampaigns", params).toString();
     }
 
     /**
@@ -102,7 +102,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String updateCampaigns(VKParameters params) {
-        return prepareRequest("updateCampaigns", params).getRequest();
+        return execute("updateCampaigns", params).toString();
     }
 
     /**
@@ -112,7 +112,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String deleteCampaigns(VKParameters params) {
-        return prepareRequest("deleteCampaigns", params).getRequest();
+        return execute("deleteCampaigns", params).toString();
     }
 
     /**
@@ -122,7 +122,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getAds(VKParameters params) {
-        return prepareRequest("getAds", params).getRequest();
+        return execute("getAds", params).toString();
     }
 
     /**
@@ -132,7 +132,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getAdsLayout(VKParameters params) {
-        return prepareRequest("getAdsLayout", params).getRequest();
+        return execute("getAdsLayout", params).toString();
     }
 
     /**
@@ -142,7 +142,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getAdsTargeting(VKParameters params) {
-        return prepareRequest("getAdsTargeting", params).getRequest();
+        return execute("getAdsTargeting", params).toString();
     }
 
     /**
@@ -152,7 +152,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String createAds(VKParameters params) {
-        return prepareRequest("createAds", params).getRequest();
+        return execute("createAds", params).toString();
     }
 
     /**
@@ -162,7 +162,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String updateAds(VKParameters params) {
-        return prepareRequest("updateAds", params).getRequest();
+        return execute("updateAds", params).toString();
     }
 
     /**
@@ -172,7 +172,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String deleteAds(VKParameters params) {
-        return prepareRequest("deleteAds", params).getRequest();
+        return execute("deleteAds", params).toString();
     }
 
     /**
@@ -182,7 +182,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getStatistics(VKParameters params) {
-        return prepareRequest("getStatistics", params).getRequest();
+        return execute("getStatistics", params).toString();
     }
 
     /**
@@ -192,7 +192,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getDemographics(VKParameters params) {
-        return prepareRequest("getDemographics", params).getRequest();
+        return execute("getDemographics", params).toString();
     }
 
     /**
@@ -202,7 +202,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getBudget(VKParameters params) {
-        return prepareRequest("getBudget", params).getRequest();
+        return execute("getBudget", params).toString();
     }
 
     /**
@@ -212,7 +212,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getOfficeUsers(VKParameters params) {
-        return prepareRequest("getOfficeUsers", params).getRequest();
+        return execute("getOfficeUsers", params).toString();
     }
 
     /**
@@ -222,7 +222,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String addOfficeUsers(VKParameters params) {
-        return prepareRequest("addOfficeUsers", params).getRequest();
+        return execute("addOfficeUsers", params).toString();
     }
 
     /**
@@ -232,7 +232,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String removeOfficeUsers(VKParameters params) {
-        return prepareRequest("removeOfficeUsers", params).getRequest();
+        return execute("removeOfficeUsers", params).toString();
     }
 
     /**
@@ -242,7 +242,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getTargetingStats(VKParameters params) {
-        return prepareRequest("getTargetingStats", params).getRequest();
+        return execute("getTargetingStats", params).toString();
     }
 
     /**
@@ -252,7 +252,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getSuggestions(VKParameters params) {
-        return prepareRequest("getSuggestions", params).getRequest();
+        return execute("getSuggestions", params).toString();
     }
 
     /**
@@ -262,7 +262,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getCategories(VKParameters params) {
-        return prepareRequest("getCategories", params).getRequest();
+        return execute("getCategories", params).toString();
     }
 
     /**
@@ -272,7 +272,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getUploadURL(VKParameters params) {
-        return prepareRequest("getUploadURL", params).getRequest();
+        return execute("getUploadURL", params).toString();
     }
 
     /**
@@ -282,7 +282,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getVideoUploadURL(VKParameters params) {
-        return prepareRequest("getVideoUploadURL", params).getRequest();
+        return execute("getVideoUploadURL", params).toString();
     }
 
     /**
@@ -292,7 +292,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getFloodStats(VKParameters params) {
-        return prepareRequest("getFloodStats", params).getRequest();
+        return execute("getFloodStats", params).toString();
     }
 
     /**
@@ -302,7 +302,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getRejectionReason(VKParameters params) {
-        return prepareRequest("getRejectionReason", params).getRequest();
+        return execute("getRejectionReason", params).toString();
     }
 
     /**
@@ -312,7 +312,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String createTargetGroup(VKParameters params) {
-        return prepareRequest("createTargetGroup", params).getRequest();
+        return execute("createTargetGroup", params).toString();
     }
 
     /**
@@ -322,7 +322,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String updateTargetGroup(VKParameters params) {
-        return prepareRequest("updateTargetGroup", params).getRequest();
+        return execute("updateTargetGroup", params).toString();
     }
 
     /**
@@ -332,7 +332,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String deleteTargetGroup(VKParameters params) {
-        return prepareRequest("deleteTargetGroup", params).getRequest();
+        return execute("deleteTargetGroup", params).toString();
     }
 
     /**
@@ -342,7 +342,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getTargetGroups(VKParameters params) {
-        return prepareRequest("getTargetGroups", params).getRequest();
+        return execute("getTargetGroups", params).toString();
     }
 
     /**
@@ -352,7 +352,7 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String importTargetContacts(VKParameters params) {
-        return prepareRequest("importTargetContacts", params).getRequest();
+        return execute("importTargetContacts", params).toString();
     }
 
     @Override

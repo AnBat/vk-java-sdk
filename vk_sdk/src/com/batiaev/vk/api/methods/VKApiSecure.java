@@ -27,7 +27,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getAppBalance(VKParameters params) {
-        return prepareRequest("getAppBalance", params).getRequest();
+        return execute("getAppBalance", params).toString();
     }
 
     /**
@@ -39,7 +39,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getTransactionsHistory(VKParameters params) {
-        return prepareRequest("getTransactionsHistory", params).getRequest();
+        return execute("getTransactionsHistory", params).toString();
     }
 
     /**
@@ -51,7 +51,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getSMSHistory(VKParameters params) {
-        return prepareRequest("getSMSHistory", params).getRequest();
+        return execute("getSMSHistory", params).toString();
     }
 
     /**
@@ -63,7 +63,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String sendSMSNotification(VKParameters params) {
-        return prepareRequest("sendSMSNotification", params).getRequest();
+        return execute("sendSMSNotification", params).toString();
     }
 
     /**
@@ -75,7 +75,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String sendNotification(VKParameters params) {
-        return prepareRequest("sendNotification", params).getRequest();
+        return execute("sendNotification", params).toString();
     }
 
     /**
@@ -87,7 +87,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String setCounter(VKParameters params) {
-        return prepareRequest("setCounter", params).getRequest();
+        return execute("setCounter", params).toString();
     }
 
     /**
@@ -99,7 +99,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String setUserLevel(VKParameters params) {
-        return prepareRequest("setUserLevel", params).getRequest();
+        return execute("setUserLevel", params).toString();
     }
 
     /**
@@ -111,7 +111,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getUserLevel(VKParameters params) {
-        return prepareRequest("getUserLevel", params).getRequest();
+        return execute("getUserLevel", params).toString();
     }
 
     /**
@@ -123,7 +123,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String checkToken(VKParameters params) {
-        return prepareRequest("checkToken", params).getRequest();
+        return execute("checkToken", params).toString();
     }
 
     @Override

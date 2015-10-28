@@ -25,7 +25,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
     
     /**
@@ -36,7 +36,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String getById(VKParameters params) {
-        return prepareRequest("getById", params).getRequest();
+        return execute("getById", params).toString();
     }
     
     /**
@@ -47,7 +47,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String getFriendsNotes(VKParameters params) {
-        return prepareRequest("getFriendsNotes", params).getRequest();
+        return execute("getFriendsNotes", params).toString();
     }
     
     /**
@@ -58,7 +58,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String add(VKParameters params) {
-        return prepareRequest("add", params).getRequest();
+        return execute("add", params).toString();
     }
 
     /**
@@ -69,7 +69,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String edit(VKParameters params) {
-        return prepareRequest("edit", params).getRequest();
+        return execute("edit", params).toString();
     }
 
     /**
@@ -80,7 +80,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String delete(VKParameters params) {
-        return prepareRequest("delete", params).getRequest();
+        return execute("delete", params).toString();
     }
 
     /**
@@ -91,7 +91,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String getComments(VKParameters params) {
-        return prepareRequest("getComments", params).getRequest();
+        return execute("getComments", params).toString();
     }
 
     /**
@@ -103,7 +103,7 @@ public class VKApiNotes extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String createComment(VKParameters params) {
-        return prepareRequest("createComment", params).getRequest();
+        return execute("createComment", params).toString();
     }
 
     /**
@@ -115,7 +115,7 @@ public class VKApiNotes extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String editComment(VKParameters params) {
-        return prepareRequest("editComment", params).getRequest();
+        return execute("editComment", params).toString();
     }
 
     /**
@@ -127,7 +127,7 @@ public class VKApiNotes extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String deleteComment(VKParameters params) {
-        return prepareRequest("deleteComment", params).getRequest();
+        return execute("deleteComment", params).toString();
     }
 
     /**
@@ -139,7 +139,7 @@ public class VKApiNotes extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String restoreComment(VKParameters params) {
-        return prepareRequest("restoreComment", params).getRequest();
+        return execute("restoreComment", params).toString();
     }
 
     @Override

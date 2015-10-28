@@ -27,7 +27,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getTopics(VKParameters params) {
-        return prepareRequest("getTopics", params).getRequest();
+        return execute("getTopics", params).toString();
     }
 
     /**
@@ -37,7 +37,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getComments(VKParameters params) {
-        return prepareRequest("getComments", params).getRequest();
+        return execute("getComments", params).toString();
     }
 
     /**
@@ -47,7 +47,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String addTopic(VKParameters params) {
-        return prepareRequest("addTopic", params).getRequest();
+        return execute("addTopic", params).toString();
     }
 
     /**
@@ -57,7 +57,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String addComment(VKParameters params) {
-        return prepareRequest("addComment", params).getRequest();
+        return execute("addComment", params).toString();
     }
 
     /**
@@ -67,7 +67,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String deleteTopic(VKParameters params) {
-        return prepareRequest("deleteTopic", params).getRequest();
+        return execute("deleteTopic", params).toString();
     }
 
     /**
@@ -77,7 +77,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editTopic(VKParameters params) {
-        return prepareRequest("editTopic", params).getRequest();
+        return execute("editTopic", params).toString();
     }
 
     /**
@@ -87,7 +87,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editComment(VKParameters params) {
-        return prepareRequest("editComment", params).getRequest();
+        return execute("editComment", params).toString();
     }
 
     /**
@@ -97,7 +97,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String restoreComment(VKParameters params) {
-        return prepareRequest("restoreComment", params).getRequest();
+        return execute("restoreComment", params).toString();
     }
 
     /**
@@ -107,7 +107,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String deleteComment(VKParameters params) {
-        return prepareRequest("deleteComment", params).getRequest();
+        return execute("deleteComment", params).toString();
     }
 
     /**
@@ -117,7 +117,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String openTopic(VKParameters params) {
-        return prepareRequest("openTopic", params).getRequest();
+        return execute("openTopic", params).toString();
     }
 
     /**
@@ -127,7 +127,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String closeTopic(VKParameters params) {
-        return prepareRequest("closeTopic", params).getRequest();
+        return execute("closeTopic", params).toString();
     }
 
     /**
@@ -137,7 +137,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String fixTopic(VKParameters params) {
-        return prepareRequest("fixTopic", params).getRequest();
+        return execute("fixTopic", params).toString();
     }
 
     /**
@@ -147,7 +147,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String unfixTopic(VKParameters params) {
-        return prepareRequest("unfixTopic", params).getRequest();
+        return execute("unfixTopic", params).toString();
     }
 
     @Override

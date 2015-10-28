@@ -26,7 +26,7 @@ public class VKApiUtils extends VKApiBase {
      * @return String with json respond
      */
     public String checkLink(VKParameters params) {
-        return prepareRequest("checkLink", params).getRequest();
+        return execute("checkLink", params).toString();
     }
     
     /**
@@ -37,7 +37,7 @@ public class VKApiUtils extends VKApiBase {
      * @return String with json respond
      */
     public String resolveScreenName(VKParameters params) {
-        return prepareRequest("resolveScreenName", params).getRequest();
+        return execute("resolveScreenName", params).toString();
     }
 
     /**
@@ -48,7 +48,7 @@ public class VKApiUtils extends VKApiBase {
      * @return String with json respond
      */
     public String getServerTime(VKParameters params) {
-        return prepareRequest("getServerTime", params).getRequest();
+        return execute("getServerTime", params).toString();
     }
 
     @Override

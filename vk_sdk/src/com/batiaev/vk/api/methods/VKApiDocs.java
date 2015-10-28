@@ -27,7 +27,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
     
     /**
@@ -37,7 +37,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String getById(VKParameters params) {
-        return prepareRequest("getById", params).getRequest();
+        return execute("getById", params).toString();
     }
     
     /**
@@ -47,7 +47,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String getUploadServer(VKParameters params) {
-        return prepareRequest("getUploadServer", params).getRequest();
+        return execute("getUploadServer", params).toString();
     }
     
     /**
@@ -57,7 +57,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String getWallUploadServer(VKParameters params) {
-        return prepareRequest("getWallUploadServer", params).getRequest();
+        return execute("getWallUploadServer", params).toString();
     }
 
     /**
@@ -67,7 +67,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String save(VKParameters params) {
-        return prepareRequest("save", params).getRequest();
+        return execute("save", params).toString();
     }
 
     /**
@@ -77,7 +77,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String delete(VKParameters params) {
-        return prepareRequest("delete", params).getRequest();
+        return execute("delete", params).toString();
     }
 
     /**
@@ -87,7 +87,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String add(VKParameters params) {
-        return prepareRequest("add", params).getRequest();
+        return execute("add", params).toString();
     }
 
     @Override

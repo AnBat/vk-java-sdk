@@ -39,7 +39,13 @@ public class VkMessageCache {
         VKAuthorization.loadProperties();
 
         fileName = System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator
-                + VKAuthorization.userId() + File.separator + "messages" + File.separator + String.valueOf(userId) + ".msg";
+                + VKAuthorization.userId() + File.separator + "messages";
+
+        File file = new File(fileName);
+        if (!file.exists()) file.mkdirs();
+        fileName += File.separator + String.valueOf(userId) + ".msg";
+        file = new File(fileName);
+        if (file.exists()) file.delete();
 
         long packSize = 200;
         VKParameters parameters = new VKParameters();
@@ -49,7 +55,6 @@ public class VkMessageCache {
         VKMessageList messages = VKApi.messages().getHistory(parameters);
 
         if (messages == null) return false;
-        writeToFile("", false);
         writeToFile(messages.plainText());
 
         long count = messages.totalCount();

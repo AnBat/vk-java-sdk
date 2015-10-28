@@ -26,7 +26,7 @@ public class VKApiStatus extends VKApiBase {
      * @return String with json respond
      */
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
     
     /**
@@ -38,7 +38,7 @@ public class VKApiStatus extends VKApiBase {
      * @return String with json respond
      */
     public String set(VKParameters params) {
-        return prepareRequest("set", params).getRequest();
+        return execute("set", params).toString();
     }
 
     @Override

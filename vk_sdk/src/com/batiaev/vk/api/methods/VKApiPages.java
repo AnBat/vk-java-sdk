@@ -26,7 +26,7 @@ public class VKApiPages extends VKApiBase {
      * You need the following rights to call this method: pages.
      */
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
 
     /**
@@ -37,7 +37,7 @@ public class VKApiPages extends VKApiBase {
      * You need the following rights to call this method: pages.
      */
     public String save(VKParameters params) {
-        return prepareRequest("save", params).getRequest();
+        return execute("save", params).toString();
     }
 
     /**
@@ -48,7 +48,7 @@ public class VKApiPages extends VKApiBase {
      * You need the following rights to call this method: pages.
      */
     public String saveAccess(VKParameters params) {
-        return prepareRequest("saveAccess", params).getRequest();
+        return execute("saveAccess", params).toString();
     }
 
     /**
@@ -59,7 +59,7 @@ public class VKApiPages extends VKApiBase {
      * You need the following rights to call this method: pages.
      */
     public String getHistory(VKParameters params) {
-        return prepareRequest("getHistory", params).getRequest();
+        return execute("getHistory", params).toString();
     }
 
     /**
@@ -70,7 +70,7 @@ public class VKApiPages extends VKApiBase {
      * You need the following rights to call this method: pages.
      */
     public String getTitles(VKParameters params) {
-        return prepareRequest("getTitles", params).getRequest();
+        return execute("getTitles", params).toString();
     }
 
     /**
@@ -81,7 +81,7 @@ public class VKApiPages extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getVersion(VKParameters params) {
-        return prepareRequest("getVersion", params).getRequest();
+        return execute("getVersion", params).toString();
     }
 
     /**
@@ -92,7 +92,7 @@ public class VKApiPages extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String parseWiki(VKParameters params) {
-        return prepareRequest("parseWiki", params).getRequest();
+        return execute("parseWiki", params).toString();
     }
 
     /**
@@ -103,7 +103,7 @@ public class VKApiPages extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String clearCache(VKParameters params) {
-        return prepareRequest("clearCache", params).getRequest();
+        return execute("clearCache", params).toString();
     }
 
     @Override

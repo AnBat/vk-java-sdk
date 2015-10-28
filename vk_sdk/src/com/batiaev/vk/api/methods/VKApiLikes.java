@@ -26,7 +26,7 @@ public class VKApiLikes extends VKApiBase {
      * @return String with json respond
      */
     public String getList(VKParameters params) {
-        return prepareRequest("getList", params).getRequest();
+        return execute("getList", params).toString();
     }
     
     /**
@@ -38,7 +38,7 @@ public class VKApiLikes extends VKApiBase {
      * @return String with json respond
      */
     public String add(VKParameters params) {
-        return prepareRequest("add", params).getRequest();
+        return execute("add", params).toString();
     }
     
     /**
@@ -50,7 +50,7 @@ public class VKApiLikes extends VKApiBase {
      * @return String with json respond
      */
     public String delete(VKParameters params) {
-        return prepareRequest("delete", params).getRequest();
+        return execute("delete", params).toString();
     }
     
     /**
@@ -62,7 +62,7 @@ public class VKApiLikes extends VKApiBase {
      * @return String with json respond
      */
     public String isLiked(VKParameters params) {
-        return prepareRequest("isLiked", params).getRequest();
+        return execute("isLiked", params).toString();
     }
 
     @Override

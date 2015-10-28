@@ -26,23 +26,14 @@ public class VKRequest {
 
     private static final Logger LOG = LogManager.getLogger(VKRequest.class);
     //    https://api.vk.com/method/METHOD_NAME?PARAMETERS&access_token=ACCESS_TOKEN
-    public String method_name;
-    public String parameters;
     public final static String BASE_URL = "https://api.vk.com/method/";
     public final static String ACCESS_TOKEN_URL = "https://oauth.vk.com/access_token?";
     public final static String AUTH_URL = "https://oauth.vk.com/authorize?";
 
-    public void setMethodName(String methodName) {
-        method_name = methodName;
-    }
-
-    public void setParameters(String params) {
-        parameters = params;
-    }
-
     public static VKRequest create() {
         return new VKRequest();
     }
+
     public String getRequest(String methodName, String params) {
 //        https://hc.apache.org/httpcomponents-client-4.4.x/httpclient/examples/org/apache/http/examples/client/ClientWithResponseHandler.java /
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -84,10 +75,5 @@ public class VKRequest {
             return null;
         }
         return responseBody;
-    }
-
-    @Deprecated
-    public String getRequest() {
-        return getRequest(method_name, parameters);
     }
 }

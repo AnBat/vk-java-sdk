@@ -35,7 +35,7 @@ public class VKApiDatabase extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getCountries(VKParameters params) {
-        return prepareRequest("getCountries", params).getRequest();
+        return execute("getCountries", params).toString();
     }
 
     /**
@@ -45,7 +45,7 @@ public class VKApiDatabase extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getRegions(VKParameters params) {
-        return prepareRequest("getRegions", params).getRequest();
+        return execute("getRegions", params).toString();
     }
 
     /**
@@ -55,7 +55,7 @@ public class VKApiDatabase extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getStreetsById(VKParameters params) {
-        return prepareRequest("getStreetsById", params).getRequest();
+        return execute("getStreetsById", params).toString();
     }
 
     /**
@@ -72,7 +72,7 @@ public class VKApiDatabase extends VKApiBase {
             country.setId(countryId);
             country.setName(VkLocalCache.getCountry(countryId));
         } else {
-            String respond = prepareRequest("getCountriesById", params).getRequest();
+            String respond = execute("getCountriesById", params).toString();
 
             LOG.info(respond);
 
@@ -98,7 +98,7 @@ public class VKApiDatabase extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getCities(VKParameters params) {
-        return prepareRequest("getCities", params).getRequest();
+        return execute("getCities", params).toString();
     }
 
     /**
@@ -115,7 +115,7 @@ public class VKApiDatabase extends VKApiBase {
         if (VkLocalCache.hastCity(cityId)) {
             city.setName(VkLocalCache.getCity(cityId));
         } else {
-            String respond = prepareRequest("getCitiesById", params).getRequest();
+            String respond = execute("getCitiesById", params).toString();
 
             LOG.info(respond);
 
@@ -142,7 +142,7 @@ public class VKApiDatabase extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getUniversities(VKParameters params) {
-        return prepareRequest("getUniversities", params).getRequest();
+        return execute("getUniversities", params).toString();
     }
 
     /**
@@ -152,7 +152,7 @@ public class VKApiDatabase extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getSchools(VKParameters params) {
-        return prepareRequest("getSchools", params).getRequest();
+        return execute("getSchools", params).toString();
     }
 
     /**
@@ -162,7 +162,7 @@ public class VKApiDatabase extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getSchoolClasses(VKParameters params) {
-        return prepareRequest("getSchoolClasses", params).getRequest();
+        return execute("getSchoolClasses", params).toString();
     }
 
     /**
@@ -172,7 +172,7 @@ public class VKApiDatabase extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getFaculties(VKParameters params) {
-        return prepareRequest("getFaculties", params).getRequest();
+        return execute("getFaculties", params).toString();
     }
 
     /**
@@ -182,7 +182,7 @@ public class VKApiDatabase extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getChairs(VKParameters params) {
-        return prepareRequest("getChairs", params).getRequest();
+        return execute("getChairs", params).toString();
     }
 
     @Override

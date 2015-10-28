@@ -26,7 +26,7 @@ public class VKApiStats extends VKApiBase {
      * @return String with json respond
      */
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
 
     /**
@@ -47,7 +47,7 @@ public class VKApiStats extends VKApiBase {
      * @return String with json respond
      */
     public String trackVisitor(VKParameters params) {
-        return prepareRequest("trackVisitor", params).getRequest();
+        return execute("trackVisitor", params).toString();
     }
 
     /**
@@ -71,7 +71,7 @@ public class VKApiStats extends VKApiBase {
      *  - unsubscribe - unsubscribe the number of participants.
      */
     public String getPostReach(VKParameters params) {
-        return prepareRequest("getPostReach", params).getRequest();
+        return execute("getPostReach", params).toString();
     }
 
     @Override

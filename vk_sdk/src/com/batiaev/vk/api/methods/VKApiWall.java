@@ -26,7 +26,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String get(VKParameters params) {
-		return prepareRequest("get", params).getRequest();
+		return execute("get", params).toString();
     }
 
     /**
@@ -37,7 +37,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String search(VKParameters params) {
-		return prepareRequest("search", params).getRequest();
+		return execute("search", params).toString();
     }
 
     /**
@@ -48,7 +48,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String getById(VKParameters params) {
-        return prepareRequest("getById", params).getRequest();
+        return execute("getById", params).toString();
     }
 
     /**
@@ -60,7 +60,7 @@ public class VKApiWall extends VKApiBase {
      * This method is only available to Standalone-apps and web clients using the confirmation window.
      */
     public String post(VKParameters params) {
-        return prepareRequest("post", params).getRequest();
+        return execute("post", params).toString();
     }
 
     /**
@@ -72,7 +72,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String repost(VKParameters params) {
-        return prepareRequest("repost", params).getRequest();
+        return execute("repost", params).toString();
     }
 
     /**
@@ -83,7 +83,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String getReposts(VKParameters params) {
-        return prepareRequest("getReposts", params).getRequest();
+        return execute("getReposts", params).toString();
     }
 
     /**
@@ -95,7 +95,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String edit(VKParameters params) {
-        return prepareRequest("edit", params).getRequest();
+        return execute("edit", params).toString();
     }
 
     /**
@@ -107,7 +107,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String delete(VKParameters params) {
-        return prepareRequest("delete", params).getRequest();
+        return execute("delete", params).toString();
     }
 
     /**
@@ -119,7 +119,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String restore(VKParameters params) {
-        return prepareRequest("restore", params).getRequest();
+        return execute("restore", params).toString();
     }
 
     /**
@@ -131,7 +131,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String pin(VKParameters params) {
-        return prepareRequest("pin", params).getRequest();
+        return execute("pin", params).toString();
     }
 
     /**
@@ -143,7 +143,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String unpin(VKParameters params) {
-        return prepareRequest("unpin", params).getRequest();
+        return execute("unpin", params).toString();
     }
 
 
@@ -156,7 +156,7 @@ public class VKApiWall extends VKApiBase {
      * Your app needs the following rights to access data on a user's behalf: wall.
      */
     public String getComments(VKParameters params) {
-        return prepareRequest("getComments", params).getRequest();
+        return execute("getComments", params).toString();
     }
 
     /**
@@ -168,7 +168,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String addComment(VKParameters params) {
-        return prepareRequest("addComment", params).getRequest();
+        return execute("addComment", params).toString();
     }
 
     /**
@@ -180,7 +180,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String editComment(VKParameters params) {
-        return prepareRequest("editComment", params).getRequest();
+        return execute("editComment", params).toString();
     }
 
     /**
@@ -192,7 +192,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String deleteComment(VKParameters params) {
-        return prepareRequest("deleteComment", params).getRequest();
+        return execute("deleteComment", params).toString();
     }
 
     /**
@@ -204,7 +204,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String restoreComment(VKParameters params) {
-        return prepareRequest("restoreComment", params).getRequest();
+        return execute("restoreComment", params).toString();
     }
 
     /**
@@ -216,7 +216,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String reportPost(VKParameters params) {
-        return prepareRequest("reportPost", params).getRequest();
+        return execute("reportPost", params).toString();
     }
 
     /**
@@ -227,7 +227,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String reportComment(VKParameters params) {
-        return prepareRequest("reportComment", params).getRequest();
+        return execute("reportComment", params).toString();
     }
 
     @Override

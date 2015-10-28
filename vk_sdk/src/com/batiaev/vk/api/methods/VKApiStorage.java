@@ -26,7 +26,7 @@ public class VKApiStorage extends VKApiBase {
      * @return String with json respond
      */
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
 
     /**
@@ -37,7 +37,7 @@ public class VKApiStorage extends VKApiBase {
      * @return String with json respond
      */
     public String set(VKParameters params) {
-        return prepareRequest("set", params).getRequest();
+        return execute("set", params).toString();
     }
 
     /**
@@ -48,7 +48,7 @@ public class VKApiStorage extends VKApiBase {
      * @return String with json respond
      */
     public String getKeys(VKParameters params) {
-        return prepareRequest("getKeys", params).getRequest();
+        return execute("getKeys", params).toString();
     }
 
     @Override

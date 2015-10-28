@@ -25,7 +25,7 @@ public class VKApiNotifications extends VKApiBase {
      * @return String with json respond
      */
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
     
     /**
@@ -36,7 +36,7 @@ public class VKApiNotifications extends VKApiBase {
      * @return String with json respond
      */
     public String markAsViewed(VKParameters params) {
-        return prepareRequest("markAsViewed", params).getRequest();
+        return execute("markAsViewed", params).toString();
     }
 
     @Override

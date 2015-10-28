@@ -28,7 +28,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String isMember(VKParameters params) {
-        return prepareRequest("isMember", params).getRequest();
+        return execute("isMember", params).toString();
     }
 
     /**
@@ -39,7 +39,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String getById(VKParameters params) {
-        return prepareRequest("getById", params).getRequest();
+        return execute("getById", params).toString();
     }
 
     /**
@@ -50,7 +50,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.NOTHING)
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
 
     /**
@@ -61,7 +61,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String getMembers(VKParameters params) {
-        return prepareRequest("getMembers", params).getRequest();
+        return execute("getMembers", params).toString();
     }
 
     /**
@@ -72,7 +72,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String join(VKParameters params) {
-        return prepareRequest("join", params).getRequest();
+        return execute("join", params).toString();
     }
 
     /**
@@ -83,7 +83,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String leave(VKParameters params) {
-        return prepareRequest("leave", params).getRequest();
+        return execute("leave", params).toString();
     }
 
     /**
@@ -94,7 +94,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.NOTHING)
     public String search(VKParameters params) {
-        return prepareRequest("search", params).getRequest();
+        return execute("search", params).toString();
     }
 
     /**
@@ -105,7 +105,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getInvites(VKParameters params) {
-        return prepareRequest("getInvites", params).getRequest();
+        return execute("getInvites", params).toString();
     }
 
     /**
@@ -116,7 +116,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getInvitedUsers(VKParameters params) {
-        return prepareRequest("getInvitedUsers", params).getRequest();
+        return execute("getInvitedUsers", params).toString();
     }
 
     /**
@@ -127,7 +127,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String banUser(VKParameters params) {
-        return prepareRequest("banUser", params).getRequest();
+        return execute("banUser", params).toString();
     }
 
     /**
@@ -138,7 +138,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String unbanUser(VKParameters params) {
-        return prepareRequest("unbanUser", params).getRequest();
+        return execute("unbanUser", params).toString();
     }
 
     /**
@@ -149,7 +149,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getBanned(VKParameters params) {
-        return prepareRequest("getBanned", params).getRequest();
+        return execute("getBanned", params).toString();
     }
 
     /**
@@ -160,7 +160,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String create(VKParameters params) {
-        return prepareRequest("create", params).getRequest();
+        return execute("create", params).toString();
     }
 
     /**
@@ -171,7 +171,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String edit(VKParameters params) {
-        return prepareRequest("edit", params).getRequest();
+        return execute("edit", params).toString();
     }
 
     /**
@@ -182,7 +182,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editPlace(VKParameters params) {
-        return prepareRequest("editPlace", params).getRequest();
+        return execute("editPlace", params).toString();
     }
 
     /**
@@ -192,17 +192,17 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getSettings(VKParameters params) {
-        return prepareRequest("getSettings", params).getRequest();
+        return execute("getSettings", params).toString();
     }
 
     /**
      * @param params method parameters
      * @return String with json respond
-     * @see <a href="https://vk.com/dev/groups.getRequests">API groups.getRequests()</a>
+     * @see <a href="https://vk.com/dev/groups.toStrings">API groups.toStrings()</a>
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
-    public String getRequests(VKParameters params) {
-        return prepareRequest("getRequests", params).getRequest();
+    public String toStrings(VKParameters params) {
+        return execute("toStrings", params).toString();
     }
 
     /**
@@ -212,7 +212,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editManager(VKParameters params) {
-        return prepareRequest("editManager", params).getRequest();
+        return execute("editManager", params).toString();
     }
 
     /**
@@ -222,7 +222,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String invite(VKParameters params) {
-        return prepareRequest("invite", params).getRequest();
+        return execute("invite", params).toString();
     }
 
     /**
@@ -232,7 +232,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String addLink(VKParameters params) {
-        return prepareRequest("addLink", params).getRequest();
+        return execute("addLink", params).toString();
     }
 
     /**
@@ -242,7 +242,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String deleteLink(VKParameters params) {
-        return prepareRequest("deleteLink", params).getRequest();
+        return execute("deleteLink", params).toString();
     }
 
     /**
@@ -252,7 +252,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editLink(VKParameters params) {
-        return prepareRequest("editLink", params).getRequest();
+        return execute("editLink", params).toString();
     }
 
     /**
@@ -262,7 +262,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String reorderLink(VKParameters params) {
-        return prepareRequest("reorderLink", params).getRequest();
+        return execute("reorderLink", params).toString();
     }
 
     /**
@@ -272,7 +272,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String removeUser(VKParameters params) {
-        return prepareRequest("removeUser", params).getRequest();
+        return execute("removeUser", params).toString();
     }
 
     /**
@@ -282,7 +282,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String approveRequest(VKParameters params) {
-        return prepareRequest("approveRequest", params).getRequest();
+        return execute("approveRequest", params).toString();
     }
 
     @Override

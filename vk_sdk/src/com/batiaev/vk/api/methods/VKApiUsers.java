@@ -34,8 +34,7 @@ public class VKApiUsers extends VKApiBase {
      *
      */
     public VKUserList get(VKParameters params) {
-        JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET, params).getRequest());
-
+        JSONObject obj = new JSONObject(executeRaw(VKApiConst.GET, params));
         final JSONArray friendList = obj.getJSONArray(VKApiJsonConst.RESPONSE);
         VKUserList result = new VKUserList();
         for (int i = 0; i < friendList.length(); ++i) {
@@ -54,7 +53,7 @@ public class VKApiUsers extends VKApiBase {
      *
      */
     public String search(VKParameters params) {
-        return prepareRequest("search", params).getRequest();
+        return execute("search", params).toString();
     }
 
     /**
@@ -65,7 +64,7 @@ public class VKApiUsers extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String isAppUser(VKParameters params) {
-        return prepareRequest("isAppUser", params).getRequest();
+        return execute("isAppUser", params).toString();
     }
 
     /**
@@ -76,7 +75,7 @@ public class VKApiUsers extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String getSubscriptions(VKParameters params) {
-        return prepareRequest("getSubscriptions", params).getRequest();
+        return execute("getSubscriptions", params).toString();
     }
 
     /**
@@ -87,7 +86,7 @@ public class VKApiUsers extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String getFollowers(VKParameters params) {
-        return prepareRequest("getFollowers", params).getRequest();
+        return execute("getFollowers", params).toString();
     }
 
     /**
@@ -100,7 +99,7 @@ public class VKApiUsers extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String report(VKParameters params) {
-        return prepareRequest("report", params).getRequest();
+        return execute("report", params).toString();
     }
 
     /**
@@ -111,7 +110,7 @@ public class VKApiUsers extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String getNearby(VKParameters params) {
-        return prepareRequest("getNearby", params).getRequest();
+        return execute("getNearby", params).toString();
     }
 
     @Override

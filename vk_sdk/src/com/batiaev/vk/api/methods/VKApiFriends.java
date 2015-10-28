@@ -37,10 +37,10 @@ public class VKApiFriends extends VKApiBase {
     @Rights(VKApiRigths.OPEN_METHOD)
     public VKUserList get(VKParameters params) {
 
-        JSONObject obj = new JSONObject(prepareRequest(VKApiConst.GET, params).getRequest());
+        JSONObject obj = execute(VKApiConst.GET, params);
 
-        final JSONArray friendList = obj.getJSONObject(VKApiJsonConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
-        VKUserList result = new VKUserList(obj.getJSONObject(VKApiJsonConst.RESPONSE).getInt(VKApiConst.COUNT));
+        final JSONArray friendList = obj.getJSONArray(VKApiConst.ITEMS);
+        VKUserList result = new VKUserList(obj.getInt(VKApiConst.COUNT));
         for (int i = 0; i < friendList.length(); ++i) {
             JSONObject userJson = friendList.getJSONObject(i);
             VKUser user = VkJsonParser.parseUser(userJson);
@@ -57,7 +57,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getOnline(VKParameters params) {
-        return prepareRequest("getOnline", params).getRequest();
+        return execute("getOnline", params).toString();
     }
 
     /**
@@ -68,7 +68,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getMutual(VKParameters params) {
-        return prepareRequest("getMutual", params).getRequest();
+        return execute("getMutual", params).toString();
     }
 
     /**
@@ -79,7 +79,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getRecent(VKParameters params) {
-        return prepareRequest("getRecent", params).getRequest();
+        return execute("getRecent", params).toString();
     }
 
     /**
@@ -94,10 +94,10 @@ public class VKApiFriends extends VKApiBase {
 
         //some magic for getting method name
 //        String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
-        JSONObject obj = new JSONObject(prepareRequest("getRequests", params).getRequest());
+        JSONObject obj = execute("getRequests", params);
 
-        final JSONArray friendList = obj.getJSONObject(VKApiJsonConst.RESPONSE).getJSONArray(VKApiConst.ITEMS);
-        VKUserList result = new VKUserList(obj.getJSONObject(VKApiJsonConst.RESPONSE).getInt(VKApiConst.COUNT));
+        final JSONArray friendList = obj.getJSONArray(VKApiConst.ITEMS);
+        VKUserList result = new VKUserList(obj.getInt(VKApiConst.COUNT));
         for (int i = 0; i < friendList.length(); ++i) {
             JSONObject userJson = friendList.getJSONObject(i);
             VKUser user = VkJsonParser.parseUser(userJson);
@@ -115,7 +115,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String add(VKParameters params) {
-        return prepareRequest("add", params).getRequest();
+        return execute("add", params).toString();
     }
 
     /**
@@ -127,7 +127,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String edit(VKParameters params) {
-        return prepareRequest("edit", params).getRequest();
+        return execute("edit", params).toString();
     }
 
     /**
@@ -139,7 +139,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String delete(VKParameters params) {
-        return prepareRequest("delete", params).getRequest();
+        return execute("delete", params).toString();
     }
 
     /**
@@ -151,7 +151,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getLists(VKParameters params) {
-        return prepareRequest("getLists", params).getRequest();
+        return execute("getLists", params).toString();
     }
 
     /**
@@ -163,7 +163,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String addList(VKParameters params) {
-        return prepareRequest("addList", params).getRequest();
+        return execute("addList", params).toString();
     }
 
     /**
@@ -175,7 +175,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String editList(VKParameters params) {
-        return prepareRequest("editList", params).getRequest();
+        return execute("editList", params).toString();
     }
 
     /**
@@ -187,7 +187,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String deleteList(VKParameters params) {
-        return prepareRequest("deleteList", params).getRequest();
+        return execute("deleteList", params).toString();
     }
 
     /**
@@ -198,7 +198,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getAppUsers(VKParameters params) {
-        return prepareRequest("getAppUsers", params).getRequest();
+        return execute("getAppUsers", params).toString();
     }
 
     /**
@@ -210,7 +210,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getByPhones(VKParameters params) {
-        return prepareRequest("getByPhones", params).getRequest();
+        return execute("getByPhones", params).toString();
     }
 
     /**
@@ -222,7 +222,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String deleteAllRequests(VKParameters params) {
-        return prepareRequest("deleteAllRequests", params).getRequest();
+        return execute("deleteAllRequests", params).toString();
     }
 
     /**
@@ -234,7 +234,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getSuggestions(VKParameters params) {
-        return prepareRequest("getSuggestions", params).getRequest();
+        return execute("getSuggestions", params).toString();
     }
 
     /**
@@ -245,7 +245,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String areFriends(VKParameters params) {
-        return prepareRequest("areFriends", params).getRequest();
+        return execute("areFriends", params).toString();
     }
 
     /**
@@ -256,7 +256,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getAvailableForCall(VKParameters params) {
-        return prepareRequest("getAvailableForCall", params).getRequest();
+        return execute("getAvailableForCall", params).toString();
     }
 
     /**
@@ -267,7 +267,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String search(VKParameters params) {
-        return prepareRequest("search", params).getRequest();
+        return execute("search", params).toString();
     }
 
     @Override

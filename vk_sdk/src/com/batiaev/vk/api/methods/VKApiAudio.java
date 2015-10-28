@@ -25,7 +25,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
 
     /**
@@ -35,7 +35,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String getById(VKParameters params) {
-        return prepareRequest("getById", params).getRequest();
+        return execute("getById", params).toString();
     }
 
     /**
@@ -45,7 +45,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String getLyrics(VKParameters params) {
-        return prepareRequest("getLyrics", params).getRequest();
+        return execute("getLyrics", params).toString();
     }
 
     /**
@@ -55,7 +55,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String search(VKParameters params) {
-        return prepareRequest("search", params).getRequest();
+        return execute("search", params).toString();
     }
 
     /**
@@ -65,7 +65,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String getUploadServer(VKParameters params) {
-        return prepareRequest("getUploadServer", params).getRequest();
+        return execute("getUploadServer", params).toString();
     }
 
     /**
@@ -75,7 +75,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String save(VKParameters params) {
-        return prepareRequest("save", params).getRequest();
+        return execute("save", params).toString();
     }
 
     /**
@@ -85,7 +85,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String add(VKParameters params) {
-        return prepareRequest("add", params).getRequest();
+        return execute("add", params).toString();
     }
 
     /**
@@ -95,7 +95,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String delete(VKParameters params) {
-        return prepareRequest("delete", params).getRequest();
+        return execute("delete", params).toString();
     }
 
     /**
@@ -105,7 +105,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String edit(VKParameters params) {
-        return prepareRequest("edit", params).getRequest();
+        return execute("edit", params).toString();
     }
 
     /**
@@ -115,7 +115,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String reorder(VKParameters params) {
-        return prepareRequest("reorder", params).getRequest();
+        return execute("reorder", params).toString();
     }
 
     /**
@@ -125,7 +125,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String restore(VKParameters params) {
-        return prepareRequest("restore", params).getRequest();
+        return execute("restore", params).toString();
     }
 
     /**
@@ -135,7 +135,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String getAlbums(VKParameters params) {
-        return prepareRequest("getAlbums", params).getRequest();
+        return execute("getAlbums", params).toString();
     }
 
     /**
@@ -145,7 +145,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String addAlbum(VKParameters params) {
-        return prepareRequest("addAlbum", params).getRequest();
+        return execute("addAlbum", params).toString();
     }
 
     /**
@@ -155,7 +155,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String editAlbum(VKParameters params) {
-        return prepareRequest("editAlbum", params).getRequest();
+        return execute("editAlbum", params).toString();
     }
 
     /**
@@ -165,7 +165,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String deleteAlbum(VKParameters params) {
-        return prepareRequest("deleteAlbum", params).getRequest();
+        return execute("deleteAlbum", params).toString();
     }
 
     /**
@@ -175,7 +175,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String moveToAlbum(VKParameters params) {
-        return prepareRequest("moveToAlbum", params).getRequest();
+        return execute("moveToAlbum", params).toString();
     }
 
     /**
@@ -185,7 +185,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String setBroadcast(VKParameters params) {
-        return prepareRequest("setBroadcast", params).getRequest();
+        return execute("setBroadcast", params).toString();
     }
 
     /**
@@ -195,7 +195,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String getBroadcastList(VKParameters params) {
-        return prepareRequest("getBroadcastList", params).getRequest();
+        return execute("getBroadcastList", params).toString();
     }
 
     /**
@@ -205,7 +205,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String getRecommendations(VKParameters params) {
-        return prepareRequest("getRecommendations", params).getRequest();
+        return execute("getRecommendations", params).toString();
     }
 
     /**
@@ -215,7 +215,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String getPopular(VKParameters params) {
-        return prepareRequest("getPopular", params).getRequest();
+        return execute("getPopular", params).toString();
     }
 
     /**
@@ -225,7 +225,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String getCount(VKParameters params) {
-        return prepareRequest("getCount", params).getRequest();
+        return execute("getCount", params).toString();
     }
 
     @Override

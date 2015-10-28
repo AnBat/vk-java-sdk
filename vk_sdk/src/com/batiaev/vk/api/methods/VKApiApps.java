@@ -24,7 +24,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String getCatalog(VKParameters params) {
-        return prepareRequest("getCatalog", params).getRequest();
+        return execute("getCatalog", params).toString();
     }
 
     /**
@@ -34,7 +34,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
     
     /**
@@ -44,7 +44,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String sendRequest(VKParameters params) {
-        return prepareRequest("sendRequest", params).getRequest();
+        return execute("sendRequest", params).toString();
     }
 
     /**
@@ -54,7 +54,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String deleteAppRequests(VKParameters params) {
-        return prepareRequest("deleteAppRequests", params).getRequest();
+        return execute("deleteAppRequests", params).toString();
     }
 
     /**
@@ -64,7 +64,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String getFriendsList(VKParameters params) {
-        return prepareRequest("getFriendsList", params).getRequest();
+        return execute("getFriendsList", params).toString();
     }
 
     @Override

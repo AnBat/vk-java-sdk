@@ -26,7 +26,7 @@ public class VKApiSearch extends VKApiBase {
      * @return String with json respond
      */
     public String getHints(VKParameters params) {
-        return prepareRequest("getHints", params).getRequest();
+        return execute("getHints", params).toString();
     }
 
     @Override

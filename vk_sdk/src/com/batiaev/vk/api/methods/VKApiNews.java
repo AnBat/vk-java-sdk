@@ -25,7 +25,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String get(VKParameters params) {
-        return prepareRequest("get", params).getRequest();
+        return execute("get", params).toString();
     }
 	
     /**
@@ -36,7 +36,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getRecommended(VKParameters params) {
-        return prepareRequest("getRecommended", params).getRequest();
+        return execute("getRecommended", params).toString();
     }
 	
     /**
@@ -48,7 +48,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getComments(VKParameters params) {
-        return prepareRequest("getComments", params).getRequest();
+        return execute("getComments", params).toString();
     }
 	
     /**
@@ -59,7 +59,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getMentions(VKParameters params) {
-        return prepareRequest("getMentions", params).getRequest();
+        return execute("getMentions", params).toString();
     }
 	
     /**
@@ -71,7 +71,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getBanned(VKParameters params) {
-        return prepareRequest("getBanned", params).getRequest();
+        return execute("getBanned", params).toString();
     }
 	
     /**
@@ -83,7 +83,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String addBan(VKParameters params) {
-        return prepareRequest("addBan", params).getRequest();
+        return execute("addBan", params).toString();
     }
 	
     /**
@@ -95,7 +95,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String deleteBan(VKParameters params) {
-        return prepareRequest("deleteBan", params).getRequest();
+        return execute("deleteBan", params).toString();
     }
 	
     /**
@@ -107,7 +107,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String ignoreItem(VKParameters params) {
-        return prepareRequest("ignoreItem", params).getRequest();
+        return execute("ignoreItem", params).toString();
     }
 	
     /**
@@ -119,7 +119,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String unignoreItem(VKParameters params) {
-        return prepareRequest("unignoreItem", params).getRequest();
+        return execute("unignoreItem", params).toString();
     }
 	
     /**
@@ -130,7 +130,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String search(VKParameters params) {
-        return prepareRequest("search", params).getRequest();
+        return execute("search", params).toString();
     }
 	
     /**
@@ -142,7 +142,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getLists(VKParameters params) {
-        return prepareRequest("getLists", params).getRequest();
+        return execute("getLists", params).toString();
     }
 	
     /**
@@ -154,7 +154,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String saveList(VKParameters params) {
-        return prepareRequest("saveList", params).getRequest();
+        return execute("saveList", params).toString();
     }
 	
     /**
@@ -166,7 +166,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String deleteList(VKParameters params) {
-        return prepareRequest("deleteList", params).getRequest();
+        return execute("deleteList", params).toString();
     }
 
     /**
@@ -178,7 +178,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String unsubscribe(VKParameters params) {
-        return prepareRequest("unsubscribe", params).getRequest();
+        return execute("unsubscribe", params).toString();
     }
 	
     /**
@@ -189,7 +189,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getSuggestedSources(VKParameters params) {
-        return prepareRequest("getSuggestedSources", params).getRequest();
+        return execute("getSuggestedSources", params).toString();
     }
 
     @Override
