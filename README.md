@@ -1,5 +1,6 @@
 Vk Java SDK
 ==========
+[![Build Status](https://travis-ci.org/AnBat/vk-java-sdk.svg)](https://travis-ci.org/AnBat/vk-java-sdk)
 
 Library for working with [VK API](https://vk.com/dev/openapi), authorization through VK app, using VK functions.
 
