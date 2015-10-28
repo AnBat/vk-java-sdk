@@ -7,8 +7,6 @@ package com.batiaev.vk.api;
  * www.batiaev.com
  */
 
-import com.batiaev.vk.api.consts.VKApiConst;
-import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.methods.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

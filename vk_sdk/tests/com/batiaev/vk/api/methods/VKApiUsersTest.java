@@ -4,7 +4,6 @@ import com.batiaev.vk.api.VKApi;
 import com.batiaev.vk.api.VKAuthorization;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.dataTypes.VKUserList;
-import jdk.nashorn.internal.AssertsEnabled;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
