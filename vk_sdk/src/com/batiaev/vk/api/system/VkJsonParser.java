@@ -127,6 +127,7 @@ public class VkJsonParser {
             message.setEmoji(json.getInt(VKApiJsonConst.EMOJI) == 1);
         return message;
     }
+
     public static VkAttachment parseAttachment(JSONObject attachJSON) {
         String type = attachJSON.getString(VKApiJsonConst.TYPE);
         switch (type) {
@@ -145,7 +146,7 @@ public class VkJsonParser {
         }
     }
 
-        public static VKError parseError(JSONObject errorJson) {
+    public static VKError parseError(JSONObject errorJson) {
         VKError error = new VKError();
         error.error_code = errorJson.getInt(VKApiJsonConst.ERROR_CODE);
         error.error_msg = errorJson.getString(VKApiJsonConst.ERROR_MSG);

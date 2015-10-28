@@ -16,16 +16,20 @@ import java.util.TimerTask;
 public class MessageLoader extends TimerTask {
     private static final Logger LOG = LogManager.getLogger(MessageLoader.class);
     private VKUserList friends;
-    private int currentIndex;
+    private VkMessageCache messageCache;
 
     public static void main(String[] args) {
 
+//        VkMessageCache messageCache = new VkMessageCache();
+//        boolean result = messageCache.cachingMassages(62311368);
+//        if (result)
+//            LOG.info("Caching messages is finished");
+
         MessageLoader loader = new MessageLoader();
-        Timer timer = new Timer();
-        timer.schedule(loader, 0, 10000); //checker each 10 sec
+        loader.run();
     }
 
-    public MessageLoader() {
+    public void run() {
         VKAuthorization.loadProperties();
 
         VKParameters params = VKParameters.create()
@@ -33,14 +37,11 @@ public class MessageLoader extends TimerTask {
                 .add("order", "hints")
                 .add("fields", "uid");
         friends = VKApi.friends().get(params);
-        currentIndex = 0;
-    }
+        messageCache = new VkMessageCache();
 
-    @Override
-    public void run() {
-        LOG.info(String.format("Load messages for %s", friends.get(currentIndex).fullName()));
-        VkMessageCache messageCache = new VkMessageCache();
-        messageCache.cachingMassages(friends.get(currentIndex).userId());
-        currentIndex++;
+        friends.forEach(friend -> {
+            LOG.info(String.format("Load messages for %s", friend.fullName()));
+            messageCache.cachingMassages(friend.userId());
+        });
     }
 }

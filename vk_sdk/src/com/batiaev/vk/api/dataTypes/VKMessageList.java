@@ -31,4 +31,11 @@ public class VKMessageList extends ArrayList<VKMessage> {
 
     private int totalCount = 0;
     private int upreadCount = 0;
+
+    public String plainText() {
+        StringBuilder builder = new StringBuilder();
+        this.forEach(msg -> builder.append(msg.plainText()));
+        return builder.toString();
+    }
+
 }

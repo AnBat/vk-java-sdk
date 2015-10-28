@@ -1,5 +1,8 @@
 package com.batiaev.vk.api.dataTypes;
 
+import com.batiaev.vk.sdk.VkLocalCache;
+
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -57,6 +60,11 @@ public class VKMessage {
 
     public Date getDate() {
         return date;
+    }
+
+    public String getDate(String format) {
+        SimpleDateFormat df = new SimpleDateFormat(format);//"yyyy.MM.dd_HH:mm:ss"
+        return df.format(date);
     }
 
     public void setDate(Date date) {
@@ -144,4 +152,9 @@ public class VKMessage {
         attachments = new ArrayList<>();
         fwd_messages = new ArrayList<>();
     }
+
+    public String plainText() {
+        return getDate("yyyy.MM.dd HH:mm:ss") + " " + VkLocalCache.getUser(from_id) + " " + body + System.lineSeparator();
+    }
+
 }
