@@ -1,5 +1,6 @@
 package com.batiaev.vk.api.system;
 
+import com.batiaev.vk.api.VKApi;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,8 +21,8 @@ public class VkCache extends Properties {
     private String name;
 
     public VkCache(String name) {
-        this.name = name;
-        File file = new File(name);
+        this.name = VKApi.home() + name + ".properties";
+        File file = new File(this.name);
         if (!file.exists()) {
             try {
                 file.createNewFile();
