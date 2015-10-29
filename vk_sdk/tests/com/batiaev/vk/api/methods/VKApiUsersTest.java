@@ -20,7 +20,7 @@ public class VKApiUsersTest extends TestCase {
     @Before
     public void setUp() {
         userId = 1;
-        parameters = new VKParameters();
+        parameters = new VKParameters(false);
         parameters.setValue("user_id", userId);
         parameters.setValue("fields", "first_name, last_name");
 

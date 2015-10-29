@@ -16,15 +16,29 @@ import java.util.HashMap;
 public class VKParameters {
     private HashMap<String, String> values = new HashMap<>();
 
+    public VKParameters(boolean withToken) {
+        init(withToken);
+    }
+
     public VKParameters() {
+        init(true);
+    }
+
+    private void init(boolean withToken) {
         values.put("v", VKApiVersion.v5_34);
         values.put("lang", VKApiLang.en);
-        values.put(VKApiConst.ACCESS_TOKEN, VKAuthorization.accessToken());
+        if (withToken) values.put(VKApiConst.ACCESS_TOKEN, VKAuthorization.accessToken());
 //        values.put("test_mode", "1");
     }
+
+    public static VKParameters create(boolean withToken) {
+        return new VKParameters(withToken);
+    }
+
     public static VKParameters create() {
         return new VKParameters();
     }
+
     public VKParameters add(String key, String value) {
         values.put(key, value);
         return this;

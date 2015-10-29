@@ -8,13 +8,10 @@ package com.batiaev.vk.api.methods;
  */
 
 import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.consts.VkApiMethods;
 import com.batiaev.vk.api.dataTypes.VKUserList;
 import com.batiaev.vk.api.system.VkJsonParser;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -24,7 +21,6 @@ import org.json.JSONObject;
  * https://vk.com/dev/users
  */
 public class VKApiUsers extends VKApiBase {
-    private static final Logger LOG = LogManager.getLogger(VKApiUsers.class);
 
     /**
      * @param params method parameters
