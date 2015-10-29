@@ -4,7 +4,7 @@ import com.batiaev.vk.api.VKApi;
 import com.batiaev.vk.api.VKAuthorization;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.dataTypes.VKUserList;
-import com.batiaev.vk.api.system.VkPropertyLoader;
+import com.batiaev.vk.api.system.VkCache;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +14,6 @@ import java.io.*;
 import java.net.URL;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Properties;
 import java.util.Set;
 
 /**
@@ -23,6 +22,7 @@ import java.util.Set;
  */
 public class VkLocalCache {
     private static final Logger LOG = LogManager.getLogger(VkLocalCache.class);
+    private static HashMap<String, VkCache> caches = new HashMap<>();
 
     public static void saveFriendsPage(VKUserList friends, String user_id) {
         //generate html file
@@ -59,13 +59,12 @@ public class VkLocalCache {
         }
 
         //generate properties file
-        VkPropertyLoader.setPropertyFileName(user_id + File.separator + "friends");
-        friends.forEach(user -> VkPropertyLoader.setProperty(String.valueOf(user.userId()), user.fullName()));
+        friends.forEach(user -> cache("friends").setProperty(String.valueOf(user.userId()), user.fullName()));
     }
 
     private static File createCacheFile(String fileName, String user_id) {
-        File user_data = user_id.isEmpty() ? new File(System.getProperty("user.home") + File.separator + ".vk_sdk")
-                : new File(System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator + user_id);
+        File user_data = user_id.isEmpty() ? new File(VKApi.home())
+                : new File(VKApi.home() + user_id);
         if (!user_data.exists() && !user_data.mkdirs()) LOG.error("Cannot create folder : " + user_data.getAbsolutePath());
         File user_friends = new File(user_data.getPath() + File.separator + fileName);
         try {
@@ -139,43 +138,35 @@ public class VkLocalCache {
     }
 
     public static Set<Object> getKeySet(String type) {
-        VkPropertyLoader.setPropertyFileName(type);
-        return VkPropertyLoader.properties().keySet();
+        return cache(type).keySet();
     }
 
     public static Collection<Object> getValues(String type) {
-        VkPropertyLoader.setPropertyFileName(type);
-        return VkPropertyLoader.properties().values();
+        return cache(type).values();
     }
 
     public static String getItem(final long id, String type) {
-        VkPropertyLoader.setPropertyFileName(type);
-        return VkPropertyLoader.getProperty(String.valueOf(id));
+        return cache(type).getProperty(String.valueOf(id));
     }
 
     public static String getItem(final int id, String type) {
-        VkPropertyLoader.setPropertyFileName(type);
-        return VkPropertyLoader.getProperty(String.valueOf(id));
+        return cache(type).getProperty(String.valueOf(id));
     }
 
     public static void setItem(int id, String name, String type) {
-        VkPropertyLoader.setPropertyFileName(type);
-        VkPropertyLoader.setProperty(String.valueOf(id), name);
+        cache(type).setProperty(String.valueOf(id), name);
     }
 
     public static void setItem(long id, String name, String type) {
-        VkPropertyLoader.setPropertyFileName(type);
-        VkPropertyLoader.setProperty(String.valueOf(id), name);
+        cache(type).setProperty(String.valueOf(id), name);
     }
 
     public static boolean hasItem(long id, String type) {
-        VkPropertyLoader.setPropertyFileName(type);
-        return VkPropertyLoader.hasProperty(String.valueOf(id));
+        return cache(type).hasProperty(String.valueOf(id));
     }
 
     public static boolean hasItem(int id, String type) {
-        VkPropertyLoader.setPropertyFileName(type);
-        return VkPropertyLoader.hasProperty(String.valueOf(id));
+        return cache(type).hasProperty(String.valueOf(id));
     }
 
     public static void cachingFriends() {
@@ -188,14 +179,11 @@ public class VkLocalCache {
     }
 
     public static void setUsers(VKUserList users) {
-        VkPropertyLoader.setPropertyFileName("users");
-        users.forEach(user -> VkPropertyLoader.setProperty(String.valueOf(user.userId()), user.fullName()));
+        users.forEach(user -> cache("users").setProperty(String.valueOf(user.userId()), user.fullName()));
 
-        VkPropertyLoader.setPropertyFileName("photo");
-        String root_path = System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator
-                + VKAuthorization.userId() + File.separator;
+        String root_path = VKApi.home() + VKAuthorization.userId() + File.separator;
         users.forEach(user -> {
-            VkPropertyLoader.setProperty(String.valueOf(user.userId()), user.photoMaxOrig());
+            cache("photo").setProperty(String.valueOf(user.userId()), user.photoMaxOrig());
 
             String fileName = root_path + String.valueOf(user.userId()) + ".jpg";
             File userPhotoFile = new File(fileName);
@@ -212,5 +200,14 @@ public class VkLocalCache {
 
             System.out.println("Loaded [" + user.userId() + "] " + user.fullName());
         });
+    }
+
+    /**
+     * @param name cache name
+     * @return cache assigned with name
+     */
+    public static VkCache cache(String name) {
+        if (!caches.containsKey(name)) caches.put(name, new VkCache(name));
+        return caches.get(name);
     }
 }

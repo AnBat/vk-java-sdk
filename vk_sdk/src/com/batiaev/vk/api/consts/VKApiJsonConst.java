@@ -53,4 +53,8 @@ public class VKApiJsonConst {
     public final static String CITY_IDS = "city_ids";
     public final static String COUNTRY_IDS = "country_ids";
     public final static String NEED_ALL = "need_all";
+
+    //for friends
+    public final static String ONLINE = "online";
+    public final static String ONLINE_MOBILE = "online_mobile";
 }

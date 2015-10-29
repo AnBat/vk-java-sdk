@@ -2,6 +2,7 @@ package com.batiaev.vk.api.methods;
 
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VkApiMethods;
 import com.batiaev.vk.api.dataTypes.VkChatMessage;
 import com.batiaev.vk.api.dataTypes.VkChatList;
 import com.batiaev.vk.api.dataTypes.VKMessage;
@@ -38,7 +39,7 @@ public class VKApiMessages extends VKApiBase {
      */
     public VKMessageList get(VKParameters params) {
 
-        JSONObject respondJson = execute(VKApiConst.GET, params);
+        JSONObject respondJson = execute(VkApiMethods.GET, params);
         if (respondJson == null) return null;
 
         VKMessageList result = new VKMessageList();
@@ -131,7 +132,7 @@ public class VKApiMessages extends VKApiBase {
      */
     public VKMessageList getHistory(VKParameters params) {
 
-        JSONObject respondJson = execute(VKApiConst.GET_HISTORY, params);
+        JSONObject respondJson = execute(VkApiMethods.GET_HISTORY, params);
         if (respondJson == null) return null;
 
         VKMessageList result = new VKMessageList();

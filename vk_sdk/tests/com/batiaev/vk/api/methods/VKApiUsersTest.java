@@ -19,8 +19,6 @@ public class VKApiUsersTest extends TestCase {
 
     @Before
     public void setUp() {
-        VKAuthorization.loadProperties();
-
         userId = 1;
         parameters = new VKParameters();
         parameters.setValue("user_id", userId);
@@ -36,6 +34,7 @@ public class VKApiUsersTest extends TestCase {
     @Test
     public void testGet() {
 
+        VKAuthorization.loadProperties();
         VKUserList users = VKApi.users().get(parameters);
         assertNotNull(users);
         assertNotNull(users.get(0));

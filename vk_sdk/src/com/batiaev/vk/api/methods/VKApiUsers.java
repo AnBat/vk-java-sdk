@@ -10,6 +10,7 @@ package com.batiaev.vk.api.methods;
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiJsonConst;
+import com.batiaev.vk.api.consts.VkApiMethods;
 import com.batiaev.vk.api.dataTypes.VKUserList;
 import com.batiaev.vk.api.system.VkJsonParser;
 import org.apache.logging.log4j.LogManager;
@@ -34,7 +35,7 @@ public class VKApiUsers extends VKApiBase {
      *
      */
     public VKUserList get(VKParameters params) {
-        JSONObject obj = new JSONObject(executeRaw(VKApiConst.GET, params));
+        JSONObject obj = new JSONObject(executeRaw(VkApiMethods.GET, params));
         final JSONArray friendList = obj.getJSONArray(VKApiJsonConst.RESPONSE);
         VKUserList result = new VKUserList();
         for (int i = 0; i < friendList.length(); ++i) {

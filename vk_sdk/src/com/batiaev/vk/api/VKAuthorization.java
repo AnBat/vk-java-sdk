@@ -150,6 +150,7 @@ public class VKAuthorization {
         return "";
     }
 
+    //FIXME setting params ones
     public static void loadProperties() {
 
         VkSecureProperties prop = new VkSecureProperties();

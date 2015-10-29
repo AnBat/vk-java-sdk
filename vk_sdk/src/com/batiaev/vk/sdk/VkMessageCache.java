@@ -38,8 +38,7 @@ public class VkMessageCache {
 
         VKAuthorization.loadProperties();
 
-        fileName = System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator
-                + VKAuthorization.userId() + File.separator + "messages";
+        fileName = VKApi.home() + VKAuthorization.userId() + File.separator + "messages";
 
         File file = new File(fileName);
         if (!file.exists()) file.mkdirs();

@@ -9,9 +9,9 @@ package com.batiaev.vk.api.methods;
 
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.VKRequest;
-import com.batiaev.vk.api.consts.VKApiConst;
 import com.batiaev.vk.api.consts.VKApiJsonConst;
-import com.batiaev.vk.api.dataTypes.VKMessageList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
 /**
@@ -19,10 +19,18 @@ import org.json.JSONObject;
  */
 public abstract class VKApiBase {
 
+    private static final Logger LOG = LogManager.getLogger(VKApiBase.class);
     /**
+     * Contain name of methods groups like friends, messages, etc
+     */
+    protected String methodsGroup = "";
+    /**
+     * user methodsGroup
      * @return name of methods group
      */
-    protected abstract String getMethodsGroup();
+    protected String getMethodsGroup() {
+        return methodsGroup;
+    }
 
     /**
      * @param methodName method name in currect group
@@ -30,7 +38,10 @@ public abstract class VKApiBase {
      * @return respond json object or null if any error
      */
     protected JSONObject execute(String methodName, VKParameters methodParameters) {
-        String respond = VKRequest.create().getRequest(getMethodsGroup() + "." + methodName, methodParameters.toString());
+        String method = getMethodsGroup() + "." + methodName;
+        LOG.debug("Execute " + method);
+
+        String respond = VKRequest.create().getRequest(method, methodParameters.toString());
         if (respond == null) return null;
 
         JSONObject obj = new JSONObject(respond);

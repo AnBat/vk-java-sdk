@@ -59,12 +59,11 @@ public class VKParameters {
         values.keySet().forEach(key -> {
             String value = values.get(key);
             try {
-                value = URLEncoder.encode(values.get(key), "UTF-8");
+                value = URLEncoder.encode(value, "UTF-8");
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
             result.append(String.format("%s=%s&", key, value));
-
         });
         return result.toString().replace(" ", "");
     }

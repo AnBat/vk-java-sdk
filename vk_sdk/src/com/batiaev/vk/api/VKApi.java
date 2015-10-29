@@ -12,6 +12,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 
+import java.io.File;
+
 /**
  * Common interface for VK API
  * 
@@ -19,6 +21,11 @@ import org.json.JSONObject;
  */
 public class VKApi extends VKApiBase {
     private static final Logger LOG = LogManager.getLogger(VKApi.class);
+
+    /**
+     * @return path to sdk home folder
+     */
+    public static String home() { return System.getProperty("user.home") + File.separator + ".vk_sdk" + File.separator; }
 
     /**
      * @return Vk Api for account methods

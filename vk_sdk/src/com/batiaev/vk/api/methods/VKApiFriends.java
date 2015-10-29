@@ -9,9 +9,7 @@ package com.batiaev.vk.api.methods;
 
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.annotation.Rights;
-import com.batiaev.vk.api.consts.VKApiConst;
-import com.batiaev.vk.api.consts.VKApiJsonConst;
-import com.batiaev.vk.api.consts.VKApiRigths;
+import com.batiaev.vk.api.consts.*;
 import com.batiaev.vk.api.dataTypes.VKUser;
 import com.batiaev.vk.api.dataTypes.VKUserList;
 import com.batiaev.vk.api.system.VkJsonParser;
@@ -19,6 +17,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Builds requests for API.friends part
@@ -29,6 +30,10 @@ public class VKApiFriends extends VKApiBase {
 
     private static final Logger LOG = LogManager.getLogger(VKApiFriends.class);
 
+    public VKApiFriends() {
+        methodsGroup = "friends";
+    }
+
     /**
      * <a href="https://vk.com/dev/friends.get">API friends.get()</a>
      * @param params method parameters
@@ -37,7 +42,8 @@ public class VKApiFriends extends VKApiBase {
     @Rights(VKApiRigths.OPEN_METHOD)
     public VKUserList get(VKParameters params) {
 
-        JSONObject obj = execute(VKApiConst.GET, params);
+        JSONObject obj = execute(VkApiMethods.GET, params);
+        if (obj == null) return null;
 
         final JSONArray friendList = obj.getJSONArray(VKApiConst.ITEMS);
         VKUserList result = new VKUserList(obj.getInt(VKApiConst.COUNT));
@@ -54,10 +60,29 @@ public class VKApiFriends extends VKApiBase {
      *
      * You need the following rights to call this method: friends.
      * @param params method parameters
-     * @return String with json respond
+     * @return hash with two keys online and online_mobile with lists of id users
      */
-    public String getOnline(VKParameters params) {
-        return execute("getOnline", params).toString();
+    @Rights(VKApiRigths.FRIENDS)
+    public HashMap<String, ArrayList<Long>> getOnline(VKParameters params) {
+        JSONObject obj = execute(VkApiMethods.GET_ONLINE, params);
+        if (obj == null) return null;
+
+        HashMap<String, ArrayList<Long>> result = new HashMap<>();
+        if (obj.has(VKApiJsonConst.ONLINE)) {
+            final JSONArray online = obj.getJSONArray(VKApiJsonConst.ONLINE);
+            ArrayList<Long> onlineList = new ArrayList<>();
+            for (int i = 0; i < online.length(); ++i) onlineList.add(online.getLong(i));
+            result.put(VKApiJsonConst.ONLINE, onlineList);
+        }
+        else if (obj.has(VKApiJsonConst.ONLINE_MOBILE)) {
+            final JSONArray onlineMobile = obj.getJSONArray(VKApiJsonConst.ONLINE_MOBILE);
+            ArrayList<Long> onlineList = new ArrayList<>();
+            for (int i = 0; i < onlineMobile.length(); ++i) onlineList.add(onlineMobile.getLong(i));
+            result.put(VKApiJsonConst.ONLINE, onlineList);
+        }
+        else return null;
+
+        return result;
     }
 
     /**
@@ -67,8 +92,11 @@ public class VKApiFriends extends VKApiBase {
      * @param params method parameters
      * @return String with json respond
      */
+    @Rights(VKApiRigths.FRIENDS)
     public String getMutual(VKParameters params) {
-        return execute("getMutual", params).toString();
+        JSONObject obj = execute(VkApiMethods.GET_MUTUAL, params);
+        if (obj == null) return null;
+        return obj.toString();
     }
 
     /**
@@ -78,8 +106,11 @@ public class VKApiFriends extends VKApiBase {
      * @param params method parameters
      * @return String with json respond
      */
+    @Rights(VKApiRigths.FRIENDS)
     public String getRecent(VKParameters params) {
-        return execute("getRecent", params).toString();
+        JSONObject obj = execute(VkApiMethods.GET_RECENT, params);
+        if (obj == null) return null;
+        return obj.toString();
     }
 
     /**
@@ -90,11 +121,13 @@ public class VKApiFriends extends VKApiBase {
      * @param params method parameters
      * @return List of users wich send friend requests
      */
+    @Rights(VKApiRigths.FRIENDS)
     public VKUserList getRequests(VKParameters params) {
 
         //some magic for getting method name
 //        String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
         JSONObject obj = execute("getRequests", params);
+        if (obj == null) return null;
 
         final JSONArray friendList = obj.getJSONArray(VKApiConst.ITEMS);
         VKUserList result = new VKUserList(obj.getInt(VKApiConst.COUNT));
@@ -112,10 +145,15 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      * @param params method parameters
-     * @return String with json respond
+     * @return one of the following values:
+     *  1 — Friend request sent.
+     *  2 — Friend request from the user approved.
+     *  4 — Request resending.
      */
-    public String add(VKParameters params) {
-        return execute("add", params).toString();
+    @Rights(VKApiRigths.FRIENDS)
+    public int add(VKParameters params) {
+        JSONObject obj = new JSONObject(executeRaw(VkApiMethods.ADD, params));
+        return obj.getInt(VKApiJsonConst.RESPONSE);
     }
 
     /**
@@ -124,10 +162,12 @@ public class VKApiFriends extends VKApiBase {
      * You need the following rights to call this method: friends.
      * This method is available only to standalone-applications.
      * @param params method parameters
-     * @return String with json respond
+     * @return 1
      */
-    public String edit(VKParameters params) {
-        return execute("edit", params).toString();
+    @Rights(VKApiRigths.FRIENDS)
+    public int edit(VKParameters params) {
+        JSONObject obj = new JSONObject(executeRaw(VkApiMethods.EDIT, params));
+        return obj.getInt(VKApiJsonConst.RESPONSE);
     }
 
     /**
@@ -138,8 +178,9 @@ public class VKApiFriends extends VKApiBase {
      * @param params method parameters
      * @return String with json respond
      */
+    @Rights(VKApiRigths.FRIENDS)
     public String delete(VKParameters params) {
-        return execute("delete", params).toString();
+        return execute(VkApiMethods.DELETE, params).toString();
     }
 
     /**
@@ -268,10 +309,5 @@ public class VKApiFriends extends VKApiBase {
      */
     public String search(VKParameters params) {
         return execute("search", params).toString();
-    }
-
-    @Override
-    protected String getMethodsGroup() {
-        return "friends";
     }
 }
