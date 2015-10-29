@@ -2,6 +2,7 @@ package com.batiaev.vk.api.methods;
 
 import com.batiaev.vk.api.VKParameters;
 import com.batiaev.vk.api.consts.VKApiConst;
+import com.batiaev.vk.api.consts.VKApiJsonConst;
 import com.batiaev.vk.api.consts.VkApiMethods;
 import com.batiaev.vk.api.dataTypes.VkChatMessage;
 import com.batiaev.vk.api.dataTypes.VkChatList;
@@ -156,8 +157,9 @@ public class VKApiMessages extends VKApiBase {
      * @param params method parameters
      * @return ID of the sent message (mid).
      */
-    public String send(VKParameters params) {
-        return execute("send", params).toString();
+    public long send(VKParameters params) {
+        JSONObject obj = new JSONObject(executeRaw("send", params));
+        return obj.getLong(VKApiJsonConst.RESPONSE);
     }
     
     /**
