@@ -170,7 +170,6 @@ public class VkLocalCache {
     }
 
     public static void cachingFriends() {
-        VKAuthorization.loadProperties();
         VKParameters params = new VKParameters();
         params.setValue("user_id", VKAuthorization.userId());
         params.setValue("order", "hints");

@@ -30,8 +30,6 @@ public class MessageLoader extends TimerTask {
     }
 
     public void run() {
-        VKAuthorization.loadProperties();
-
         VKParameters params = VKParameters.create()
                 .add("user_id", VKAuthorization.userId())
                 .add("order", "hints")

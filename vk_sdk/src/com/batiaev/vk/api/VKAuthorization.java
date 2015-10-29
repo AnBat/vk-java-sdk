@@ -1,7 +1,7 @@
 package com.batiaev.vk.api;
 
 import com.batiaev.vk.api.consts.VKApiConst;
-import com.batiaev.vk.api.system.VkSecureProperties;
+import com.batiaev.vk.api.system.VkCache;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
@@ -27,68 +27,44 @@ public class VKAuthorization {
 
     private static final String BASE_URL = "https://oauth.vk.com/";
     private static final String vk_api_version = VKApiVersion.Latest;
-    private static String vk_user_id = "1";
-    private static String vk_user_email = "";
-    private static String vk_user_password = "";
-    private static String vk_app_id = "";
-    private static String vk_secure_code = "";
-    private static String vk_access_token = "";
-
-    public VKAuthorization() {
-    }
+    private static VkCache cache;
 
     public static String secureCode() {
-        return vk_secure_code;
-    }
-
-    public static void setSecureCode(String secureCode) {
-        vk_secure_code = secureCode;
+        if (cache == null) loadCache();
+        return cache.getProperty("vk.app.secure_code");
     }
 
     public static String appId() {
-        return vk_app_id;
-    }
-
-    public static void setAppId(String id) {
-        vk_app_id = id;
+        if (cache == null) loadCache();
+        return cache.getProperty("vk.app.id");
     }
 
     public static String userId() {
-        return vk_user_id;
-    }
-
-    public static void setUserId(String id) {
-        vk_user_id = id;
+        if (cache == null) loadCache();
+        return cache.getProperty("vk.user.id");
     }
 
     public static String userEmail() {
-        return vk_user_email;
-    }
-
-    public static void setUserEmail(String email) {
-        vk_user_email = email;
+        if (cache == null) loadCache();
+        return cache.getProperty("vk.user.email");
     }
 
     public static String userPassword() {
-        return vk_user_password;
-    }
-
-    public static void setUserPassword(String pass) {
-        vk_user_password = pass;
+        if (cache == null) loadCache();
+        return cache.getProperty("vk.user.password");
     }
 
     public static String accessToken() {
-        return vk_access_token;
-    }
-
-    public static void setAccessToken(String accessToken) {
-        vk_access_token = accessToken;
+        if (cache == null) loadCache();
+        return cache.getProperty("vk.access_token");
     }
 
     public String serverAuth() {
+        if (cache == null) loadCache();
+
         String requestUrl = BASE_URL + "access_token?" +
-                            "client_id=" + vk_app_id +
-                            "&client_secret=" + vk_secure_code +
+                            "client_id=" + cache.getProperty("vk.app.id") +
+                            "&client_secret=" + cache.getProperty("vk.app.secure_code") +
                             "&v=" + vk_api_version +
                             "&grant_type=client_credentials";
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -112,10 +88,9 @@ public class VKAuthorization {
         }
 
         JSONObject obj = new JSONObject(responseBody);
-        vk_access_token = obj.getString(VKApiConst.ACCESS_TOKEN);
-        LOG.error(responseBody);
-        LOG.error(vk_access_token);
-        return vk_access_token;
+        cache.setProperty("vk.access_token", obj.getString(VKApiConst.ACCESS_TOKEN));
+        LOG.error(responseBody + "\n" + cache.getProperty("vk.access_token"));
+        return cache.getProperty("vk.access_token");
     }
 
     public String clientAuth() {
@@ -124,7 +99,7 @@ public class VKAuthorization {
         String display = "popup";
         String response_type = "token";
         String requestUrl = BASE_URL + "authorize?" +
-                "client_id=" + vk_app_id +
+                "client_id=" + cache.getProperty("vk.app.id") +
                 "&scope=" + scope +
                 "&redirect_uri=" + redirect_uri +
                 "&display=" + display +
@@ -150,16 +125,7 @@ public class VKAuthorization {
         return "";
     }
 
-    //FIXME setting params ones
-    public static void loadProperties() {
-
-        VkSecureProperties prop = new VkSecureProperties();
-
-        setUserId(prop.userId());
-        setUserEmail(prop.userEmail());
-        setUserPassword(prop.userPassword());
-        setAppId(prop.appId());
-        setSecureCode(prop.secureCode());
-        setAccessToken(prop.accessToken());
+    public static void loadCache() {
+        cache = new VkCache("secure");
     }
 }

@@ -36,8 +36,6 @@ public class VkMessageCache {
 
     public boolean cachingMassages(long userId) {
 
-        VKAuthorization.loadProperties();
-
         fileName = VKApi.home() + VKAuthorization.userId() + File.separator + "messages";
 
         File file = new File(fileName);

@@ -23,7 +23,6 @@ public class TestApp {
 
     public static void main(String[] args) {
 
-        VKAuthorization.loadProperties();
         VkLocalCache.cachingFriends();
 //        authorization.serverAuth();
 //        authorization.clientAuth();
