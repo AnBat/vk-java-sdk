@@ -128,22 +128,33 @@ public class VkJsonParser {
         return message;
     }
 
-    public static VkAttachment parseAttachment(JSONObject attachJSON) {
+    public static VkMessageAttachment parseAttachment(JSONObject attachJSON) {
         String type = attachJSON.getString(VKApiJsonConst.TYPE);
         switch (type) {
-            case VKApiConst.PHOTO:
+            case VkMessageAttachment.Photo:
                 VkPhotoAttachment photoAttach = new VkPhotoAttachment();
-                photoAttach.setPhoto(parsePhoto(attachJSON.getJSONObject(VKApiConst.PHOTO)));
+                photoAttach.setPhoto(parsePhoto(attachJSON.getJSONObject(VkMessageAttachment.Photo)));
                 photoAttach.setJson(attachJSON.toString());
                 photoAttach.setValue(photoAttach.photo().photoMax());
                 return photoAttach;
+            case VkMessageAttachment.Wall:
+                VkWallAttachment post = new VkWallAttachment();
+                post.setPost(parsePost(attachJSON.getJSONObject(VkMessageAttachment.Wall)));
+                post.setJson(attachJSON.toString());
+                post.setValue(post.post().text());
+                return post;
             default:
-                VkAttachment attach = new VkAttachment();
+                VkMessageAttachment attach = new VkMessageAttachment();
                 attach.setType(type);
                 attach.setJson(attachJSON.toString());
                 attach.setValue(attachJSON.toString());
                 return attach;
         }
+    }
+
+    private static VKPost parsePost(JSONObject postJson) {
+        VKPost post = new VKPost();
+        return post;
     }
 
     public static VKError parseError(JSONObject errorJson) {

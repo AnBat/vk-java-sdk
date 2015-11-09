@@ -7,7 +7,26 @@ package com.batiaev.vk.api.dataTypes;
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batiaev.com
  */
-public class VkPhotoAttachment extends VkAttachment {
+public class VkPhotoAttachment extends VkMessageAttachment {
+    /**
+     * photo ID
+     */
+    private long pid;
+    /**
+     *  ID of photo owner;
+     */
+    private long owner_id;
+    /**
+     * image URL
+     */
+    private String src;
+    /**
+     * big size image URL
+     */
+    private String src_big;
+
+    private VKPhoto photo;
+
     public VkPhotoAttachment() {
         type = Photo;
         photo = new VKPhoto();
@@ -25,6 +44,4 @@ public class VkPhotoAttachment extends VkAttachment {
     public String getValue() {
         return photo.photoMax();
     }
-
-    private VKPhoto photo;
 }

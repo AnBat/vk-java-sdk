@@ -20,6 +20,4 @@ public class VKApiConst {
 
     public final static String VALUE = "value";
     public final static String KEY = "key";
-
-    public final static String PHOTO = "photo";
 }

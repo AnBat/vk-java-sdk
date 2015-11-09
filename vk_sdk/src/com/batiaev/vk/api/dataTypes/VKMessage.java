@@ -19,18 +19,18 @@ import java.util.*;
  */
 public class VKMessage {
 
-    public void addAttachment(VkAttachment attachment) {
+    public void addAttachment(VkMessageAttachment attachment) {
         attachments.add(attachment);
     }
 
-    public VkAttachment attachment(int index) {
+    public VkMessageAttachment attachment(int index) {
         return attachments.get(index);
     }
-    public ArrayList<VkAttachment> attachments() {
+    public ArrayList<VkMessageAttachment> attachments() {
         return attachments;
     }
 
-    public void setAttachments(ArrayList<VkAttachment> attachments) {
+    public void setAttachments(ArrayList<VkMessageAttachment> attachments) {
         this.attachments = attachments;
     }
 
@@ -143,7 +143,7 @@ public class VKMessage {
     private boolean out;
     private String title;
     private String body;
-    private ArrayList<VkAttachment> attachments;
+    private ArrayList<VkMessageAttachment> attachments;
     private ArrayList<VKMessage> fwd_messages;
     private boolean emoji;
     private boolean deleted;
