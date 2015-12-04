@@ -47,6 +47,14 @@ public class VKApiJsonConst {
     public final static String PHOTO_2560 = "photo_2560";
     public final static String FWD_MESSAGES = "fwd_messages";
 
+    //for sticker attach
+    public final static String PHOTO_64 = "photo_64";
+    public final static String PHOTO_128 = "photo_128";
+    public final static String PHOTO_256 = "photo_256";
+    public final static String PHOTO_352 = "photo_352";
+    public final static String PHOTO_512 = "photo_512";
+
+
     //for database
     public final static String CID = "cid";
     public final static String NAME = "name";

@@ -17,6 +17,7 @@ package com.batiaev.vk.api.dataTypes;
  */
 public class VkMessageAttachment extends VkAttachment {
     public static final String Photo = "photo";
+    public static final String Sticker = "sticker";
     public static final String Video = "video";
     public static final String Audio = "audio";
     public static final String Document = "document";

@@ -143,6 +143,12 @@ public class VkJsonParser {
                 post.setJson(attachJSON.toString());
                 post.setValue(post.post().text());
                 return post;
+            case VkMessageAttachment.Sticker:
+                VkPhotoAttachment stickerAttach = new VkPhotoAttachment();
+                stickerAttach.setPhoto(parseSticker(attachJSON.getJSONObject(VkMessageAttachment.Sticker)));
+                stickerAttach.setJson(attachJSON.toString());
+                stickerAttach.setValue(stickerAttach.photo().photoMax());
+                return stickerAttach;
             default:
                 VkMessageAttachment attach = new VkMessageAttachment();
                 attach.setType(type);
@@ -188,6 +194,21 @@ public class VkJsonParser {
         if (photoJson.has(VKApiJsonConst.PHOTO_2560)) photo.setPhoto2560(photoJson.getString(VKApiJsonConst.PHOTO_2560));
 
         return photo;
+    }
+
+    public static VKPhoto parseSticker(JSONObject stickerJson) {
+
+        VKPhoto sticker = new VKPhoto();
+        if (stickerJson.has(VKApiJsonConst.ID)) sticker.setId(stickerJson.getInt(VKApiJsonConst.ID));
+        if (stickerJson.has(VKApiJsonConst.HEIGHT)) sticker.setHeight(stickerJson.getInt(VKApiJsonConst.HEIGHT));
+        if (stickerJson.has(VKApiJsonConst.WIDTH)) sticker.setWidth(stickerJson.getInt(VKApiJsonConst.WIDTH));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_64)) sticker.setPhoto75(stickerJson.getString(VKApiJsonConst.PHOTO_64));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_128)) sticker.setPhoto130(stickerJson.getString(VKApiJsonConst.PHOTO_128));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_256)) sticker.setPhoto604(stickerJson.getString(VKApiJsonConst.PHOTO_256));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_352)) sticker.setPhoto604(stickerJson.getString(VKApiJsonConst.PHOTO_352));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_512)) sticker.setPhoto604(stickerJson.getString(VKApiJsonConst.PHOTO_512));
+
+        return sticker;
     }
 
     public static VkChatMessage parseChat(JSONObject jsonObject) {
