@@ -160,6 +160,15 @@ public class VkJsonParser {
 
     private static VKPost parsePost(JSONObject postJson) {
         VKPost post = new VKPost();
+        if (postJson.has(VKApiJsonConst.ID)) post.setId(postJson.getInt(VKApiJsonConst.ID));
+        if (postJson.has(VKApiJsonConst.OWNER_ID)) post.setOwnerId(postJson.getInt(VKApiJsonConst.OWNER_ID));
+        if (postJson.has(VKApiJsonConst.FROM_ID)) post.setFromId(postJson.getInt(VKApiJsonConst.FROM_ID));
+        if (postJson.has(VKApiJsonConst.DATE)) post.setDate(postJson.getInt(VKApiJsonConst.DATE));
+        if (postJson.has(VKApiJsonConst.TEXT)) post.setText(postJson.getString(VKApiJsonConst.TEXT));
+        if (postJson.has(VKApiJsonConst.REPLY_OWNER_ID)) post.setReplyOwnerId(postJson.getInt(VKApiJsonConst.REPLY_OWNER_ID));
+        if (postJson.has(VKApiJsonConst.REPLY_POST_ID)) post.setReplyPostId(postJson.getInt(VKApiJsonConst.REPLY_POST_ID));
+        if (postJson.has(VKApiJsonConst.FRIENDS_ONLY)) post.setFriendsOnly(postJson.getInt(VKApiJsonConst.FRIENDS_ONLY));
+        //FIXME
         return post;
     }
 

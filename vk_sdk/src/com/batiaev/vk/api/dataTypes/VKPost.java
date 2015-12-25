@@ -20,12 +20,12 @@ public class VKPost {
         this.id = id;
     }
 
-    public int toId() {
-        return to_id;
+    public int ownerId() {
+        return owner_id;
     }
 
-    public void setToId(int to_id) {
-        this.to_id = to_id;
+    public void setOwnerId(int to_id) {
+        this.owner_id = to_id;
     }
 
     public int fromId() {
@@ -36,11 +36,11 @@ public class VKPost {
         this.from_id = from_id;
     }
 
-    public String date() {
+    public int date() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(int date) {
         this.date = date;
     }
 
@@ -52,27 +52,27 @@ public class VKPost {
         this.text = text;
     }
 
-    public String replyOwnerId() {
+    public int replyOwnerId() {
         return reply_owner_id;
     }
 
-    public void setReplyOwnerId(String reply_owner_id) {
+    public void setReplyOwnerId(int reply_owner_id) {
         this.reply_owner_id = reply_owner_id;
     }
 
-    public String replyPostId() {
+    public int replyPostId() {
         return reply_post_id;
     }
 
-    public void setReplyPostId(String reply_post_id) {
+    public void setReplyPostId(int reply_post_id) {
         this.reply_post_id = reply_post_id;
     }
 
-    public String friendsOnly() {
+    public int friendsOnly() {
         return friends_only;
     }
 
-    public void setFriendsOnly(String friends_only) {
+    public void setFriendsOnly(int friends_only) {
         this.friends_only = friends_only;
     }
 
@@ -156,19 +156,19 @@ public class VKPost {
         this.copy_post_type = copy_post_type;
     }
 
-    public String copyOwnerId() {
+    public int copyOwnerId() {
         return copy_owner_id;
     }
 
-    public void setCopyOwnerId(String copy_owner_id) {
+    public void setCopyOwnerId(int copy_owner_id) {
         this.copy_owner_id = copy_owner_id;
     }
 
-    public String copyPostId() {
+    public int copyPostId() {
         return copy_post_id;
     }
 
-    public void setCopyPostId(String copy_post_id) {
+    public void setCopyPostId(int copy_post_id) {
         this.copy_post_id = copy_post_id;
     }
 
@@ -180,14 +180,38 @@ public class VKPost {
         this.copy_text = copy_text;
     }
 
+    public boolean isCanPin() {
+        return can_pin;
+    }
+
+    public void setCanPin(boolean can_pin) {
+        this.can_pin = can_pin;
+    }
+
+    public boolean isPinned() {
+        return is_pinned;
+    }
+
+    public void setIsPinned(boolean is_pinned) {
+        this.is_pinned = is_pinned;
+    }
+
+    public String getCopyHistory() {
+        return copy_history;
+    }
+
+    public void setCopyHistory(String copy_history) {
+        this.copy_history = copy_history;
+    }
+
     private int id;
-    private int to_id;
+    private int owner_id;
     private int from_id;
-    private String date;
+    private int date;
     private String text;
-    private String reply_owner_id;
-    private String reply_post_id;
-    private String friends_only;
+    private int reply_owner_id;
+    private int reply_post_id;
+    private int friends_only;
     private String comments;
     private String likes;
     private String reposts;
@@ -196,9 +220,12 @@ public class VKPost {
     private String attachments;
     private String geo;
     private String signer_id;
+    private String copy_history;
     private String copy_post_date;
     private String copy_post_type;
-    private String copy_owner_id;
-    private String copy_post_id;
+    private int copy_owner_id;
+    private int copy_post_id;
     private String copy_text;
+    private boolean can_pin;
+    private boolean is_pinned;
 }

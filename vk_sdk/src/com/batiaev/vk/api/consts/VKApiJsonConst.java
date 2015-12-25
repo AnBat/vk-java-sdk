@@ -54,6 +54,10 @@ public class VKApiJsonConst {
     public final static String PHOTO_352 = "photo_352";
     public final static String PHOTO_512 = "photo_512";
 
+    //for wall post attach
+    public final static String REPLY_OWNER_ID = "reply_owner_id";
+    public final static String REPLY_POST_ID = "reply_post_id";
+    public final static String FRIENDS_ONLY = "friends_only";
 
     //for database
     public final static String CID = "cid";
