@@ -1,10 +1,9 @@
-import com.batiaev.vk.api.VKApi;
-import com.batiaev.vk.api.VKAuthorization;
-import com.batiaev.vk.api.VKParameters;
-import com.batiaev.vk.api.consts.VkApiMessagesParams;
-import com.batiaev.vk.api.dataTypes.VKMessage;
-import com.batiaev.vk.api.dataTypes.VKMessageList;
-import com.batiaev.vk.api.dataTypes.VKUserList;
+import com.batiaev.vk.common.VKApi;
+import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMessagesParams;
+import com.batiaev.vk.common.entity.VKMessage;
+import com.batiaev.vk.common.entity.VKMessageList;
+import com.batiaev.vk.common.entity.VKUserList;
 import com.batiaev.vk.sdk.VkLocalCache;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -11,7 +11,7 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="com.batiaev.vk.api.VKRequest" level="debug">
+        <Logger name="com.batiaev.vk.common.VKRequest" level="debug">
             <AppenderRef ref="MainLog"/>
         </Logger>
         <Root level="error">
