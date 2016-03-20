@@ -27,7 +27,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(VKApiRigths.NOTHING)
     public String getCounters(VKParameters params) {
-        return execute("getCounters", params).toString();
+        return execute(getUrl("getCounters", params)).toString();
     }
 
     /**
@@ -37,7 +37,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(VKApiRigths.NOTHING)
     public String setNameInMenu(VKParameters params) {
-        return execute("setNameInMenu", params).toString();
+        return execute(getUrl("setNameInMenu", params)).toString();
     }
     
     /**
@@ -47,7 +47,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String setOnline(VKParameters params) {
-        return execute("setOnline", params).toString();
+        return execute(getUrl("setOnline", params)).toString();
     }
     
     /**
@@ -57,7 +57,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String setOffline(VKParameters params) {
-        return execute("setOffline", params).toString();
+        return execute(getUrl("setOffline", params)).toString();
     }
 
     /**
@@ -67,7 +67,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String lookupContacts(VKParameters params) {
-        return execute("lookupContacts", params).toString();
+        return execute(getUrl("lookupContacts", params)).toString();
     }
 
     /**
@@ -77,7 +77,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public String registerDevice(VKParameters params) {
-        return execute("registerDevice", params).toString();
+        return execute(getUrl("registerDevice", params)).toString();
     }
 
     /**
@@ -87,7 +87,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public String unregisterDevice(VKParameters params) {
-        return execute("unregisterDevice", params).toString();
+        return execute(getUrl("unregisterDevice", params)).toString();
     }
     
     /**
@@ -97,7 +97,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public String setSilenceMode(VKParameters params) {
-        return execute("setSilenceMode", params).toString();
+        return execute(getUrl("setSilenceMode", params)).toString();
     }
     
     /**
@@ -107,7 +107,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(value = VKApiRigths.MESSAGES, standAloneOnly = true)
     public String getPushSettings(VKParameters params) {
-        return execute("getPushSettings", params).toString();
+        return execute(getUrl("getPushSettings", params)).toString();
     }
     
     /**
@@ -117,7 +117,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(VKApiRigths.NOTHING)
     public String getAppPermissions(VKParameters params) {
-        return execute("getAppPermissions", params).toString();
+        return execute(getUrl("getAppPermissions", params)).toString();
     }
     
     /**
@@ -127,7 +127,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(VKApiRigths.NOTHING)
     public String getActiveOffers(VKParameters params) {
-        return execute("getActiveOffers", params).toString();
+        return execute(getUrl("getActiveOffers", params)).toString();
     }
     
     /**
@@ -137,7 +137,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String banUser(VKParameters params) {
-        return execute("banUser", params).toString();
+        return execute(getUrl("banUser", params)).toString();
     }
     
     /**
@@ -147,7 +147,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String unbanUser(VKParameters params) {
-        return execute("unbanUser", params).toString();
+        return execute(getUrl("unbanUser", params)).toString();
     }
 
     /**
@@ -157,7 +157,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String getBanned(VKParameters params) {
-        return execute("getBanned", params).toString();
+        return execute(getUrl("getBanned", params)).toString();
     }
     
     /**
@@ -167,7 +167,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String getInfo(VKParameters params) {
-        return execute("getInfo", params).toString();
+        return execute(getUrl("getInfo", params)).toString();
     }
     
     /**
@@ -177,7 +177,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String setInfo(VKParameters params) {
-        return execute("setInfo", params).toString();
+        return execute(getUrl("setInfo", params)).toString();
     }
     
     /**
@@ -187,7 +187,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String changePassword(VKParameters params) {
-        return execute("changePassword", params).toString();
+        return execute(getUrl("changePassword", params)).toString();
     }
     
     /**
@@ -197,7 +197,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String getProfileInfo(VKParameters params) {
-        return execute("getProfileInfo", params).toString();
+        return execute(getUrl("getProfileInfo", params)).toString();
     }
     
     /**
@@ -207,7 +207,7 @@ public class VKApiAccount extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String saveProfileInfo(VKParameters params) {
-        return execute("saveProfileInfo", params).toString();
+        return execute(getUrl("saveProfileInfo", params)).toString();
     }
 
     @Override

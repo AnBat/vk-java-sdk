@@ -37,11 +37,16 @@ public abstract class VKApiBase {
      * @param methodParameters method parameters required for method
      * @return respond json object or null if any error
      */
+    @Deprecated
     protected JSONObject execute(String methodName, VKParameters methodParameters) {
-        String method = getMethodsGroup() + "." + methodName;
-        LOG.debug("Execute " + method);
+        String url = getUrl(methodName, methodParameters);
+        return execute(url);
+    }
 
-        String respond = VKRequest.create().getRequest(method, methodParameters.toString());
+    protected JSONObject execute(String url) {
+        LOG.debug("Execute " + url);
+
+        String respond = VKRequest.create().getRequest(url);
         if (respond == null) return null;
 
         JSONObject obj = new JSONObject(respond);
@@ -53,7 +58,16 @@ public abstract class VKApiBase {
      * @param methodParameters method parameters required for method
      * @return respond string with raw json
      */
+    @Deprecated
     protected String executeRaw(String methodName, VKParameters methodParameters) {
         return VKRequest.create().getRequest(getMethodsGroup() + "." + methodName, methodParameters.toString());
+    }
+
+    protected String executeRaw(String url) {
+        return VKRequest.create().getRequest(url);
+    }
+
+    protected String getUrl(String methodName, VKParameters methodParameters) {
+        return VKRequest.BASE_URL + getMethodsGroup() + "." + methodName + "?" + methodParameters.toString();
     }
 }

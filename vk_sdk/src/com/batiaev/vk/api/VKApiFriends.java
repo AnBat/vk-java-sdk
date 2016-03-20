@@ -9,7 +9,10 @@ package com.batiaev.vk.api;
 
 import com.batiaev.vk.common.VKParameters;
 import com.batiaev.vk.common.annotation.Rights;
-import com.batiaev.vk.common.consts.*;
+import com.batiaev.vk.common.consts.VKApiConst;
+import com.batiaev.vk.common.consts.VKApiJsonConst;
+import com.batiaev.vk.common.consts.VKApiRigths;
+import com.batiaev.vk.common.consts.VkApiMethods;
 import com.batiaev.vk.common.entity.VKUser;
 import com.batiaev.vk.common.entity.VKUserList;
 import com.batiaev.vk.common.system.VkJsonParser;
@@ -41,8 +44,9 @@ public class VKApiFriends extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public VKUserList get(VKParameters params) {
+        String url = getUrl(VkApiMethods.GET, params);
 
-        JSONObject obj = execute(VkApiMethods.GET, params);
+        JSONObject obj = execute(url);
         if (obj == null) return null;
 
         final JSONArray friendList = obj.getJSONArray(VKApiConst.ITEMS);

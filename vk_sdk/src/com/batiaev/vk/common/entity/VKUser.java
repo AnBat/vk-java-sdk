@@ -187,6 +187,15 @@ public class VKUser implements Serializable {
         return user_id + " : " + fullName();
     }
 
+    public void setValue(String name, Object value) {
+        System.out.println("## Set value " + value + " for field " + name);
+        try {
+            this.getClass().getDeclaredField(name).set(this, value);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
     public long userId() {
         return user_id;
     }
@@ -231,10 +240,6 @@ public class VKUser implements Serializable {
         return hidden;
     }
 
-    public void setHidden(boolean hidden) {
-        this.hidden = hidden;
-    }
-
     public void setHidden(int hidden) {
         this.hidden = hidden == 1;
     }
@@ -243,20 +248,12 @@ public class VKUser implements Serializable {
         return verified;
     }
 
-    public void setVerified(boolean verified) {
-        this.verified = verified;
-    }
-
     public void setVerified(int verified) {
         this.verified = verified ==1 ;
     }
 
     public boolean isBlacklisted() {
         return blacklisted;
-    }
-
-    public void setBlacklisted(boolean blacklisted) {
-        this.blacklisted = blacklisted;
     }
 
     public void setBlacklisted(int blacklisted) {
@@ -405,10 +402,6 @@ public class VKUser implements Serializable {
 
     public boolean isOnline() {
         return online;
-    }
-
-    public void setOnline(boolean online) {
-        this.online = online;
     }
 
     public void setOnline(int online) {

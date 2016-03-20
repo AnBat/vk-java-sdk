@@ -31,7 +31,9 @@ public class VKApiUsers extends VKApiBase {
      *
      */
     public VKUserList get(VKParameters params) {
-        JSONObject obj = new JSONObject(executeRaw(VkApiMethods.GET, params));
+        String url = getUrl(VkApiMethods.GET, params);
+
+        JSONObject obj = new JSONObject(executeRaw(url));
         final JSONArray friendList = obj.getJSONArray(VKApiJsonConst.RESPONSE);
         VKUserList result = new VKUserList();
         for (int i = 0; i < friendList.length(); ++i) {

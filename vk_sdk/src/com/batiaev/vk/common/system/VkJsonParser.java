@@ -1,9 +1,9 @@
 package com.batiaev.vk.common.system;
 
-import com.batiaev.vk.common.entity.*;
 import com.batiaev.vk.common.consts.VKApiConst;
 import com.batiaev.vk.common.consts.VKApiJsonConst;
 import com.batiaev.vk.common.consts.VKApiUserConsts;
+import com.batiaev.vk.common.entity.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
@@ -29,6 +29,8 @@ public class VkJsonParser {
     public static VKUser parseUser(JSONObject userJson) {
         LOG.debug("Parsing user...");
         VKUser user = new VKUser();
+
+//        userJson.keySet().forEach(key -> user.setValue(String.valueOf(key), userJson.get(String.valueOf(key))));
 
         if (userJson.has(VKApiJsonConst.ID))
             user.setUserId(userJson.getInt(VKApiJsonConst.ID));
