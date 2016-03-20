@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by batiaev on 10/23/15.
  * @author batiaev
  */
-public class VkChat {
+public class VkChat extends AbstractEntity {
     /**
      *  chat ID, positive number
      */

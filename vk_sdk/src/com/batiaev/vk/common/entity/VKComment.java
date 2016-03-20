@@ -14,7 +14,7 @@ import java.util.List;
  * API version 5.0 and higher
  * @see VKPost
  */
-public class VKComment {
+public class VKComment extends AbstractEntity {
 
     public int id() {
         return id;

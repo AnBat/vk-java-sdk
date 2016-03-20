@@ -25,7 +25,7 @@ public class VKApiWidgets extends VKApiBase {
      * @return String with json respond
      */
     public String getComments(VKParameters params) {
-        return execute("getComments", params).toString();
+        return execute(getUrl("getComments", params)).toString();
     }
 
     /**
@@ -36,7 +36,7 @@ public class VKApiWidgets extends VKApiBase {
      * @return String with json respond
      */
     public String getPages(VKParameters params) {
-        return execute("getPages", params).toString();
+        return execute(getUrl("getPages", params)).toString();
     }
 
     @Override

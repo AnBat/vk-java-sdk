@@ -5,7 +5,7 @@ package com.batiaev.vk.common.entity;
  * Abstract attachment class
  * Created by batiaev on 11/9/15.
  */
-public abstract class VkAttachment {
+public abstract class VkAttachment extends AbstractEntity {
     protected String type;
     protected String json;
 

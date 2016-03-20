@@ -11,7 +11,7 @@ package com.batiaev.vk.common.entity;
  * @author batiaev
  * Photo object describes a photo
  */
-public class VKPhoto {
+public class VKPhoto extends AbstractEntity {
 
     public VKPhoto() {
         photo_75 = "";

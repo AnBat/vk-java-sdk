@@ -24,7 +24,7 @@ public class VKApiAuth extends VKApiBase {
      * @return String with json respond
      */
     public String checkPhone(VKParameters params) {
-        return execute("checkPhone", params).toString();
+        return execute(getUrl("checkPhone", params)).toString();
     }
 
     /**
@@ -35,7 +35,7 @@ public class VKApiAuth extends VKApiBase {
      * @return String with json respond
      */
     public String signup(VKParameters params) {
-        return execute("signup", params).toString();
+        return execute(getUrl("signup", params)).toString();
     }
 
     /**
@@ -46,7 +46,7 @@ public class VKApiAuth extends VKApiBase {
      * @return String with json respond
      */
     public String confirm(VKParameters params) {
-        return execute("confirm", params).toString();
+        return execute(getUrl("confirm", params)).toString();
     }
 
     /**
@@ -58,7 +58,7 @@ public class VKApiAuth extends VKApiBase {
      * @return String with json respond
      */
     public String restore(VKParameters params) {
-        return execute("restore", params).toString();
+        return execute(getUrl("restore", params)).toString();
     }
 
     @Override

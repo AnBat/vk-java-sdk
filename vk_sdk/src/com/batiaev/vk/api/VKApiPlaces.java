@@ -23,7 +23,7 @@ public class VKApiPlaces extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String add(VKParameters params) {
-        return execute("add", params).toString();
+        return execute(getUrl("add", params)).toString();
     }
 
     /**
@@ -34,7 +34,7 @@ public class VKApiPlaces extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String getById(VKParameters params) {
-        return execute("getById", params).toString();
+        return execute(getUrl("getById", params)).toString();
     }
 
     /**
@@ -45,7 +45,7 @@ public class VKApiPlaces extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String search(VKParameters params) {
-        return execute("search", params).toString();
+        return execute(getUrl("search", params)).toString();
     }
 
     /**
@@ -57,7 +57,7 @@ public class VKApiPlaces extends VKApiBase {
      * This method is available only to standalone-applications.  
      */
     public String checkin(VKParameters params) {
-        return execute("checkin", params).toString();
+        return execute(getUrl("checkin", params)).toString();
     }
 
     /**
@@ -68,7 +68,7 @@ public class VKApiPlaces extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String getCheckins(VKParameters params) {
-        return execute("getCheckins", params).toString();
+        return execute(getUrl("getCheckins", params)).toString();
     }
 
     /**
@@ -79,7 +79,7 @@ public class VKApiPlaces extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String getTypes(VKParameters params) {
-        return execute("getTypes", params).toString();
+        return execute(getUrl("getTypes", params)).toString();
     }
 
     @Override

@@ -5,7 +5,10 @@ package com.batiaev.vk.common.entity;
  *
  * Created by batiaev on 7/18/15.
  */
-public class VkPlace {
+public class VkPlace extends AbstractEntity {
+
+    private int id;
+    private String name;
 
     public VkPlace() {
         id = -1;
@@ -27,7 +30,4 @@ public class VkPlace {
     public void setName(String name) {
         this.name = name;
     }
-
-    private int id;
-    private String name;
 }

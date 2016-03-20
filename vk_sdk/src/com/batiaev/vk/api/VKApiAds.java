@@ -32,7 +32,8 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getAccounts(VKParameters params) {
-        return execute("getAccounts", params).toString();
+        String url = getUrl("getAccounts", params);
+        return execute(url).toString();
     }
 
     /**
@@ -42,7 +43,8 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getClients(VKParameters params) {
-        return execute("getClients", params).toString();
+        String url = getUrl("getClients", params);
+        return execute(url).toString();
     }
 
     /**
@@ -52,7 +54,8 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String createClients(VKParameters params) {
-        return execute("createClients", params).toString();
+        String url = getUrl("createClients", params);
+        return execute(url).toString();
     }
 
     /**
@@ -62,7 +65,8 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String updateClients(VKParameters params) {
-        return execute("updateClients", params).toString();
+        String url = getUrl("updateClients", params);
+        return execute(url).toString();
     }
 
     /**
@@ -72,7 +76,8 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String deleteClients(VKParameters params) {
-        return execute("deleteClients", params).toString();
+        String url = getUrl("deleteClients", params);
+        return execute(url).toString();
     }
 
     /**
@@ -82,7 +87,8 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String getCampaigns(VKParameters params) {
-        return execute("getCampaigns", params).toString();
+        String url = getUrl("getCampaigns", params);
+        return execute(url).toString();
     }
 
     /**
@@ -92,7 +98,8 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String createCampaigns(VKParameters params) {
-        return execute("createCampaigns", params).toString();
+        String url = getUrl("createCampaigns", params);
+        return execute(url).toString();
     }
 
     /**
@@ -102,7 +109,8 @@ public class VKApiAds extends VKApiBase {
      */
     @Rights(VKApiRigths.ADS)
     public String updateCampaigns(VKParameters params) {
-        return execute("updateCampaigns", params).toString();
+        String url = getUrl("updateCampaigns", params);
+        return execute(url).toString();
     }
 
     /**

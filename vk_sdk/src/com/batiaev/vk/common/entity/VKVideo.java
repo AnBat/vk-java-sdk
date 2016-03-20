@@ -11,7 +11,7 @@ package com.batiaev.vk.common.entity;
  * Copyright © 2015. Anton Batiaev. All Rights Reserved.
  * www.batiaev.com
  */
-public class VKVideo {
+public class VKVideo extends AbstractEntity {
 
     public int id() {
         return id;

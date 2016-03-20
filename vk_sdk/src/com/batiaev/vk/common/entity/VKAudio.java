@@ -11,7 +11,7 @@ package com.batiaev.vk.common.entity;
  * An audio object describes an audio file
  * @see VKAudioGenre
  */
-public class VKAudio {
+public class VKAudio extends AbstractEntity {
 
     public int id() {
         return id;

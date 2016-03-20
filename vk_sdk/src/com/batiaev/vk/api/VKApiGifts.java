@@ -26,7 +26,7 @@ public class VKApiGifts extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String get(VKParameters params) {
-        return execute("get", params).toString();
+        return execute(getUrl("get", params)).toString();
     }
 
     @Override

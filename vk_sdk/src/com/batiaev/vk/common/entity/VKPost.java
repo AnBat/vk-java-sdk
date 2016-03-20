@@ -10,7 +10,7 @@ package com.batiaev.vk.common.entity;
 /**
  * Post object describes a wall post
  */
-public class VKPost {
+public class VKPost extends AbstractEntity {
 
     public int id() {
         return id;

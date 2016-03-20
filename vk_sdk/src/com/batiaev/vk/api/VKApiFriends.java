@@ -156,7 +156,8 @@ public class VKApiFriends extends VKApiBase {
      */
     @Rights(VKApiRigths.FRIENDS)
     public int add(VKParameters params) {
-        JSONObject obj = new JSONObject(executeRaw(VkApiMethods.ADD, params));
+        String url = getUrl(VkApiMethods.ADD, params);
+        JSONObject obj = new JSONObject(executeRaw(url));
         return obj.getInt(VKApiJsonConst.RESPONSE);
     }
 
@@ -170,7 +171,8 @@ public class VKApiFriends extends VKApiBase {
      */
     @Rights(VKApiRigths.FRIENDS)
     public int edit(VKParameters params) {
-        JSONObject obj = new JSONObject(executeRaw(VkApiMethods.EDIT, params));
+        String url = getUrl(VkApiMethods.EDIT, params);
+        JSONObject obj = new JSONObject(executeRaw(url));
         return obj.getInt(VKApiJsonConst.RESPONSE);
     }
 
@@ -184,7 +186,8 @@ public class VKApiFriends extends VKApiBase {
      */
     @Rights(VKApiRigths.FRIENDS)
     public String delete(VKParameters params) {
-        return execute(VkApiMethods.DELETE, params).toString();
+        String url = getUrl(VkApiMethods.DELETE, params);
+        return execute(url).toString();
     }
 
     /**
@@ -196,7 +199,8 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getLists(VKParameters params) {
-        return execute("getLists", params).toString();
+        String url = getUrl("getLists", params);
+        return execute(url).toString();
     }
 
     /**

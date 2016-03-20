@@ -24,7 +24,7 @@ public class VKApiOrders extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String get(VKParameters params) {
-        return execute("get", params).toString();
+        return execute(getUrl("get", params)).toString();
     }
 
     /**
@@ -36,7 +36,7 @@ public class VKApiOrders extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String getById(VKParameters params) {
-        return execute("getById", params).toString();
+        return execute(getUrl("getById", params)).toString();
     }
 
     /**
@@ -48,7 +48,7 @@ public class VKApiOrders extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String changeState(VKParameters params) {
-        return execute("changeState", params).toString();
+        return execute(getUrl("changeState", params)).toString();
     }
 
     @Override

@@ -11,7 +11,7 @@ package com.batiaev.vk.common.entity;
  * Group object describes a community
  * @see VKPost
  */
-public class VKGroup {
+public class VKGroup extends AbstractEntity {
 
     public int gid;
     public String name;

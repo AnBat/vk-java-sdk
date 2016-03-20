@@ -158,7 +158,8 @@ public class VKApiMessages extends VKApiBase {
      * @return ID of the sent message (mid).
      */
     public long send(VKParameters params) {
-        JSONObject obj = new JSONObject(executeRaw("send", params));
+        String url = getUrl("send", params);
+        JSONObject obj = new JSONObject(executeRaw(url));
         return obj.getLong(VKApiJsonConst.RESPONSE);
     }
     

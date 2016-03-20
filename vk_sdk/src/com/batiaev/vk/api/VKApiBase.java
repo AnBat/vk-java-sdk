@@ -54,15 +54,9 @@ public abstract class VKApiBase {
     }
 
     /**
-     * @param methodName method name in currect group
-     * @param methodParameters method parameters required for method
+     * @param url api url for get request
      * @return respond string with raw json
      */
-    @Deprecated
-    protected String executeRaw(String methodName, VKParameters methodParameters) {
-        return VKRequest.create().getRequest(getMethodsGroup() + "." + methodName, methodParameters.toString());
-    }
-
     protected String executeRaw(String url) {
         return VKRequest.create().getRequest(url);
     }
