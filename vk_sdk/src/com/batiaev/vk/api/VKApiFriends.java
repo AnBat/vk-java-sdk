@@ -68,7 +68,7 @@ public class VKApiFriends extends VKApiBase {
      */
     @Rights(VKApiRigths.FRIENDS)
     public HashMap<String, ArrayList<Long>> getOnline(VKParameters params) {
-        JSONObject obj = execute(VkApiMethods.GET_ONLINE, params);
+        JSONObject obj = execute(getUrl(VkApiMethods.GET_ONLINE, params));
         if (obj == null) return null;
 
         HashMap<String, ArrayList<Long>> result = new HashMap<>();
@@ -98,7 +98,7 @@ public class VKApiFriends extends VKApiBase {
      */
     @Rights(VKApiRigths.FRIENDS)
     public String getMutual(VKParameters params) {
-        JSONObject obj = execute(VkApiMethods.GET_MUTUAL, params);
+        JSONObject obj = execute(getUrl(VkApiMethods.GET_MUTUAL, params));
         if (obj == null) return null;
         return obj.toString();
     }
@@ -112,7 +112,7 @@ public class VKApiFriends extends VKApiBase {
      */
     @Rights(VKApiRigths.FRIENDS)
     public String getRecent(VKParameters params) {
-        JSONObject obj = execute(VkApiMethods.GET_RECENT, params);
+        JSONObject obj = execute(getUrl(VkApiMethods.GET_RECENT, params));
         if (obj == null) return null;
         return obj.toString();
     }
@@ -130,7 +130,7 @@ public class VKApiFriends extends VKApiBase {
 
         //some magic for getting method name
 //        String methodName = new Object(){}.getClass().getEnclosingMethod().getName();
-        JSONObject obj = execute("getRequests", params);
+        JSONObject obj = execute(getUrl("getRequests", params));
         if (obj == null) return null;
 
         final JSONArray friendList = obj.getJSONArray(VKApiConst.ITEMS);
@@ -212,7 +212,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String addList(VKParameters params) {
-        return execute("addList", params).toString();
+        return execute(getUrl("addList", params)).toString();
     }
 
     /**
@@ -224,7 +224,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String editList(VKParameters params) {
-        return execute("editList", params).toString();
+        return execute(getUrl("editList", params)).toString();
     }
 
     /**
@@ -236,7 +236,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String deleteList(VKParameters params) {
-        return execute("deleteList", params).toString();
+        return execute(getUrl("deleteList", params)).toString();
     }
 
     /**
@@ -247,7 +247,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getAppUsers(VKParameters params) {
-        return execute("getAppUsers", params).toString();
+        return execute(getUrl("getAppUsers", params)).toString();
     }
 
     /**
@@ -259,7 +259,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getByPhones(VKParameters params) {
-        return execute("getByPhones", params).toString();
+        return execute(getUrl("getByPhones", params)).toString();
     }
 
     /**
@@ -271,7 +271,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String deleteAllRequests(VKParameters params) {
-        return execute("deleteAllRequests", params).toString();
+        return execute(getUrl("deleteAllRequests", params)).toString();
     }
 
     /**
@@ -283,7 +283,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getSuggestions(VKParameters params) {
-        return execute("getSuggestions", params).toString();
+        return execute(getUrl("getSuggestions", params)).toString();
     }
 
     /**
@@ -294,7 +294,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String areFriends(VKParameters params) {
-        return execute("areFriends", params).toString();
+        return execute(getUrl("areFriends", params)).toString();
     }
 
     /**
@@ -305,7 +305,7 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String getAvailableForCall(VKParameters params) {
-        return execute("getAvailableForCall", params).toString();
+        return execute(getUrl("getAvailableForCall", params)).toString();
     }
 
     /**
@@ -316,6 +316,6 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String search(VKParameters params) {
-        return execute("search", params).toString();
+        return execute(getUrl("search", params)).toString();
     }
 }

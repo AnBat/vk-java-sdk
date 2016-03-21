@@ -9,6 +9,7 @@ package com.batiaev.vk.api;
  */
 
 import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * Builds requests for API.notes part
@@ -25,7 +26,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String get(VKParameters params) {
-        return execute("get", params).toString();
+        return execute(getUrl(VkApiMethods.GET, params)).toString();
     }
     
     /**
@@ -36,7 +37,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String getById(VKParameters params) {
-        return execute("getById", params).toString();
+        return execute(getUrl(VkApiMethods.GET_BY_ID, params)).toString();
     }
     
     /**
@@ -47,7 +48,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String getFriendsNotes(VKParameters params) {
-        return execute("getFriendsNotes", params).toString();
+        return execute(getUrl("getFriendsNotes", params)).toString();
     }
     
     /**
@@ -58,7 +59,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String add(VKParameters params) {
-        return execute("add", params).toString();
+        return execute(getUrl(VkApiMethods.ADD, params)).toString();
     }
 
     /**
@@ -69,7 +70,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String edit(VKParameters params) {
-        return execute("edit", params).toString();
+        return execute(getUrl(VkApiMethods.EDIT, params)).toString();
     }
 
     /**
@@ -80,7 +81,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String delete(VKParameters params) {
-        return execute("delete", params).toString();
+        return execute(getUrl(VkApiMethods.DELETE, params)).toString();
     }
 
     /**
@@ -91,7 +92,7 @@ public class VKApiNotes extends VKApiBase {
      * You need the following rights to call this method: notes.
      */
     public String getComments(VKParameters params) {
-        return execute("getComments", params).toString();
+        return execute(getUrl("getComments", params)).toString();
     }
 
     /**
@@ -103,7 +104,7 @@ public class VKApiNotes extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String createComment(VKParameters params) {
-        return execute("createComment", params).toString();
+        return execute(getUrl("createComment", params)).toString();
     }
 
     /**
@@ -115,7 +116,7 @@ public class VKApiNotes extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String editComment(VKParameters params) {
-        return execute("editComment", params).toString();
+        return execute(getUrl("editComment", params)).toString();
     }
 
     /**
@@ -127,7 +128,7 @@ public class VKApiNotes extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String deleteComment(VKParameters params) {
-        return execute("deleteComment", params).toString();
+        return execute(getUrl("deleteComment", params)).toString();
     }
 
     /**
@@ -139,7 +140,7 @@ public class VKApiNotes extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String restoreComment(VKParameters params) {
-        return execute("restoreComment", params).toString();
+        return execute(getUrl("restoreComment", params)).toString();
     }
 
     @Override

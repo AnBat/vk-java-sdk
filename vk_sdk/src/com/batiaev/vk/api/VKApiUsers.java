@@ -52,7 +52,7 @@ public class VKApiUsers extends VKApiBase {
      *
      */
     public String search(VKParameters params) {
-        return execute("search", params).toString();
+        return execute(getUrl("search", params)).toString();
     }
 
     /**
@@ -63,7 +63,7 @@ public class VKApiUsers extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String isAppUser(VKParameters params) {
-        return execute("isAppUser", params).toString();
+        return execute(getUrl("isAppUser", params)).toString();
     }
 
     /**
@@ -74,7 +74,7 @@ public class VKApiUsers extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String getSubscriptions(VKParameters params) {
-        return execute("getSubscriptions", params).toString();
+        return execute(getUrl("getSubscriptions", params)).toString();
     }
 
     /**
@@ -85,7 +85,7 @@ public class VKApiUsers extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String getFollowers(VKParameters params) {
-        return execute("getFollowers", params).toString();
+        return execute(getUrl("getFollowers", params)).toString();
     }
 
     /**
@@ -98,7 +98,7 @@ public class VKApiUsers extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String report(VKParameters params) {
-        return execute("report", params).toString();
+        return execute(getUrl("report", params)).toString();
     }
 
     /**
@@ -109,7 +109,7 @@ public class VKApiUsers extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String getNearby(VKParameters params) {
-        return execute("getNearby", params).toString();
+        return execute(getUrl("getNearby", params)).toString();
     }
 
     @Override

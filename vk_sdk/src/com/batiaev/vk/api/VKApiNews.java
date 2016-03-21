@@ -9,6 +9,7 @@ package com.batiaev.vk.api;
  */
 
 import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * Builds requests for API.newsfeed part
@@ -25,7 +26,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String get(VKParameters params) {
-        return execute("get", params).toString();
+        return execute(getUrl(VkApiMethods.GET, params)).toString();
     }
 	
     /**
@@ -36,7 +37,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getRecommended(VKParameters params) {
-        return execute("getRecommended", params).toString();
+        return execute(getUrl("getRecommended", params)).toString();
     }
 	
     /**
@@ -48,7 +49,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getComments(VKParameters params) {
-        return execute("getComments", params).toString();
+        return execute(getUrl("getComments", params)).toString();
     }
 	
     /**
@@ -59,7 +60,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getMentions(VKParameters params) {
-        return execute("getMentions", params).toString();
+        return execute(getUrl("getMentions", params)).toString();
     }
 	
     /**
@@ -71,7 +72,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getBanned(VKParameters params) {
-        return execute("getBanned", params).toString();
+        return execute(getUrl("getBanned", params)).toString();
     }
 	
     /**
@@ -83,7 +84,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String addBan(VKParameters params) {
-        return execute("addBan", params).toString();
+        return execute(getUrl("addBan", params)).toString();
     }
 	
     /**
@@ -95,7 +96,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String deleteBan(VKParameters params) {
-        return execute("deleteBan", params).toString();
+        return execute(getUrl("deleteBan", params)).toString();
     }
 	
     /**
@@ -107,7 +108,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String ignoreItem(VKParameters params) {
-        return execute("ignoreItem", params).toString();
+        return execute(getUrl("ignoreItem", params)).toString();
     }
 	
     /**
@@ -119,7 +120,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String unignoreItem(VKParameters params) {
-        return execute("unignoreItem", params).toString();
+        return execute(getUrl("unignoreItem", params)).toString();
     }
 	
     /**
@@ -130,7 +131,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String search(VKParameters params) {
-        return execute("search", params).toString();
+        return execute(getUrl(VkApiMethods.SEARCH, params)).toString();
     }
 	
     /**
@@ -142,7 +143,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getLists(VKParameters params) {
-        return execute("getLists", params).toString();
+        return execute(getUrl("getLists", params)).toString();
     }
 	
     /**
@@ -154,7 +155,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String saveList(VKParameters params) {
-        return execute("saveList", params).toString();
+        return execute(getUrl("saveList", params)).toString();
     }
 	
     /**
@@ -166,7 +167,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String deleteList(VKParameters params) {
-        return execute("deleteList", params).toString();
+        return execute(getUrl("deleteList", params)).toString();
     }
 
     /**
@@ -178,7 +179,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String unsubscribe(VKParameters params) {
-        return execute("unsubscribe", params).toString();
+        return execute(getUrl("unsubscribe", params)).toString();
     }
 	
     /**
@@ -189,7 +190,7 @@ public class VKApiNews extends VKApiBase {
      * @return String with json respond
      */
     public String getSuggestedSources(VKParameters params) {
-        return execute("getSuggestedSources", params).toString();
+        return execute(getUrl("getSuggestedSources", params)).toString();
     }
 
     @Override

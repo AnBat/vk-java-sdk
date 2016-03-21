@@ -8,6 +8,7 @@ package com.batiaev.vk.api;
  */
 
 import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author batiaev
@@ -26,7 +27,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String get(VKParameters params) {
-		return execute("get", params).toString();
+		return execute(getUrl(VkApiMethods.GET, params)).toString();
     }
 
     /**
@@ -37,7 +38,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String search(VKParameters params) {
-		return execute("search", params).toString();
+		return execute(getUrl(VkApiMethods.SEARCH, params)).toString();
     }
 
     /**
@@ -48,7 +49,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String getById(VKParameters params) {
-        return execute("getById", params).toString();
+        return execute(getUrl(VkApiMethods.GET_BY_ID, params)).toString();
     }
 
     /**
@@ -60,7 +61,7 @@ public class VKApiWall extends VKApiBase {
      * This method is only available to Standalone-apps and web clients using the confirmation window.
      */
     public String post(VKParameters params) {
-        return execute("post", params).toString();
+        return execute(getUrl("post", params)).toString();
     }
 
     /**
@@ -72,7 +73,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String repost(VKParameters params) {
-        return execute("repost", params).toString();
+        return execute(getUrl("repost", params)).toString();
     }
 
     /**
@@ -83,7 +84,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String getReposts(VKParameters params) {
-        return execute("getReposts", params).toString();
+        return execute(getUrl("getReposts", params)).toString();
     }
 
     /**
@@ -95,7 +96,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String edit(VKParameters params) {
-        return execute("edit", params).toString();
+        return execute(getUrl(VkApiMethods.EDIT, params)).toString();
     }
 
     /**
@@ -107,7 +108,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String delete(VKParameters params) {
-        return execute("delete", params).toString();
+        return execute(getUrl(VkApiMethods.DELETE, params)).toString();
     }
 
     /**
@@ -119,7 +120,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String restore(VKParameters params) {
-        return execute("restore", params).toString();
+        return execute(getUrl("restore", params)).toString();
     }
 
     /**
@@ -131,7 +132,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String pin(VKParameters params) {
-        return execute("pin", params).toString();
+        return execute(getUrl("pin", params)).toString();
     }
 
     /**
@@ -143,7 +144,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String unpin(VKParameters params) {
-        return execute("unpin", params).toString();
+        return execute(getUrl("unpin", params)).toString();
     }
 
 
@@ -156,7 +157,7 @@ public class VKApiWall extends VKApiBase {
      * Your app needs the following rights to access data on a user's behalf: wall.
      */
     public String getComments(VKParameters params) {
-        return execute("getComments", params).toString();
+        return execute(getUrl("getComments", params)).toString();
     }
 
     /**
@@ -168,7 +169,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String addComment(VKParameters params) {
-        return execute("addComment", params).toString();
+        return execute(getUrl("addComment", params)).toString();
     }
 
     /**
@@ -180,7 +181,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String editComment(VKParameters params) {
-        return execute("editComment", params).toString();
+        return execute(getUrl("editComment", params)).toString();
     }
 
     /**
@@ -192,7 +193,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String deleteComment(VKParameters params) {
-        return execute("deleteComment", params).toString();
+        return execute(getUrl("deleteComment", params)).toString();
     }
 
     /**
@@ -204,7 +205,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String restoreComment(VKParameters params) {
-        return execute("restoreComment", params).toString();
+        return execute(getUrl("restoreComment", params)).toString();
     }
 
     /**
@@ -216,7 +217,7 @@ public class VKApiWall extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String reportPost(VKParameters params) {
-        return execute("reportPost", params).toString();
+        return execute(getUrl("reportPost", params)).toString();
     }
 
     /**
@@ -227,7 +228,7 @@ public class VKApiWall extends VKApiBase {
      * This is an open method; it does not require an access_token.
      */
     public String reportComment(VKParameters params) {
-        return execute("reportComment", params).toString();
+        return execute(getUrl("reportComment", params)).toString();
     }
 
     @Override

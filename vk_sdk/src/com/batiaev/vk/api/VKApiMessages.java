@@ -40,7 +40,7 @@ public class VKApiMessages extends VKApiBase {
      */
     public VKMessageList get(VKParameters params) {
 
-        JSONObject respondJson = execute(VkApiMethods.GET, params);
+        JSONObject respondJson = execute(getUrl(VkApiMethods.GET, params));
         if (respondJson == null) return null;
 
         VKMessageList result = new VKMessageList();
@@ -67,7 +67,7 @@ public class VKApiMessages extends VKApiBase {
      */
     public VkChatList getDialogs(VKParameters params) {
 
-        JSONObject respondJson = execute("getDialogs", params);
+        JSONObject respondJson = execute(getUrl("getDialogs", params));
         if (respondJson == null) return null;
 
         VkChatList result = new VkChatList();
@@ -94,7 +94,7 @@ public class VKApiMessages extends VKApiBase {
      */
     public VKMessageList getById(VKParameters params) {
 
-        JSONObject respondJson = execute("getById", params);
+        JSONObject respondJson = execute(getUrl("getById", params));
         if (respondJson == null) return null;
 
         VKMessageList result = new VKMessageList();
@@ -120,7 +120,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String search(VKParameters params) {
-        return execute("search", params).toString();
+        return execute(getUrl(VkApiMethods.SEARCH, params)).toString();
     }
     
     /**
@@ -133,7 +133,7 @@ public class VKApiMessages extends VKApiBase {
      */
     public VKMessageList getHistory(VKParameters params) {
 
-        JSONObject respondJson = execute(VkApiMethods.GET_HISTORY, params);
+        JSONObject respondJson = execute(getUrl(VkApiMethods.GET_HISTORY, params));
         if (respondJson == null) return null;
 
         VKMessageList result = new VKMessageList();
@@ -172,7 +172,7 @@ public class VKApiMessages extends VKApiBase {
      * @return 1
      */
     public String delete(VKParameters params) {
-        return execute("delete", params).toString();
+        return execute(getUrl(VkApiMethods.DELETE, params)).toString();
     }
     
     /**
@@ -184,7 +184,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String deleteDialog(VKParameters params) {
-        return execute("deleteDialog", params).toString();
+        return execute(getUrl("deleteDialog", params)).toString();
     }
     
     /**
@@ -196,7 +196,7 @@ public class VKApiMessages extends VKApiBase {
      * @return 1
      */
     public String restore(VKParameters params) {
-        return execute("restore", params).toString();
+        return execute(getUrl("restore", params)).toString();
     }
     
     /**
@@ -208,7 +208,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String markAsRead(VKParameters params) {
-        return execute("markAsRead", params).toString();
+        return execute(getUrl("markAsRead", params)).toString();
     }
     
     /**
@@ -220,7 +220,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String markAsImportant(VKParameters params) {
-        return execute("markAsImportant", params).toString();
+        return execute(getUrl("markAsImportant", params)).toString();
     }
     
     /**
@@ -232,7 +232,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getLongPollServer(VKParameters params) {
-        return execute("getLongPollServer", params).toString();
+        return execute(getUrl("getLongPollServer", params)).toString();
     }
     
     /**
@@ -244,7 +244,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getLongPollHistory(VKParameters params) {
-        return execute("getLongPollHistory", params).toString();
+        return execute(getUrl("getLongPollHistory", params)).toString();
     }
     
     /**
@@ -256,7 +256,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getChat(VKParameters params) {
-        return execute("getChat", params).toString();
+        return execute(getUrl("getChat", params)).toString();
     }
     
     /**
@@ -268,7 +268,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String createChat(VKParameters params) {
-        return execute("createChat", params).toString();
+        return execute(getUrl("createChat", params)).toString();
     }
     
     /**
@@ -280,7 +280,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String editChat(VKParameters params) {
-        return execute("editChat", params).toString();
+        return execute(getUrl("editChat", params)).toString();
     }
     
     /**
@@ -292,7 +292,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getChatUsers(VKParameters params) {
-        return execute("getChatUsers", params).toString();
+        return execute(getUrl("getChatUsers", params)).toString();
     }
     
     /**
@@ -304,7 +304,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String setActivity(VKParameters params) {
-        return execute("setActivity", params).toString();
+        return execute(getUrl("setActivity", params)).toString();
     }
     
     /**
@@ -316,7 +316,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String searchDialogs(VKParameters params) {
-        return execute("searchDialogs", params).toString();
+        return execute(getUrl("searchDialogs", params)).toString();
     }
     
     /**
@@ -328,7 +328,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String addChatUser(VKParameters params) {
-        return execute("addChatUser", params).toString();
+        return execute(getUrl("addChatUser", params)).toString();
     }
     
     /**
@@ -340,7 +340,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String removeChatUser(VKParameters params) {
-        return execute("removeChatUser", params).toString();
+        return execute(getUrl("removeChatUser", params)).toString();
     }
     
     /**
@@ -352,7 +352,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String getLastActivity(VKParameters params) {
-        return execute("getLastActivity", params).toString();
+        return execute(getUrl("getLastActivity", params)).toString();
     }
     
     /**
@@ -364,7 +364,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String setChatPhoto(VKParameters params) {
-        return execute("setChatPhoto", params).toString();
+        return execute(getUrl("setChatPhoto", params)).toString();
     }
     
     /**
@@ -376,7 +376,7 @@ public class VKApiMessages extends VKApiBase {
      * @return String with json respond
      */
     public String deleteChatPhoto(VKParameters params) {
-        return execute("deleteChatPhoto", params).toString();
+        return execute(getUrl("deleteChatPhoto", params)).toString();
     }
 
     @Override

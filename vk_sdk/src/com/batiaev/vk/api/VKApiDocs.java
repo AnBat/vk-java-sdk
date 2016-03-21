@@ -10,6 +10,7 @@ package com.batiaev.vk.api;
 import com.batiaev.vk.common.VKParameters;
 import com.batiaev.vk.common.annotation.Rights;
 import com.batiaev.vk.common.consts.VKApiRigths;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author batiaev
@@ -27,7 +28,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String get(VKParameters params) {
-        return execute("get", params).toString();
+        return execute(getUrl(VkApiMethods.GET, params)).toString();
     }
     
     /**
@@ -37,7 +38,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String getById(VKParameters params) {
-        return execute("getById", params).toString();
+        return execute(getUrl("getById", params)).toString();
     }
     
     /**
@@ -47,7 +48,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String getUploadServer(VKParameters params) {
-        return execute("getUploadServer", params).toString();
+        return execute(getUrl("getUploadServer", params)).toString();
     }
     
     /**
@@ -57,7 +58,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String getWallUploadServer(VKParameters params) {
-        return execute("getWallUploadServer", params).toString();
+        return execute(getUrl("getWallUploadServer", params)).toString();
     }
 
     /**
@@ -67,7 +68,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String save(VKParameters params) {
-        return execute("save", params).toString();
+        return execute(getUrl(VkApiMethods.SAVE, params)).toString();
     }
 
     /**
@@ -77,7 +78,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String delete(VKParameters params) {
-        return execute("delete", params).toString();
+        return execute(getUrl("delete", params)).toString();
     }
 
     /**
@@ -87,7 +88,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String add(VKParameters params) {
-        return execute("add", params).toString();
+        return execute(getUrl(VkApiMethods.ADD, params)).toString();
     }
 
     @Override

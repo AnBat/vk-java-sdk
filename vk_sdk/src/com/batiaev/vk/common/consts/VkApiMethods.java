@@ -19,4 +19,8 @@ public class VkApiMethods {
     //API Messages
     public final static String GET_HISTORY = "getHistory";
 
+    public final static String SAVE = "save";
+    public final static String CREATE = "create";
+    public final static String SEARCH = "search";
+    public final static String GET_BY_ID = "getById";
 }

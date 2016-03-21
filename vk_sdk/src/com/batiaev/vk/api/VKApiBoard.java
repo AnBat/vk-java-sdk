@@ -27,7 +27,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getTopics(VKParameters params) {
-        return execute("getTopics", params).toString();
+        return execute(getUrl("getTopics", params)).toString();
     }
 
     /**
@@ -37,7 +37,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.OPEN_METHOD)
     public String getComments(VKParameters params) {
-        return execute("getComments", params).toString();
+        return execute(getUrl("getComments", params)).toString();
     }
 
     /**
@@ -47,7 +47,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String addTopic(VKParameters params) {
-        return execute("addTopic", params).toString();
+        return execute(getUrl("addTopic", params)).toString();
     }
 
     /**
@@ -57,7 +57,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String addComment(VKParameters params) {
-        return execute("addComment", params).toString();
+        return execute(getUrl("addComment", params)).toString();
     }
 
     /**
@@ -67,7 +67,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String deleteTopic(VKParameters params) {
-        return execute("deleteTopic", params).toString();
+        return execute(getUrl("deleteTopic", params)).toString();
     }
 
     /**
@@ -77,7 +77,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editTopic(VKParameters params) {
-        return execute("editTopic", params).toString();
+        return execute(getUrl("editTopic", params)).toString();
     }
 
     /**
@@ -87,7 +87,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editComment(VKParameters params) {
-        return execute("editComment", params).toString();
+        return execute(getUrl("editComment", params)).toString();
     }
 
     /**
@@ -97,7 +97,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String restoreComment(VKParameters params) {
-        return execute("restoreComment", params).toString();
+        return execute(getUrl("restoreComment", params)).toString();
     }
 
     /**
@@ -107,7 +107,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String deleteComment(VKParameters params) {
-        return execute("deleteComment", params).toString();
+        return execute(getUrl("deleteComment", params)).toString();
     }
 
     /**
@@ -117,7 +117,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String openTopic(VKParameters params) {
-        return execute("openTopic", params).toString();
+        return execute(getUrl("openTopic", params)).toString();
     }
 
     /**
@@ -127,7 +127,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String closeTopic(VKParameters params) {
-        return execute("closeTopic", params).toString();
+        return execute(getUrl("closeTopic", params)).toString();
     }
 
     /**
@@ -137,7 +137,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String fixTopic(VKParameters params) {
-        return execute("fixTopic", params).toString();
+        return execute(getUrl("fixTopic", params)).toString();
     }
 
     /**
@@ -147,7 +147,7 @@ public class VKApiBoard extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String unfixTopic(VKParameters params) {
-        return execute("unfixTopic", params).toString();
+        return execute(getUrl("unfixTopic", params)).toString();
     }
 
     @Override

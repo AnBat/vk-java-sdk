@@ -33,16 +33,9 @@ public abstract class VKApiBase {
     }
 
     /**
-     * @param methodName method name in currect group
-     * @param methodParameters method parameters required for method
+     * @param url api url for get request
      * @return respond json object or null if any error
      */
-    @Deprecated
-    protected JSONObject execute(String methodName, VKParameters methodParameters) {
-        String url = getUrl(methodName, methodParameters);
-        return execute(url);
-    }
-
     protected JSONObject execute(String url) {
         LOG.debug("Execute " + url);
 

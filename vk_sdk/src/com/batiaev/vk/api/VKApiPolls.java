@@ -8,6 +8,7 @@ package com.batiaev.vk.api;
  */
 
 import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author batiaev
@@ -26,7 +27,7 @@ public class VKApiPolls extends VKApiBase {
      * You need the following rights to call this method: wall.
      */
     public String getById(VKParameters params) {
-        return execute("getById", params).toString();
+        return execute(getUrl("getById", params)).toString();
     }
 
     /**
@@ -38,7 +39,7 @@ public class VKApiPolls extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String addVote(VKParameters params) {
-        return execute("addVote", params).toString();
+        return execute(getUrl("addVote", params)).toString();
     }
 
     /**
@@ -50,7 +51,7 @@ public class VKApiPolls extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String deleteVote(VKParameters params) {
-        return execute("deleteVote", params).toString();
+        return execute(getUrl("deleteVote", params)).toString();
     }
 
     /**
@@ -61,7 +62,7 @@ public class VKApiPolls extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getVoters(VKParameters params) {
-        return execute("getVoters", params).toString();
+        return execute(getUrl("getVoters", params)).toString();
     }
 
     /**
@@ -73,7 +74,7 @@ public class VKApiPolls extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String create(VKParameters params) {
-        return execute("create", params).toString();
+        return execute(getUrl(VkApiMethods.CREATE, params)).toString();
     }
 
     /**
@@ -85,7 +86,7 @@ public class VKApiPolls extends VKApiBase {
      * This method is available only to standalone-applications.
      */
     public String edit(VKParameters params) {
-        return execute("edit", params).toString();
+        return execute(getUrl(VkApiMethods.EDIT, params)).toString();
     }
 
     @Override

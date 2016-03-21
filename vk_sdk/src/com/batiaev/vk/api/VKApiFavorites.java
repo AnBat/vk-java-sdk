@@ -27,7 +27,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String getUsers(VKParameters params) {
-        return execute("getUsers", params).toString();
+        return execute(getUrl("getUsers", params)).toString();
     }
     
     /**
@@ -37,7 +37,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String getPhotos(VKParameters params) {
-        return execute("getPhotos", params).toString();
+        return execute(getUrl("getPhotos", params)).toString();
     }
     
     /**
@@ -47,7 +47,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String getPosts(VKParameters params) {
-        return execute("getPosts", params).toString();
+        return execute(getUrl("getPosts", params)).toString();
     }
     
     /**
@@ -57,7 +57,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String getVideos(VKParameters params) {
-        return execute("getVideos", params).toString();
+        return execute(getUrl("getVideos", params)).toString();
     }
 
     /**
@@ -67,7 +67,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String getLinks(VKParameters params) {
-        return execute("getLinks", params).toString();
+        return execute(getUrl("getLinks", params)).toString();
     }
 
     /**
@@ -77,7 +77,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String addUser(VKParameters params) {
-        return execute("addUser", params).toString();
+        return execute(getUrl("addUser", params)).toString();
     }
 
     /**
@@ -87,7 +87,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String removeUser(VKParameters params) {
-        return execute("removeUser", params).toString();
+        return execute(getUrl("removeUser", params)).toString();
     }
 
     /**
@@ -97,7 +97,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String addGroup(VKParameters params) {
-        return execute("addGroup", params).toString();
+        return execute(getUrl("addGroup", params)).toString();
     }
 
     /**
@@ -107,7 +107,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String removeGroup(VKParameters params) {
-        return execute("removeGroup", params).toString();
+        return execute(getUrl("removeGroup", params)).toString();
     }
 
     /**
@@ -117,7 +117,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String addLink(VKParameters params) {
-        return execute("addLink", params).toString();
+        return execute(getUrl("addLink", params)).toString();
     }
 
     /**
@@ -127,7 +127,7 @@ public class VKApiFavorites extends VKApiBase {
      */
     @Rights(value = VKApiRigths.FRIENDS, standAloneOnly = true)
     public String removeLink(VKParameters params) {
-        return execute("removeLink", params).toString();
+        return execute(getUrl("removeLink", params)).toString();
     }
 
     @Override

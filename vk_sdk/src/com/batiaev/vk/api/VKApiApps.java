@@ -3,6 +3,7 @@ package com.batiaev.vk.api;
 import com.batiaev.vk.common.annotation.Rights;
 import com.batiaev.vk.common.VKParameters;
 import com.batiaev.vk.common.consts.VKApiRigths;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author anbat
@@ -24,7 +25,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String getCatalog(VKParameters params) {
-        return execute("getCatalog", params).toString();
+        return execute(getUrl("getCatalog", params)).toString();
     }
 
     /**
@@ -34,7 +35,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String get(VKParameters params) {
-        return execute("get", params).toString();
+        return execute(getUrl(VkApiMethods.GET, params)).toString();
     }
     
     /**
@@ -44,7 +45,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String sendRequest(VKParameters params) {
-        return execute("sendRequest", params).toString();
+        return execute(getUrl("sendRequest", params)).toString();
     }
 
     /**
@@ -54,7 +55,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String deleteAppRequests(VKParameters params) {
-        return execute("deleteAppRequests", params).toString();
+        return execute(getUrl("deleteAppRequests", params)).toString();
     }
 
     /**
@@ -64,7 +65,7 @@ public class VKApiApps extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String getFriendsList(VKParameters params) {
-        return execute("getFriendsList", params).toString();
+        return execute(getUrl("getFriendsList", params)).toString();
     }
 
     @Override

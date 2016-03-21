@@ -10,6 +10,7 @@ package com.batiaev.vk.api;
 import com.batiaev.vk.common.VKParameters;
 import com.batiaev.vk.common.annotation.Rights;
 import com.batiaev.vk.common.consts.VKApiRigths;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author batiaev
@@ -28,7 +29,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String isMember(VKParameters params) {
-        return execute("isMember", params).toString();
+        return execute(getUrl("isMember", params)).toString();
     }
 
     /**
@@ -39,7 +40,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String getById(VKParameters params) {
-        return execute("getById", params).toString();
+        return execute(getUrl("getById", params)).toString();
     }
 
     /**
@@ -50,7 +51,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.NOTHING)
     public String get(VKParameters params) {
-        return execute("get", params).toString();
+        return execute(getUrl(VkApiMethods.GET, params)).toString();
     }
 
     /**
@@ -61,7 +62,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String getMembers(VKParameters params) {
-        return execute("getMembers", params).toString();
+        return execute(getUrl("getMembers", params)).toString();
     }
 
     /**
@@ -72,7 +73,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String join(VKParameters params) {
-        return execute("join", params).toString();
+        return execute(getUrl("join", params)).toString();
     }
 
     /**
@@ -83,7 +84,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String leave(VKParameters params) {
-        return execute("leave", params).toString();
+        return execute(getUrl("leave", params)).toString();
     }
 
     /**
@@ -94,7 +95,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.NOTHING)
     public String search(VKParameters params) {
-        return execute("search", params).toString();
+        return execute(getUrl("search", params)).toString();
     }
 
     /**
@@ -105,7 +106,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getInvites(VKParameters params) {
-        return execute("getInvites", params).toString();
+        return execute(getUrl("getInvites", params)).toString();
     }
 
     /**
@@ -116,7 +117,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getInvitedUsers(VKParameters params) {
-        return execute("getInvitedUsers", params).toString();
+        return execute(getUrl("getInvitedUsers", params)).toString();
     }
 
     /**
@@ -127,7 +128,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String banUser(VKParameters params) {
-        return execute("banUser", params).toString();
+        return execute(getUrl("banUser", params)).toString();
     }
 
     /**
@@ -138,7 +139,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String unbanUser(VKParameters params) {
-        return execute("unbanUser", params).toString();
+        return execute(getUrl("unbanUser", params)).toString();
     }
 
     /**
@@ -149,7 +150,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getBanned(VKParameters params) {
-        return execute("getBanned", params).toString();
+        return execute(getUrl("getBanned", params)).toString();
     }
 
     /**
@@ -160,7 +161,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String create(VKParameters params) {
-        return execute("create", params).toString();
+        return execute(getUrl(VkApiMethods.CREATE, params)).toString();
     }
 
     /**
@@ -171,7 +172,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String edit(VKParameters params) {
-        return execute("edit", params).toString();
+        return execute(getUrl(VkApiMethods.EDIT, params)).toString();
     }
 
     /**
@@ -182,7 +183,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editPlace(VKParameters params) {
-        return execute("editPlace", params).toString();
+        return execute(getUrl("editPlace", params)).toString();
     }
 
     /**
@@ -192,7 +193,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String getSettings(VKParameters params) {
-        return execute("getSettings", params).toString();
+        return execute(getUrl("getSettings", params)).toString();
     }
 
     /**
@@ -202,7 +203,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String toStrings(VKParameters params) {
-        return execute("toStrings", params).toString();
+        return execute(getUrl("toStrings", params)).toString();
     }
 
     /**
@@ -212,7 +213,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editManager(VKParameters params) {
-        return execute("editManager", params).toString();
+        return execute(getUrl("editManager", params)).toString();
     }
 
     /**
@@ -222,7 +223,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String invite(VKParameters params) {
-        return execute("invite", params).toString();
+        return execute(getUrl("invite", params)).toString();
     }
 
     /**
@@ -232,7 +233,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String addLink(VKParameters params) {
-        return execute("addLink", params).toString();
+        return execute(getUrl("addLink", params)).toString();
     }
 
     /**
@@ -242,7 +243,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String deleteLink(VKParameters params) {
-        return execute("deleteLink", params).toString();
+        return execute(getUrl("deleteLink", params)).toString();
     }
 
     /**
@@ -252,7 +253,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String editLink(VKParameters params) {
-        return execute("editLink", params).toString();
+        return execute(getUrl("editLink", params)).toString();
     }
 
     /**
@@ -262,7 +263,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String reorderLink(VKParameters params) {
-        return execute("reorderLink", params).toString();
+        return execute(getUrl("reorderLink", params)).toString();
     }
 
     /**
@@ -272,7 +273,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String removeUser(VKParameters params) {
-        return execute("removeUser", params).toString();
+        return execute(getUrl("removeUser", params)).toString();
     }
 
     /**
@@ -282,7 +283,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(value = VKApiRigths.GROUPS, standAloneOnly = true)
     public String approveRequest(VKParameters params) {
-        return execute("approveRequest", params).toString();
+        return execute(getUrl("approveRequest", params)).toString();
     }
 
     @Override

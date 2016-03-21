@@ -27,7 +27,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getAppBalance(VKParameters params) {
-        return execute("getAppBalance", params).toString();
+        return execute(getUrl("getAppBalance", params)).toString();
     }
 
     /**
@@ -39,7 +39,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getTransactionsHistory(VKParameters params) {
-        return execute("getTransactionsHistory", params).toString();
+        return execute(getUrl("getTransactionsHistory", params)).toString();
     }
 
     /**
@@ -51,7 +51,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getSMSHistory(VKParameters params) {
-        return execute("getSMSHistory", params).toString();
+        return execute(getUrl("getSMSHistory", params)).toString();
     }
 
     /**
@@ -63,7 +63,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String sendSMSNotification(VKParameters params) {
-        return execute("sendSMSNotification", params).toString();
+        return execute(getUrl("sendSMSNotification", params)).toString();
     }
 
     /**
@@ -75,7 +75,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String sendNotification(VKParameters params) {
-        return execute("sendNotification", params).toString();
+        return execute(getUrl("sendNotification", params)).toString();
     }
 
     /**
@@ -87,7 +87,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String setCounter(VKParameters params) {
-        return execute("setCounter", params).toString();
+        return execute(getUrl("setCounter", params)).toString();
     }
 
     /**
@@ -99,7 +99,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String setUserLevel(VKParameters params) {
-        return execute("setUserLevel", params).toString();
+        return execute(getUrl("setUserLevel", params)).toString();
     }
 
     /**
@@ -111,7 +111,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String getUserLevel(VKParameters params) {
-        return execute("getUserLevel", params).toString();
+        return execute(getUrl("getUserLevel", params)).toString();
     }
 
     /**
@@ -123,7 +123,7 @@ public class VKApiSecure extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String checkToken(VKParameters params) {
-        return execute("checkToken", params).toString();
+        return execute(getUrl("checkToken", params)).toString();
     }
 
     @Override

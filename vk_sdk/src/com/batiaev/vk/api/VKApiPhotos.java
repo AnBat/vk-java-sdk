@@ -8,6 +8,7 @@ package com.batiaev.vk.api;
  */
 
 import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author batiaev
@@ -26,7 +27,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String createAlbum(VKParameters params) {
-        return execute("createAlbum", params).toString();
+        return execute(getUrl("createAlbum", params)).toString();
     }
 
     /**
@@ -37,7 +38,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String editAlbum(VKParameters params) {
-        return execute("editAlbum", params).toString();
+        return execute(getUrl("editAlbum", params)).toString();
     }
     
     /**
@@ -48,7 +49,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getAlbums(VKParameters params) {
-        return execute("getAlbums", params).toString();
+        return execute(getUrl("getAlbums", params)).toString();
     }
     
     /**
@@ -59,7 +60,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String get(VKParameters params) {
-        return execute("get", params).toString();
+        return execute(getUrl(VkApiMethods.GET, params)).toString();
     }
     
     /**
@@ -70,7 +71,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getAlbumsCount(VKParameters params) {
-        return execute("getAlbumsCount", params).toString();
+        return execute(getUrl("getAlbumsCount", params)).toString();
     }
     
     /**
@@ -81,7 +82,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getProfile(VKParameters params) {
-        return execute("getProfile", params).toString();
+        return execute(getUrl("getProfile", params)).toString();
     }
     
     /**
@@ -92,7 +93,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getById(VKParameters params) {
-        return execute("getById", params).toString();
+        return execute(getUrl(VkApiMethods.GET_BY_ID, params)).toString();
     }
     
     /**
@@ -103,7 +104,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getUploadServer(VKParameters params) {
-        return execute("getUploadServer", params).toString();
+        return execute(getUrl("getUploadServer", params)).toString();
     }
     
     /**
@@ -114,7 +115,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getOwnerPhotoUploadServer(VKParameters params) {
-        return execute("getOwnerPhotoUploadServer", params).toString();
+        return execute(getUrl("getOwnerPhotoUploadServer", params)).toString();
     }
     
     /**
@@ -126,7 +127,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getChatUploadServer(VKParameters params) {
-        return execute("getChatUploadServer", params).toString();
+        return execute(getUrl("getChatUploadServer", params)).toString();
     }
     
     /**
@@ -137,7 +138,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String saveOwnerPhoto(VKParameters params) {
-        return execute("saveOwnerPhoto", params).toString();
+        return execute(getUrl("saveOwnerPhoto", params)).toString();
     }
     
     /**
@@ -148,7 +149,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String saveWallPhoto(VKParameters params) {
-        return execute("saveWallPhoto", params).toString();
+        return execute(getUrl("saveWallPhoto", params)).toString();
     }
     
     /**
@@ -159,7 +160,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getWallUploadServer(VKParameters params) {
-        return execute("getWallUploadServer", params).toString();
+        return execute(getUrl("getWallUploadServer", params)).toString();
     }
     
     /**
@@ -171,7 +172,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getMessagesUploadServer(VKParameters params) {
-        return execute("getMessagesUploadServer", params).toString();
+        return execute(getUrl("getMessagesUploadServer", params)).toString();
     }
     
     /**
@@ -183,7 +184,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String saveMessagesPhoto(VKParameters params) {
-        return execute("saveMessagesPhoto", params).toString();
+        return execute(getUrl("saveMessagesPhoto", params)).toString();
     }
     
     /**
@@ -195,7 +196,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String report(VKParameters params) {
-        return execute("report", params).toString();
+        return execute(getUrl("report", params)).toString();
     }
     
     /**
@@ -207,7 +208,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String reportComment(VKParameters params) {
-        return execute("reportComment", params).toString();
+        return execute(getUrl("reportComment", params)).toString();
     }
     
     /**
@@ -218,7 +219,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String search(VKParameters params) {
-        return execute("search", params).toString();
+        return execute(getUrl(VkApiMethods.SEARCH, params)).toString();
     }
 
     /**
@@ -229,7 +230,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String save(VKParameters params) {
-        return execute("save", params).toString();
+        return execute(getUrl(VkApiMethods.SAVE, params)).toString();
     }
     
     /**
@@ -241,7 +242,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String copy(VKParameters params) {
-        return execute("copy", params).toString();
+        return execute(getUrl("copy", params)).toString();
     }
     
     /**
@@ -252,7 +253,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String edit(VKParameters params) {
-        return execute("edit", params).toString();
+        return execute(getUrl(VkApiMethods.EDIT, params)).toString();
     }
     
     /**
@@ -263,7 +264,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String move(VKParameters params) {
-        return execute("move", params).toString();
+        return execute(getUrl("move", params)).toString();
     }
     
     /**
@@ -274,7 +275,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String makeCover(VKParameters params) {
-        return execute("makeCover", params).toString();
+        return execute(getUrl("makeCover", params)).toString();
     }
     
     /**
@@ -285,7 +286,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String reorderAlbums(VKParameters params) {
-        return execute("reorderAlbums", params).toString();
+        return execute(getUrl("reorderAlbums", params)).toString();
     }
     
     /**
@@ -296,7 +297,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String reorderPhotos(VKParameters params) {
-        return execute("reorderPhotos", params).toString();
+        return execute(getUrl("reorderPhotos", params)).toString();
     }
     
     /**
@@ -307,7 +308,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getAll(VKParameters params) {
-        return execute("getAll", params).toString();
+        return execute(getUrl("getAll", params)).toString();
     }
     
     /**
@@ -318,7 +319,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getUserPhotos(VKParameters params) {
-        return execute("getUserPhotos", params).toString();
+        return execute(getUrl("getUserPhotos", params)).toString();
     }
     
     /**
@@ -330,7 +331,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String deleteAlbum(VKParameters params) {
-        return execute("deleteAlbum", params).toString();
+        return execute(getUrl("deleteAlbum", params)).toString();
     }
     
     /**
@@ -342,7 +343,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String delete(VKParameters params) {
-        return execute("delete", params).toString();
+        return execute(getUrl(VkApiMethods.DELETE, params)).toString();
     }
     
     /**
@@ -354,7 +355,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String restore(VKParameters params) {
-        return execute("restore", params).toString();
+        return execute(getUrl("restore", params)).toString();
     }
     
     /**
@@ -366,7 +367,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String confirmTag(VKParameters params) {
-        return execute("confirmTag", params).toString();
+        return execute(getUrl("confirmTag", params)).toString();
     }
     
     /**
@@ -377,7 +378,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getComments(VKParameters params) {
-        return execute("getComments", params).toString();
+        return execute(getUrl("getComments", params)).toString();
     }
     
     /**
@@ -388,7 +389,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getAllComments(VKParameters params) {
-        return execute("getAllComments", params).toString();
+        return execute(getUrl("getAllComments", params)).toString();
     }
     
     /**
@@ -400,7 +401,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String createComment(VKParameters params) {
-        return execute("createComment", params).toString();
+        return execute(getUrl("createComment", params)).toString();
     }
     
     /**
@@ -412,7 +413,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String deleteComment(VKParameters params) {
-        return execute("deleteComment", params).toString();
+        return execute(getUrl("deleteComment", params)).toString();
     }
     
     /**
@@ -424,7 +425,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String restoreComment(VKParameters params) {
-        return execute("restoreComment", params).toString();
+        return execute(getUrl("restoreComment", params)).toString();
     }
     
     /**
@@ -436,7 +437,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String editComment(VKParameters params) {
-        return execute("editComment", params).toString();
+        return execute(getUrl("editComment", params)).toString();
     }
     
     /**
@@ -448,7 +449,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getTags(VKParameters params) {
-        return execute("getTags", params).toString();
+        return execute(getUrl("getTags", params)).toString();
     }
     
     /**
@@ -460,7 +461,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String putTag(VKParameters params) {
-        return execute("putTag", params).toString();
+        return execute(getUrl("putTag", params)).toString();
     }
     
     /**
@@ -472,7 +473,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String removeTag(VKParameters params) {
-        return execute("removeTag", params).toString();
+        return execute(getUrl("removeTag", params)).toString();
     }
     
     /**
@@ -484,7 +485,7 @@ public class VKApiPhotos extends VKApiBase {
      * @return String with json respond
      */
     public String getNewTags(VKParameters params) {
-        return execute("getNewTags", params).toString();
+        return execute(getUrl("getNewTags", params)).toString();
     }
 
     @Override
