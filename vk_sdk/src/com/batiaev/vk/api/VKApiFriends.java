@@ -316,6 +316,6 @@ public class VKApiFriends extends VKApiBase {
      * @return String with json respond
      */
     public String search(VKParameters params) {
-        return execute(getUrl("search", params)).toString();
+        return execute(getUrl(VkApiMethods.SEARCH, params)).toString();
     }
 }

@@ -38,7 +38,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String getById(VKParameters params) {
-        return execute(getUrl("getById", params)).toString();
+        return execute(getUrl(VkApiMethods.GET_BY_ID, params)).toString();
     }
     
     /**
@@ -78,7 +78,7 @@ public class VKApiDocs extends VKApiBase {
      */
     @Rights(VKApiRigths.DOCS)
     public String delete(VKParameters params) {
-        return execute(getUrl("delete", params)).toString();
+        return execute(getUrl(VkApiMethods.DELETE, params)).toString();
     }
 
     /**

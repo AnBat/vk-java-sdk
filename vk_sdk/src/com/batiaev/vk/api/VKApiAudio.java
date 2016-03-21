@@ -36,7 +36,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String getById(VKParameters params) {
-        return execute(getUrl("getById", params)).toString();
+        return execute(getUrl(VkApiMethods.GET_BY_ID, params)).toString();
     }
 
     /**
@@ -56,7 +56,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String search(VKParameters params) {
-        return execute(getUrl("search", params)).toString();
+        return execute(getUrl(VkApiMethods.SEARCH, params)).toString();
     }
 
     /**
@@ -76,7 +76,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String save(VKParameters params) {
-        return execute(getUrl("save", params)).toString();
+        return execute(getUrl(VkApiMethods.SAVE, params)).toString();
     }
 
     /**
@@ -86,7 +86,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String add(VKParameters params) {
-        return execute(getUrl("add", params)).toString();
+        return execute(getUrl(VkApiMethods.ADD, params)).toString();
     }
 
     /**
@@ -96,7 +96,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String delete(VKParameters params) {
-        return execute(getUrl("delete", params)).toString();
+        return execute(getUrl(VkApiMethods.DELETE, params)).toString();
     }
 
     /**
@@ -106,7 +106,7 @@ public class VKApiAudio extends VKApiBase {
      */
     @Rights(VKApiRigths.AUDIO)
     public String edit(VKParameters params) {
-        return execute(getUrl("edit", params)).toString();
+        return execute(getUrl(VkApiMethods.EDIT, params)).toString();
     }
 
     /**

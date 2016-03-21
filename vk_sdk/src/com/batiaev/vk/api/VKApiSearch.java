@@ -8,6 +8,7 @@ package com.batiaev.vk.api;
  */
 
 import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author batiaev
@@ -31,6 +32,6 @@ public class VKApiSearch extends VKApiBase {
 
     @Override
     protected String getMethodsGroup() {
-        return "search";
+        return VkApiMethods.SEARCH;
     }
 }

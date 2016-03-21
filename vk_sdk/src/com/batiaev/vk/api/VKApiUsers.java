@@ -52,7 +52,7 @@ public class VKApiUsers extends VKApiBase {
      *
      */
     public String search(VKParameters params) {
-        return execute(getUrl("search", params)).toString();
+        return execute(getUrl(VkApiMethods.SEARCH, params)).toString();
     }
 
     /**

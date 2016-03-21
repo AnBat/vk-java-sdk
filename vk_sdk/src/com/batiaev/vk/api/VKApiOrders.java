@@ -1,6 +1,7 @@
 package com.batiaev.vk.api;
 
 import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author batiaev
@@ -24,7 +25,7 @@ public class VKApiOrders extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String get(VKParameters params) {
-        return execute(getUrl("get", params)).toString();
+        return execute(getUrl(VkApiMethods.GET, params)).toString();
     }
 
     /**
@@ -36,7 +37,7 @@ public class VKApiOrders extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String getById(VKParameters params) {
-        return execute(getUrl("getById", params)).toString();
+        return execute(getUrl(VkApiMethods.GET_BY_ID, params)).toString();
     }
 
     /**

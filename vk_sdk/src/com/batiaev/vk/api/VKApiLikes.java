@@ -8,6 +8,7 @@ package com.batiaev.vk.api;
  */
 
 import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author batiaev
@@ -38,7 +39,7 @@ public class VKApiLikes extends VKApiBase {
      * @return String with json respond
      */
     public String add(VKParameters params) {
-        return execute(getUrl("add", params)).toString();
+        return execute(getUrl(VkApiMethods.ADD, params)).toString();
     }
     
     /**
@@ -50,7 +51,7 @@ public class VKApiLikes extends VKApiBase {
      * @return String with json respond
      */
     public String delete(VKParameters params) {
-        return execute(getUrl("delete", params)).toString();
+        return execute(getUrl(VkApiMethods.DELETE, params)).toString();
     }
     
     /**

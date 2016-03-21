@@ -94,7 +94,7 @@ public class VKApiMessages extends VKApiBase {
      */
     public VKMessageList getById(VKParameters params) {
 
-        JSONObject respondJson = execute(getUrl("getById", params));
+        JSONObject respondJson = execute(getUrl(VkApiMethods.GET_BY_ID, params));
         if (respondJson == null) return null;
 
         VKMessageList result = new VKMessageList();

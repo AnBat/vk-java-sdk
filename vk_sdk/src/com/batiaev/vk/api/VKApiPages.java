@@ -60,7 +60,7 @@ public class VKApiPages extends VKApiBase {
      * You need the following rights to call this method: pages.
      */
     public String getHistory(VKParameters params) {
-        return execute(getUrl("getHistory", params)).toString();
+        return execute(getUrl(VkApiMethods.GET_HISTORY, params)).toString();
     }
 
     /**

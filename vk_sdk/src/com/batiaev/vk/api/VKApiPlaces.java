@@ -8,6 +8,7 @@ package com.batiaev.vk.api;
  */
 
 import com.batiaev.vk.common.VKParameters;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * Builds requests for API.places part
@@ -23,7 +24,7 @@ public class VKApiPlaces extends VKApiBase {
      * This method doesn't require any specific rights.
      */
     public String add(VKParameters params) {
-        return execute(getUrl("add", params)).toString();
+        return execute(getUrl(VkApiMethods.ADD, params)).toString();
     }
 
     /**
@@ -34,7 +35,7 @@ public class VKApiPlaces extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String getById(VKParameters params) {
-        return execute(getUrl("getById", params)).toString();
+        return execute(getUrl(VkApiMethods.GET_BY_ID, params)).toString();
     }
 
     /**
@@ -45,7 +46,7 @@ public class VKApiPlaces extends VKApiBase {
      * This method doesn't require any specific rights. 
      */
     public String search(VKParameters params) {
-        return execute(getUrl("search", params)).toString();
+        return execute(getUrl(VkApiMethods.SEARCH, params)).toString();
     }
 
     /**

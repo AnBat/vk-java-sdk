@@ -40,7 +40,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.OPEN_METHOD)
     public String getById(VKParameters params) {
-        return execute(getUrl("getById", params)).toString();
+        return execute(getUrl(VkApiMethods.GET_BY_ID, params)).toString();
     }
 
     /**
@@ -95,7 +95,7 @@ public class VKApiGroups extends VKApiBase {
      */
     @Rights(VKApiRigths.NOTHING)
     public String search(VKParameters params) {
-        return execute(getUrl("search", params)).toString();
+        return execute(getUrl(VkApiMethods.SEARCH, params)).toString();
     }
 
     /**

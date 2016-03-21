@@ -9,6 +9,7 @@ package com.batiaev.vk.api;
 
 import com.batiaev.vk.common.VKParameters;
 import com.batiaev.vk.common.annotation.Rights;
+import com.batiaev.vk.common.consts.VkApiMethods;
 
 /**
  * @author batiaev
@@ -26,7 +27,7 @@ public class VKApiGifts extends VKApiBase {
      */
     @Rights(standAloneOnly = true)
     public String get(VKParameters params) {
-        return execute(getUrl("get", params)).toString();
+        return execute(getUrl(VkApiMethods.GET, params)).toString();
     }
 
     @Override
