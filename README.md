@@ -7,7 +7,7 @@ Library for working with [VK API](https://vk.com/dev/openapi), authorization thr
 gradle clean build javaDoc jacocoTestReport run
 
 ## Prerequisites
-- Apache httpClient v.4.5
+- Apache httpClient v.4.5.2
 - Apache log4j v.2.2
 - org.json v.20140107
 - JUnit v.4.12

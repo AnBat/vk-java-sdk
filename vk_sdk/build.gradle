@@ -46,7 +46,7 @@ sourceSets {
     }
 }
 
-def httpClientVersion = '4.5'
+def httpClientVersion = '4.5.2'
 def log4jVersion = '2.2'
 def jsonVersion = '20140107'
 def junitVersion = '4.12'
