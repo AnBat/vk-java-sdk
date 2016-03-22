@@ -10,8 +10,9 @@ package com.batiaev.vk.api;
 import com.batiaev.vk.common.VKParameters;
 import com.batiaev.vk.common.consts.VKApiJsonConst;
 import com.batiaev.vk.common.consts.VkApiMethods;
+import com.batiaev.vk.common.entity.VKUser;
 import com.batiaev.vk.common.entity.VKUserList;
-import com.batiaev.vk.common.system.VkJsonParser;
+import com.batiaev.vk.common.system.VkJson2Class;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -38,7 +39,7 @@ public class VKApiUsers extends VKApiBase {
         VKUserList result = new VKUserList();
         for (int i = 0; i < friendList.length(); ++i) {
             JSONObject userJson = friendList.getJSONObject(i);
-            result.add(VkJsonParser.parseUser(userJson));
+            result.add((VKUser) VkJson2Class.toClass(userJson, VKUser.class));
         }
         return result;
     }

@@ -4,11 +4,11 @@ import com.batiaev.vk.common.VKParameters;
 import com.batiaev.vk.common.consts.VKApiConst;
 import com.batiaev.vk.common.consts.VKApiJsonConst;
 import com.batiaev.vk.common.consts.VkApiMethods;
-import com.batiaev.vk.common.entity.VkChatMessage;
-import com.batiaev.vk.common.entity.VkChatList;
 import com.batiaev.vk.common.entity.VKMessage;
 import com.batiaev.vk.common.entity.VKMessageList;
-import com.batiaev.vk.common.system.VkJsonParser;
+import com.batiaev.vk.common.entity.VkChatList;
+import com.batiaev.vk.common.entity.VkChatMessage;
+import com.batiaev.vk.common.system.VkJson2Class;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
@@ -51,7 +51,7 @@ public class VKApiMessages extends VKApiBase {
         final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
 
         for (int i = 0; i < messageList.length(); ++i) {
-            VKMessage message = VkJsonParser.parseMessage(messageList.getJSONObject(i));
+            VKMessage message = (VKMessage) VkJson2Class.toClass(messageList.getJSONObject(i), VKMessage.class);
             result.add(message);
         }
         return result;
@@ -78,7 +78,7 @@ public class VKApiMessages extends VKApiBase {
         final JSONArray chatList = respondJson.getJSONArray(VKApiConst.ITEMS);
 
         for (int i = 0; i < chatList.length(); ++i) {
-            VkChatMessage chat = VkJsonParser.parseChat(chatList.getJSONObject(i));
+            VkChatMessage chat = (VkChatMessage) VkJson2Class.toClass(chatList.getJSONObject(i), VkChatMessage.class);
             result.add(chat);
         }
         return result;
@@ -105,7 +105,7 @@ public class VKApiMessages extends VKApiBase {
         final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
 
         for (int i = 0; i < messageList.length(); ++i) {
-            VKMessage message = VkJsonParser.parseMessage(messageList.getJSONObject(i));
+            VKMessage message = (VKMessage) VkJson2Class.toClass(messageList.getJSONObject(i), VKMessage.class);
             result.add(message);
         }
         return result;
@@ -143,7 +143,7 @@ public class VKApiMessages extends VKApiBase {
 
         final JSONArray messageList = respondJson.getJSONArray(VKApiConst.ITEMS);
         for (int i = 0; i < messageList.length(); ++i) {
-            VKMessage message = VkJsonParser.parseMessage(messageList.getJSONObject(i));
+            VKMessage message = (VKMessage) VkJson2Class.toClass(messageList.getJSONObject(i), VKMessage.class);
             result.add(message);
         }
         return result;

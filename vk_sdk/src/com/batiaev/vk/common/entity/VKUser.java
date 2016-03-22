@@ -17,7 +17,7 @@ import java.util.Date;
  * @author batiaev
  * User object describes a user profile.
  */
-public class VKUser extends AbstractEntity implements Serializable {
+public class VKUser extends VkObject implements Serializable {
     /**
      * User ID using in vk.com
      */

@@ -11,7 +11,7 @@ package com.batiaev.vk.common.entity;
  * @author batiaev
  * Photo object describes a photo
  */
-public class VKPhoto extends AbstractEntity {
+public class VKPhoto extends VkObject {
 
     public VKPhoto() {
         photo_75 = "";
@@ -154,58 +154,58 @@ public class VKPhoto extends AbstractEntity {
     /**
      * photo id
      */
-    private int id;
+    protected int id;
     /**
      * Photo album ID.
      */
-    private int album_id;
+    protected int album_id;
     /**
      * ID of the user or community that owns the photo.
      */
-    private int owner_id;
+    protected int owner_id;
     /**
      * User who post this
      */
-    private int user_id;
+    protected int user_id;
     /**
      * URL of image with maximum size 75x75px.
      */
-    private String photo_75;
+    protected String photo_75;
     /**
      * URL of image with maximum size 130x130px.
      */
-    private String photo_130;
+    protected String photo_130;
     /**
      * URL of image with maximum size 604x604px.
      */
-    private String photo_604;
+    protected String photo_604;
     /**
      * URL of image with maximum size 807x807px.
      */
-    private String photo_807;
+    protected String photo_807;
     /**
      * URL of image with maximum size 1280x1024px.
      */
-    private String photo_1280;
+    protected String photo_1280;
     /**
      * URL of image with maximum size 2560x2048px.
      */
-    private String photo_2560;
+    protected String photo_2560;
     /**
      * Width (in pixels) of the original photo.
      */
-    private int width;
+    protected int width;
     /**
      * Height (in pixels) of the original photo.
      */
-    private int height;
+    protected int height;
     /**
      * Text describing the photo.
      */
-    private String text;
+    protected String text;
     /**
      * in Unix time
      */
-    private int date;
+    protected int date;
 
 }
