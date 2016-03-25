@@ -5,7 +5,6 @@ import com.batiaev.vk.common.json2class.VkJson2Class;
 import com.batiaev.vk.common.entity.VkError;
 import com.batiaev.vk.common.entity.VkObjectType;
 import org.apache.http.HttpEntity;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -38,14 +37,14 @@ public class VKRequest {
 
     public String getRequest(String url) {
 
-        String responseBody = readUrl(url);
-        JSONObject obj = new JSONObject(responseBody);
+        String response = doGet(url);
+        JSONObject obj = new JSONObject(response);
         if (obj.has(VKApiJsonConst.ERROR)) {
             VkError error = (VkError) VkJson2Class.toClass(obj.getJSONObject(VKApiJsonConst.ERROR), VkObjectType.ERROR);
             LOG.error("Error respond: " + error.toString());
             return null;
         }
-        return responseBody;
+        return response;
     }
 
     @Deprecated
@@ -54,9 +53,9 @@ public class VKRequest {
         return getRequest(url);
     }
 
-    private String readUrl(String url) {
-//        https://hc.apache.org/httpcomponents-client-4.4.x/httpclient/examples/org/apache/http/examples/client/ClientWithResponseHandler.java /
+    private String doGet(String url) {
         CloseableHttpClient httpclient = HttpClients.createDefault();
+
         String responseBody = "";
         try {
             HttpGet httpget = new HttpGet(url);
@@ -65,18 +64,16 @@ public class VKRequest {
 
             // Create a custom response handler
             ResponseHandler<String> responseHandler = response -> {
-                int status = response.getStatusLine().getStatusCode();
-                if (status >= 200 && status < 300) {
+                int statusCode = response.getStatusLine().getStatusCode();
+                String result = null;
+                if (statusCode >= 200 && statusCode < 300) {
                     HttpEntity entity = response.getEntity();
-                    return entity != null ? EntityUtils.toString(entity) : null;
-                } else {
-                    throw new ClientProtocolException("Unexpected response status: " + status);
+                    if (entity != null) result = EntityUtils.toString(entity);
                 }
+                else LOG.error("Cannot get information from VK.com or problems in protocol\n");
+                return result;
             };
             responseBody = httpclient.execute(httpget, responseHandler);
-        } catch (ClientProtocolException e) {
-            LOG.error("Cannot get information from VK.com or problems in protocol\n");
-            e.printStackTrace();
         } catch (IOException e) {
             LOG.error("Cannot get information from VK.com\n");
             e.printStackTrace();
