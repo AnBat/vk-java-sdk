@@ -1,9 +1,8 @@
 package com.batiaev.vk.common;
 
 import com.batiaev.vk.common.consts.VKApiJsonConst;
-import com.batiaev.vk.common.json2class.VkJson2Class;
 import com.batiaev.vk.common.entity.VkError;
-import com.batiaev.vk.common.entity.VkObjectType;
+import com.batiaev.vk.common.system.VkJson2Class;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
@@ -40,8 +39,8 @@ public class VKRequest {
         String response = doGet(url);
         JSONObject obj = new JSONObject(response);
         if (obj.has(VKApiJsonConst.ERROR)) {
-            VkError error = (VkError) VkJson2Class.toClass(obj.getJSONObject(VKApiJsonConst.ERROR), VkObjectType.ERROR);
-            LOG.error("Error respond: " + error.toString());
+            VkError error = (VkError) VkJson2Class.toClass(obj.getJSONObject(VKApiJsonConst.ERROR), VkError.class);
+            if (error != null) LOG.error("Error respond: " + error.toString());
             return null;
         }
         return response;

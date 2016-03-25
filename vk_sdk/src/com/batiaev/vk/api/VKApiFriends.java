@@ -15,7 +15,7 @@ import com.batiaev.vk.common.consts.VKApiRigths;
 import com.batiaev.vk.common.consts.VkApiMethods;
 import com.batiaev.vk.common.entity.VKUser;
 import com.batiaev.vk.common.entity.VKUserList;
-import com.batiaev.vk.common.system.VkJsonParser;
+import com.batiaev.vk.common.system.VkJson2Class;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
@@ -53,7 +53,7 @@ public class VKApiFriends extends VKApiBase {
         VKUserList result = new VKUserList(obj.getInt(VKApiConst.COUNT));
         for (int i = 0; i < friendList.length(); ++i) {
             JSONObject userJson = friendList.getJSONObject(i);
-            VKUser user = VkJsonParser.parseUser(userJson);
+            VKUser user = (VKUser) VkJson2Class.toClass(userJson, VKUser.class);
             result.add(user);
         }
         return result;
@@ -137,7 +137,7 @@ public class VKApiFriends extends VKApiBase {
         VKUserList result = new VKUserList(obj.getInt(VKApiConst.COUNT));
         for (int i = 0; i < friendList.length(); ++i) {
             JSONObject userJson = friendList.getJSONObject(i);
-            VKUser user = VkJsonParser.parseUser(userJson);
+            VKUser user = (VKUser) VkJson2Class.toClass(userJson, VKUser.class);
             result.add(user);
         }
         return result;

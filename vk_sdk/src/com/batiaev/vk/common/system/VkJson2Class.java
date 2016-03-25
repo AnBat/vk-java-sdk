@@ -17,16 +17,99 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
+ * Created by batiaev on 2/11/16.
  * @author batiaev
- * Created by batiaev on 09/07/15.
- * ---
- * Copyright © 2015. Anton Batiaev. All Rights Reserved.
- * www.batiaev.com
  */
-public class VkJsonParser {
-    private static final Logger LOG = LogManager.getLogger(VkJsonParser.class);
+public class VkJson2Class {
+    private static final Logger LOG = LogManager.getLogger(VkJson2Class.class);
 
-    public static VKUser parseUser(JSONObject userJson) {
+
+    public static VkObject toClass(JSONObject jsonObject, Class type) {
+        if (VkError.class.equals(type)) return parseError(jsonObject);
+        else if (VKPost.class.equals(type)) return parsePost(jsonObject);
+        else if (VKPhoto.class.equals(type)) return parsePhoto(jsonObject);
+        else if (VkSticker.class.equals(type)) return parseSticker(jsonObject);
+        else if (VKUser.class.equals(type)) return parseUser(jsonObject);
+        else if (VKMessage.class.equals(type)) return parseMessage(jsonObject);
+        else if (VkMessageAttachment.class.equals(type)) return parseAttachment(jsonObject);
+        else if (VkChatMessage.class.equals(type)) return parseChat(jsonObject);
+
+        return null;
+    }
+
+    public static JSONObject toJson(VkObject object) {
+        return new JSONObject();
+    }
+
+    //---
+
+    private static VkError parseError(JSONObject jsonObject) {
+        LOG.debug("Parsing error...");
+        VkError error = new VkError();
+        error.error_code = jsonObject.getInt(VKApiJsonConst.ERROR_CODE);
+        error.error_msg = jsonObject.getString(VKApiJsonConst.ERROR_MSG);
+        JSONArray requestParams = jsonObject.getJSONArray(VKApiConst.REQUEST_PARAMS);
+        for (int i = 0; i < requestParams.length(); ++i) {
+            JSONObject param = requestParams.getJSONObject(i);
+            error.request_params.put(param.getString(VKApiConst.KEY), param.getString(VKApiConst.VALUE));
+        }
+        return error;
+    }
+
+    private static VKPost parsePost(JSONObject postJson) {
+        LOG.debug("Parsing post...");
+        VKPost post = new VKPost();
+        if (postJson.has(VKApiJsonConst.ID)) post.setId(postJson.getInt(VKApiJsonConst.ID));
+        if (postJson.has(VKApiJsonConst.OWNER_ID)) post.setOwnerId(postJson.getInt(VKApiJsonConst.OWNER_ID));
+        if (postJson.has(VKApiJsonConst.FROM_ID)) post.setFromId(postJson.getInt(VKApiJsonConst.FROM_ID));
+        if (postJson.has(VKApiJsonConst.DATE)) post.setDate(postJson.getInt(VKApiJsonConst.DATE));
+        if (postJson.has(VKApiJsonConst.TEXT)) post.setText(postJson.getString(VKApiJsonConst.TEXT));
+        if (postJson.has(VKApiJsonConst.REPLY_OWNER_ID)) post.setReplyOwnerId(postJson.getInt(VKApiJsonConst.REPLY_OWNER_ID));
+        if (postJson.has(VKApiJsonConst.REPLY_POST_ID)) post.setReplyPostId(postJson.getInt(VKApiJsonConst.REPLY_POST_ID));
+        if (postJson.has(VKApiJsonConst.FRIENDS_ONLY)) post.setFriendsOnly(postJson.getInt(VKApiJsonConst.FRIENDS_ONLY));
+        //FIXME
+        return post;
+    }
+
+    private static VKPhoto parsePhoto(JSONObject photoJson) {
+        LOG.debug("Parsing photo...");
+
+        VKPhoto photo = new VKPhoto();
+        if (photoJson.has(VKApiJsonConst.ID)) photo.setId(photoJson.getInt(VKApiJsonConst.ID));
+        if (photoJson.has(VKApiJsonConst.USER_ID)) photo.setUserId(photoJson.getInt(VKApiJsonConst.USER_ID));
+        if (photoJson.has(VKApiJsonConst.OWNER_ID)) photo.setOwnerId(photoJson.getInt(VKApiJsonConst.OWNER_ID));
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setAlbumId(photoJson.getInt(VKApiJsonConst.ALBUM_ID));
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setDate(photoJson.getInt(VKApiJsonConst.DATE));
+        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setText(photoJson.getString(VKApiJsonConst.TEXT));
+        if (photoJson.has(VKApiJsonConst.HEIGHT)) photo.setHeight(photoJson.getInt(VKApiJsonConst.HEIGHT));
+        if (photoJson.has(VKApiJsonConst.WIDTH)) photo.setWidth(photoJson.getInt(VKApiJsonConst.WIDTH));
+        if (photoJson.has(VKApiJsonConst.PHOTO_75)) photo.setPhoto75(photoJson.getString(VKApiJsonConst.PHOTO_75));
+        if (photoJson.has(VKApiJsonConst.PHOTO_130)) photo.setPhoto130(photoJson.getString(VKApiJsonConst.PHOTO_130));
+        if (photoJson.has(VKApiJsonConst.PHOTO_604)) photo.setPhoto604(photoJson.getString(VKApiJsonConst.PHOTO_604));
+        if (photoJson.has(VKApiJsonConst.PHOTO_807)) photo.setPhoto807(photoJson.getString(VKApiJsonConst.PHOTO_807));
+        if (photoJson.has(VKApiJsonConst.PHOTO_1280)) photo.setPhoto1280(photoJson.getString(VKApiJsonConst.PHOTO_1280));
+        if (photoJson.has(VKApiJsonConst.PHOTO_2560)) photo.setPhoto2560(photoJson.getString(VKApiJsonConst.PHOTO_2560));
+
+        return photo;
+    }
+
+    private static VKPhoto parseSticker(JSONObject stickerJson) {
+        LOG.debug("Parsing sticker...");
+
+        VkSticker sticker = new VkSticker();
+        if (stickerJson.has(VKApiJsonConst.ID)) sticker.setId(stickerJson.getInt(VKApiJsonConst.ID));
+        if (stickerJson.has(VKApiJsonConst.HEIGHT)) sticker.setHeight(stickerJson.getInt(VKApiJsonConst.HEIGHT));
+        if (stickerJson.has(VKApiJsonConst.WIDTH)) sticker.setWidth(stickerJson.getInt(VKApiJsonConst.WIDTH));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_64)) sticker.setPhoto75(stickerJson.getString(VKApiJsonConst.PHOTO_64));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_128)) sticker.setPhoto130(stickerJson.getString(VKApiJsonConst.PHOTO_128));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_256)) sticker.setPhoto604(stickerJson.getString(VKApiJsonConst.PHOTO_256));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_352)) sticker.setPhoto604(stickerJson.getString(VKApiJsonConst.PHOTO_352));
+        if (stickerJson.has(VKApiJsonConst.PHOTO_512)) sticker.setPhoto604(stickerJson.getString(VKApiJsonConst.PHOTO_512));
+
+        return sticker;
+    }
+
+    private static VKUser parseUser(JSONObject userJson) {
         LOG.debug("Parsing user...");
         VKUser user = new VKUser();
 
@@ -103,7 +186,7 @@ public class VkJsonParser {
         return user;
     }
 
-    public static VKMessage parseMessage(JSONObject json) {
+    private static VKMessage parseMessage(JSONObject json) {
         LOG.debug("Parsing message...");
         VKMessage message = new VKMessage();
 
@@ -131,25 +214,27 @@ public class VkJsonParser {
         return message;
     }
 
-    public static VkMessageAttachment parseAttachment(JSONObject attachJSON) {
+    private static VkMessageAttachment parseAttachment(JSONObject attachJSON) {
         LOG.debug("Parsing attachment...");
         String type = attachJSON.getString(VKApiJsonConst.TYPE);
         switch (type) {
             case VkMessageAttachment.Photo:
                 VkPhotoAttachment photoAttach = new VkPhotoAttachment();
-                photoAttach.setPhoto(parsePhoto(attachJSON.getJSONObject(VkMessageAttachment.Photo)));
+                photoAttach.setPhoto((VKPhoto) VkJson2Class.toClass(attachJSON.getJSONObject(VkMessageAttachment.Photo), VKPhoto.class));
                 photoAttach.setJson(attachJSON.toString());
                 photoAttach.setValue(photoAttach.photo().photoMax());
                 return photoAttach;
             case VkMessageAttachment.Wall:
                 VkWallAttachment post = new VkWallAttachment();
-                post.setPost(parsePost(attachJSON.getJSONObject(VkMessageAttachment.Wall)));
+                post.setPost((VKPost) VkJson2Class.toClass(attachJSON.getJSONObject(VkMessageAttachment.Wall),
+                        VKPost.class));
                 post.setJson(attachJSON.toString());
                 post.setValue(post.post().text());
                 return post;
             case VkMessageAttachment.Sticker:
                 VkPhotoAttachment stickerAttach = new VkPhotoAttachment();
-                stickerAttach.setPhoto(parseSticker(attachJSON.getJSONObject(VkMessageAttachment.Sticker)));
+                stickerAttach.setPhoto((VKPhoto) VkJson2Class.toClass(attachJSON.getJSONObject(VkMessageAttachment.Sticker),
+                        VkSticker.class));
                 stickerAttach.setJson(attachJSON.toString());
                 stickerAttach.setValue(stickerAttach.photo().photoMax());
                 return stickerAttach;
@@ -162,60 +247,7 @@ public class VkJsonParser {
         }
     }
 
-    private static VKPost parsePost(JSONObject postJson) {
-        LOG.debug("Parsing post...");
-        VKPost post = new VKPost();
-        if (postJson.has(VKApiJsonConst.ID)) post.setId(postJson.getInt(VKApiJsonConst.ID));
-        if (postJson.has(VKApiJsonConst.OWNER_ID)) post.setOwnerId(postJson.getInt(VKApiJsonConst.OWNER_ID));
-        if (postJson.has(VKApiJsonConst.FROM_ID)) post.setFromId(postJson.getInt(VKApiJsonConst.FROM_ID));
-        if (postJson.has(VKApiJsonConst.DATE)) post.setDate(postJson.getInt(VKApiJsonConst.DATE));
-        if (postJson.has(VKApiJsonConst.TEXT)) post.setText(postJson.getString(VKApiJsonConst.TEXT));
-        if (postJson.has(VKApiJsonConst.REPLY_OWNER_ID)) post.setReplyOwnerId(postJson.getInt(VKApiJsonConst.REPLY_OWNER_ID));
-        if (postJson.has(VKApiJsonConst.REPLY_POST_ID)) post.setReplyPostId(postJson.getInt(VKApiJsonConst.REPLY_POST_ID));
-        if (postJson.has(VKApiJsonConst.FRIENDS_ONLY)) post.setFriendsOnly(postJson.getInt(VKApiJsonConst.FRIENDS_ONLY));
-        //FIXME
-        return post;
-    }
-
-    public static VKPhoto parsePhoto(JSONObject photoJson) {
-        LOG.debug("Parsing photo...");
-
-        VKPhoto photo = new VKPhoto();
-        if (photoJson.has(VKApiJsonConst.ID)) photo.setId(photoJson.getInt(VKApiJsonConst.ID));
-        if (photoJson.has(VKApiJsonConst.USER_ID)) photo.setUserId(photoJson.getInt(VKApiJsonConst.USER_ID));
-        if (photoJson.has(VKApiJsonConst.OWNER_ID)) photo.setOwnerId(photoJson.getInt(VKApiJsonConst.OWNER_ID));
-        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setAlbumId(photoJson.getInt(VKApiJsonConst.ALBUM_ID));
-        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setDate(photoJson.getInt(VKApiJsonConst.DATE));
-        if (photoJson.has(VKApiJsonConst.ALBUM_ID)) photo.setText(photoJson.getString(VKApiJsonConst.TEXT));
-        if (photoJson.has(VKApiJsonConst.HEIGHT)) photo.setHeight(photoJson.getInt(VKApiJsonConst.HEIGHT));
-        if (photoJson.has(VKApiJsonConst.WIDTH)) photo.setWidth(photoJson.getInt(VKApiJsonConst.WIDTH));
-        if (photoJson.has(VKApiJsonConst.PHOTO_75)) photo.setPhoto75(photoJson.getString(VKApiJsonConst.PHOTO_75));
-        if (photoJson.has(VKApiJsonConst.PHOTO_130)) photo.setPhoto130(photoJson.getString(VKApiJsonConst.PHOTO_130));
-        if (photoJson.has(VKApiJsonConst.PHOTO_604)) photo.setPhoto604(photoJson.getString(VKApiJsonConst.PHOTO_604));
-        if (photoJson.has(VKApiJsonConst.PHOTO_807)) photo.setPhoto807(photoJson.getString(VKApiJsonConst.PHOTO_807));
-        if (photoJson.has(VKApiJsonConst.PHOTO_1280)) photo.setPhoto1280(photoJson.getString(VKApiJsonConst.PHOTO_1280));
-        if (photoJson.has(VKApiJsonConst.PHOTO_2560)) photo.setPhoto2560(photoJson.getString(VKApiJsonConst.PHOTO_2560));
-
-        return photo;
-    }
-
-    public static VKPhoto parseSticker(JSONObject stickerJson) {
-        LOG.debug("Parsing sticker...");
-
-        VKPhoto sticker = new VKPhoto();
-        if (stickerJson.has(VKApiJsonConst.ID)) sticker.setId(stickerJson.getInt(VKApiJsonConst.ID));
-        if (stickerJson.has(VKApiJsonConst.HEIGHT)) sticker.setHeight(stickerJson.getInt(VKApiJsonConst.HEIGHT));
-        if (stickerJson.has(VKApiJsonConst.WIDTH)) sticker.setWidth(stickerJson.getInt(VKApiJsonConst.WIDTH));
-        if (stickerJson.has(VKApiJsonConst.PHOTO_64)) sticker.setPhoto75(stickerJson.getString(VKApiJsonConst.PHOTO_64));
-        if (stickerJson.has(VKApiJsonConst.PHOTO_128)) sticker.setPhoto130(stickerJson.getString(VKApiJsonConst.PHOTO_128));
-        if (stickerJson.has(VKApiJsonConst.PHOTO_256)) sticker.setPhoto604(stickerJson.getString(VKApiJsonConst.PHOTO_256));
-        if (stickerJson.has(VKApiJsonConst.PHOTO_352)) sticker.setPhoto604(stickerJson.getString(VKApiJsonConst.PHOTO_352));
-        if (stickerJson.has(VKApiJsonConst.PHOTO_512)) sticker.setPhoto604(stickerJson.getString(VKApiJsonConst.PHOTO_512));
-
-        return sticker;
-    }
-
-    public static VkChatMessage parseChat(JSONObject jsonObject) {
+    private static VkChatMessage parseChat(JSONObject jsonObject) {
         LOG.debug("Parsing chat...");
 
         JSONObject json = jsonObject.getJSONObject(VKApiJsonConst.MESSAGE);
