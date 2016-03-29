@@ -6,8 +6,8 @@
 public class Main {
     public static void main(String[] args) {
 
-        String demo = "testApp";
-//        String demo = "messageLoader";
+//        String demo = "testApp";
+        String demo = "messageLoader";
 
         switch (demo) {
             case "testApp":

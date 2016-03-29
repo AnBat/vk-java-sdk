@@ -19,13 +19,13 @@ public class MessageLoader extends TimerTask {
 
     public static void main(String[] args) {
 
-//        VkMessageCache messageCache = new VkMessageCache();
-//        boolean result = messageCache.cachingMassages(62311368);
-//        if (result)
-//            LOG.info("Caching messages is finished");
-
-        MessageLoader loader = new MessageLoader();
-        loader.run();
+        VkMessageCache messageCache = new VkMessageCache();
+        boolean result = messageCache.cachingMassages(62311368);
+        if (result)
+            LOG.info("Caching messages is finished");
+//
+//        MessageLoader loader = new MessageLoader();
+//        loader.run();
     }
 
     public void run() {
