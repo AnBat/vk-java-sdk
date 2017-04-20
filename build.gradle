@@ -1,31 +1,68 @@
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-}
+apply plugin: 'java'
+apply plugin: 'idea'
 
-allprojects {
-    group = 'com.batiaev.vk'
-    version = '0.1.1'
-
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-
-    apply plugin: 'java'
-    apply plugin: 'idea'
-}
-
-subprojects {
-    apply plugin: 'application'
-}
+group = 'com.batiaev.vk'
+version = '0.1.1'
 
 idea {
     project {
         jdkName = '1.8'
         languageLevel = '1.8'
         vcs = 'Git'
+    }
+}
+
+ext {
+    lombokVersion = '1.16.16'
+    httpClientVersion = '4.5'
+    log4jVersion = '2.2'
+    jsonVersion = '20140107'
+    junitVersion = '4.12'
+    slf4jVersion = '1.7.25'
+}
+
+subprojects {
+    apply plugin: 'application'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+configure(project(':vk_sdk')) {
+    mainClassName = "com.batiaev.vk.Main"
+
+    jar {
+        manifest.attributes("Main-Class": mainClassName);
+    }
+
+    dependencies {
+        compile "org.slf4j:jcl-over-slf4j:${slf4jVersion}"
+        compile "org.slf4j:log4j-over-slf4j:${slf4jVersion}"
+        compile "org.projectlombok:lombok:${lombokVersion}"
+        compile "org.apache.httpcomponents:httpclient:${httpClientVersion}"
+        compile "org.apache.logging.log4j:log4j-core:${log4jVersion}"
+        compile "org.json:json:${jsonVersion}"
+        testCompile "junit:junit:${junitVersion}"
+    }
+}
+
+configure(project(':demo')) {
+    mainClassName = "com.batiaev.vk.demo.Main"
+
+    jar {
+        manifest.attributes("Main-Class": mainClassName);
+    }
+
+    dependencies {
+        compile project(':vk_sdk')
+    }
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
     }
 }
