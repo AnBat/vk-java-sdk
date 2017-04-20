@@ -15,8 +15,8 @@ idea {
 ext {
     lombokVersion = '1.16.16'
     httpClientVersion = '4.5'
-    log4jVersion = '2.2'
-    jsonVersion = '20140107'
+    log4jVersion = '2.8.2'
+    jsonVersion = '20160810'
     junitVersion = '4.12'
     slf4jVersion = '1.7.25'
 }
